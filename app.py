@@ -15,6 +15,86 @@ import matplotlib.cm as cm
 from pathlib import Path
 import torchvision.transforms.functional as TF
 
+CSS = """
+/* Hallmark · macrostructure: Workbench · tone: clinical-utilitarian · anchor hue: deep teal */
+:root {
+  --paper: oklch(0.972 0.008 95);
+  --paper-2: oklch(0.945 0.012 95);
+  --field: oklch(1 0 0);
+  --ink: oklch(0.24 0.015 85);
+  --ink-soft: oklch(0.44 0.02 85);
+  --rule: oklch(0.85 0.015 90);
+  --accent: oklch(0.45 0.095 195);
+  --accent-deep: oklch(0.33 0.075 195);
+  --danger: oklch(0.52 0.15 25);
+  --ok: oklch(0.5 0.11 155);
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --radius: 6px;
+  --body-background-fill: var(--paper);
+  --body-text-color: var(--ink);
+  --block-background-fill: var(--field);
+  --block-border-color: var(--rule);
+  --block-border-width: 1px;
+  --block-radius: var(--radius);
+  --block-shadow: none;
+  --button-primary-background-fill: var(--ink);
+  --button-primary-background-fill-hover: var(--accent-deep);
+  --button-primary-text-color: var(--paper);
+  --button-primary-border-color: var(--ink);
+  --button-radius: var(--radius);
+  --input-background-fill: var(--field);
+  --panel-background-fill: var(--paper-2);
+}
+.gradio-container {
+  background: var(--paper) !important;
+  color: var(--ink);
+  color-scheme: light;
+  font-family: var(--font-body);
+  max-width: 1120px !important;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md) var(--space-xl) !important;
+}
+#masthead { padding: var(--space-md) 0 var(--space-lg); border-bottom: 2px solid var(--ink); margin-bottom: var(--space-lg); }
+#masthead .eyebrow {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-soft); margin: 0 0 var(--space-sm);
+}
+#masthead h1 {
+  font-family: var(--font-display); font-style: normal; font-weight: 400;
+  font-size: clamp(30px, 4.5vw, 46px); line-height: 1.05; letter-spacing: -0.01em;
+  margin: 0 0 var(--space-sm); overflow-wrap: anywhere;
+}
+#masthead .lede { font-size: 17px; line-height: 1.55; color: var(--ink-soft); max-width: 64ch; margin: 0; }
+#masthead .lede strong { color: var(--ink); font-weight: 600; }
+.figures { display: flex; border-top: 1px solid var(--rule); margin-top: var(--space-lg); }
+.figures > div { flex: 1 1 0; min-width: 0; padding: var(--space-sm) var(--space-md) var(--space-sm) 0; }
+.figures > div + div { border-left: 1px solid var(--rule); padding-left: var(--space-md); }
+.figures b { display: block; font-family: var(--font-mono); font-weight: 600; font-size: 22px; font-variant-numeric: tabular-nums; }
+.figures span { font-size: 13px; color: var(--ink-soft); }
+#workbench { gap: var(--space-lg); }
+#workbench .form { background: transparent !important; border: none !important; box-shadow: none !important; }
+#reading .form { background: var(--paper-2) !important; border: 1px solid var(--rule) !important; border-radius: var(--radius); }
+#controls { margin-top: var(--space-md); display: grid; gap: var(--space-sm); }
+#read-btn button { font-size: 16px; font-weight: 600; padding: 12px; }
+#colophon { border-top: 1px solid var(--rule); margin-top: var(--space-xl); padding-top: var(--space-md); font-size: 13px; line-height: 1.6; color: var(--ink-soft); max-width: 72ch; }
+#colophon strong { color: var(--ink); }
+input[type='range'] { accent-color: var(--accent); }
+*:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 2px; }
+@media (max-width: 768px) {
+  .figures { flex-direction: column; }
+  .figures > div + div { border-left: none; border-top: 1px solid var(--rule); padding-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.15s !important; animation-duration: 0.15s !important; }
+}
+"""
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--stageA", default="checkpoints/stageA12.pt")
 parser.add_argument("--stageB", default="checkpoints/stageB12.pt")
@@ -141,7 +221,7 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
         logitsA = modelA(tfA(rgb).unsqueeze(0).to(device))
         overlay = gradcam_overlay(rgb, featA, gradA, logitsA[0, 0], IA)
         conf = {"normal": 1 - p_tumor, "tumor": p_tumor}
-        text = f"**NORMAL** ({conf['normal']:.1%} confidence)\n\nStage A gate: no tumor found.\n\n{DISCLAIMER}"
+        text = f"**NORMAL** ({conf['normal']:.1%} confidence)\n\nThe gate found no tumor.\n\n{DISCLAIMER}"
         return overlay, conf, text
 
     probB = specialist_probs(rgb, tta, vote)
@@ -153,28 +233,47 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
     conf = {"benign": float(probB[0]), "malignant": float(probB[1])}
     kind = "non-cancerous" if idx == 0 else "cancerous"
     text = (f"**{label.upper()}** ({conf[label]:.1%} confidence, {kind})\n\n"
-            f"Stage A tumor probability: {p_tumor:.1%}\n\n{DISCLAIMER}")
+            f"Tumor probability: {p_tumor:.1%}\n\n{DISCLAIMER}")
     return overlay, conf, text
 
 
-with gr.Blocks(title="🦴 Bone Cancer Detector") as demo:
-    gr.Markdown("# 🦴 Bone Cancer Detector — Two-Stage AI Screening Aid\n" + DISCLAIMER)
-    gr.Markdown("**Stage A:** tumor-vs-normal gate (96%) → **Stage B:** benign-vs-malignant specialist | "
-                "Test accuracy 89.5% (TTA) | Grad-CAM explainability")
-    with gr.Row():
-        inp = gr.Image(type="pil", label="Upload X-ray")
-        out_img = gr.Image(label="Grad-CAM — where the AI looked")
-    with gr.Row():
-        tta_box = gr.Checkbox(label="Accurate mode — 5-view vote (slower, matches 89.4%)", value=False)
-        ens_box = gr.Checkbox(label="Two-expert vote (B11+B12, slower)", value=False,
-                              visible=modelB2 is not None)
-    thresh = gr.Slider(0.2, 0.7, value=0.5, step=0.05,
-                       label="Tumor sensitivity — lower catches subtler tumors, more false alarms")
-    out_label = gr.Label(label="Prediction")
-    out_text = gr.Markdown()
-    btn = gr.Button("Analyze", variant="primary")
+with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
+    gr.HTML("""
+    <div id="masthead">
+      <p class="eyebrow">Screening aid · proof of concept</p>
+      <h1>A second look at bone X-rays.</h1>
+      <p class="lede">Two models read every film: one asks <strong>tumor or not</strong>,
+      the other asks <strong>harmless or cancerous</strong>. On 564 test films it got
+      <strong>505 right</strong> and caught <strong>163 of 179 cancers</strong>.</p>
+      <div class="figures">
+        <div><b>505 / 564</b><span>test films read correctly</span></div>
+        <div><b>163 / 179</b><span>cancers caught</span></div>
+        <div><b>96%</b><span>tumor gate accuracy</span></div>
+      </div>
+    </div>""")
+    with gr.Row(elem_id="workbench"):
+        with gr.Column():
+            inp = gr.Image(type="pil", label="The film")
+            with gr.Group(elem_id="controls"):
+                btn = gr.Button("Read film", variant="primary", elem_id="read-btn")
+                tta_box = gr.Checkbox(label="Careful reading — 5 views, slower", value=False)
+                ens_box = gr.Checkbox(label="Second opinion — B11 + B12 vote", value=False,
+                                      visible=modelB2 is not None)
+                thresh = gr.Slider(0.2, 0.7, value=0.5, step=0.05,
+                                   label="Sensitivity — lower catches subtler tumors, more false alarms")
+        with gr.Column(elem_id="reading"):
+            out_img = gr.Image(label="Where the model looked")
+            out_label = gr.Label(label="Reading")
+            out_text = gr.Markdown()
+    gr.HTML("""
+    <div id="colophon">
+      <p><strong>Not a medical device.</strong> Wrong about one film in ten. A missed tumor
+      costs more than a false alarm, so the sensitivity slider leans toward catching.
+      Method: EfficientNet-B3 gate, EfficientNet-B6 specialist, Grad-CAM evidence.
+      Always see a doctor.</p>
+    </div>""")
     btn.click(predict, inputs=[inp, tta_box, ens_box, thresh], outputs=[out_img, out_label, out_text])
     inp.change(predict, inputs=[inp, tta_box, ens_box, thresh], outputs=[out_img, out_label, out_text])
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=args.port, share=True)
+    demo.launch(server_name="0.0.0.0", server_port=args.port, share=True, css=CSS)

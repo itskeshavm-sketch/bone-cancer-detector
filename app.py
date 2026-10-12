@@ -72,14 +72,14 @@ CSS = """
 #masthead h1 {
   font-family: var(--font-display); font-style: normal; font-weight: 400;
   font-size: clamp(30px, 4.5vw, 46px); line-height: 1.05; letter-spacing: -0.01em;
-  margin: 0 0 var(--space-sm); overflow-wrap: anywhere;
+  margin: 0 0 var(--space-sm); overflow-wrap: anywhere; color: var(--ink);
 }
 #masthead .lede { font-size: 17px; line-height: 1.55; color: var(--ink-soft); max-width: 64ch; margin: 0; }
 #masthead .lede strong { color: var(--ink); font-weight: 600; }
 .figures { display: flex; border-top: 1px solid var(--rule); margin-top: var(--space-lg); }
 .figures > div { flex: 1 1 0; min-width: 0; padding: var(--space-sm) var(--space-md) var(--space-sm) 0; }
 .figures > div + div { border-left: 1px solid var(--rule); padding-left: var(--space-md); }
-.figures b { display: block; font-family: var(--font-mono); font-weight: 600; font-size: 22px; font-variant-numeric: tabular-nums; }
+.figures b { display: block; font-family: var(--font-mono); font-weight: 600; font-size: 22px; font-variant-numeric: tabular-nums; color: var(--ink); }
 .figures span { font-size: 13px; color: var(--ink-soft); }
 #workbench { gap: var(--space-lg); }
 #workbench .form { background: transparent !important; border: none !important; box-shadow: none !important; }
@@ -158,6 +158,42 @@ if Path("checkpoints/stageB11.pt").exists():
         print("stageB11 not usable:", e)
 IA, IB = int(ckA.get("img", 300)), int(ckB.get("img", 456))
 print(f"A: {ckA['classes']} acc={ckA.get('acc')} | B: {ckB['classes']} acc={ckB.get('acc')}")
+
+# Light clinical theme, pinned for BOTH modes: every *_dark twin carries the same
+# light value so a dark OS color-scheme cannot restyle the page behind our back.
+theme = gr.themes.Default().set(
+    body_background_fill="#F0FDFA", body_background_fill_dark="#F0FDFA",
+    body_text_color="#134E4A", body_text_color_dark="#134E4A",
+    body_text_color_subdued="#475569", body_text_color_subdued_dark="#475569",
+    background_fill_primary="#FFFFFF", background_fill_primary_dark="#FFFFFF",
+    background_fill_secondary="#F0FDFA", background_fill_secondary_dark="#F0FDFA",
+    block_background_fill="#FFFFFF", block_background_fill_dark="#FFFFFF",
+    block_border_color="#CCFBF1", block_border_color_dark="#99F6E4",
+    block_label_background_fill="#F0FDFA", block_label_background_fill_dark="#F0FDFA",
+    block_label_text_color="#134E4A", block_label_text_color_dark="#134E4A",
+    block_title_text_color="#134E4A", block_title_text_color_dark="#134E4A",
+    button_primary_background_fill="#0E7490", button_primary_background_fill_dark="#0E7490",
+    button_primary_background_fill_hover="#155E75",
+    button_primary_background_fill_hover_dark="#155E75",
+    button_primary_text_color="#FFFFFF", button_primary_text_color_dark="#FFFFFF",
+    button_primary_border_color="#0E7490", button_primary_border_color_dark="#0E7490",
+    button_secondary_background_fill="#FFFFFF", button_secondary_background_fill_dark="#FFFFFF",
+    button_secondary_text_color="#134E4A", button_secondary_text_color_dark="#134E4A",
+    button_secondary_border_color="#99F6E4", button_secondary_border_color_dark="#99F6E4",
+    input_background_fill="#FFFFFF", input_background_fill_dark="#FFFFFF",
+    panel_background_fill="#F0FDFA", panel_background_fill_dark="#F0FDFA",
+    slider_color="#0891B2", slider_color_dark="#0891B2",
+    checkbox_background_color_selected="#0891B2",
+    checkbox_background_color_selected_dark="#0891B2",
+    checkbox_border_color_selected="#0891B2",
+    checkbox_border_color_selected_dark="#0891B2",
+    color_accent="#0891B2",
+    color_accent_soft="#CCFBF1", color_accent_soft_dark="#CCFBF1",
+    link_text_color="#0E7490", link_text_color_dark="#0E7490",
+    primary_500="#0891B2", primary_600="#0E7490", primary_700="#155E75",
+    font=[gr.themes.GoogleFont("Figtree"), "system-ui", "sans-serif"],
+    font_mono=[gr.themes.GoogleFont("IBM Plex Mono"), "ui-monospace", "monospace"],
+)
 
 
 def hook_pair(model):
@@ -282,7 +318,7 @@ def thorough(img: Image.Image):
     return predict(img, True, modelB2 is not None, 0.35)
 
 
-with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
+with gr.Blocks(title="Bone cancer detector — screening aid", theme=theme) as demo:
     gr.HTML("""
     <div id="masthead">
       <p class="eyebrow">Screening aid · proof of concept</p>

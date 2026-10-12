@@ -318,7 +318,7 @@ def thorough(img: Image.Image):
     return predict(img, True, modelB2 is not None, 0.35)
 
 
-with gr.Blocks(title="Bone cancer detector — screening aid", theme=theme) as demo:
+with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
     gr.HTML("""
     <div id="masthead">
       <p class="eyebrow">Screening aid · proof of concept</p>
@@ -378,4 +378,4 @@ with gr.Blocks(title="Bone cancer detector — screening aid", theme=theme) as d
     inp.change(predict, inputs=[inp, tta_box, ens_box, thresh], outputs=[out_img, out_label, out_text])
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=args.port, share=True, css=CSS)
+    demo.launch(server_name="0.0.0.0", server_port=args.port, share=True, theme=theme, css=CSS)

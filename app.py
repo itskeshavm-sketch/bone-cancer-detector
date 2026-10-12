@@ -161,7 +161,10 @@ print(f"A: {ckA['classes']} acc={ckA.get('acc')} | B: {ckB['classes']} acc={ckB.
 
 # Light clinical theme, pinned for BOTH modes: every *_dark twin carries the same
 # light value so a dark OS color-scheme cannot restyle the page behind our back.
-theme = gr.themes.Default().set(
+theme = gr.themes.Default(
+    font=[gr.themes.GoogleFont("Figtree"), "system-ui", "sans-serif"],
+    font_mono=[gr.themes.GoogleFont("IBM Plex Mono"), "ui-monospace", "monospace"],
+).set(
     body_background_fill="#F0FDFA", body_background_fill_dark="#F0FDFA",
     body_text_color="#134E4A", body_text_color_dark="#134E4A",
     body_text_color_subdued="#475569", body_text_color_subdued_dark="#475569",
@@ -190,9 +193,6 @@ theme = gr.themes.Default().set(
     color_accent="#0891B2",
     color_accent_soft="#CCFBF1", color_accent_soft_dark="#CCFBF1",
     link_text_color="#0E7490", link_text_color_dark="#0E7490",
-    primary_500="#0891B2", primary_600="#0E7490", primary_700="#155E75",
-    font=[gr.themes.GoogleFont("Figtree"), "system-ui", "sans-serif"],
-    font_mono=[gr.themes.GoogleFont("IBM Plex Mono"), "ui-monospace", "monospace"],
 )
 
 

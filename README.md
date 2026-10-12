@@ -19,6 +19,7 @@ Two models beat one because each learns a single easy question.
 | V11 (B3+B6) | 89.4% | best gate yet at the time |
 | **V12 (B3+B6, seed 12)** | **89.5%** | champion |
 | V13 (B3+B7, focal loss) | 85.8% | focal + lower threshold overfit; recipe rejected |
+| V14 (B3+V2-L 120M) | 83.3% | giant model starved on 2.7k images; heavy direction dead |
 
 Per-class (V11): malignant P/R 89.4%, benign F1 85.1%, normal F1 93.3%.
 

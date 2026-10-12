@@ -1,12 +1,12 @@
-"""Kaggle GPU V14: heavyweight expert — EfficientNet-V2-L (120M params) with the PROVEN V11/V12
-recipe (plain CE + label-smoothing 0.05, NO focal — V13 flopped). Stage A=B3 binary. Stage B=V2-L@456,
-batch 8, 40 epochs, SWA-last-10, thresh on VAL. Seed 14. Data in /tmp."""
+"""Kaggle GPU V15: diversity run — Stage A gate trains on main+ziya+XMERG (~19k images, label map
+1=tumor/0=normal verified by 1779 hash matches, 100% consistent). XMERG test split NEVER copied;
+md5 dedup vs our test drops leakers. Stage B=B6 proven recipe (plain CE, no focal). Seed 15. Data in /tmp."""
 import csv, hashlib, json, random, shutil, sys, time, traceback
 from pathlib import Path
 
-random.seed(14)
+random.seed(15)
 import torch
-torch.manual_seed(14)
+torch.manual_seed(15)
 
 print("=== DIAGNOSTICS ===", flush=True)
 try:
@@ -21,8 +21,9 @@ except Exception as e:
 ROOT = Path("/kaggle/input")
 MAIN_SRC = next((p.parent.parent for p in ROOT.rglob("train/images") if p.is_dir()), None)
 ZIYA = next((p.parent.parent for p in ROOT.rglob("train/_classes.csv")), None)
-print("MAIN:", MAIN_SRC, "ZIYA:", ZIYA, flush=True)
-if MAIN_SRC is None or ZIYA is None:
+XMERG = next((p.parent for p in ROOT.rglob("_train_labels.csv") if p.is_file()), None)
+print("MAIN:", MAIN_SRC, "ZIYA:", ZIYA, "XMERG:", XMERG, flush=True)
+if MAIN_SRC is None or ZIYA is None or XMERG is None:
     sys.exit(2)
 
 import torch.nn as nn
@@ -169,7 +170,16 @@ try:
                 dropped += 1
     print("dedup dropped:", dropped, flush=True)
 
-    # ---- merged binary (main + ziya) ----
+    # ---- xmerg rows: image_id,binary_label (1=tumor, 0=normal — verified by hash match) ----
+    # NOTE: xmerg TEST split is never touched (likely overlaps our test set).
+    xrows = {}
+    for split, dest in [("train", "train"), ("val", "val")]:
+        with open(XMERG / f"_{split}_labels.csv") as f:
+            r = csv.DictReader(f)
+            xrows[dest] = [(row["image_id"], row["binary_label"].strip() == "1") for row in r]
+    print("xmerg rows:", {k: len(v) for k, v in xrows.items()}, flush=True)
+
+    # ---- merged binary (main + ziya + xmerg) ----
     BIN = TMP / "data_bin"
     for split in ["train", "val"]:
         for c in ["tumor", "normal"]:
@@ -186,6 +196,10 @@ try:
             shutil.copy2(img, BIN / split / "tumor" / ("z_" + img.name))
         for img in (ZB / z / "normal").glob("*"):
             shutil.copy2(img, BIN / split / "normal" / ("z_" + img.name))
+        for fn, is_tumor in xrows[split]:
+            src = XMERG / fn
+            if src.exists():
+                shutil.copy2(src, BIN / split / ("tumor" if is_tumor else "normal") / ("x2_" + Path(fn).name))
     print("binary:", {s: {d.name: len(list(d.glob("*"))) for d in (BIN / s).iterdir()} for s in ["train", "val"]}, flush=True)
 
     # ---- subtype folders ----
@@ -300,7 +314,7 @@ try:
     a_pt, a_hist, a_best, _, _ = run_stage("stageA", BIN / "train", BIN / "val", ["normal", "tumor"],
                                            12, 64, 300, make_b3, False, swa_last=0)
     b_pt, b_hist, b_best, b_swa_pt, b_swa = run_stage("stageB", SUB / "train", SUB / "val", ["benign", "malignant"],
-                                                     40, 8, 456, make_ev2l, True, label_smoothing=0.05, swa_last=10, focal_gamma=0)
+                                                     50, 12, 456, make_b6, True, label_smoothing=0.05, swa_last=10, focal_gamma=0)
     b_final = str(b_swa_pt) if b_swa > b_best else str(b_pt)
     print(f"stageB raw={b_best:.4f} swa={b_swa:.4f} chained uses: {b_final}", flush=True)
 
@@ -308,7 +322,7 @@ try:
     mA = make_b3(2)
     mA.load_state_dict(torch.load(str(a_pt), map_location=device)["model"])
     mA.eval()
-    mB = make_ev2l(2)
+    mB = make_b6(2)
     mB.load_state_dict(torch.load(b_final, map_location=device)["model"])
     mB.eval()
     import torchvision.transforms.functional as TF

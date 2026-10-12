@@ -212,6 +212,10 @@ def gradcam_overlay(orig_pil, feat, grad, score, size):
     return Image.fromarray((0.45 * base + 0.55 * heat).astype(np.uint8))
 
 
+def conf_word(p):
+    return "high" if p >= 0.9 else ("moderate" if p >= 0.7 else "uncertain")
+
+
 def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
     if img is None:
         return None, None, DISCLAIMER
@@ -224,7 +228,10 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
         logitsA = modelA(tfA(rgb).unsqueeze(0).to(device))
         overlay = gradcam_overlay(rgb, featA, gradA, logitsA[0, 0], IA)
         conf = {"normal": 1 - p_tumor, "tumor": p_tumor}
-        text = f"**NORMAL** ({conf['normal']:.1%} confidence)\n\nThe gate found no tumor.\n\n{DISCLAIMER}"
+        text = (f"**NORMAL** ({conf['normal']:.1%} confidence, {conf_word(conf['normal'])})\n\n"
+                f"The gate found no tumor.\n\n"
+                f"What next: nothing here suggests a tumor — but this tool misses one film in ten, "
+                f"so keep up routine care.\n\n{DISCLAIMER}")
         return overlay, conf, text
 
     probB = specialist_probs(rgb, tta, vote)
@@ -235,9 +242,20 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
     overlay = gradcam_overlay(rgb, featB, gradB, logitsB[0, idx], IB)
     conf = {"benign": float(probB[0]), "malignant": float(probB[1])}
     kind = "non-cancerous" if idx == 0 else "cancerous"
-    text = (f"**{label.upper()}** ({conf[label]:.1%} confidence, {kind})\n\n"
-            f"Tumor probability: {p_tumor:.1%}\n\n{DISCLAIMER}")
+    nxt = ("Save this page and show it to a doctor promptly." if idx == 1
+           else "Save this page and show it to a doctor at your next visit.")
+    text = (f"**{label.upper()}** ({conf[label]:.1%} confidence, {conf_word(conf[label])}, {kind})\n\n"
+            f"Tumor probability: {p_tumor:.1%}\n\n"
+            f"What next: {nxt}\n\n{DISCLAIMER}")
     return overlay, conf, text
+
+
+def quick(img: Image.Image):
+    return predict(img, False, False, 0.5)
+
+
+def thorough(img: Image.Image):
+    return predict(img, True, modelB2 is not None, 0.35)
 
 
 with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
@@ -275,6 +293,9 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
                 gr.Examples(examples=samples, inputs=[inp], label="Sample films — click one")
             with gr.Group(elem_id="controls"):
                 btn = gr.Button("Read film", variant="primary", elem_id="read-btn")
+                with gr.Row():
+                    qbtn = gr.Button("Quick check — 4 seconds", variant="secondary")
+                    tbtn = gr.Button("Thorough check — careful + second opinion", variant="secondary")
                 tta_box = gr.Checkbox(label="Careful reading — 5 views, slower", value=False)
                 ens_box = gr.Checkbox(label="Second opinion — B11 + B12 vote", value=False,
                                       visible=modelB2 is not None)
@@ -292,6 +313,8 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
       Always see a doctor.</p>
     </div>""")
     btn.click(predict, inputs=[inp, tta_box, ens_box, thresh], outputs=[out_img, out_label, out_text])
+    qbtn.click(quick, inputs=[inp], outputs=[out_img, out_label, out_text])
+    tbtn.click(thorough, inputs=[inp], outputs=[out_img, out_label, out_text])
     inp.change(predict, inputs=[inp, tta_box, ens_box, thresh], outputs=[out_img, out_label, out_text])
 
 if __name__ == "__main__":

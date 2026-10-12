@@ -1,0 +1,332 @@
+[
+ {
+  "file": "data/test\\benign\\btxrd_IMG000117.jpeg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\btxrd_IMG000172.jpeg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\btxrd_IMG000173.jpeg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\btxrd_IMG000182.jpeg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\btxrd_IMG000183.jpeg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\btxrd_IMG000184.jpeg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\btxrd_IMG000198.jpeg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\btxrd_IMG000199.jpeg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\btxrd_IMG000220.jpeg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\btxrd_IMG001865.jpeg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\btxrd_IMG001866.jpeg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000366_jpeg.rf.70bcb9107742443a5214690d4cc7956f.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000377_jpeg.rf.33c039ec63088cda41b864ca717db2c2.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000389_jpeg.rf.885de9bb07c4e39a2faae98d8e4ff574.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000396_jpeg.rf.d967d52b01b783b03adbc59f25c57a23.jpg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000425_jpeg.rf.451d2cd7040b36c22ad3e49c1eb2b07c.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000427_jpeg.rf.92122a6e167daef22bbc9e3d1ad1845b.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000502_jpeg.rf.cbb258b94125aa4f03f7c097f3e43fed.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000504_jpeg.rf.40163668dd35fea470c7542e04d1b192.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000629_jpeg.rf.a32bec08b84cc21005a6f0f0a2d95075.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000635_jpeg.rf.0c6ba78544420baf85da49505e7ee525.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000654_jpeg.rf.1b9045c1dfadcd63cb6fed1a5becbdb3.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000794_jpeg.rf.b20142e53805f4efea82ea27e5499248.jpg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000808_jpeg.rf.f88ea3ffd4a2e6cc8a050df684886098.jpg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000823_jpeg.rf.576b5edb1e77c72c3fa6efa712f24772.jpg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG000842_jpeg.rf.6873186490dfbdc35c32479b8afbee88.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG001437_jpeg.rf.6da866ebb1b192853671eaad9ede41ca.jpg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG001444_jpeg.rf.b5ce8b0fcce311499bad3618ff7d4bb4.jpg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG001457_jpeg.rf.0b886a1e2730aeb2b08e883a05f738e3.jpg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG001585_jpeg.rf.4cb705ec5fb6831fd87e2b160a3becc7.jpg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG001636_jpeg.rf.0b600a737c49bb5ae6f5458de6fd153e.jpg",
+  "true": "benign",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG001738_jpeg.rf.3dd5d2d3b3beff9fc9d8f310eec9cb6d.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG001776_jpeg.rf.8708d544d361453d1426b499dacaeba7.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\benign\\tb2_IMG001830_jpeg.rf.c5ec68e706dd5574797e43abd01851b6.jpg",
+  "true": "benign",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG000283.jpeg",
+  "true": "malignant",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG000791.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001417.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001418.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001563.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001614.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001637.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001726.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001728.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001765.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001784.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001795.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001807.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\btxrd_IMG001833.jpeg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\tb2_IMG000147_jpeg.rf.1dcf9cdbbfbc28a0725d2fb87fe7783f.jpg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\tb2_IMG000180_jpeg.rf.8489943ad42c170c8fc363000b366fac.jpg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\malignant\\tb2_IMG000220_jpeg.rf.87b9168aecb149488d64d3cf7dfa729a.jpg",
+  "true": "malignant",
+  "pred": "normal"
+ },
+ {
+  "file": "data/test\\malignant\\tb2_IMG001740_jpeg.rf.a9874c089aa0189dc259f546fab16c4f.jpg",
+  "true": "malignant",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\normal\\btxrd_IMG002332.jpeg",
+  "true": "normal",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\normal\\btxrd_IMG002658.jpeg",
+  "true": "normal",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\normal\\btxrd_IMG003121.jpeg",
+  "true": "normal",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\normal\\btxrd_IMG003404.jpeg",
+  "true": "normal",
+  "pred": "malignant"
+ },
+ {
+  "file": "data/test\\normal\\tb2_IMG002241_jpeg.rf.b54ecb55471b27aee5ecba1c49444218.jpg",
+  "true": "normal",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\normal\\tb2_IMG002315_jpeg.rf.5b6d6dd1b5b8fdc01c7fccef35b87a7b.jpg",
+  "true": "normal",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\normal\\tb2_IMG002354_jpeg.rf.f6373b61bf0dee09bfe8a7217facb4ef.jpg",
+  "true": "normal",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\normal\\tb2_IMG002490_jpeg.rf.5dd1817e2256e7f07b6acfcd3524462e.jpg",
+  "true": "normal",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\normal\\tb2_IMG002898_jpeg.rf.572d28633a9d7aa9d74fe163e2f7a898.jpg",
+  "true": "normal",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\normal\\tb2_IMG003050_jpeg.rf.21a9050e9abd98ddac870608398bf40b.jpg",
+  "true": "normal",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\normal\\tb2_IMG003404_jpeg.rf.f87e6c5acb8562d75101e89b23b4a90e.jpg",
+  "true": "normal",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\normal\\tb2_IMG003449_jpeg.rf.0d47f9e33efbae3ffc7a6f2bdeaf4524.jpg",
+  "true": "normal",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\normal\\tb2_IMG003631_jpeg.rf.80dc98765a49abfd81fa2b591f43f2e1.jpg",
+  "true": "normal",
+  "pred": "benign"
+ },
+ {
+  "file": "data/test\\normal\\tb2_IMG003732_jpg.rf.926e5cdef30f6d8a3feef208ff2224a4.jpg",
+  "true": "normal",
+  "pred": "benign"
+ }
+]

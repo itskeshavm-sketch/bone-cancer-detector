@@ -1,0 +1,1 @@
+{"chained_test_acc_single_view_local":0.8759,"confusion_rows_true_benign_malignant_normal":[[147,17,16],[20,156,3],[12,2,191]],"members":["stageB6 (B4-380)","stageB7 (B5-456)","stageB10 (B5-456)"],"run":"local CPU eval, A10 gate + averaged B probs, single-view","verdict":"ensemble flat-to-worse vs B10 alone; B6 drags it down; do NOT wire into demo"}

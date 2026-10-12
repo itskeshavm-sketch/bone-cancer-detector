@@ -1,0 +1,1 @@
+{"chained_test_acc_tta":0.8777,"champion_stays":"V7 (0.8794 TTA)","ema_best_val":0.8906,"raw_best_val":0.9002,"run":"V9 = V8 + int-buffer EMA fix, B5-456px, MixUp + EMA, 50 epochs","stageA_val":0.9608,"verdict":"MixUp + EMA did not help; keep A7+B7"}

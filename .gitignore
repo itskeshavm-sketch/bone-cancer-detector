@@ -1,0 +1,13 @@
+# weights (too big for GitHub; see README for Kaggle source + training script)
+*.pt
+# datasets (rebuilt from Kaggle sources by kaggle_gpu/train_gpu.py)
+data/
+data_binary/
+raw_data/
+ziya_peek/
+# kernel outputs / scratch
+kaggle_out/
+kaggle_out_probe/
+__pycache__/
+*.out
+*.log

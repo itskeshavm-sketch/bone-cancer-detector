@@ -29,6 +29,8 @@ pip install -r requirements.txt
 python app.py --share
 ```
 
+Weights (`checkpoints/*.pt`, ~1GB) are git-ignored — train them with `kaggle_gpu/train_gpu.py` on Kaggle GPUs, or pull them from the kernel's Output tab. Metrics JSONs for every run are in `checkpoints/`.
+
 Tick *Accurate mode* for the 5-view vote that matches the 89.4% number.
 
 ## ⚠️ Disclaimer

@@ -1,11 +1,12 @@
-"""Kaggle GPU V13: heavy expert (B7@456) with focal loss for hard/subtle tumors. Stage A=B3 binary.
-Stage B=B7, RandAugment+Erasing, focal alpha=0.35 gamma=3.0, 50 epochs, SWA-last-10, thresh for malignant recall on VAL. Seed 13. Data in /tmp."""
+"""Kaggle GPU V14: heavyweight expert — EfficientNet-V2-L (120M params) with the PROVEN V11/V12
+recipe (plain CE + label-smoothing 0.05, NO focal — V13 flopped). Stage A=B3 binary. Stage B=V2-L@456,
+batch 8, 40 epochs, SWA-last-10, thresh on VAL. Seed 14. Data in /tmp."""
 import csv, hashlib, json, random, shutil, sys, time, traceback
 from pathlib import Path
 
-random.seed(13)
+random.seed(14)
 import torch
-torch.manual_seed(13)
+torch.manual_seed(14)
 
 print("=== DIAGNOSTICS ===", flush=True)
 try:
@@ -29,7 +30,7 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from torch.cuda.amp import GradScaler, autocast
 from torchvision import datasets, transforms
-from torchvision.models import efficientnet_b3, efficientnet_b4, efficientnet_b5, efficientnet_b6, efficientnet_b7, EfficientNet_B3_Weights, EfficientNet_B4_Weights, EfficientNet_B5_Weights, EfficientNet_B6_Weights, EfficientNet_B7_Weights
+from torchvision.models import efficientnet_b3, efficientnet_b4, efficientnet_b5, efficientnet_b6, efficientnet_b7, efficientnet_v2_l, EfficientNet_B3_Weights, EfficientNet_B4_Weights, EfficientNet_B5_Weights, EfficientNet_B6_Weights, EfficientNet_B7_Weights, EfficientNet_V2_L_Weights
 from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix
 from tqdm import tqdm
 from PIL import Image
@@ -117,6 +118,12 @@ def make_b6(ncls, drop=0.4):
 
 def make_b7(ncls, drop=0.4):
     m = efficientnet_b7(weights=EfficientNet_B7_Weights.IMAGENET1K_V1)
+    m.classifier = nn.Sequential(nn.Dropout(drop), nn.Linear(m.classifier[1].in_features, ncls))
+    return m.to(device)
+
+
+def make_ev2l(ncls, drop=0.4):
+    m = efficientnet_v2_l(weights=EfficientNet_V2_L_Weights.IMAGENET1K_V1)
     m.classifier = nn.Sequential(nn.Dropout(drop), nn.Linear(m.classifier[1].in_features, ncls))
     return m.to(device)
 
@@ -293,7 +300,7 @@ try:
     a_pt, a_hist, a_best, _, _ = run_stage("stageA", BIN / "train", BIN / "val", ["normal", "tumor"],
                                            12, 64, 300, make_b3, False, swa_last=0)
     b_pt, b_hist, b_best, b_swa_pt, b_swa = run_stage("stageB", SUB / "train", SUB / "val", ["benign", "malignant"],
-                                                     50, 8, 456, make_b7, True, focal_alpha=0.35, focal_gamma=3.0, swa_last=10)
+                                                     40, 8, 456, make_ev2l, True, label_smoothing=0.05, swa_last=10, focal_gamma=0)
     b_final = str(b_swa_pt) if b_swa > b_best else str(b_pt)
     print(f"stageB raw={b_best:.4f} swa={b_swa:.4f} chained uses: {b_final}", flush=True)
 
@@ -301,7 +308,7 @@ try:
     mA = make_b3(2)
     mA.load_state_dict(torch.load(str(a_pt), map_location=device)["model"])
     mA.eval()
-    mB = make_b7(2)
+    mB = make_ev2l(2)
     mB.load_state_dict(torch.load(b_final, map_location=device)["model"])
     mB.eval()
     import torchvision.transforms.functional as TF

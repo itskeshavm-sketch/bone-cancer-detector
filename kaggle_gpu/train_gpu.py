@@ -1,12 +1,12 @@
-"""Kaggle GPU V15: diversity run — Stage A gate trains on main+ziya+XMERG (~19k images, label map
-1=tumor/0=normal verified by 1779 hash matches, 100% consistent). XMERG test split NEVER copied;
-md5 dedup vs our test drops leakers. Stage B=B6 proven recipe (plain CE, no focal). Seed 15. Data in /tmp."""
+"""Kaggle GPU V16 (supersedes queued V15): xmerg gate diversity + hardened specialist for wild
+images (multi-scale crops, stronger RandAugment/Erasing, 60 epochs). B6 proven recipe, plain CE.
+Seed 16. Data in /tmp. GPU budget ~14.5h; this run ~5h."""
 import csv, hashlib, json, random, shutil, sys, time, traceback
 from pathlib import Path
 
-random.seed(15)
+random.seed(16)
 import torch
-torch.manual_seed(15)
+torch.manual_seed(16)
 
 print("=== DIAGNOSTICS ===", flush=True)
 try:
@@ -75,13 +75,14 @@ def aug_train(img_size, strong=False):
         transforms.ColorJitter(brightness=0.15, contrast=0.15),
     ]
     if strong:
-        base.append(transforms.RandAugment(num_ops=2, magnitude=9))
+        base.append(transforms.RandAugment(num_ops=2, magnitude=12))
+        base.append(transforms.RandomResizedCrop(img_size, scale=(0.8, 1.0), ratio=(0.9, 1.1)))
     base += [
         transforms.ToTensor(),
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ]
     if strong:
-        base.append(transforms.RandomErasing(p=0.25))
+        base.append(transforms.RandomErasing(p=0.35))
     return transforms.Compose(base)
 
 
@@ -314,7 +315,7 @@ try:
     a_pt, a_hist, a_best, _, _ = run_stage("stageA", BIN / "train", BIN / "val", ["normal", "tumor"],
                                            12, 64, 300, make_b3, False, swa_last=0)
     b_pt, b_hist, b_best, b_swa_pt, b_swa = run_stage("stageB", SUB / "train", SUB / "val", ["benign", "malignant"],
-                                                     50, 12, 456, make_b6, True, label_smoothing=0.05, swa_last=10, focal_gamma=0)
+                                                     60, 12, 456, make_b6, True, label_smoothing=0.05, swa_last=10, focal_gamma=0)
     b_final = str(b_swa_pt) if b_swa > b_best else str(b_pt)
     print(f"stageB raw={b_best:.4f} swa={b_swa:.4f} chained uses: {b_final}", flush=True)
 

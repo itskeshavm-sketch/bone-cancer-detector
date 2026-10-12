@@ -315,7 +315,7 @@ def quick(img: Image.Image):
 
 
 def thorough(img: Image.Image):
-    return predict(img, True, modelB2 is not None, 0.35)
+    return predict(img, True, modelB2 is not None, 0.5)
 
 
 with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
@@ -355,7 +355,7 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
                 btn = gr.Button("Read film", variant="primary", elem_id="read-btn")
                 with gr.Row():
                     qbtn = gr.Button("Quick check — 4 seconds", variant="secondary")
-                    tbtn = gr.Button("Thorough check — careful + second opinion", variant="secondary")
+                    tbtn = gr.Button("Thorough check — vote + 5 views (most accurate)", variant="secondary")
                 tta_box = gr.Checkbox(label="Careful reading — 5 views, slower", value=False)
                 ens_box = gr.Checkbox(label="Second opinion — B11 + B12 vote", value=False,
                                       visible=modelB2 is not None)

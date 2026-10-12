@@ -82,6 +82,9 @@ CSS = """
 #reading .form { background: var(--paper-2) !important; border: 1px solid var(--rule) !important; border-radius: var(--radius); }
 #controls { margin-top: var(--space-md); display: grid; gap: var(--space-sm); }
 #read-btn button { font-size: 16px; font-weight: 600; padding: 12px; }
+#tryit { margin-top: var(--space-md); }
+#tryit ol { margin: var(--space-sm) 0 0; padding-left: 20px; color: var(--ink-soft); font-size: 14px; line-height: 1.7; }
+#tryit li::marker { color: var(--accent-deep); font-family: var(--font-mono); }
 #colophon { border-top: 1px solid var(--rule); margin-top: var(--space-xl); padding-top: var(--space-md); font-size: 13px; line-height: 1.6; color: var(--ink-soft); max-width: 72ch; }
 #colophon strong { color: var(--ink); }
 input[type='range'] { accent-color: var(--accent); }
@@ -254,6 +257,22 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
     with gr.Row(elem_id="workbench"):
         with gr.Column():
             inp = gr.Image(type="pil", label="The film")
+            gr.HTML("""
+            <div id="tryit">
+              <p><strong>First visit?</strong> Click a sample film, then Read film.</p>
+              <ol>
+                <li>Start with the <strong>malignant</strong> sample — the clearest case.</li>
+                <li>Then the <strong>benign</strong> one, and compare the two readings.</li>
+                <li>Finish with <strong>normal</strong>, and drag sensitivity down to see what over-flagging looks like.</li>
+              </ol>
+            </div>""")
+            samples = []
+            for cls in ["malignant", "benign", "normal"]:
+                hits = sorted(Path(f"data/test/{cls}").glob("*"))
+                if hits:
+                    samples.append([str(hits[0])])
+            if samples:
+                gr.Examples(examples=samples, inputs=[inp], label="Sample films — click one")
             with gr.Group(elem_id="controls"):
                 btn = gr.Button("Read film", variant="primary", elem_id="read-btn")
                 tta_box = gr.Checkbox(label="Careful reading — 5 views, slower", value=False)

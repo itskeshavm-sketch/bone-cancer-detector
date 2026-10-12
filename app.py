@@ -16,26 +16,30 @@ from pathlib import Path
 import torchvision.transforms.functional as TF
 
 CSS = """
-/* Hallmark · macrostructure: Workbench · tone: clinical-utilitarian · anchor hue: deep teal */
+/* Hallmark · macrostructure: Workbench · tone: clinical-utilitarian · anchor hue: deep teal
+ * ui-ux-pro-max overlay: Accessible & Ethical system — medical teal #0891B2 + health green,
+ * Figtree/Noto Sans (system fallback), 44px targets, 3px focus ring, semantic verdict color + words */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600&display=swap');
 :root {
-  --paper: oklch(0.972 0.008 95);
-  --paper-2: oklch(0.945 0.012 95);
+  --paper: oklch(0.965 0.015 185);
+  --paper-2: oklch(0.94 0.02 185);
   --field: oklch(1 0 0);
-  --ink: oklch(0.24 0.015 85);
-  --ink-soft: oklch(0.44 0.02 85);
-  --rule: oklch(0.85 0.015 90);
-  --accent: oklch(0.45 0.095 195);
-  --accent-deep: oklch(0.33 0.075 195);
-  --danger: oklch(0.52 0.15 25);
-  --ok: oklch(0.5 0.11 155);
-  --font-display: Georgia, 'Times New Roman', serif;
-  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ink: oklch(0.32 0.05 180);
+  --ink-soft: oklch(0.45 0.04 180);
+  --rule: oklch(0.82 0.03 185);
+  --accent: oklch(0.55 0.12 195);
+  --accent-deep: oklch(0.42 0.1 195);
+  --btn: oklch(0.45 0.1 195);
+  --ok: oklch(0.55 0.14 150);
+  --danger: oklch(0.55 0.16 25);
+  --font-display: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Noto Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
   --space-sm: 8px;
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 40px;
-  --radius: 6px;
+  --radius: 8px;
   --body-background-fill: var(--paper);
   --body-text-color: var(--ink);
   --block-background-fill: var(--field);
@@ -43,10 +47,10 @@ CSS = """
   --block-border-width: 1px;
   --block-radius: var(--radius);
   --block-shadow: none;
-  --button-primary-background-fill: var(--ink);
+  --button-primary-background-fill: var(--btn);
   --button-primary-background-fill-hover: var(--accent-deep);
-  --button-primary-text-color: var(--paper);
-  --button-primary-border-color: var(--ink);
+  --button-primary-text-color: var(--field);
+  --button-primary-border-color: var(--btn);
   --button-radius: var(--radius);
   --input-background-fill: var(--field);
   --panel-background-fill: var(--paper-2);
@@ -81,14 +85,26 @@ CSS = """
 #workbench .form { background: transparent !important; border: none !important; box-shadow: none !important; }
 #reading .form { background: var(--paper-2) !important; border: 1px solid var(--rule) !important; border-radius: var(--radius); }
 #controls { margin-top: var(--space-md); display: grid; gap: var(--space-sm); }
+#read-btn button, #presets button { min-height: 44px; }
 #read-btn button { font-size: 16px; font-weight: 600; padding: 12px; }
+.verdict { background: var(--field); border: 1px solid var(--rule); border-left: 6px solid var(--accent); border-radius: var(--radius); padding: var(--space-md); }
+.verdict.v-normal { border-left-color: var(--accent); }
+.verdict.v-benign { border-left-color: var(--ok); }
+.verdict.v-malignant { border-left-color: var(--danger); }
+.verdict .v-kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 4px; }
+.verdict .v-head { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 30px; margin: 0 0 4px; }
+.verdict.v-malignant .v-head { color: var(--danger); }
+.verdict.v-benign .v-head { color: var(--ok); }
+.verdict .v-conf { font-family: var(--font-mono); font-size: 14px; font-variant-numeric: tabular-nums; margin: 0 0 var(--space-sm); }
+.verdict .v-next { font-size: 15px; line-height: 1.55; margin: 0 0 var(--space-sm); }
+.verdict .v-note { font-size: 12px; color: var(--ink-soft); margin: 0; }
 #tryit { margin-top: var(--space-md); }
 #tryit ol { margin: var(--space-sm) 0 0; padding-left: 20px; color: var(--ink-soft); font-size: 14px; line-height: 1.7; }
 #tryit li::marker { color: var(--accent-deep); font-family: var(--font-mono); }
 #colophon { border-top: 1px solid var(--rule); margin-top: var(--space-xl); padding-top: var(--space-md); font-size: 13px; line-height: 1.6; color: var(--ink-soft); max-width: 72ch; }
 #colophon strong { color: var(--ink); }
 input[type='range'] { accent-color: var(--accent); }
-*:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 2px; }
+*:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px; }
 @media (max-width: 768px) {
   .figures { flex-direction: column; }
   .figures > div + div { border-left: none; border-top: 1px solid var(--rule); padding-left: 0; }
@@ -216,6 +232,16 @@ def conf_word(p):
     return "high" if p >= 0.9 else ("moderate" if p >= 0.7 else "uncertain")
 
 
+def verdict_card(kind, head, conf_line, next_line):
+    return (f'<div class="verdict v-{kind}">'
+            f'<p class="v-kicker">Reading · {head.lower()}</p>'
+            f'<p class="v-head">{head}</p>'
+            f'<p class="v-conf">{conf_line}</p>'
+            f'<p class="v-next">{next_line}</p>'
+            f'<p class="v-note">Proof-of-concept only — not for clinical use. Always see a doctor.</p>'
+            f'</div>')
+
+
 def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
     if img is None:
         return None, None, DISCLAIMER
@@ -228,10 +254,8 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
         logitsA = modelA(tfA(rgb).unsqueeze(0).to(device))
         overlay = gradcam_overlay(rgb, featA, gradA, logitsA[0, 0], IA)
         conf = {"normal": 1 - p_tumor, "tumor": p_tumor}
-        text = (f"**NORMAL** ({conf['normal']:.1%} confidence, {conf_word(conf['normal'])})\n\n"
-                f"The gate found no tumor.\n\n"
-                f"What next: nothing here suggests a tumor — but this tool misses one film in ten, "
-                f"so keep up routine care.\n\n{DISCLAIMER}")
+        text = verdict_card("normal", "Normal", f"{conf['normal']:.1%} confidence · {conf_word(conf['normal'])}",
+                                "Nothing here suggests a tumor — but this tool misses one film in ten, so keep up routine care.")
         return overlay, conf, text
 
     probB = specialist_probs(rgb, tta, vote)
@@ -244,9 +268,9 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
     kind = "non-cancerous" if idx == 0 else "cancerous"
     nxt = ("Save this page and show it to a doctor promptly." if idx == 1
            else "Save this page and show it to a doctor at your next visit.")
-    text = (f"**{label.upper()}** ({conf[label]:.1%} confidence, {conf_word(conf[label])}, {kind})\n\n"
-            f"Tumor probability: {p_tumor:.1%}\n\n"
-            f"What next: {nxt}\n\n{DISCLAIMER}")
+    text = verdict_card(label, label.capitalize(),
+                        f"{conf[label]:.1%} confidence · {conf_word(conf[label])} · {kind} · tumor probability {p_tumor:.1%}",
+                        nxt)
     return overlay, conf, text
 
 
@@ -304,7 +328,7 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
         with gr.Column(elem_id="reading"):
             out_img = gr.Image(label="Where the model looked")
             out_label = gr.Label(label="Reading")
-            out_text = gr.Markdown()
+            out_text = gr.HTML(label="Verdict")
     gr.HTML("""
     <div id="colophon">
       <p><strong>Not a medical device.</strong> Wrong about one film in ten. A missed tumor

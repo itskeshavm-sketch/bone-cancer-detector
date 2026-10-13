@@ -1,12 +1,11 @@
-"""Kaggle GPU V17 (V15 staged-crash + V16 0s-fail fix): identical V16 training recipe, but staging
-uses symlinks (no /tmp disk blowup), deterministic dataset resolution, xmerg basename fallback,
-and STAGE markers so any future failure pinpoints itself. Seed 17. Data in /tmp. ~5h."""
+"""Kaggle GPU V18 (V17 xmerg-path fix): identical recipe; XMROOT (merged_dataset root) correctly
+addresses train/ and val/ CSVs — V17 wrongly joined the train dir with the val filename. Seed 18."""
 import csv, hashlib, json, os, random, shutil, sys, time, traceback
 from pathlib import Path
 
-random.seed(17)
+random.seed(18)
 import torch
-torch.manual_seed(17)
+torch.manual_seed(18)
 
 print("=== DIAGNOSTICS ===", flush=True)
 try:
@@ -31,9 +30,11 @@ def find_main():
 MAIN_SRC = find_main()
 _z = [p.parent.parent for p in ROOT.rglob("train/_classes.csv")]
 ZIYA = _z[0] if _z else None
+_x = [p.parent.parent for p in ROOT.rglob("train/_train_labels.csv") if p.is_file()]
+XMROOT = _x[0] if _x else None
 XMERG = next((p.parent for p in ROOT.rglob("_train_labels.csv") if p.is_file()), None)
-print("MAIN:", MAIN_SRC, "ZIYA:", ZIYA, "XMERG:", XMERG, flush=True)
-if MAIN_SRC is None or ZIYA is None or XMERG is None:
+print("MAIN:", MAIN_SRC, "ZIYA:", ZIYA, "XMROOT:", XMROOT, "XMERG:", XMERG, flush=True)
+if MAIN_SRC is None or ZIYA is None or XMROOT is None:
     sys.exit(2)
 
 
@@ -205,7 +206,7 @@ try:
     # NOTE: xmerg TEST split is never touched (likely overlaps our test set).
     xrows = {}
     for split, dest in [("train", "train"), ("val", "val")]:
-        with open(XMERG / f"_{split}_labels.csv") as f:
+        with open(XMROOT / split / f"_{split}_labels.csv") as f:
             r = csv.DictReader(f)
             xrows[dest] = [(row["image_id"], row["binary_label"].strip() == "1") for row in r]
     print("xmerg rows:", {k: len(v) for k, v in xrows.items()}, flush=True)
@@ -229,9 +230,9 @@ try:
             link(img, BIN / split / "normal" / ("z_" + img.name))
         xn = 0
         for fn, is_tumor in xrows[split]:
-            src = XMERG / fn
+            src = XMROOT / split / fn
             if not src.exists():
-                cands = list(XMERG.rglob(Path(fn).name))
+                cands = list(XMROOT.rglob(Path(fn).name))
                 src = cands[0] if cands else None
             if src is not None and src.exists():
                 link(src, BIN / split / ("tumor" if is_tumor else "normal") / ("x2_" + Path(fn).name))

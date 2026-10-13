@@ -1,12 +1,12 @@
-"""Kaggle GPU V16 (supersedes queued V15): xmerg gate diversity + hardened specialist for wild
-images (multi-scale crops, stronger RandAugment/Erasing, 60 epochs). B6 proven recipe, plain CE.
-Seed 16. Data in /tmp. GPU budget ~14.5h; this run ~5h."""
-import csv, hashlib, json, random, shutil, sys, time, traceback
+"""Kaggle GPU V17 (V15 staged-crash + V16 0s-fail fix): identical V16 training recipe, but staging
+uses symlinks (no /tmp disk blowup), deterministic dataset resolution, xmerg basename fallback,
+and STAGE markers so any future failure pinpoints itself. Seed 17. Data in /tmp. ~5h."""
+import csv, hashlib, json, os, random, shutil, sys, time, traceback
 from pathlib import Path
 
-random.seed(16)
+random.seed(17)
 import torch
-torch.manual_seed(16)
+torch.manual_seed(17)
 
 print("=== DIAGNOSTICS ===", flush=True)
 try:
@@ -19,12 +19,39 @@ except Exception as e:
     sys.exit(2)
 
 ROOT = Path("/kaggle/input")
-MAIN_SRC = next((p.parent.parent for p in ROOT.rglob("train/images") if p.is_dir()), None)
-ZIYA = next((p.parent.parent for p in ROOT.rglob("train/_classes.csv")), None)
+
+
+def find_main():
+    for p in ROOT.rglob("train/images"):
+        if p.is_dir() and (p.parent / "labels").is_dir():
+            return p.parent.parent
+    return None
+
+
+MAIN_SRC = find_main()
+_z = [p.parent.parent for p in ROOT.rglob("train/_classes.csv")]
+ZIYA = _z[0] if _z else None
 XMERG = next((p.parent for p in ROOT.rglob("_train_labels.csv") if p.is_file()), None)
 print("MAIN:", MAIN_SRC, "ZIYA:", ZIYA, "XMERG:", XMERG, flush=True)
 if MAIN_SRC is None or ZIYA is None or XMERG is None:
     sys.exit(2)
+
+
+def mark(s):
+    print("STAGE:", s, flush=True)
+    try:
+        Path("/kaggle/working/STAGE.txt").write_text(s)
+    except Exception:
+        pass
+
+
+def link(src, dst):
+    try:
+        if dst.exists() or dst.is_symlink():
+            dst.unlink()
+        os.symlink(src, dst)
+    except Exception:
+        shutil.copy2(src, dst)
 
 import torch.nn as nn
 import torch.nn.functional as F
@@ -138,7 +165,8 @@ try:
             (D3 / split / c).mkdir(parents=True, exist_ok=True)
         for img in (MAIN_SRC / split / "images").iterdir():
             if img.suffix.lower() in (".jpg", ".jpeg", ".png"):
-                shutil.copy2(img, D3 / split / main_label(img, MAIN_SRC / split / "labels") / img.name)
+                link(img, D3 / split / main_label(img, MAIN_SRC / split / "labels") / img.name)
+    mark("main-staged")
 
     # ---- ziya: train+valid+test CSVs ----
     zrows = {}
@@ -157,9 +185,10 @@ try:
         for fn, is_tumor in zrows[split]:
             src = ZIYA / split / fn
             if src.exists():
-                shutil.copy2(src, ZB / dest / ("tumor" if is_tumor else "normal") / Path(fn).name)
+                link(src, ZB / dest / ("tumor" if is_tumor else "normal") / Path(fn).name)
                 n += 1
         print(f"ziya {split}->{dest}: {n}", flush=True)
+    mark("ziya-staged")
 
     # ---- dedup all train/val vs OUR test ----
     test_hashes = {md5(img) for c in ["normal", "benign", "malignant"] for img in (D3 / "test" / c).glob("*")}
@@ -170,6 +199,7 @@ try:
                 img.unlink()
                 dropped += 1
     print("dedup dropped:", dropped, flush=True)
+    mark("dedup-done")
 
     # ---- xmerg rows: image_id,binary_label (1=tumor, 0=normal — verified by hash match) ----
     # NOTE: xmerg TEST split is never touched (likely overlaps our test set).
@@ -187,21 +217,28 @@ try:
             (BIN / split / c).mkdir(parents=True, exist_ok=True)
         m = "train" if split == "train" else "val"
         for img in (D3 / m / "benign").glob("*"):
-            shutil.copy2(img, BIN / split / "tumor" / img.name)
+            link(img, BIN / split / "tumor" / img.name)
         for img in (D3 / m / "malignant").glob("*"):
-            shutil.copy2(img, BIN / split / "tumor" / ("m_" + img.name))
+            link(img, BIN / split / "tumor" / ("m_" + img.name))
         for img in (D3 / m / "normal").glob("*"):
-            shutil.copy2(img, BIN / split / "normal" / img.name)
+            link(img, BIN / split / "normal" / img.name)
         z = "train" if split == "train" else "val"
         for img in (ZB / z / "tumor").glob("*"):
-            shutil.copy2(img, BIN / split / "tumor" / ("z_" + img.name))
+            link(img, BIN / split / "tumor" / ("z_" + img.name))
         for img in (ZB / z / "normal").glob("*"):
-            shutil.copy2(img, BIN / split / "normal" / ("z_" + img.name))
+            link(img, BIN / split / "normal" / ("z_" + img.name))
+        xn = 0
         for fn, is_tumor in xrows[split]:
             src = XMERG / fn
-            if src.exists():
-                shutil.copy2(src, BIN / split / ("tumor" if is_tumor else "normal") / ("x2_" + Path(fn).name))
+            if not src.exists():
+                cands = list(XMERG.rglob(Path(fn).name))
+                src = cands[0] if cands else None
+            if src is not None and src.exists():
+                link(src, BIN / split / ("tumor" if is_tumor else "normal") / ("x2_" + Path(fn).name))
+                xn += 1
+        print(f"xmerg {split}: {xn}/{len(xrows[split])} linked", flush=True)
     print("binary:", {s: {d.name: len(list(d.glob("*"))) for d in (BIN / s).iterdir()} for s in ["train", "val"]}, flush=True)
+    mark("binary-merged")
 
     # ---- subtype folders ----
     SUB = TMP / "data_sub"
@@ -210,7 +247,8 @@ try:
         for c in ["benign", "malignant"]:
             (SUB / split / c).mkdir(parents=True, exist_ok=True)
             for img in (D3 / m / c).glob("*"):
-                shutil.copy2(img, SUB / split / c / img.name)
+                link(img, SUB / split / c / img.name)
+    mark("subtype-staged")
 
     def run_stage(tag, train_dir, val_dir, names, epochs, batch, img, maker, strong_aug, lr=3e-4, label_smoothing=0.05, swa_last=10, focal_alpha=0.25, focal_gamma=2.0):
         tr = datasets.ImageFolder(str(train_dir), transform=aug_train(img, strong_aug))

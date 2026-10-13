@@ -1,6 +1,6 @@
-"""Kaggle GPU V19a: DINO self-supervised pretraining on ~20k unlabeled bone X-rays.
-EfficientNet-B3 backbone, teacher=EMA(student). 2 global (224) + 4 local (96) crops,
-X-ray-safe augs (no color jitter). Saves teacher backbone for V19b fine-tune. Seed 19."""
+"""Kaggle GPU V19a2 (V19a OOM/shm fix): DINO on ~14k unlabeled train X-rays, B3 backbone.
+2 global (192) + 2 local (96) crops, batch 48, workers=2, 20 epochs (~5h). Saves teacher
+backbone every 2 epochs for V19b fine-tune. Seed 19."""
 import csv, hashlib, json, os, random, shutil, sys, time, traceback
 from pathlib import Path
 
@@ -79,7 +79,7 @@ class UnlabeledXRay(Dataset):
     def __getitem__(self, i):
         img = Image.open(self.files[i]).convert("RGB")
         return [self.global_tf(img), self.global_tf(img)] + \
-               [self.local_tf(img) for _ in range(4)]
+               [self.local_tf(img) for _ in range(2)]
 
 
 def crop_tf(size, scale):
@@ -145,10 +145,10 @@ try:
     mark("pool-ready")
     assert len(files) > 5000
 
-    EPOCHS, BATCH = 35, 64
-    ds = UnlabeledXRay(files, crop_tf(224, (0.4, 1.0)), crop_tf(96, (0.05, 0.4)))
-    ld = DataLoader(ds, batch_size=BATCH, shuffle=True, num_workers=4,
-                    pin_memory=True, drop_last=True, persistent_workers=True)
+    EPOCHS, BATCH = 20, 48
+    ds = UnlabeledXRay(files, crop_tf(192, (0.4, 1.0)), crop_tf(96, (0.05, 0.4)))
+    ld = DataLoader(ds, batch_size=BATCH, shuffle=True, num_workers=2,
+                    pin_memory=True, drop_last=True)
 
     student_bb, teacher_bb = backbone().to(device), backbone().to(device)
     student_hd = DINOHead(1536).to(device)
@@ -184,7 +184,7 @@ try:
                         if si == ti:
                             continue
                         loss += -(tq * F.log_softmax(sq, dim=1)).sum(1).mean()
-                loss = loss / (2 * 5)
+                loss = loss / (2 * 3)
             scaler.scale(loss).backward()
             scaler.step(opt)
             scaler.update()
@@ -202,7 +202,7 @@ try:
         msg = f"dino ep{ep + 1}/{EPOCHS}: loss={tot / cnt:.4f} ({time.time() - t0:.0f}s)"
         print(msg, flush=True)
         hist.append({"ep": ep + 1, "loss": tot / cnt})
-        if (ep + 1) % 5 == 0 or ep == EPOCHS - 1:
+        if (ep + 1) % 2 == 0 or ep == EPOCHS - 1:
             torch.save({"backbone": teacher_bb.state_dict(), "ep": ep + 1},
                        str(WORK / f"dino_bb_ep{ep + 1}.pt"))
     torch.save({"backbone": teacher_bb.state_dict(), "ep": EPOCHS}, str(WORK / "dino_backbone.pt"))

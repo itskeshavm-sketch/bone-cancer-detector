@@ -145,7 +145,7 @@ try:
     mark("pool-ready")
     assert len(files) > 5000
 
-    EPOCHS, BATCH = 20, 48
+    EPOCHS, BATCH = 20, 32
     ds = UnlabeledXRay(files, crop_tf(192, (0.4, 1.0)), crop_tf(96, (0.05, 0.4)))
     ld = DataLoader(ds, batch_size=BATCH, shuffle=True, num_workers=2,
                     pin_memory=True, drop_last=True)

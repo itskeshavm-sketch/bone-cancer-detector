@@ -1,0 +1,10 @@
+{
+ "v": 20,
+ "wild_acc": 0.45226130653266333,
+ "wild_n": "90/199",
+ "benign": "59/104",
+ "malignant": "31/95",
+ "benchmark_test_tta": 0.9255,
+ "benchmark_val_tta": 0.9283,
+ "verdict": "benchmark win (+3.0pp vs V12) but wild flat-to-worse (45.2 vs 45.7 V12 / 46.7 V18); malignant wild collapsed 32.6%; demo stays V12"
+}

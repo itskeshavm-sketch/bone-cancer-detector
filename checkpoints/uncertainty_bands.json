@@ -1,0 +1,69 @@
+{
+ "model": "V12 (stageA12 gate + stageB12 specialist)",
+ "n_films": 564,
+ "overall_accuracy": 0.8829787234042553,
+ "overall_error_rate": 0.11702127659574468,
+ "uncertain_error_threshold": 0.25,
+ "bands": [
+  {
+   "lo": 0.0,
+   "hi": 0.6,
+   "n": 12,
+   "accuracy": 0.4166666666666667,
+   "error_rate": 0.5833333333333333,
+   "share": 0.02127659574468085,
+   "uncertain": true
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.7,
+   "n": 24,
+   "accuracy": 0.5833333333333334,
+   "error_rate": 0.41666666666666663,
+   "share": 0.0425531914893617,
+   "uncertain": true
+  },
+  {
+   "lo": 0.7,
+   "hi": 0.8,
+   "n": 17,
+   "accuracy": 0.6470588235294118,
+   "error_rate": 0.3529411764705882,
+   "share": 0.030141843971631204,
+   "uncertain": true
+  },
+  {
+   "lo": 0.8,
+   "hi": 0.9,
+   "n": 46,
+   "accuracy": 0.7391304347826086,
+   "error_rate": 0.26086956521739135,
+   "share": 0.08156028368794327,
+   "uncertain": true
+  },
+  {
+   "lo": 0.9,
+   "hi": 1.01,
+   "n": 465,
+   "accuracy": 0.9333333333333333,
+   "error_rate": 0.06666666666666665,
+   "share": 0.824468085106383,
+   "uncertain": false
+  }
+ ],
+ "flagged_count": 99,
+ "flagged_share": 0.17553191489361702,
+ "flagged_error_rate": 0.35353535353535354,
+ "errors_total": 66,
+ "errors_caught": 35,
+ "error_capture": 0.5303030303030303,
+ "reliable_band": {
+  "lo": 0.9,
+  "hi": 1.01,
+  "n": 465,
+  "accuracy": 0.9333333333333333,
+  "error_rate": 0.06666666666666665,
+  "share": 0.824468085106383,
+  "uncertain": false
+ }
+}

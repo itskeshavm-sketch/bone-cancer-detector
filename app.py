@@ -3,6 +3,7 @@ Gradio Demo — Two-Stage Bone Cancer Detection with Grad-CAM
 Stage A (B3): tumor vs normal gate | Stage B (B4): benign vs malignant specialist
 """
 import argparse
+import json
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -91,6 +92,8 @@ CSS = """
 .verdict.v-normal { border-left-color: var(--accent); }
 .verdict.v-benign { border-left-color: var(--ok); }
 .verdict.v-malignant { border-left-color: var(--danger); }
+.verdict.v-uncertain { border-left-color: var(--ink-soft); background: var(--paper-2); }
+.verdict.v-uncertain .v-head { color: var(--ink); }
 .verdict .v-kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 4px; }
 .verdict .v-head { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 30px; margin: 0 0 4px; }
 .verdict.v-malignant .v-head { color: var(--danger); }
@@ -98,6 +101,7 @@ CSS = """
 .verdict .v-conf { font-family: var(--font-mono); font-size: 14px; font-variant-numeric: tabular-nums; margin: 0 0 var(--space-sm); }
 .verdict .v-next { font-size: 15px; line-height: 1.55; margin: 0 0 var(--space-sm); }
 .verdict .v-note { font-size: 12px; color: var(--ink-soft); margin: 0; }
+.verdict .v-rel { font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin: 0 0 var(--space-sm); border-top: 1px solid var(--rule); padding-top: var(--space-sm); }
 #tryit { margin-top: var(--space-md); }
 #tryit ol { margin: var(--space-sm) 0 0; padding-left: 20px; color: var(--ink-soft); font-size: 14px; line-height: 1.7; }
 #tryit li::marker { color: var(--accent-deep); font-family: var(--font-mono); }
@@ -117,6 +121,7 @@ input[type='range'] { accent-color: var(--accent); }
 parser = argparse.ArgumentParser()
 parser.add_argument("--stageA", default="checkpoints/stageA12.pt")
 parser.add_argument("--stageB", default="checkpoints/stageB12.pt")
+parser.add_argument("--bands", default="checkpoints/uncertainty_bands.json")
 parser.add_argument("--port", type=int, default=7860)
 args, _ = parser.parse_known_args()
 
@@ -158,6 +163,24 @@ if Path("checkpoints/stageB11.pt").exists():
         print("stageB11 not usable:", e)
 IA, IB = int(ckA.get("img", 300)), int(ckB.get("img", 456))
 print(f"A: {ckA['classes']} acc={ckA.get('acc')} | B: {ckB['classes']} acc={ckB.get('acc')}")
+
+# ---- measured reliability bands (calibrated on 564 test films) ----------------
+# The band table says how often this model is actually right on films that look
+# like the one being read. Bands whose measured error rate is high get flagged
+# "uncertain" instead of asserting a verdict the model cannot back up.
+BANDS = None
+_bp = Path(args.bands)
+if _bp.exists():
+    try:
+        BANDS = json.loads(_bp.read_text())
+        print(f"bands: {BANDS['n_films']} films, overall acc {BANDS['overall_accuracy']:.3f}, "
+              f"uncertain covers {BANDS['flagged_share']:.1%} of films "
+              f"and {BANDS['error_capture']:.1%} of errors")
+    except Exception as e:
+        print("bands file unusable:", e)
+        BANDS = None
+else:
+    print("no band table found - verdicts will show confidence only")
 
 # Light clinical theme, pinned for BOTH modes: every *_dark twin carries the same
 # light value so a dark OS color-scheme cannot restyle the page behind our back.
@@ -220,20 +243,37 @@ def tta_views(pil):
 
 
 def gate_tumor_prob(pil, tta):
+    """Returns (tta-averaged tumor probability, single-view tumor probability).
+
+    The single-view value is the band key on purpose: the band table was
+    calibrated on the demo's single-view path, so turning on TTA must not
+    change which reliability band a film is judged in.
+    """
     views = tta_views(pil) if tta else [pil]
     with torch.no_grad():
-        tp = sum(float(F.softmax(modelA(tfA(v).unsqueeze(0).to(device)), 1)[0, 1])
-                 for v in views) / len(views)
-    return tp
+        singles = [float(F.softmax(modelA(tfA(v).unsqueeze(0).to(device)), 1)[0, 1])
+                   for v in views]
+    return sum(singles) / len(singles), singles[0]
 
 
 def specialist_probs(pil, tta, vote):
+    """Returns (tta-averaged [benign, malignant], single-view key [benign, malignant]).
+
+    The key is modelB alone at a single view so the band lookup always matches
+    the calibration, regardless of TTA or the second-opinion vote.
+    """
     models = [modelB] + ([modelB2] if (vote and modelB2 is not None) else [])
     views = tta_views(pil) if tta else [pil]
     with torch.no_grad():
-        p = sum(F.softmax(m(tfB(v).unsqueeze(0).to(device)), 1)[0].cpu()
-                for m in models for v in views)
-    return p / (len(models) * len(views))
+        key = F.softmax(modelB(tfB(views[0]).unsqueeze(0).to(device)), 1)[0].cpu()
+        per_view = []
+        for v in views:
+            acc = torch.zeros(2)
+            for m in models:
+                acc += F.softmax(m(tfB(v).unsqueeze(0).to(device)), 1)[0].cpu()
+            per_view.append(acc / len(models))
+        avg = sum(per_view) / len(per_view)
+    return avg, key
 
 
 def tf(img_size):
@@ -268,12 +308,36 @@ def conf_word(p):
     return "high" if p >= 0.9 else ("moderate" if p >= 0.7 else "uncertain")
 
 
-def verdict_card(kind, head, conf_line, next_line):
+def band_for(conf):
+    """Look up the measured reliability band for a single-view confidence value."""
+    if not BANDS:
+        return None
+    for b in BANDS["bands"]:
+        if b.get("n") and b["lo"] <= conf < b["hi"]:
+            return b
+    return None
+
+
+def reliability_note(band):
+    """Returns (uncertain?, text). Text states what the model measurably achieves on
+    films that look like this one - a measured claim, not a vibe."""
+    if not band:
+        return False, ""
+    acc = band["accuracy"]
+    if band["uncertain"]:
+        return True, (f"On films that look like this one it is right about {acc:.0%} of the time. "
+                      f"Treat this as a flag for expert review, not a result.")
+    return False, f"On films that look like this one it is right about {acc:.0%} of the time."
+
+
+def verdict_card(kind, head, conf_line, next_line, rel_line=""):
+    rel = f'<p class="v-rel">{rel_line}</p>' if rel_line else ""
     return (f'<div class="verdict v-{kind}">'
             f'<p class="v-kicker">Reading · {head.lower()}</p>'
             f'<p class="v-head">{head}</p>'
             f'<p class="v-conf">{conf_line}</p>'
             f'<p class="v-next">{next_line}</p>'
+            f'{rel}'
             f'<p class="v-note">Proof-of-concept only — not for clinical use. Always see a doctor.</p>'
             f'</div>')
 
@@ -283,18 +347,27 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
         return None, None, DISCLAIMER
     rgb = img.convert("RGB")
 
-    p_tumor = gate_tumor_prob(rgb, tta)
+    p_tumor, p_tumor_1 = gate_tumor_prob(rgb, tta)
 
     if p_tumor < thresh:
         modelA.zero_grad()
         logitsA = modelA(tfA(rgb).unsqueeze(0).to(device))
         overlay = gradcam_overlay(rgb, featA, gradA, logitsA[0, 0], IA)
         conf = {"normal": 1 - p_tumor, "tumor": p_tumor}
-        text = verdict_card("normal", "Normal", f"{conf['normal']:.1%} confidence · {conf_word(conf['normal'])}",
-                                "Nothing here suggests a tumor — but this tool misses one film in ten, so keep up routine care.")
+        uncertain, rel = reliability_note(band_for(1.0 - p_tumor_1))
+        if uncertain:
+            head = "Uncertain reading"
+            nxt = ("The model leans normal here, but not confidently — a radiologist should read this film.")
+            text = verdict_card("uncertain", head,
+                                f"{conf['normal']:.1%} confidence · {conf_word(conf['normal'])} · leans normal",
+                                nxt, rel)
+        else:
+            text = verdict_card("normal", "Normal", f"{conf['normal']:.1%} confidence · {conf_word(conf['normal'])}",
+                                "Nothing here suggests a tumor — but this tool misses one film in ten, so keep up routine care.",
+                                rel)
         return overlay, conf, text
 
-    probB = specialist_probs(rgb, tta, vote)
+    probB, key = specialist_probs(rgb, tta, vote)
     idx = int(probB.argmax())
     label = ["benign", "malignant"][idx]
     modelB.zero_grad()
@@ -302,11 +375,20 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
     overlay = gradcam_overlay(rgb, featB, gradB, logitsB[0, idx], IB)
     conf = {"benign": float(probB[0]), "malignant": float(probB[1])}
     kind = "non-cancerous" if idx == 0 else "cancerous"
-    nxt = ("Save this page and show it to a doctor promptly." if idx == 1
-           else "Save this page and show it to a doctor at your next visit.")
-    text = verdict_card(label, label.capitalize(),
-                        f"{conf[label]:.1%} confidence · {conf_word(conf[label])} · {kind} · tumor probability {p_tumor:.1%}",
-                        nxt)
+    uncertain, rel = reliability_note(band_for(float(max(key[0], key[1]))))
+    if uncertain:
+        head = "Uncertain reading"
+        nxt = (f"The model leans {label} here, but not confidently — a radiologist should read this film.")
+        text = verdict_card("uncertain", head,
+                            f"{conf[label]:.1%} confidence · {conf_word(conf[label])} · leans {label} "
+                            f"· tumor probability {p_tumor:.1%}",
+                            nxt, rel)
+    else:
+        nxt = ("Save this page and show it to a doctor promptly." if idx == 1
+               else "Save this page and show it to a doctor at your next visit.")
+        text = verdict_card(label, label.capitalize(),
+                            f"{conf[label]:.1%} confidence · {conf_word(conf[label])} · {kind} · tumor probability {p_tumor:.1%}",
+                            nxt, rel)
     return overlay, conf, text
 
 
@@ -319,17 +401,24 @@ def thorough(img: Image.Image):
 
 
 with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
-    gr.HTML("""
+    rel_band = None
+    if BANDS:
+        rel_band = BANDS.get("reliable_band")
+    rel_pct = f"{rel_band['accuracy']:.0%}" if rel_band else "93%"
+    rel_unc_pct = f"{BANDS['flagged_error_rate']:.0%}" if BANDS else "35%"
+    gr.HTML(f"""
     <div id="masthead">
       <p class="eyebrow">Screening aid · proof of concept</p>
       <h1>A second look at bone X-rays.</h1>
       <p class="lede">Two models read every film: one asks <strong>tumor or not</strong>,
       the other asks <strong>harmless or cancerous</strong>. On 564 test films it got
-      <strong>505 right</strong> and caught <strong>163 of 179 cancers</strong>.</p>
+      <strong>505 right</strong> and caught <strong>163 of 179 cancers</strong>. When it
+      is not sure it says <strong>uncertain reading</strong> instead of guessing.</p>
       <div class="figures">
         <div><b>505 / 564</b><span>test films read correctly</span></div>
         <div><b>163 / 179</b><span>cancers caught</span></div>
-        <div><b>96%</b><span>tumor gate accuracy</span></div>
+        <div><b>{rel_pct}</b><span>accuracy on confident reads</span></div>
+        <div><b>{rel_unc_pct}</b><span>error rate on flagged reads</span></div>
       </div>
     </div>""")
     with gr.Row(elem_id="workbench"):
@@ -365,11 +454,16 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
             out_img = gr.Image(label="Where the model looked")
             out_label = gr.Label(label="Reading")
             out_text = gr.HTML(label="Verdict")
-    gr.HTML("""
+    gr.HTML(f"""
     <div id="colophon">
       <p><strong>Not a medical device.</strong> Wrong about one film in ten. A missed tumor
-      costs more than a false alarm, so the sensitivity slider leans toward catching.
-      Method: EfficientNet-B3 gate, EfficientNet-B6 specialist, Grad-CAM evidence.
+      costs more than a false alarm, so the sensitivity slider leans toward catching.</p>
+      <p><strong>It knows when it does not know.</strong> Every reading is checked against
+      confidence bands measured on 564 test films: on confident reads it is right about
+      {rel_pct} of the time, and on the reads it flags as uncertain it is wrong about
+      {rel_unc_pct} of the time — those are marked <em>uncertain reading</em> and mean
+      "a radiologist should look at this", not "probably fine".</p>
+      <p>Method: EfficientNet-B3 gate, EfficientNet-B6 specialist, Grad-CAM evidence.
       Always see a doctor.</p>
     </div>""")
     btn.click(predict, inputs=[inp, tta_box, ens_box, thresh], outputs=[out_img, out_label, out_text])

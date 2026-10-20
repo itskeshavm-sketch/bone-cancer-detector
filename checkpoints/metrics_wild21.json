@@ -1,0 +1,13 @@
+{
+ "v": 21,
+ "wild_acc": 0.44221105527638194,
+ "wild": "88/199",
+ "benign": "60/104 (57.7%)",
+ "malignant": "28/95 (29.5%)",
+ "benchmark_test_tta": 0.922,
+ "benchmark_val_tta": 0.9302,
+ "spec_val": 0.9081,
+ "swa_val": 0.897,
+ "malignant_bench": "158/179 (88.3%)",
+ "verdict": "benchmark strong (92.2%) but wild 44.2% < V12 45.7%; wild malignant 29.5% vs V12 53.7% - V12 stays champion"
+}

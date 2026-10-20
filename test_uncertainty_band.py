@@ -21,7 +21,9 @@ for cls in ["benign", "malignant", "normal"]:
     files = sorted(Path(f"data/test/{cls}").glob("*"))[:12]
     for p in files:
         pil = Image.open(p).convert("RGB")
-        overlay, conf, html = app.predict(pil, tta=False, vote=False, thresh=0.5)
+        overlay, conf, html = app.predict(pil, tta=False, vote=False,
+                                          thresh=app.args.gate_thresh,
+                                          mal_thresh=app.args.mal_thresh)
         uncertain = 'v-uncertain' in html
         head = "Uncertain reading" if uncertain else "Unknown"
         for line in html.split("<p"):

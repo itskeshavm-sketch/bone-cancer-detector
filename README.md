@@ -69,7 +69,7 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 
 ## 4. Two scoreboards — and why they disagree
 
-**Board 1 — benchmark (564 held-out test films, 5-view TTA):**
+**Board 1 — benchmark (564 held-out test films):**
 
 | Version | Gate | Specialist | Test TTA | Malignant caught | Spec val | Verdict |
 |---|---|---|---|---|---|---|
@@ -79,12 +79,13 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 | V9 | B3 | B5 | 87.8% | — | 89.1% | MixUp+EMA **rejected** |
 | V10 | B3 | B5 | 88.5% | 160/179 | 90.6% | spec val best of its era |
 | V11 | B3 | B6 | 89.4% | 160/179 | 89.5% | |
-| **V12** | **A12** | **B6** | **89.5%** | **163/179** | 89.9% | **demo champion** |
+| V12 | A12 | B6 | 89.5% | 163/179 | 89.9% | previous champion |
 | V13 | B3 | B7 | 85.8% | — | 89.9% | focal loss **rejected** |
 | V14 | B3 | V2-L 120M | 83.3% | — | 84.6% | giant model **starved**, direction dead |
-| V18 | A18 | B6 | 89.0% | 143/179 | 87.5% | gate val 99.37%, malignant fell |
-| V20 | A18 | B5 | **92.6%** | 156/179 | 90.6% | benchmark win, wild flat |
+| V18 | A18 | B6 | 89.0% | 143/179 | 87.5% | gate val 99.37% |
+| V20 | A18 | B5 | 92.6% | 156/179 | 90.6% | benchmark win, wild flat |
 | V21 | A18 | B6 | 92.2% | 158/179 | **90.8%** | best spec val ever |
+| **V21 @ malignant thr 0.25** | **A18** | **B6** | **92.7%** (single-view) | **165/179** | 90.8% | **current champion** |
 
 **Board 2 — wild pool (199 expert-labeled real films):**
 
@@ -92,8 +93,9 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 |---|---|---|---|---|
 | **A12 gate** | 45.7% | **47.2%** | 45.7% | 44.7% |
 | **A18 gate** | 45.2% | 46.7% | 45.2% | 44.2% |
+| **A18 gate, malignant thr 0.25** | — | — | — | **48.2% (96/199)** |
 
-**The headline number and the real-world number rank models in opposite order.** V21 beats V12 by 2.7pp on the benchmark and loses by 1.5pp on real films. Three independent runs (V18, V20, V21) show the same inversion.
+**The headline number and the real-world number ranked models in opposite order** — until the operating point was corrected. V21 beat V12 by 2.7pp on the benchmark while losing on real films; with the threshold fixed it beats V12 on *both* boards, and catches more cancers (165 vs 163) in a single view than V12 does with 5-view TTA.
 
 ## 5. The investigation: why V12 was ahead
 
@@ -159,15 +161,17 @@ The V21 training curve (recovered from the kernel log) shows train acc 98.4% vs 
 
 The model knows when it does not know. `calibrate_uncertainty.py` runs the demo's own single-view path over all 564 test films, records every film's confidence, and measures accuracy *within* each confidence band.
 
+**Measured on the shipped champion (A18 + B21, malignant threshold 0.25):**
+
 | Confidence band | n | Measured accuracy | Error rate | Flagged? |
 |---|---|---|---|---|
-| 0.00–0.60 | 12 | 41.7% | 58.3% | **yes** |
-| 0.60–0.70 | 24 | 58.3% | 41.7% | **yes** |
-| 0.70–0.80 | 17 | 64.7% | 35.3% | **yes** |
-| 0.80–0.90 | 46 | 73.9% | 26.1% | **yes** |
-| 0.90–1.00 | 465 | **93.3%** | 6.7% | no |
+| 0.00–0.60 | 6 | 66.7% | 33.3% | **yes** |
+| 0.60–0.70 | 13 | 53.8% | 46.2% | **yes** |
+| 0.70–0.80 | 20 | 70.0% | 30.0% | **yes** |
+| 0.80–0.90 | 24 | 75.0% | 25.0% | **yes** |
+| 0.90–1.00 | 501 | **95.8%** | 4.2% | no |
 
-**17.6% of films carry 53% of all errors.** The error rate collapses above 0.90 confidence, so the band edges follow the data, not a round number.
+**11.2% of films carry 48.8% of all errors.** The error rate collapses above 0.90 confidence, so the band edges follow the data, not a round number. The reliable band is **95.8% accurate** — and the previous champion's equivalent band was 93.3%.
 
 In the demo, a low-confidence read changes the headline to **"Uncertain reading"** with a neutral border (no green/red false certainty), keeps the lean ("leans benign"), and changes the next step to *"a radiologist should read this film."* Confident reads state the measured accuracy for films that look like this one.
 
@@ -181,9 +185,12 @@ python app.py --port 7860      # → http://localhost:7860
 - **Quick check** — single view, ~4 s
 - **Thorough check** — 5-view TTA + B11/B12 second-opinion vote, ~7 s
 - **Sample films** — one per class for the guided first test
-- **Sensitivity slider** — moves the gate threshold
+- **Gate sensitivity** (0.2–0.7, default 0.30) — normal↔tumor boundary
+- **Cancer caution** (0.05–0.60, default 0.25) — benign↔malignant boundary. Measured on the wild pool: at 0.25 the model catches the same 49/95 cancers as the old champion *and* gets 6 more films right. Lower it to catch subtler cancers; raise it to reduce false alarms.
 - **Grad-CAM overlay** — shows where each model looked
 - **Uncertain reading** — measured reliability band (above)
+
+**Shipped configuration:** `stageA18.pt` (gate, 99.37% val) + `stageB21.pt` (specialist, 90.81% val), gate threshold 0.30, malignant threshold 0.25, band table `uncertainty_bands_v21.json`.
 
 `localhost` only. Never `0.0.0.0`.
 

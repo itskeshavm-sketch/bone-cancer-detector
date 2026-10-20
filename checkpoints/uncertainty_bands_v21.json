@@ -1,0 +1,85 @@
+{
+ "model": "V21 (stageA18 gate + stageB21 specialist, gate 0.30, malignant 0.25)",
+ "n_films": 564,
+ "overall_accuracy": 0.9273049645390071,
+ "overall_error_rate": 0.07269503546099287,
+ "uncertain_error_threshold": 0.25,
+ "bands": [
+  {
+   "lo": 0.0,
+   "hi": 0.6,
+   "n": 6,
+   "accuracy": 0.6666666666666666,
+   "error_rate": 0.33333333333333337,
+   "share": 0.010638297872340425,
+   "uncertain": true
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.7,
+   "n": 13,
+   "accuracy": 0.5384615384615384,
+   "error_rate": 0.46153846153846156,
+   "share": 0.02304964539007092,
+   "uncertain": true
+  },
+  {
+   "lo": 0.7,
+   "hi": 0.8,
+   "n": 20,
+   "accuracy": 0.7,
+   "error_rate": 0.30000000000000004,
+   "share": 0.03546099290780142,
+   "uncertain": true
+  },
+  {
+   "lo": 0.8,
+   "hi": 0.9,
+   "n": 24,
+   "accuracy": 0.75,
+   "error_rate": 0.25,
+   "share": 0.0425531914893617,
+   "uncertain": true
+  },
+  {
+   "lo": 0.9,
+   "hi": 1.01,
+   "n": 501,
+   "accuracy": 0.9580838323353293,
+   "error_rate": 0.041916167664670656,
+   "share": 0.8882978723404256,
+   "uncertain": false
+  }
+ ],
+ "flagged_count": 63,
+ "flagged_share": 0.11170212765957446,
+ "flagged_error_rate": 0.31746031746031744,
+ "errors_total": 41,
+ "errors_caught": 20,
+ "error_capture": 0.4878048780487805,
+ "reliable_band": {
+  "lo": 0.9,
+  "hi": 1.01,
+  "n": 501,
+  "accuracy": 0.9580838323353293,
+  "error_rate": 0.041916167664670656,
+  "share": 0.8882978723404256,
+  "uncertain": false
+ },
+ "benchmark_single_view": {
+  "acc": 0.9273049645390071,
+  "ok": 523,
+  "n": 564,
+  "benign": "153/180",
+  "malignant": "165/179",
+  "normal": "205/205"
+ },
+ "argmax_comparison": {
+  "acc": 0.925531914893617,
+  "ok": 522,
+  "n": 564,
+  "benign": "160/180",
+  "malignant": "157/179",
+  "normal": "205/205"
+ }
+}

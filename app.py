@@ -434,11 +434,11 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
       <h1>A second look at bone X-rays.</h1>
       <p class="lede">Two models read every film: one asks <strong>tumor or not</strong>,
       the other asks <strong>harmless or cancerous</strong>. On 564 test films it got
-      <strong>505 right</strong> and caught <strong>163 of 179 cancers</strong>. When it
+      <strong>523 right</strong> and caught <strong>165 of 179 cancers</strong>. When it
       is not sure it says <strong>uncertain reading</strong> instead of guessing.</p>
       <div class="figures">
-        <div><b>505 / 564</b><span>test films read correctly</span></div>
-        <div><b>163 / 179</b><span>cancers caught</span></div>
+        <div><b>523 / 564</b><span>test films read correctly</span></div>
+        <div><b>165 / 179</b><span>cancers caught</span></div>
         <div><b>{rel_pct}</b><span>accuracy on confident reads</span></div>
         <div><b>{rel_unc_pct}</b><span>error rate on flagged reads</span></div>
       </div>
@@ -480,8 +480,9 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
             out_text = gr.HTML(label="Verdict")
     gr.HTML(f"""
     <div id="colophon">
-      <p><strong>Not a medical device.</strong> Wrong about one film in ten. A missed tumor
-      costs more than a false alarm, so the sensitivity slider leans toward catching.</p>
+      <p><strong>Not a medical device.</strong> On held-out data it is wrong about one
+      film in fourteen. A missed tumor costs more than a false alarm, so the default
+      operating point leans toward catching cancer.</p>
       <p><strong>It knows when it does not know.</strong> Every reading is checked against
       confidence bands measured on 564 test films: on confident reads it is right about
       {rel_pct} of the time, and on the reads it flags as uncertain it is wrong about

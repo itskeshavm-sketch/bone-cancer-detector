@@ -223,7 +223,15 @@ python app.py --port 7860      # → http://localhost:7860
 - **30 GPU-h/week**, refreshes on the 24th. `api.quota_view()` reports live usage.
 - **Max 2 concurrent GPU sessions.** Exceeding it fails *pushes*, not runs.
 - **Output files and logs are published only after a run ENDS.** Mid-run, both look identical to a dead kernel. The only honest mid-run signal is **quota burn** (1.0× wall clock = training, 0× = wedged).
-- Kernels are pushed with `kaggle_gpu/kernel-metadata.json`; `push_kernel.py` hard-fails on Kaggle errors.
+- Kernels are pushed with each folder's `kernel-metadata.json`; `push_kernel.py` and
+  `kaggle_out_probe/push_any.py` hard-fail on Kaggle-side errors (an earlier version
+  printed `PUSH_OK` unconditionally and hid `"Maximum batch GPU session count of 2
+  reached"` for hours).
+- **Live kernels:** `bone-cancer-v21-train` (V21, current champion weights),
+  `bone-cancer-v22-train` (V22, lesion-aware). The original `bone-cancer-gpu-train`
+  kernel was deleted on 2026-10-20 to release a wedged GPU session slot — its code
+  is `kaggle_gpu/train_gpu.py` in this repo and its weights are in `checkpoints/`
+  (`stageA18.pt`, `stageB18.pt`). It is restored at the end of the V22 run.
 - Weight downloads: `kaggle_out_probe/kget21_final.py` pattern (single file + size check).
 - Polling: `loop_poll_v21.py` sleeps 15 min, then reports kernel status **and** live quota burn. Background pollers die on server restart — re-arm after one.
 

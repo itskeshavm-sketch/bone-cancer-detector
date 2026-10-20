@@ -267,6 +267,29 @@ class SubtypeDataset(Dataset):
 # main training program
 # ----------------------------------------------------------------------------
 
+def load_pretrained_b6():
+    """Fetch the ImageNet EfficientNet-B6 weights with retries.
+
+    The kernel needs INTERNET to pull these from download.pytorch.org. A flaky
+    network must not kill a 4-hour run, and the failure must surface in the first
+    minute rather than 14 minutes into staging, so the fetch is retried here and
+    called before any data work begins.
+    """
+    from torchvision.models import efficientnet_b6, EfficientNet_B6_Weights
+    last = None
+    for attempt in range(1, 7):
+        try:
+            print(f"fetching ImageNet B6 weights (attempt {attempt})...", flush=True)
+            m = efficientnet_b6(weights=EfficientNet_B6_Weights.IMAGENET1K_V1)
+            print("weights OK", flush=True)
+            return m
+        except Exception as e:
+            last = e
+            print(f"weight download attempt {attempt} failed: {str(e)[:140]}", flush=True)
+            time.sleep(15 * attempt)
+    raise RuntimeError(f"could not fetch ImageNet B6 weights: {last}")
+
+
 def main():
     print("=== DIAGNOSTICS ===", flush=True)
     print("cuda:", torch.cuda.is_available(), flush=True)
@@ -285,6 +308,10 @@ def main():
     if MAIN_SRC is None or GA is None:
         print("missing main dataset or gate weights - aborting", flush=True)
         sys.exit(2)
+
+    # Fail fast on the one thing that needs the network, before any data staging.
+    pretrained = load_pretrained_b6()
+    print("preflight OK: pretrained weights available", flush=True)
 
     from torch.cuda.amp import GradScaler, autocast
     from torchvision.models import (efficientnet_b3, efficientnet_b6,
@@ -376,7 +403,7 @@ def main():
     print(f"train={len(tr)} val={len(va)} steps/ep={len(tr_ld)} img={IMG} "
           f"batch={BATCH} accum={ACCUM} effective={BATCH*ACCUM}", flush=True)
 
-    model = efficientnet_b6(weights=EfficientNet_B6_Weights.IMAGENET1K_V1)
+    model = pretrained
     model.classifier = nn.Sequential(
         nn.Dropout(0.4), nn.Linear(model.classifier[1].in_features, 2))
     model = model.to(device)

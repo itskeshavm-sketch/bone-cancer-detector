@@ -119,9 +119,11 @@ input[type='range'] { accent-color: var(--accent); }
 """
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--stageA", default="checkpoints/stageA12.pt")
-parser.add_argument("--stageB", default="checkpoints/stageB12.pt")
-parser.add_argument("--bands", default="checkpoints/uncertainty_bands.json")
+parser.add_argument("--stageA", default="checkpoints/stageA18.pt")
+parser.add_argument("--stageB", default="checkpoints/stageB21.pt")
+parser.add_argument("--bands", default="checkpoints/uncertainty_bands_v21.json")
+parser.add_argument("--gate-thresh", type=float, default=0.30)
+parser.add_argument("--mal-thresh", type=float, default=0.25)
 parser.add_argument("--port", type=int, default=7860)
 args, _ = parser.parse_known_args()
 
@@ -129,10 +131,16 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 NORM = [[0.485, 0.456, 0.406], [0.229, 0.224, 0.225]]
 
 
+def _classes(ckpt, default):
+    """V21+ checkpoints were saved without a 'classes' key; fall back to 2-way."""
+    c = ckpt.get("classes")
+    return len(c) if c else default
+
+
 def load_b3(path):
     ckpt = torch.load(path, map_location=device)
     m = efficientnet_b3(weights=None)
-    m.classifier = nn.Sequential(nn.Dropout(0.3), nn.Linear(m.classifier[1].in_features, len(ckpt["classes"])))
+    m.classifier = nn.Sequential(nn.Dropout(0.3), nn.Linear(m.classifier[1].in_features, _classes(ckpt, 2)))
     m.load_state_dict(ckpt["model"])
     return m.to(device).eval(), ckpt
 
@@ -140,7 +148,7 @@ def load_b3(path):
 def load_b5(path):
     ckpt = torch.load(path, map_location=device)
     m = efficientnet_b5(weights=None)
-    m.classifier = nn.Sequential(nn.Dropout(0.3), nn.Linear(m.classifier[1].in_features, len(ckpt["classes"])))
+    m.classifier = nn.Sequential(nn.Dropout(0.3), nn.Linear(m.classifier[1].in_features, _classes(ckpt, 2)))
     m.load_state_dict(ckpt["model"])
     return m.to(device).eval(), ckpt
 
@@ -148,7 +156,7 @@ def load_b5(path):
 def load_b6(path):
     ckpt = torch.load(path, map_location=device)
     m = efficientnet_b6(weights=None)
-    m.classifier = nn.Sequential(nn.Dropout(0.3), nn.Linear(m.classifier[1].in_features, len(ckpt["classes"])))
+    m.classifier = nn.Sequential(nn.Dropout(0.3), nn.Linear(m.classifier[1].in_features, _classes(ckpt, 2)))
     m.load_state_dict(ckpt["model"])
     return m.to(device).eval(), ckpt
 
@@ -162,7 +170,9 @@ if Path("checkpoints/stageB11.pt").exists():
     except Exception as e:
         print("stageB11 not usable:", e)
 IA, IB = int(ckA.get("img", 300)), int(ckB.get("img", 456))
-print(f"A: {ckA['classes']} acc={ckA.get('acc')} | B: {ckB['classes']} acc={ckB.get('acc')}")
+print(f"A: {ckA.get('classes', ['normal', 'tumor'])} acc={ckA.get('acc')} | "
+      f"B: {ckB.get('classes', ['benign', 'malignant'])} acc={ckB.get('acc')}")
+print(f"operating point: gate thresh {args.gate_thresh}, malignant thresh {args.mal_thresh}")
 
 # ---- measured reliability bands (calibrated on 564 test films) ----------------
 # The band table says how often this model is actually right on films that look
@@ -276,6 +286,18 @@ def specialist_probs(pil, tta, vote):
     return avg, key
 
 
+def decide_specialist(prob_benign, prob_malignant, mal_thr):
+    """Call malignant when p(malignant) >= mal_thr.
+
+    The threshold is NOT a tuning knob for accuracy - it is the operating point on
+    the benign<->malignant ROC curve. Measured on the 199-film wild pool, argmax
+    (0.5) parks this model in a benign-leaning corner that misses rare cancers;
+    0.25 restores the same cancer sensitivity as the previous champion while
+    getting 6 more films right. See checkpoints/metrics_wild21.json.
+    """
+    return 1 if prob_malignant >= mal_thr else 0
+
+
 def tf(img_size):
     return transforms.Compose([
         transforms.Resize((img_size, img_size)),
@@ -342,7 +364,7 @@ def verdict_card(kind, head, conf_line, next_line, rel_line=""):
             f'</div>')
 
 
-def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
+def predict(img: Image.Image, tta=False, vote=False, thresh=0.30, mal_thresh=0.25):
     if img is None:
         return None, None, DISCLAIMER
     rgb = img.convert("RGB")
@@ -368,7 +390,7 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
         return overlay, conf, text
 
     probB, key = specialist_probs(rgb, tta, vote)
-    idx = int(probB.argmax())
+    idx = decide_specialist(float(probB[0]), float(probB[1]), mal_thresh)
     label = ["benign", "malignant"][idx]
     modelB.zero_grad()
     logitsB = modelB(tfB(rgb).unsqueeze(0).to(device))
@@ -393,11 +415,11 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.5):
 
 
 def quick(img: Image.Image):
-    return predict(img, False, False, 0.5)
+    return predict(img, False, False, args.gate_thresh, args.mal_thresh)
 
 
 def thorough(img: Image.Image):
-    return predict(img, True, modelB2 is not None, 0.5)
+    return predict(img, True, modelB2 is not None, args.gate_thresh, args.mal_thresh)
 
 
 with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
@@ -448,8 +470,10 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
                 tta_box = gr.Checkbox(label="Careful reading — 5 views, slower", value=False)
                 ens_box = gr.Checkbox(label="Second opinion — B11 + B12 vote", value=False,
                                       visible=modelB2 is not None)
-                thresh = gr.Slider(0.2, 0.7, value=0.5, step=0.05,
-                                   label="Sensitivity — lower catches subtler tumors, more false alarms")
+                thresh = gr.Slider(0.2, 0.7, value=args.gate_thresh, step=0.05,
+                                   label="Gate sensitivity — lower catches subtler tumors, more false alarms")
+                mal_slider = gr.Slider(0.05, 0.60, value=args.mal_thresh, step=0.01,
+                                       label="Cancer caution — lower calls more things cancer (missed tumors cost more than false alarms)")
         with gr.Column(elem_id="reading"):
             out_img = gr.Image(label="Where the model looked")
             out_label = gr.Label(label="Reading")
@@ -466,10 +490,12 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
       <p>Method: EfficientNet-B3 gate, EfficientNet-B6 specialist, Grad-CAM evidence.
       Always see a doctor.</p>
     </div>""")
-    btn.click(predict, inputs=[inp, tta_box, ens_box, thresh], outputs=[out_img, out_label, out_text])
+    btn.click(predict, inputs=[inp, tta_box, ens_box, thresh, mal_slider],
+              outputs=[out_img, out_label, out_text])
     qbtn.click(quick, inputs=[inp], outputs=[out_img, out_label, out_text])
     tbtn.click(thorough, inputs=[inp], outputs=[out_img, out_label, out_text])
-    inp.change(predict, inputs=[inp, tta_box, ens_box, thresh], outputs=[out_img, out_label, out_text])
+    inp.change(predict, inputs=[inp, tta_box, ens_box, thresh, mal_slider],
+               outputs=[out_img, out_label, out_text])
 
 if __name__ == "__main__":
     demo.launch(server_name="0.0.0.0", server_port=args.port, share=True, theme=theme, css=CSS)

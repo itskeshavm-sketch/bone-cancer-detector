@@ -133,13 +133,27 @@ Reading the malignant and benign columns together (gate held constant at A18):
 
 ### Phase 3 — The fix (free, no retraining)
 
-If the models differ only in operating point, the operating point is a **dial, not a property**. The malignant decision threshold is currently hardcoded to argmax. Sweeping it — `kaggle_out_probe/sweep_threshold.py` — lets every model be placed at a matched malignant recall, which is the apples-to-apples comparison of cancer-detection ability that was never available before.
+If the models differ only in operating point, the operating point is a **dial, not a property**. The malignant decision threshold was hardcoded to argmax. Sweeping it — `kaggle_out_probe/sweep_threshold.py` — places every model at a matched malignant recall, which is the apples-to-apples comparison of cancer-detection ability that was never available before.
 
-The demo also had a related defect: its "Sensitivity" slider moved only the **gate** threshold (normal↔tumor), never the **specialist** threshold (benign↔malignant) — so the user could not reach the malignant-leaning operating point at all.
+**At matched cancer sensitivity (49/95 malignant caught, gate A18):**
+
+| Model | Threshold | Wild acc | Correct | Malignant | Benign |
+|---|---|---|---|---|---|
+| B12 (old champion) | 0.50 (argmax) | 45.2% | 90/199 | 49/95 | 41/104 |
+| B18 | 0.50 (argmax) | 46.7% | 93/199 | 47/95 | 46/104 |
+| **B21 (new champion)** | **0.25** | **48.2%** | **96/199** | **49/95** | **47/104** |
+
+**B21 at threshold 0.25 catches exactly as many cancers as the old champion and gets 6 more films right.** Its own best point (threshold 0.1) reaches **49.2% — 98/199 with 66/95 cancers** — better than any other model on both axes simultaneously. B12's best-accuracy point (threshold 0.1) catches 83 cancers but only 10 benign — clinically useless.
+
+**Why argmax was the whole story:** B21's probabilities are systematically *lower* than B12's. Argmax (0.5) parked B21 in a benign-leaning corner of the ROC curve. The models were never different in quality — only in where they were pointed.
+
+**The demo had a matching defect:** its "Sensitivity" slider moved only the **gate** threshold (normal↔tumor), never the **specialist** threshold (benign↔malignant), so a user could not reach the cancer-leaning operating point at all. The demo now ships a second slider — **"Cancer caution"** — defaulting to the measured 0.25, and defaults to the A18 + B21 pair.
 
 ### Phase 4 — Reality check
 
 The V21 training curve (recovered from the kernel log) shows train acc 98.4% vs val 89.4%, with val peaking at **epoch 39** (90.81%) and then flat for 21 more epochs. The 60-epoch schedule I chose was 21 epochs of pure overfitting past the peak — a self-inflicted error, and evidence that "more epochs" was never the lever.
+
+**Symptom vs cause:** the symptom was "V21 is worse on real films." The cause was a fixed decision threshold in the *evaluation harness and the demo*, not in the model. The fix changed a threshold, not a weight — and the model that was "worse" turned out to be the best one available.
 
 ## 6. The uncertainty band (shipped)
 

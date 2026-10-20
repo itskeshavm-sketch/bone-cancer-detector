@@ -1,5 +1,5 @@
 {
- "model": "V21 (stageA18 gate + stageB21 specialist, gate 0.30, malignant 0.25)",
+ "model": "V21 (stageA18 gate + stageB21 specialist, malignant threshold 0.25)",
  "n_films": 564,
  "overall_accuracy": 0.9273049645390071,
  "overall_error_rate": 0.07269503546099287,
@@ -67,19 +67,21 @@
   "uncertain": false
  },
  "benchmark_single_view": {
-  "acc": 0.9273049645390071,
-  "ok": 523,
-  "n": 564,
-  "benign": "153/180",
-  "malignant": "165/179",
-  "normal": "205/205"
- },
- "argmax_comparison": {
-  "acc": 0.925531914893617,
-  "ok": 522,
-  "n": 564,
-  "benign": "160/180",
-  "malignant": "157/179",
-  "normal": "205/205"
+  "old_champion": {
+   "acc": 0.8829787234042553,
+   "ok": 498,
+   "n": 564,
+   "benign": "146/180",
+   "malignant": "161/179",
+   "normal": "191/205"
+  },
+  "new_champion": {
+   "acc": 0.9273049645390071,
+   "ok": 523,
+   "n": 564,
+   "benign": "153/180",
+   "malignant": "165/179",
+   "normal": "205/205"
+  }
  }
 }

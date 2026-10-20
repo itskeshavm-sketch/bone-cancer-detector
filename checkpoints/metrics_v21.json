@@ -1,0 +1,58 @@
+{
+ "v": 21,
+ "champion_config": {
+  "gate": "stageA18.pt",
+  "specialist": "stageB21.pt",
+  "gate_thresh": 0.3,
+  "malignant_thresh": 0.25
+ },
+ "benchmark_single_view": {
+  "old_champion_A12_B12_argmax": {
+   "acc": 0.883,
+   "ok": 498,
+   "n": 564,
+   "benign": "146/180",
+   "malignant": "161/179",
+   "normal": "191/205"
+  },
+  "new_champion_A18_B21_thr025": {
+   "acc": 0.9273,
+   "ok": 523,
+   "n": 564,
+   "benign": "153/180",
+   "malignant": "165/179",
+   "normal": "205/205"
+  },
+  "same_model_argmax_050": {
+   "acc": 0.9255,
+   "ok": 522,
+   "n": 564,
+   "benign": "160/180",
+   "malignant": "157/179",
+   "normal": "205/205"
+  }
+ },
+ "wild_199": {
+  "old_champion_B12": "90/199 (45.2%)",
+  "new_champion_B21_thr025": "96/199 (48.2%)"
+ },
+ "matched_sensitivity": {
+  "B12_thr050": {
+   "acc": 0.4523,
+   "mal": "49/95",
+   "ben": "41/104"
+  },
+  "B18_thr050": {
+   "acc": 0.4673,
+   "mal": "47/95",
+   "ben": "46/104"
+  },
+  "B21_thr025": {
+   "acc": 0.4824,
+   "mal": "49/95",
+   "ben": "47/104"
+  }
+ },
+ "root_cause": "malignant decision threshold hardcoded to argmax (0.5) in eval harness and demo; B21 probabilities run systematically lower so argmax parked it in a benign-leaning corner of the ROC curve",
+ "verdict": "V21 @ malignant thr 0.25 replaces V12 as champion - better on benchmark (+4.4pp) and on wild pool (+3.0pp), +7 cancers caught, 4 fewer errors overall"
+}

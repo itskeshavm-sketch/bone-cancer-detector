@@ -1,0 +1,639 @@
+{
+ "benign_blind_spots": [
+  {
+   "entity": "abc",
+   "n": 5,
+   "malignant": 0,
+   "errors": 4,
+   "gate_fail": 0
+  },
+  {
+   "entity": "abc_adriaan",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "abc_femur",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "boneisland",
+   "n": 5,
+   "malignant": 0,
+   "errors": 4,
+   "gate_fail": 3
+  },
+  {
+   "entity": "chondroblastoma",
+   "n": 4,
+   "malignant": 0,
+   "errors": 3,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondroblastoma_femur",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondroblastoma_knee",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondroblastoma_patella",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondroblastoma_talus",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 1
+  },
+  {
+   "entity": "cmf",
+   "n": 4,
+   "malignant": 0,
+   "errors": 3,
+   "gate_fail": 0
+  },
+  {
+   "entity": "eg_femur",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "eg_ill",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "eg_skull",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "eg_tibia",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "egranuloma",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "ench_finger",
+   "n": 2,
+   "malignant": 0,
+   "errors": 2,
+   "gate_fail": 0
+  },
+  {
+   "entity": "enchondroma_ulna",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "fd",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "fd2",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "fd3",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "fd_pelvis",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "fd_poly",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "fd_poly2",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "gct",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "gct2",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "gct_fibula",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "gct_spine",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "matrix_osteoma",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "multiple_fd",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "nof",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "nof5",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "nora",
+   "n": 3,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "osteoch_cap",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "osteochondromas2",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "osteoid4",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 1
+  },
+  {
+   "entity": "sbc5",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "sbc6",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "abcfoot",
+   "n": 3,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "bfh",
+   "n": 3,
+   "malignant": 0,
+   "errors": 3,
+   "gate_fail": 0
+  },
+  {
+   "entity": "browntumor",
+   "n": 2,
+   "malignant": 0,
+   "errors": 2,
+   "gate_fail": 0
+  },
+  {
+   "entity": "perichondroma",
+   "n": 2,
+   "malignant": 0,
+   "errors": 2,
+   "gate_fail": 0
+  }
+ ],
+ "malignant_blind_spots": [
+  {
+   "entity": "adam1",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "adam2",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "adam4",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "adam5",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "adamantinoma",
+   "n": 3,
+   "malignant": 3,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondrosarcoma",
+   "n": 4,
+   "malignant": 4,
+   "errors": 2,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondrosarcoma2",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondrosarcoma3",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondrosarcoma7_a",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondrosarcoma7_b",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondrosarcoma8",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondrosarcoma9",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondrosarcoma_hand",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondrosarcoma_humerus",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chondrosarcoma_pelvis",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "chordoma_spine2",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "cortical2_ewing",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "cortical_os",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "cs_chest",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 1
+  },
+  {
+   "entity": "cs_humerus3",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "cs_ill",
+   "n": 2,
+   "malignant": 2,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "cs_ill2",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "cs_ill4",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "cs_lowgrade",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "cs_secondary",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "ewing2",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "lowgrade_cs",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "lymphoma_knee",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "met_b",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "met_breast",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "met_femur2",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "met_femur3",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "met_humerus",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "myeloma_skull",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "os_knee",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "os_lytic",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "os_pelvis",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "osteoch_transformation",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "parosteal2b",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "pelvis",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "angiosarcoma",
+   "n": 4,
+   "malignant": 4,
+   "errors": 1,
+   "gate_fail": 1
+  },
+  {
+   "entity": "chordoma",
+   "n": 3,
+   "malignant": 3,
+   "errors": 1,
+   "gate_fail": 0
+  },
+  {
+   "entity": "metprostate",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 0
+  }
+ ],
+ "gate_fail_entities": [
+  {
+   "entity": "boneisland",
+   "n": 5,
+   "malignant": 0,
+   "errors": 4,
+   "gate_fail": 3
+  },
+  {
+   "entity": "chondroblastoma_talus",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 1
+  },
+  {
+   "entity": "osteoid4",
+   "n": 1,
+   "malignant": 0,
+   "errors": 1,
+   "gate_fail": 1
+  },
+  {
+   "entity": "cs_chest",
+   "n": 1,
+   "malignant": 1,
+   "errors": 1,
+   "gate_fail": 1
+  },
+  {
+   "entity": "angiosarcoma",
+   "n": 4,
+   "malignant": 4,
+   "errors": 1,
+   "gate_fail": 1
+  }
+ ],
+ "summary": {
+  "wild_errors_total": 100,
+  "specialist_failures": 93,
+  "gate_failures": 7,
+  "cam_fixed": 27,
+  "cam_broke": 22,
+  "note": "93% of errors are CLASSIFICATION not detection. Blind spots are exactly: benign-but-aggressive-looking (ABC, bone island, BFH, chondroblastoma, CMF, brown tumor, enchondroma, perichondroma) and malignant-but-not-osteosarcoma (chondrosarcoma, adamantinoma, angiosarcoma, chordoma)."
+ }
+}

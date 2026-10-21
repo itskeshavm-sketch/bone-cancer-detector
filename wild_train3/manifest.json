@@ -1,0 +1,227 @@
+[
+ {
+  "file": "wm_malignant_X-rays_of_osteosarcoma_000.png",
+  "label": "malignant",
+  "entity": "X-rays of osteosarcoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteogenic sarcoma2.jpg",
+  "w": 800,
+  "h": 801
+ },
+ {
+  "file": "wm_malignant_X-rays_of_osteosarcoma_001.png",
+  "label": "malignant",
+  "entity": "X-rays of osteosarcoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteosarcoma of the tibia.png",
+  "w": 1920,
+  "h": 2355
+ },
+ {
+  "file": "wm_malignant_X-rays_of_chondrosarcoma_002.png",
+  "label": "malignant",
+  "entity": "X-rays of chondrosarcoma",
+  "source": "wikimedia commons",
+  "title": "File:Chondrosarkom (Gro\u00dfzeh).jpg",
+  "w": 526,
+  "h": 993
+ },
+ {
+  "file": "wm_malignant_X-rays_of_chondrosarcoma_003.png",
+  "label": "malignant",
+  "entity": "X-rays of chondrosarcoma",
+  "source": "wikimedia commons",
+  "title": "File:Chondrosarkom proximaler Femur - 87jw - CT und Roe - 001.jpg",
+  "w": 1920,
+  "h": 894
+ },
+ {
+  "file": "wm_benign_X-rays_of_giant_cell_tumor_of_bone_004.png",
+  "label": "benign",
+  "entity": "X-rays of giant cell tumor of bone",
+  "source": "wikimedia commons",
+  "title": "File:Giant cell tumor of bone08.JPG",
+  "w": 1508,
+  "h": 2932
+ },
+ {
+  "file": "wm_benign_X-rays_of_bone_cyst_005.png",
+  "label": "benign",
+  "entity": "X-rays of bone cyst",
+  "source": "wikimedia commons",
+  "title": "File:Aneurysmatische Knochenzyste.jpg",
+  "w": 1385,
+  "h": 831
+ },
+ {
+  "file": "wm_benign_X-rays_of_bone_cyst_006.png",
+  "label": "benign",
+  "entity": "X-rays of bone cyst",
+  "source": "wikimedia commons",
+  "title": "File:Ganglio intraosseo.png",
+  "w": 540,
+  "h": 822
+ },
+ {
+  "file": "wm_benign_X-rays_of_bone_cyst_007.png",
+  "label": "benign",
+  "entity": "X-rays of bone cyst",
+  "source": "wikimedia commons",
+  "title": "File:Juvenile Knochenzyste Femur im Verlauf 05022020M - CR ap - 001.jpg",
+  "w": 1024,
+  "h": 1109
+ },
+ {
+  "file": "wm_benign_X-rays_of_bone_cyst_008.png",
+  "label": "benign",
+  "entity": "X-rays of bone cyst",
+  "source": "wikimedia commons",
+  "title": "File:Juvenile Knochenzyste Humerus mit pathologischer Fraktur 9W - CR ap - 001.jpg",
+  "w": 685,
+  "h": 1047
+ },
+ {
+  "file": "wm_benign_X-rays_of_bone_cyst_009.png",
+  "label": "benign",
+  "entity": "X-rays of bone cyst",
+  "source": "wikimedia commons",
+  "title": "File:Juvenile Knochenzyste Humerus mit pathologischer Fraktur 9W - fallen fragment CR ap - 001.jpg",
+  "w": 432,
+  "h": 906
+ },
+ {
+  "file": "wm_benign_X-rays_of_bone_cyst_010.png",
+  "label": "benign",
+  "entity": "X-rays of bone cyst",
+  "source": "wikimedia commons",
+  "title": "File:Juvenile Knochenzyste proximaler Humerus mit ausgeheilter pathologischer Fraktur 12M - CR ap - 001.jpg",
+  "w": 1007,
+  "h": 1647
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_011.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:EXOSTOSE.jpg",
+  "w": 1248,
+  "h": 2252
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_012.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Exostose schulter.jpg",
+  "w": 1677,
+  "h": 3074
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_013.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Kartilaginaere Exostose 47jm - Roe 2 Ebenen - 001.jpg",
+  "w": 1920,
+  "h": 1599
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_014.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Kartilaginaere Exostose am Becken rechts 73M - CR ap - 001.jpg",
+  "w": 1920,
+  "h": 1330
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_015.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Kartilaginaere Exostose medial am Femurcondylus 19M - MR PDW FS und Roentgen in 2 Ebenen - 001.jpg",
+  "w": 1920,
+  "h": 775
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_016.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Kartilaginaere Exostose mediale proximale Tibia 72M - CR 2 Eb - 001.jpg",
+  "w": 1723,
+  "h": 1346
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_017.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Kartilaginaere Exostosen an Femur und Tibia 95M - CR - 001.jpg",
+  "w": 1642,
+  "h": 1258
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_018.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Kartilaginaere Exostosen linkes Knie - Roe ap.jpg",
+  "w": 474,
+  "h": 1091
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_019.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Kartilaginaere Exostosen linkes Knie - Roe seitlich.jpg",
+  "w": 536,
+  "h": 1064
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_020.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Kartilagin\u00e4re Exostose.png",
+  "w": 1503,
+  "h": 1086
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_021.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:MO radiograph.jpg",
+  "w": 651,
+  "h": 680
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_022.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Multiple kartilaginaere Exostosen Knie - Roe ap 001.jpg",
+  "w": 780,
+  "h": 1893
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_023.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Multiple kartilaginaere Exostosen Unterschenkel - Roe 2 Ebenen 001.jpg",
+  "w": 915,
+  "h": 1914
+ },
+ {
+  "file": "wm_benign_X-rays_of_osteochondroma_024.png",
+  "label": "benign",
+  "entity": "X-rays of osteochondroma",
+  "source": "wikimedia commons",
+  "title": "File:Roe-exostose.jpg",
+  "w": 589,
+  "h": 835
+ }
+]

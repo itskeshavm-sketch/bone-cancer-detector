@@ -205,43 +205,53 @@ def main():
             z.extractall(str(wdir))
         search_dirs = [wdir, wild_root]
         print(f"unzipped {zpath.name}", flush=True)
+    def wild_key(name):
+        """Normalise a wild asset filename to a key shared by image and label.
+
+        The prefixes have DIFFERENT LENGTHS - "wildimg" is 7 chars, "wildlbl" is 8
+        - so stripping them with different rules leaves residuals that differ by
+        an underscore and EVERY lookup misses. V25 shipped exactly that bug: it
+        trained on zero wild images and its held-out eval returned NaN.
+        One rule for both: drop the leading "wildimg"/"wildlbl", drop the
+        extension, then drop leading underscores.
+        """
+        stem = name
+        for pref in ("wildimg", "wildlbl"):
+            if stem.startswith(pref):
+                stem = stem[len(pref):]
+                break
+        for ext in (".png", ".txt"):
+            if stem.endswith(ext):
+                stem = stem[:-len(ext)]
+                break
+        return stem.lstrip("_")
+
     wimg, wlab = {}, {}
     for d in search_dirs:
         for p in d.rglob("wildimg*.png"):
-            wimg.setdefault(p.name, p)
+            wimg.setdefault(wild_key(p.name), p)
         for p in d.rglob("wildlbl*.txt"):
-            wlab.setdefault(p.name.replace("wildlbl", "").replace(".txt", ""), p)
+            wlab.setdefault(wild_key(p.name), p)
     print(f"wild images found: {len(wimg)} | labels: {len(wlab)}", flush=True)
     if len(wimg) < 190 or len(wlab) < 190:
         print("wild assets incomplete - aborting", flush=True)
         sys.exit(2)
 
     def wild_items(entries):
-        out, missing = [], 0
+        out, missing = [], []
         for e in entries:
-            ip = wimg.get(e["file"])
-            # image wildimg[_2]_<stem>.png  <->  label wildlbl[_2]_<stem>.txt
-            # The label map is keyed by the text between "wildlbl" and ".txt",
-            # so the image stem is matched the same way. Two candidate keys are
-            # tried because the optional "2" marks the harvested batch.
-            raw = e["file"]
-            for pref in ("wildimg2_", "wildimg_"):
-                if raw.startswith(pref):
-                    stem = raw[len(pref):].replace(".png", "")
-                    break
-            else:
-                stem = raw.replace(".png", "")
-            key = None
-            for cand in (stem, stem[1:] if stem[:1].isdigit() else stem):
-                if cand in wlab:
-                    key = cand
-                    break
-            if ip is None or key is None:
-                missing += 1
+            key = wild_key(e["file"])
+            ip = wimg.get(key)
+            lp = wlab.get(key)
+            if ip is None or lp is None:
+                missing.append(e["file"])
                 continue
             out.append((str(ip), 1 if e["label"] == "malignant" else 0))
         if missing:
-            print(f"  WARNING: {missing} split entries had no image/label on disk", flush=True)
+            # LOUD, not a warning: V25 silently trained on zero wild images
+            print(f"  FATAL: {len(missing)} split entries unresolved, e.g. {missing[:3]}",
+                  flush=True)
+            sys.exit(2)
         return out
 
     train_wild = wild_items(split["train"])

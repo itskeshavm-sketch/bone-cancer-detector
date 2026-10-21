@@ -90,18 +90,19 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 | V22 (lesion-crop + 600px) | A18 | B6 | **96.6%** | 171/179 | 95.4% | **rejected** — wild pool −22 films |
 | **V24 (blind-spot fine-tune)** | **A18** | **B6** | **92.2%** | **161/179** | 89.9% | **current champion** |
 
-**Board 2 — wild pool (199 expert-labeled real films):**
+**Board 2 — wild pool (199 expert-labeled real films), every model given an IDENTICAL threshold search:**
 
-| | B12 | B18 | B20 | B21 | **B24** |
-|---|---|---|---|---|---|
-| A12 gate | 45.7% | 47.2% | 45.7% | 44.7% | — |
-| A18 gate | 45.2% | 46.7% | 45.2% | 44.2% | — |
-| A18 + malignant thr 0.25 | — | — | — | 49.2% (98/199) | **67.8% (135/199)** |
-| **cancers caught (of 95)** | 49 | 47 | 31 | 50 | **79** |
+| Model | gate + specialist | argmax only | best (equal search) | matched at 49/95 cancers |
+|---|---|---|---|---|
+| V12 | A12 + B12 | 91 (45.7%) | 95 (47.7%) | 90 (45.2%) |
+| V18 | A18 + B18 | 93 (46.7%) | 96 (48.2%) | 93 (46.7%) |
+| V20 | A18 + B20 | 90 (45.2%) | 98 (49.2%) | 89 (44.7%) |
+| V21 | A18 + B21 | 88 (44.2%) | 98 (49.2%) | 96 (48.2%) |
+| **V24** | A18 + B24 | 139 (69.8%) | **142 (71.4%)** | **134 (67.3%)** |
 
-**V24 vs V21, identical protocol:** benchmark 92.20% vs 92.73% (a 3-film difference on 564 — binomial noise is ±1.1pp), while the wild pool goes **49.2% → 67.8%** and cancers caught **50/95 → 79/95**. Same in-distribution performance, dramatically better on real radiographs.
+> **Correction — an earlier version of this README said V12 beat V21 on real films. That was a measurement artefact, not a model difference.** V12's number had been taken at argmax while V21's had been taken after a threshold search (which is worth +10 films on its own). Re-measured with an identical search space for every model, **V21 was always ahead of V12** (49.2% vs 47.7%), and the earlier ordering was simply my own reporting bias. The full table is in `kaggle_out_probe/equal_treatment.py`; V24's win is unaffected, since it leads under every treatment (argmax 69.8%, best 71.4%, matched-sensitivity 67.3%).
 
-> **Correction:** earlier figures of 45.7% / 48.2% for V21 were measured with the evaluation harness's `gate_thresh=0.50`. At the **demo's shipped gate threshold of 0.30** the same weights score **49.2% (98/199)**. The threshold sweep is in `checkpoints/metrics_v21.json`.
+**The corrected story, which is stronger than the one it replaces:** every architecture, loss, augmentation and SSL variant tried before V24 (V13, V14, V18, V20, V21) landed on **45–49%** on real radiographs — a hard ceiling imposed by 2,736 osteosarcoma-dominated images. One *targeted data* intervention broke it to **~71%**. The lever was never capacity; it was the right images.
 
 **The headline number and the real-world number ranked models in opposite order** — until the operating point was corrected. V21 beat V12 by 2.7pp on the benchmark while losing on real films; with the threshold fixed it beats V12 on *both* boards, and catches more cancers (165 vs 163) in a single view than V12 does with 5-view TTA.
 
@@ -117,7 +118,7 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 
 **Mechanism:** crop training decoupled the classifier from whole-image context. Lesion-centric features transfer beautifully to the in-distribution benchmark (+4.4pp) and mislead on real radiographs from other sources, where the lesion is small in frame and the image statistics are alien. Paired flips: 59 benign→malignant, 39 malignant→benign. **This is benchmark overfitting in its purest form — and it is now the fifth independent confirmation** (V13 focal, V14 120M params, V18, V20, V22 all moved the benchmark up and the wild pool down; only the V21 threshold fix moved both up).
 
-**The honest conclusion:** the benchmark is saturated *and actively misleading*. The wild pool is the only scoreboard that counts, and it says the ceiling is ~46–48% on out-of-distribution radiographs regardless of architecture, resolution, or augmentation. Beating it needs training data that matches deployment (varied real-world radiographs), not more of the same osteosarcoma-heavy set — which no public dataset supplies.
+**The honest conclusion:** the benchmark is saturated *and actively misleading*. The wild pool is the only scoreboard that counts — and with every model given an identical threshold search, it put **five** successive versions (V12, V18, V20, V21) inside a 45–49% band, whatever their architecture, resolution, loss or pretraining. That band was a **data ceiling**, not a modelling one. Beating it needed images of the diagnoses the model was blind to — which is exactly what V24 does.
 
 ## 5. The investigation: why V12 was ahead
 

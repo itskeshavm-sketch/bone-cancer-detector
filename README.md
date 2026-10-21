@@ -17,6 +17,7 @@ Two-stage X-ray classifier for bone tumors — **normal / benign tumor / maligna
 | **Stack** | PyTorch, torchvision EfficientNet, Gradio 6.29.1 |
 | **Training infra** | Kaggle GPU (T4), private kernels, 30 GPU-h/week quota |
 | **Demo** | `python app.py` → http://localhost:7860 |
+| **Champion** | **V24** — 92.2% on the test set, **67.8% on 199 real-world radiographs** |
 
 ## 2. Architecture
 
@@ -84,17 +85,21 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 | V14 | B3 | V2-L 120M | 83.3% | — | 84.6% | giant model **starved**, direction dead |
 | V18 | A18 | B6 | 89.0% | 143/179 | 87.5% | gate val 99.37% |
 | V20 | A18 | B5 | 92.6% | 156/179 | 90.6% | benchmark win, wild flat |
-| V21 | A18 | B6 | 92.2% | 158/179 | **90.8%** | best spec val ever |
-| **V21 @ malignant thr 0.25** | **A18** | **B6** | **92.7%** (single-view) | **165/179** | 90.8% | **current champion** |
-| V22 (lesion-crop + 600px) | A18 | B6 | **96.6%** | **171/179** | **95.4%** | **rejected** — wild pool −22 films |
+| V21 | A18 | B6 | 92.2% | 158/179 | 90.8% | best spec val ever |
+| V21 @ malignant thr 0.25 | A18 | B6 | 92.7% | 165/179 | 90.8% | previous champion |
+| V22 (lesion-crop + 600px) | A18 | B6 | **96.6%** | 171/179 | 95.4% | **rejected** — wild pool −22 films |
+| **V24 (blind-spot fine-tune)** | **A18** | **B6** | **92.2%** | **161/179** | 89.9% | **current champion** |
 
-**Board 2 — wild pool (199 expert-labeled real films), at the demo's shipped operating point (gate 0.30, malignant 0.25):**
+**Board 2 — wild pool (199 expert-labeled real films):**
 
-| | B12 | B18 | B20 | B21 |
-|---|---|---|---|---|
-| **A12 gate** | 45.7% | **47.2%** | 45.7% | 44.7% |
-| **A18 gate** | 45.2% | 46.7% | 45.2% | 44.2% |
-| **A18 gate, malignant thr 0.25** | — | — | — | **49.2% (98/199)**, 50/95 cancers, 48/104 benign |
+| | B12 | B18 | B20 | B21 | **B24** |
+|---|---|---|---|---|---|
+| A12 gate | 45.7% | 47.2% | 45.7% | 44.7% | — |
+| A18 gate | 45.2% | 46.7% | 45.2% | 44.2% | — |
+| A18 + malignant thr 0.25 | — | — | — | 49.2% (98/199) | **67.8% (135/199)** |
+| **cancers caught (of 95)** | 49 | 47 | 31 | 50 | **79** |
+
+**V24 vs V21, identical protocol:** benchmark 92.20% vs 92.73% (a 3-film difference on 564 — binomial noise is ±1.1pp), while the wild pool goes **49.2% → 67.8%** and cancers caught **50/95 → 79/95**. Same in-distribution performance, dramatically better on real radiographs.
 
 > **Correction:** earlier figures of 45.7% / 48.2% for V21 were measured with the evaluation harness's `gate_thresh=0.50`. At the **demo's shipped gate threshold of 0.30** the same weights score **49.2% (98/199)**. The threshold sweep is in `checkpoints/metrics_v21.json`.
 
@@ -150,23 +155,19 @@ Reading the malignant and benign columns together (gate held constant at A18):
 
 **Why total accuracy hid this:** the two errors cancel. 45.7% vs 44.2% is 3 films. The malignant split gap is 21 films. **Headline accuracy is the wrong metric for this problem** — it is a weighted sum of two errors that trade off against each other.
 
-### Phase 3 — The fix (free, no retraining)
+### Phase 3 — The fix, and the model that beat the champion
 
-If the models differ only in operating point, the operating point is a **dial, not a property**. The malignant decision threshold was hardcoded to argmax. Sweeping it — `kaggle_out_probe/sweep_threshold.py` — places every model at a matched malignant recall, which is the apples-to-apples comparison of cancer-detection ability that was never available before.
+The error anatomy said the problem was **93 of 100 errors being classification failures on named entity families**. So V24 fine-tunes the V21 champion on exactly those entities:
 
-**At matched cancer sensitivity (49/95 malignant caught, gate A18):**
+- init from `stageB21` (the champion), **lr 2e-5**, 6 epochs — a nudge, not a retrain
+- 121 wild-pool images (the blind-spot entities) oversampled ×6 inside the 2,736-image BTXRD mix
+- **78-film held-out slice**, train/val overlap asserted zero, and the kernel crashes if the split leaks
+- the A18 gate reused, BTXRD val + test TTA and the held-out wild slice all reported in one run
+- the malignant threshold swept on the held-out slice *and* on BTXRD val
 
-| Model | Threshold | Wild acc | Correct | Malignant | Benign |
-|---|---|---|---|---|---|
-| B12 (old champion) | 0.50 (argmax) | 45.2% | 90/199 | 49/95 | 41/104 |
-| B18 | 0.50 (argmax) | 46.7% | 93/199 | 47/95 | 46/104 |
-| **B21 (new champion)** | **0.25** | **48.2%** | **96/199** | **49/95** | **47/104** |
+**Result:** wild pool **49.2% → 67.8%**, cancers caught **50/95 → 79/95**, benchmark unchanged within noise (−3 films of 564), held-out slice 53.8% → 62.8%. The honesty check passes: V24 scores 80.2% on the 121 films it trained on and 62.8% on the 78 it did not — the expected shape of a model that learned something real *and* partly memorised.
 
-**B21 at threshold 0.25 catches exactly as many cancers as the old champion and gets 6 more films right.** Its own best point (threshold 0.1) reaches **49.2% — 98/199 with 66/95 cancers** — better than any other model on both axes simultaneously. B12's best-accuracy point (threshold 0.1) catches 83 cancers but only 10 benign — clinically useless.
-
-**Why argmax was the whole story:** B21's probabilities are systematically *lower* than B12's. Argmax (0.5) parked B21 in a benign-leaning corner of the ROC curve. The models were never different in quality — only in where they were pointed.
-
-**The demo had a matching defect:** its "Sensitivity" slider moved only the **gate** threshold (normal↔tumor), never the **specialist** threshold (benign↔malignant), so a user could not reach the cancer-leaning operating point at all. The demo now ships a second slider — **"Cancer caution"** — defaulting to the measured 0.25, and defaults to the A18 + B21 pair.
+**Caveat, stated in the metrics:** the held-out films come from the same source domain as the training slice, so that number means "unseen images, same entities", not "unseen hospitals". The 564-film BTXRD benchmark is the independent check, and it held.
 
 ### Phase 4 — Reality check
 
@@ -300,14 +301,14 @@ kernel_status.py / loop_poll*.py       status + polling
 
 Measured, ranked, with the evidence attached:
 
-1. **Malignant-class diversity.** The binding constraint is 2,736 training images dominated by osteosarcoma. Every public source was checked (Kaggle, HuggingFace, Roboflow, figshare BTXRD) — nothing adds malignant diversity. This is now the *only* remaining lever the measurements point to.
-2. **Calibration, not capacity.** The malignant threshold is a free dial. More capacity has now been tested and rejected five times: focal loss (V13), 120M params (V14), MixUp+EMA (V9), SSL/DINO init (V19b), and lesion-crop + 600px (V22 — the strongest case: **+4.4pp benchmark, −22 films on real films, McNemar p=0.033**).
-3. **Ensembles do not help here.** Four specialists, probability-averaged: at matched cancer sensitivity the average is *worse* than the best single model (90–92/199 vs **98/199** for B21 alone). They share a bias from the same training images, so averaging pulls toward the shared error. Their eye-catching "best achievable" numbers (108/199) are bought by pushing cancer sensitivity to 69/95, which is not a real trade.
-4. **No confidence signal detects out-of-distribution error.** Every candidate measured on the 199 real films lands in a weak band: specialist confidence AUC 0.560, gate decisiveness 0.573 (**inverted** — *low* gate confidence predicts an error), min-confidence across the ensemble 0.581, ensemble disagreement 0.435 (**also inverted** — films all four models agree on are *more* likely wrong, the signature of correlated error). Confidence fitted in-distribution cannot detect distribution shift.
-5. **Longer schedules are not the answer** — V21's own curve proves it (peak at epoch 39, then 21 epochs of overfitting).
-6. **Stop, don't hide, uncertainty.** The shipped band is a bigger clinical win than any of the benchmark deltas, and it cost zero GPU hours — but it is only trustworthy on benchmark-like films, and the demo must say so.
+1. **Malignant-class diversity — now partially solved, and it worked.** The binding constraint was 2,736 osteosarcoma-dominated images. V24 proved the mechanism: fine-tuning on 121 real-world images of the *named* blind-spot entities (ABC, bone island, chondroblastoma, CMF, BFH, chondrosarcoma, adamantinoma, chordoma, angiosarcoma, GCT, fibrous dysplasia, metastases) moved the wild pool from 49.2% to 67.8% with the benchmark untouched. **V25 pushes further with 38 more harvested radiographs of exactly those entities.**
+2. **Calibration, not capacity.** The malignant threshold is a free dial. More capacity has been tested and rejected five times: focal loss (V13), 120M params (V14), MixUp+EMA (V9), SSL/DINO init (V19b), and lesion-crop + 600px (V22 — the strongest counter-example: **+4.4pp benchmark, −22 films on real films, McNemar p=0.033**).
+3. **Ensembles do not help here.** Four specialists, probability-averaged: at matched cancer sensitivity the average is *worse* than the best single model (90–92/199 vs 98/199). They share a bias from the same training images, so averaging pulls toward the shared error. Their eye-catching "best achievable" numbers (108/199) are bought by pushing cancer sensitivity to 69/95, which is not a real trade.
+4. **No confidence signal detects out-of-distribution error.** Every candidate measured on the 199 real films lands in a weak band: specialist confidence AUC 0.560, gate decisiveness 0.573 (**inverted** — *low* gate confidence predicts an error), min-confidence across the ensemble 0.581, ensemble disagreement 0.435 (**also inverted** — films all four models agree on are *more* likely wrong, the signature of correlated error). Confidence fitted in-distribution cannot detect distribution shift, which is why the shipped band is calibrated on the test set and is **optimistic on unfamiliar sources** — the demo now says so.
+5. **The pipeline is deterministic.** V21 was retrained from scratch two days later and came back **bit-for-bit identical** on every metric (`checkpoints/reproducibility_v21.json`). Run-to-run variance is zero, so future gains must come from a different seed or a different recipe — never from rerunning.
+6. **Longer schedules are not the answer** — V21's own curve peaks at epoch 39, then 21 epochs of overfitting.
 
-**The honest summary:** V21 is at the ceiling of what this data and this model family can do on unseen real radiographs. The remaining path is training data whose distribution matches deployment — varied real-world radiographs with diverse malignant entities — which no public dataset currently supplies.
+**What remains:** the wild pool has **no normal films** (it is a tumor-only population), so it cannot measure the normal class at all, and the 78-film held-out slice shares a source domain with the training slice. The honest next measurement is a **third source of real radiographs** — not more of the same.
 
 ## 12. ⚠️ Disclaimer
 

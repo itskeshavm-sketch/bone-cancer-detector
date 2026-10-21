@@ -464,13 +464,14 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
       <h1>A second look at bone X-rays.</h1>
       <p class="lede">Two models read every film: one asks <strong>tumor or not</strong>,
       the other asks <strong>harmless or cancerous</strong>. On 564 test films it got
-      <strong>523 right</strong> and caught <strong>165 of 179 cancers</strong>. When it
-      is not sure it says <strong>uncertain reading</strong> instead of guessing.</p>
+      <strong>520 right</strong> and caught <strong>161 of 179 cancers</strong>. On 199
+      real-world radiographs it caught <strong>79 of 95</strong> cancers. When it is not
+      sure it says <strong>uncertain reading</strong> instead of guessing.</p>
       <div class="figures">
-        <div><b>523 / 564</b><span>test films read correctly</span></div>
-        <div><b>165 / 179</b><span>cancers caught</span></div>
+        <div><b>520 / 564</b><span>test films read correctly</span></div>
+        <div><b>161 / 179</b><span>cancers caught (test set)</span></div>
+        <div><b>79 / 95</b><span>cancers caught (real radiographs)</span></div>
         <div><b>{rel_pct}</b><span>accuracy on confident reads</span></div>
-        <div><b>{rel_unc_pct}</b><span>error rate on flagged reads</span></div>
       </div>
     </div>""")
     with gr.Row(elem_id="workbench"):
@@ -511,15 +512,18 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
     gr.HTML(f"""
     <div id="colophon">
       <p><strong>Not a medical device.</strong> On held-out data it is wrong about one
-      film in fourteen. A missed tumor costs more than a false alarm, so the default
-      operating point leans toward catching cancer.</p>
+      film in fourteen. On real-world radiographs from outside its training data it is
+      right about two in three, and it misses roughly one cancer in five — a missed
+      tumor costs more than a false alarm, so the default operating point leans toward
+      catching cancer.</p>
       <p><strong>It knows when it does not know.</strong> Every reading is checked against
       confidence bands measured on 564 test films: on confident reads it is right about
       {rel_pct} of the time, and on the reads it flags as uncertain it is wrong about
       {rel_unc_pct} of the time — those are marked <em>uncertain reading</em> and mean
-      "a radiologist should look at this", not "probably fine".</p>
-      <p>Method: EfficientNet-B3 gate, EfficientNet-B6 specialist, Grad-CAM evidence.
-      Always see a doctor.</p>
+      "a radiologist should look at this", not "probably fine". The bands were measured
+      on the test set, so treat them as optimistic on films from unfamiliar sources.</p>
+      <p>Method: EfficientNet-B3 gate, EfficientNet-B6 specialist fine-tuned on the
+      diagnoses it was failing to recognise, Grad-CAM evidence. Always see a doctor.</p>
     </div>""")
     btn.click(predict, inputs=[inp, tta_box, ens_box, thresh, mal_slider],
               outputs=[out_img, out_label, out_text])

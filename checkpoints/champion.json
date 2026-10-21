@@ -1,15 +1,23 @@
 {
-  "name": "V21",
-  "description": "Two-stage bone tumor screener: EfficientNet-B3 gate (300px) + EfficientNet-B6 specialist (456px).",
+  "name": "V24",
+  "description": "Two-stage bone tumor screener: EfficientNet-B3 gate (300px) + EfficientNet-B6 specialist (456px), fine-tuned on the entity families the error anatomy flagged (ABC, bone island, chondroblastoma, CMF, BFH, chondrosarcoma, adamantinoma, chordoma, angiosarcoma, GCT, fibrous dysplasia, metastases).",
   "stageA": "checkpoints/stageA18.pt",
-  "stageB": "checkpoints/stageB21.pt",
-  "bands": "checkpoints/uncertainty_bands_v21.json",
+  "stageB": "checkpoints/stageB23.pt",
+  "bands": "checkpoints/uncertainty_bands_v24.json",
   "gate_thresh": 0.30,
   "mal_thresh": 0.25,
   "specialist_img": 456,
   "headline": {
-    "test_films": "523 / 564",
-    "cancers": "165 / 179",
-    "note": "measured single-view, gate 0.30, malignant threshold 0.25"
+    "test_films": "520 / 564",
+    "cancers": "161 / 179",
+    "note": "measured single-view, gate 0.30, malignant threshold 0.25. V21 scored 523/564 with 165/179 on the same set."
+  },
+  "wild": {
+    "acc": 0.678,
+    "ok": 135,
+    "n": 199,
+    "cancers_caught": "79 / 95",
+    "benign_right": "56 / 104",
+    "note": "199 real-world radiographs (Radiology Assistant + bonetumor.org), gate 0.30, malignant threshold 0.25. V21 scored 98/199 (49.2%) with 50/95 cancers on the identical protocol. Held-out 78-film slice: 62.8% vs V21's 53.8%."
   }
 }

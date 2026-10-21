@@ -1,0 +1,5642 @@
+[
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000002.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999971389770508,
+  "ben": 0.9886053204536438,
+  "mal": 0.011394663713872433,
+  "top_conf": 0.9886053204536438,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000003.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999924898147583,
+  "ben": 0.994448184967041,
+  "mal": 0.005551822949200869,
+  "top_conf": 0.994448184967041,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000030.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999723434448242,
+  "ben": 0.9184622764587402,
+  "mal": 0.08153767138719559,
+  "top_conf": 0.9184622764587402,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000031.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999977350234985,
+  "ben": 0.9964334964752197,
+  "mal": 0.003566546831279993,
+  "top_conf": 0.9964334964752197,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000040.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9135761857032776,
+  "mal": 0.0864238366484642,
+  "top_conf": 0.9135761857032776,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000041.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9834898710250854,
+  "mal": 0.016510087996721268,
+  "top_conf": 0.9834898710250854,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000061.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999901056289673,
+  "ben": 0.3257941007614136,
+  "mal": 0.6742058992385864,
+  "top_conf": 0.6742058992385864,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000062.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999494552612305,
+  "ben": 0.5697484612464905,
+  "mal": 0.4302515387535095,
+  "top_conf": 0.5697484612464905,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000087.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9800140857696533,
+  "mal": 0.019985899329185486,
+  "top_conf": 0.9800140857696533,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000088.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999997615814209,
+  "ben": 0.9709501266479492,
+  "mal": 0.029049938544631004,
+  "top_conf": 0.9709501266479492,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000117.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.10447033494710922,
+  "mal": 0.8955296277999878,
+  "top_conf": 0.8955296277999878,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000118.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999995231628418,
+  "ben": 0.8873068690299988,
+  "mal": 0.11269307881593704,
+  "top_conf": 0.8873068690299988,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000158.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9812326431274414,
+  "mal": 0.01876731589436531,
+  "top_conf": 0.9812326431274414,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000159.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.974170446395874,
+  "mal": 0.02582952007651329,
+  "top_conf": 0.974170446395874,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000172.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999996423721313,
+  "ben": 0.02166333608329296,
+  "mal": 0.9783366918563843,
+  "top_conf": 0.9783366918563843,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000173.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999595880508423,
+  "ben": 0.300514280796051,
+  "mal": 0.699485719203949,
+  "top_conf": 0.699485719203949,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000182.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.06009632721543312,
+  "mal": 0.9399036169052124,
+  "top_conf": 0.9399036169052124,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000183.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999994039535522,
+  "ben": 0.04686523973941803,
+  "mal": 0.9531347751617432,
+  "top_conf": 0.9531347751617432,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000184.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999997615814209,
+  "ben": 0.059579044580459595,
+  "mal": 0.9404209852218628,
+  "top_conf": 0.9404209852218628,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000198.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999847412109375,
+  "ben": 0.06681390851736069,
+  "mal": 0.9331861138343811,
+  "top_conf": 0.9331861138343811,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000199.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.1073390394449234,
+  "mal": 0.892660915851593,
+  "top_conf": 0.892660915851593,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000208.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9865632057189941,
+  "mal": 0.01343683060258627,
+  "top_conf": 0.9865632057189941,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000209.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9878392219543457,
+  "mal": 0.012160750105977058,
+  "top_conf": 0.9878392219543457,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000220.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9971093535423279,
+  "ben": 0.05258341133594513,
+  "mal": 0.9474165439605713,
+  "top_conf": 0.9474165439605713,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG000221.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9404172897338867,
+  "ben": 0.9669495224952698,
+  "mal": 0.03305048123002052,
+  "top_conf": 0.9669495224952698,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001350.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999998807907104,
+  "ben": 0.9849395751953125,
+  "mal": 0.015060494653880596,
+  "top_conf": 0.9849395751953125,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001351.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9150739312171936,
+  "mal": 0.0849260538816452,
+  "top_conf": 0.9150739312171936,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001373.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9998527765274048,
+  "ben": 0.9954953193664551,
+  "mal": 0.00450467923656106,
+  "top_conf": 0.9954953193664551,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001375.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.981314480304718,
+  "mal": 0.01868554949760437,
+  "top_conf": 0.981314480304718,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001376.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999996423721313,
+  "ben": 0.9186570048332214,
+  "mal": 0.08134294301271439,
+  "top_conf": 0.9186570048332214,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001377.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9789703488349915,
+  "mal": 0.02102968841791153,
+  "top_conf": 0.9789703488349915,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001378.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9569356441497803,
+  "mal": 0.043064363300800323,
+  "top_conf": 0.9569356441497803,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001390.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.998484194278717,
+  "ben": 0.9877553582191467,
+  "mal": 0.012244642712175846,
+  "top_conf": 0.9877553582191467,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001453.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999904632568359,
+  "ben": 0.7831570506095886,
+  "mal": 0.21684302389621735,
+  "top_conf": 0.7831570506095886,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001483.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9951837658882141,
+  "ben": 0.9873959422111511,
+  "mal": 0.012604079209268093,
+  "top_conf": 0.9873959422111511,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001566.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9998512268066406,
+  "ben": 0.9828864932060242,
+  "mal": 0.01711352914571762,
+  "top_conf": 0.9828864932060242,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001567.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999997615814209,
+  "ben": 0.9727964997291565,
+  "mal": 0.027203546836972237,
+  "top_conf": 0.9727964997291565,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001633.jpeg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999997615814209,
+  "ben": 0.9807385802268982,
+  "mal": 0.019261499866843224,
+  "top_conf": 0.9807385802268982,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001865.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.549329936504364,
+  "mal": 0.4506699740886688,
+  "top_conf": 0.549329936504364,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\btxrd_IMG001866.jpeg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.999896764755249,
+  "ben": 0.15866482257843018,
+  "mal": 0.8413351774215698,
+  "top_conf": 0.8413351774215698,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000258_jpeg.rf.9ae19404d4e21da12f0cb3b10fd28561.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9971626400947571,
+  "ben": 0.9679107069969177,
+  "mal": 0.032089270651340485,
+  "top_conf": 0.9679107069969177,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000271_jpeg.rf.b941ca3fd2d0d21c6759ffa212f63b41.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.6230731010437012,
+  "ben": 0.9633479118347168,
+  "mal": 0.03665206953883171,
+  "top_conf": 0.9633479118347168,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000277_jpeg.rf.4e217e184dc2bc04cdd3406e1a10a601.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999998807907104,
+  "ben": 0.9812078475952148,
+  "mal": 0.018792085349559784,
+  "top_conf": 0.9812078475952148,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000295_jpeg.rf.eef7017d68517c4f5bb0b770067cdd97.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.99732506275177,
+  "ben": 0.9821855425834656,
+  "mal": 0.017814457416534424,
+  "top_conf": 0.9821855425834656,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000335_jpeg.rf.8a8969e17ee1daaad08257424ffcb795.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.999994158744812,
+  "ben": 0.986244261264801,
+  "mal": 0.013755762949585915,
+  "top_conf": 0.986244261264801,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000358_jpeg.rf.826e1a58cbb342d6832ecc711e62c5f4.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.99998939037323,
+  "ben": 0.9893669486045837,
+  "mal": 0.01063298899680376,
+  "top_conf": 0.9893669486045837,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000366_jpeg.rf.70bcb9107742443a5214690d4cc7956f.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.4598235487937927,
+  "ben": 0.9842500686645508,
+  "mal": 0.015749944373965263,
+  "top_conf": 0.9842500686645508,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000373_jpeg.rf.4d2191fa016a83efb6d8f22989d93158.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9928082227706909,
+  "ben": 0.9919295310974121,
+  "mal": 0.008070530369877815,
+  "top_conf": 0.9919295310974121,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000377_jpeg.rf.33c039ec63088cda41b864ca717db2c2.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9441453814506531,
+  "ben": 0.9778332114219666,
+  "mal": 0.022166764363646507,
+  "top_conf": 0.9778332114219666,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000379_jpeg.rf.bc7f796e86e086d0878270ba2c9273df.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9823883175849915,
+  "mal": 0.017611730843782425,
+  "top_conf": 0.9823883175849915,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000389_jpeg.rf.885de9bb07c4e39a2faae98d8e4ff574.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.999966025352478,
+  "ben": 0.9743117690086365,
+  "mal": 0.025688238441944122,
+  "top_conf": 0.9743117690086365,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000393_jpeg.rf.ee0d1f2cb08e6eaecb3e3f850e7819b5.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9998875856399536,
+  "ben": 0.9783805012702942,
+  "mal": 0.02161944843828678,
+  "top_conf": 0.9783805012702942,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000396_jpeg.rf.d967d52b01b783b03adbc59f25c57a23.jpg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999996423721313,
+  "ben": 0.6708903908729553,
+  "mal": 0.3291096091270447,
+  "top_conf": 0.6708903908729553,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000397_jpeg.rf.b87501c4ffa3c0db339bf1f8800c3c49.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999978542327881,
+  "ben": 0.9713366627693176,
+  "mal": 0.02866336889564991,
+  "top_conf": 0.9713366627693176,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000413_jpeg.rf.9077a7498254dbab17b10e951ee21e5c.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999808073043823,
+  "ben": 0.9764328598976135,
+  "mal": 0.0235670767724514,
+  "top_conf": 0.9764328598976135,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000415_jpeg.rf.e6f41bcb3d2bd51d1e1e433f75af6615.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999951124191284,
+  "ben": 0.8989020586013794,
+  "mal": 0.10109798610210419,
+  "top_conf": 0.8989020586013794,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000421_jpeg.rf.38ef7c368c152b34fc114eb0e4f5ae53.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999992847442627,
+  "ben": 0.9861646890640259,
+  "mal": 0.013835239224135876,
+  "top_conf": 0.9861646890640259,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000425_jpeg.rf.451d2cd7040b36c22ad3e49c1eb2b07c.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9995399713516235,
+  "ben": 0.9875147342681885,
+  "mal": 0.01248521264642477,
+  "top_conf": 0.9875147342681885,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000427_jpeg.rf.92122a6e167daef22bbc9e3d1ad1845b.jpg",
+  "truth": 0,
+  "pred": 2,
+  "tumor": 0.027028154581785202,
+  "ben": 0.9680714011192322,
+  "mal": 0.03192859888076782,
+  "top_conf": 0.9729718454182148,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000432_jpeg.rf.806be32f57ce19a09d1d1f476150f6c8.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999995231628418,
+  "ben": 0.9739062190055847,
+  "mal": 0.026093769818544388,
+  "top_conf": 0.9739062190055847,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000461_jpeg.rf.e16311310adbad8a88b12915dc015989.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999964237213135,
+  "ben": 0.9768664240837097,
+  "mal": 0.023133564740419388,
+  "top_conf": 0.9768664240837097,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000464_jpeg.rf.8b152c96b2e168d31d2affbd7406f442.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999996423721313,
+  "ben": 0.9843453764915466,
+  "mal": 0.015654584392905235,
+  "top_conf": 0.9843453764915466,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000482_jpeg.rf.c10ae6d267db4b7abdc2a7adcb59a4a3.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999827146530151,
+  "ben": 0.9778966903686523,
+  "mal": 0.022103309631347656,
+  "top_conf": 0.9778966903686523,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000487_jpeg.rf.e8583a7392870e95e6b8a77aac18da0c.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9679694175720215,
+  "ben": 0.9494404196739197,
+  "mal": 0.05055961385369301,
+  "top_conf": 0.9494404196739197,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000493_jpeg.rf.f5060c7b2c5368f577baa8edb333d85e.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9998911619186401,
+  "ben": 0.9956466555595398,
+  "mal": 0.004353313706815243,
+  "top_conf": 0.9956466555595398,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000499_jpeg.rf.4801248a4ffe285686bcbc819c4df912.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9663306474685669,
+  "ben": 0.9891839027404785,
+  "mal": 0.010816107504069805,
+  "top_conf": 0.9891839027404785,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000501_jpeg.rf.98849a86fc8f219ae96e558a99f66d20.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999901056289673,
+  "ben": 0.9762576222419739,
+  "mal": 0.0237423088401556,
+  "top_conf": 0.9762576222419739,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000502_jpeg.rf.cbb258b94125aa4f03f7c097f3e43fed.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9997183680534363,
+  "ben": 0.9794214963912964,
+  "mal": 0.02057851105928421,
+  "top_conf": 0.9794214963912964,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000504_jpeg.rf.40163668dd35fea470c7542e04d1b192.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999790191650391,
+  "ben": 0.9778041243553162,
+  "mal": 0.022195851430296898,
+  "top_conf": 0.9778041243553162,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000531_jpeg.rf.a810f6765481a95e3691e677f00e8102.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.920228123664856,
+  "ben": 0.9707334041595459,
+  "mal": 0.029266653582453728,
+  "top_conf": 0.9707334041595459,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000539_jpeg.rf.a8fe38b2fc26f2b946d8554259f266fd.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.857107400894165,
+  "ben": 0.9768772125244141,
+  "mal": 0.023122813552618027,
+  "top_conf": 0.9768772125244141,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000552_jpeg.rf.7a2fbe36c43b14f3eb210f6a629496d1.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999914169311523,
+  "ben": 0.8714879155158997,
+  "mal": 0.12851208448410034,
+  "top_conf": 0.8714879155158997,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000563_jpeg.rf.c04c7bbba1669c0f2f9b6752a51d861e.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999991655349731,
+  "ben": 0.962044894695282,
+  "mal": 0.03795507177710533,
+  "top_conf": 0.962044894695282,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000601_jpeg.rf.748a04a0cb2a249af9ac038d0ed5b972.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9792054295539856,
+  "mal": 0.02079460397362709,
+  "top_conf": 0.9792054295539856,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000629_jpeg.rf.a32bec08b84cc21005a6f0f0a2d95075.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9779106974601746,
+  "ben": 0.9787086844444275,
+  "mal": 0.021291309967637062,
+  "top_conf": 0.9787086844444275,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000632_jpeg.rf.11543fce74fa44e6fe7f43a2848c2a95.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999943971633911,
+  "ben": 0.8870701193809509,
+  "mal": 0.11292990297079086,
+  "top_conf": 0.8870701193809509,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000634_jpeg.rf.ffa7a8e11d6e38b3912af3a3afb70e8f.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9998021721839905,
+  "ben": 0.977828860282898,
+  "mal": 0.022171135991811752,
+  "top_conf": 0.977828860282898,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000635_jpeg.rf.0c6ba78544420baf85da49505e7ee525.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9111676216125488,
+  "ben": 0.9769883751869202,
+  "mal": 0.02301166206598282,
+  "top_conf": 0.9769883751869202,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000654_jpeg.rf.1b9045c1dfadcd63cb6fed1a5becbdb3.jpg",
+  "truth": 0,
+  "pred": 2,
+  "tumor": 1.6679328837199137e-05,
+  "ben": 0.9696322083473206,
+  "mal": 0.030367759987711906,
+  "top_conf": 0.9999833206711628,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000668_jpeg.rf.393b52e2c56937701471cf66a7e492ec.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999321699142456,
+  "ben": 0.9850760102272034,
+  "mal": 0.014923975802958012,
+  "top_conf": 0.9850760102272034,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000673_jpeg.rf.3f0e5b8f0627567c7c2a00b5b04ad4c0.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9997202754020691,
+  "ben": 0.9506868720054626,
+  "mal": 0.04931313171982765,
+  "top_conf": 0.9506868720054626,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000714_jpeg.rf.4f9350bd910e30afa69091012f68c6c9.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9998237490653992,
+  "ben": 0.9779171943664551,
+  "mal": 0.02208280935883522,
+  "top_conf": 0.9779171943664551,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000716_jpeg.rf.857cdfee907f07215b117b4f06f17aca.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9792024493217468,
+  "mal": 0.020797505974769592,
+  "top_conf": 0.9792024493217468,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000724_jpeg.rf.246776853fbca11f0353d3e0f53eeefa.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9697418212890625,
+  "ben": 0.9788899421691895,
+  "mal": 0.02111007086932659,
+  "top_conf": 0.9788899421691895,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000743_jpeg.rf.ab820792721f5812caa9bf4a9aa2cb17.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9975336790084839,
+  "ben": 0.9926642775535583,
+  "mal": 0.007335743401199579,
+  "top_conf": 0.9926642775535583,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000792_jpeg.rf.81e0e6bcb37473e3b8ed7976d3305e6e.jpg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999979734420776,
+  "ben": 0.7198005318641663,
+  "mal": 0.28019943833351135,
+  "top_conf": 0.7198005318641663,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000794_jpeg.rf.b20142e53805f4efea82ea27e5499248.jpg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999713897705078,
+  "ben": 0.1257811337709427,
+  "mal": 0.8742188215255737,
+  "top_conf": 0.8742188215255737,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000797_jpeg.rf.81169189027684763ae3d6f30ee03d0d.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.98478102684021,
+  "ben": 0.9159711003303528,
+  "mal": 0.0840289443731308,
+  "top_conf": 0.9159711003303528,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000803_jpeg.rf.66674d7ff47bda4a1782798a0e580c31.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999980926513672,
+  "ben": 0.91127610206604,
+  "mal": 0.08872390538454056,
+  "top_conf": 0.91127610206604,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000808_jpeg.rf.f88ea3ffd4a2e6cc8a050df684886098.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9994522929191589,
+  "ben": 0.8691064119338989,
+  "mal": 0.1308935582637787,
+  "top_conf": 0.8691064119338989,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000819_jpeg.rf.09432cb77ed089ac0ef0cfc5fd91ea7f.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999998807907104,
+  "ben": 0.8489585518836975,
+  "mal": 0.1510414332151413,
+  "top_conf": 0.8489585518836975,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000823_jpeg.rf.576b5edb1e77c72c3fa6efa712f24772.jpg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9992159605026245,
+  "ben": 0.2797820568084717,
+  "mal": 0.7202180027961731,
+  "top_conf": 0.7202180027961731,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000830_jpeg.rf.1fb9298de9894cc716db147fe119142f.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9266511797904968,
+  "mal": 0.07334881275892258,
+  "top_conf": 0.9266511797904968,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000842_jpeg.rf.6873186490dfbdc35c32479b8afbee88.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999539852142334,
+  "ben": 0.9522043466567993,
+  "mal": 0.047795601189136505,
+  "top_conf": 0.9522043466567993,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000864_jpeg.rf.a1b5276fa18322723b01b1f1ae1163d2.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999958276748657,
+  "ben": 0.9791145324707031,
+  "mal": 0.02088543400168419,
+  "top_conf": 0.9791145324707031,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000866_jpeg.rf.f4d5aa4af827339bea4c067704365028.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999986886978149,
+  "ben": 0.977033257484436,
+  "mal": 0.022966807708144188,
+  "top_conf": 0.977033257484436,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000883_jpeg.rf.24acf8cb607547568ab10b1b9fcfd0e9.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9996083378791809,
+  "ben": 0.9657180905342102,
+  "mal": 0.034281883388757706,
+  "top_conf": 0.9657180905342102,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000890_jpeg.rf.d1f7fc2ab22d450345d0b05103917f52.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9810232520103455,
+  "ben": 0.9742439985275269,
+  "mal": 0.02575603686273098,
+  "top_conf": 0.9742439985275269,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000896_jpeg.rf.72e381bf0d2d283d57edbca780831c66.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.999951958656311,
+  "ben": 0.9628339409828186,
+  "mal": 0.03716602548956871,
+  "top_conf": 0.9628339409828186,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000903_jpeg.rf.80223f3f5d8af949428b5cc8ba64a158.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999977350234985,
+  "ben": 0.9711726903915405,
+  "mal": 0.02882731519639492,
+  "top_conf": 0.9711726903915405,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000915_jpeg.rf.871550bb0b983872f5e0a4e742949baf.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.999987006187439,
+  "ben": 0.9838728308677673,
+  "mal": 0.0161272119730711,
+  "top_conf": 0.9838728308677673,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000919_jpeg.rf.92d4d4eb01b093ae1179a790a28cabd6.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9812507629394531,
+  "ben": 0.979393482208252,
+  "mal": 0.020606519654393196,
+  "top_conf": 0.979393482208252,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000968_jpeg.rf.51f81351b9b1f8f1c38faaf96f457080.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9998582601547241,
+  "ben": 0.9690471291542053,
+  "mal": 0.03095286525785923,
+  "top_conf": 0.9690471291542053,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000977_jpeg.rf.724c735bcc588b93250a498588ee350f.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999954700469971,
+  "ben": 0.9658800363540649,
+  "mal": 0.034120019525289536,
+  "top_conf": 0.9658800363540649,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000978_jpeg.rf.b90aafcbbe67ef2750f35e7a96988c77.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999960660934448,
+  "ben": 0.9741203188896179,
+  "mal": 0.02587963454425335,
+  "top_conf": 0.9741203188896179,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000979_jpeg.rf.f2c1720eef96bf2fbc0dcb6078c3a6dd.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999994039535522,
+  "ben": 0.9616920351982117,
+  "mal": 0.03830794245004654,
+  "top_conf": 0.9616920351982117,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000982_jpeg.rf.5bcb556e4396df11d3219cb862d9a851.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999994039535522,
+  "ben": 0.9774429798126221,
+  "mal": 0.022557012736797333,
+  "top_conf": 0.9774429798126221,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG000983_jpeg.rf.6b683ec4dcb170253bed46c625ade0d0.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9748191237449646,
+  "mal": 0.025180842727422714,
+  "top_conf": 0.9748191237449646,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001011_jpeg.rf.fdf92507b301b7a811ea6b0f71959229.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9910358190536499,
+  "ben": 0.9863237738609314,
+  "mal": 0.013676246628165245,
+  "top_conf": 0.9863237738609314,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001014_jpeg.rf.4748c364feb63838e32d534afcb4030e.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999997615814209,
+  "ben": 0.9803044199943542,
+  "mal": 0.019695628434419632,
+  "top_conf": 0.9803044199943542,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001017_jpeg.rf.beab02bd75e7f8432fb9d31a65dc9126.jpg",
+  "truth": 0,
+  "pred": 2,
+  "tumor": 0.03410474583506584,
+  "ben": 0.9895379543304443,
+  "mal": 0.01046205498278141,
+  "top_conf": 0.9658952541649342,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001041_jpeg.rf.ea15624984eba086fb1b28b92968bbc9.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9997196793556213,
+  "ben": 0.9838053584098816,
+  "mal": 0.01619463413953781,
+  "top_conf": 0.9838053584098816,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001057_jpeg.rf.60040f2dbb195c8736dd0a1c8ac4954f.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9998949766159058,
+  "ben": 0.9852604269981384,
+  "mal": 0.014739550650119781,
+  "top_conf": 0.9852604269981384,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001063_jpeg.rf.189b088eabc51ef905e1276051e04023.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9997768998146057,
+  "ben": 0.9724140763282776,
+  "mal": 0.02758585475385189,
+  "top_conf": 0.9724140763282776,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001065_jpeg.rf.0a8b5561dc055b5a06601ba8ae233570.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999549388885498,
+  "ben": 0.9801893830299377,
+  "mal": 0.019810620695352554,
+  "top_conf": 0.9801893830299377,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001079_jpeg.rf.63adb33fb841ef4e5a8b5e35e0039011.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9739044308662415,
+  "mal": 0.026095515117049217,
+  "top_conf": 0.9739044308662415,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001091_jpeg.rf.9ebec179a92f83ed7018f81323c31fc7.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999971389770508,
+  "ben": 0.9658289551734924,
+  "mal": 0.03417103737592697,
+  "top_conf": 0.9658289551734924,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001107_jpeg.rf.70fb7600a9b44fecb2b107e463c8d0f1.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9441034197807312,
+  "mal": 0.05589654669165611,
+  "top_conf": 0.9441034197807312,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001113_jpeg.rf.b52d97f193cffbee20ea8306b7026d1d.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9994626641273499,
+  "ben": 0.9720532894134521,
+  "mal": 0.027946729212999344,
+  "top_conf": 0.9720532894134521,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001116_jpeg.rf.fbc3727dc24fbe6836ca73e668d95276.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999963045120239,
+  "ben": 0.8771430253982544,
+  "mal": 0.1228569969534874,
+  "top_conf": 0.8771430253982544,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001124_jpeg.rf.23c613c3d61a2bcb966ef47cb5904dca.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9971358776092529,
+  "ben": 0.9664605855941772,
+  "mal": 0.03353949263691902,
+  "top_conf": 0.9664605855941772,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001125_jpeg.rf.3b69d7bd09d6167604f95f1ff60e7b37.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9963986873626709,
+  "ben": 0.9709452986717224,
+  "mal": 0.02905469760298729,
+  "top_conf": 0.9709452986717224,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001132_jpeg.rf.76635aee7f67206b55adfc6598989da9.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9994418025016785,
+  "ben": 0.982309877872467,
+  "mal": 0.017690129578113556,
+  "top_conf": 0.982309877872467,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001140_jpeg.rf.7ed41204be6b011800c4bcf02abfd5e8.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999970197677612,
+  "ben": 0.9635396599769592,
+  "mal": 0.03646039217710495,
+  "top_conf": 0.9635396599769592,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001155_jpeg.rf.f0710ea3c4aa756600e4738cf50101ac.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9998748302459717,
+  "ben": 0.9368749856948853,
+  "mal": 0.06312505900859833,
+  "top_conf": 0.9368749856948853,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001162_jpeg.rf.b48504d4a081f4e93154116f218d498a.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999927282333374,
+  "ben": 0.971290111541748,
+  "mal": 0.028709910809993744,
+  "top_conf": 0.971290111541748,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001169_jpeg.rf.244610534ce3fd7d635fe460b77b2a47.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999953508377075,
+  "ben": 0.9545433521270752,
+  "mal": 0.04545664042234421,
+  "top_conf": 0.9545433521270752,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001173_jpeg.rf.406ea68dbed798e0f1c2e84017a27d83.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9855334162712097,
+  "mal": 0.014466618187725544,
+  "top_conf": 0.9855334162712097,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001178_jpeg.rf.48de245440948f92968f8d802cc8f52d.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999955892562866,
+  "ben": 0.9768624305725098,
+  "mal": 0.023137541487812996,
+  "top_conf": 0.9768624305725098,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001197_jpeg.rf.4af4415895e8dee4f586733df824cbdc.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9997033476829529,
+  "ben": 0.9790905714035034,
+  "mal": 0.02090945653617382,
+  "top_conf": 0.9790905714035034,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001216_jpeg.rf.ca9cae394936fca5c2e7db3a13edca41.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9489708542823792,
+  "mal": 0.05102920159697533,
+  "top_conf": 0.9489708542823792,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001228_jpeg.rf.8ceb56286ac9e18a66e4c75968cf06b7.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999974966049194,
+  "ben": 0.9786887168884277,
+  "mal": 0.021311307325959206,
+  "top_conf": 0.9786887168884277,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001250_jpeg.rf.abbefdf9a97e746d4116b87be2e6e484.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9996528625488281,
+  "ben": 0.9527025818824768,
+  "mal": 0.04729742184281349,
+  "top_conf": 0.9527025818824768,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001252_jpeg.rf.415f62d72b37a4dc2f8265fbcdd45757.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.991455614566803,
+  "ben": 0.9806138277053833,
+  "mal": 0.019386133179068565,
+  "top_conf": 0.9806138277053833,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001262_jpeg.rf.fe1de4a22f701ccdcec260a776d929bb.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.990110456943512,
+  "ben": 0.9549511671066284,
+  "mal": 0.04504885524511337,
+  "top_conf": 0.9549511671066284,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001274_jpeg.rf.d5e33d1d63b136b7cdc6386efd80de6a.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9773672223091125,
+  "ben": 0.9787285327911377,
+  "mal": 0.02127145230770111,
+  "top_conf": 0.9787285327911377,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001275_jpeg.rf.d251e4cab87fcf746c6455daeebe9cd9.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999959468841553,
+  "ben": 0.9852070212364197,
+  "mal": 0.014793023467063904,
+  "top_conf": 0.9852070212364197,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001278_jpeg.rf.afdd988640554ced79abe65db8dcb286.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999891519546509,
+  "ben": 0.9780916571617126,
+  "mal": 0.021908313035964966,
+  "top_conf": 0.9780916571617126,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001298_jpeg.rf.0bb68c790a08d93fcedd47da2dddb786.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.999769389629364,
+  "ben": 0.9655876159667969,
+  "mal": 0.03441242501139641,
+  "top_conf": 0.9655876159667969,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001300_jpeg.rf.c7f752345bda99147d2ff9a28f3e34a8.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9998319149017334,
+  "ben": 0.9605289697647095,
+  "mal": 0.03947104886174202,
+  "top_conf": 0.9605289697647095,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001309_jpeg.rf.e093d8af5b292264f6112cbbb22711c4.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999992847442627,
+  "ben": 0.9750586748123169,
+  "mal": 0.024941332638263702,
+  "top_conf": 0.9750586748123169,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001320_jpeg.rf.8be735caf35baff1dd034d37067e876f.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999992847442627,
+  "ben": 0.9641687870025635,
+  "mal": 0.03583122417330742,
+  "top_conf": 0.9641687870025635,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001331_jpeg.rf.7d2891d47c9be74b2d50b2501bee0d34.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999916553497314,
+  "ben": 0.9696767926216125,
+  "mal": 0.030323227867484093,
+  "top_conf": 0.9696767926216125,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001344_jpeg.rf.d3680a7c89aef7bbf2ef1b0251051b91.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999994039535522,
+  "ben": 0.982684314250946,
+  "mal": 0.017315657809376717,
+  "top_conf": 0.982684314250946,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001347_jpeg.rf.e8d0c1a9816b85b44611b7eeba99ebc4.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9753432273864746,
+  "mal": 0.024656763300299644,
+  "top_conf": 0.9753432273864746,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001371_jpeg.rf.617514e5d88bb65481c33e68f717649e.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999947547912598,
+  "ben": 0.8754933476448059,
+  "mal": 0.12450666725635529,
+  "top_conf": 0.8754933476448059,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001386_jpeg.rf.06a6d01aebd8bd86642e44650e728956.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999997615814209,
+  "ben": 0.9644593596458435,
+  "mal": 0.035540662705898285,
+  "top_conf": 0.9644593596458435,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001407_jpeg.rf.2b965b6a494f2cb387c0eed5b0d577f3.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9193885922431946,
+  "mal": 0.08061141520738602,
+  "top_conf": 0.9193885922431946,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001436_jpeg.rf.1ade679720384b116a0ea937136dd514.jpg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.7317972779273987,
+  "mal": 0.2682027220726013,
+  "top_conf": 0.7317972779273987,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001437_jpeg.rf.6da866ebb1b192853671eaad9ede41ca.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9656004905700684,
+  "mal": 0.034399546682834625,
+  "top_conf": 0.9656004905700684,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001444_jpeg.rf.b5ce8b0fcce311499bad3618ff7d4bb4.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.8897568583488464,
+  "mal": 0.11024316400289536,
+  "top_conf": 0.8897568583488464,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001457_jpeg.rf.0b886a1e2730aeb2b08e883a05f738e3.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.922028124332428,
+  "mal": 0.07797189801931381,
+  "top_conf": 0.922028124332428,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001465_jpeg.rf.edd5670d1bc8e2a58ec0cb20ec750a31.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9572380185127258,
+  "mal": 0.04276202991604805,
+  "top_conf": 0.9572380185127258,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001466_jpeg.rf.9628e8a98cb3f93201d8e2bf802d0556.jpg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9976980090141296,
+  "ben": 0.4075741767883301,
+  "mal": 0.5924258232116699,
+  "top_conf": 0.5924258232116699,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001467_jpeg.rf.909ba2abade25b26120895a8b8d22650.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999998807907104,
+  "ben": 0.9095448851585388,
+  "mal": 0.09045512974262238,
+  "top_conf": 0.9095448851585388,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001469_jpeg.rf.8ce272201e868975f452f2306aa0e3a7.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9830358624458313,
+  "mal": 0.016964111477136612,
+  "top_conf": 0.9830358624458313,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001478_jpeg.rf.9c11296cf7af730144b78c9eade5afd4.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9781650900840759,
+  "mal": 0.021834909915924072,
+  "top_conf": 0.9781650900840759,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001514_jpeg.rf.dd2480284864ca80ce1e82aa7a178598.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9730935096740723,
+  "mal": 0.02690652385354042,
+  "top_conf": 0.9730935096740723,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001516_jpeg.rf.92e57caded7038efcf322e3b7b49f166.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9688130021095276,
+  "mal": 0.031186996027827263,
+  "top_conf": 0.9688130021095276,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001527_jpeg.rf.9d2032734076b21c82f4c4c23921caf4.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9554524421691895,
+  "mal": 0.04454749450087547,
+  "top_conf": 0.9554524421691895,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001547_jpeg.rf.690144359e1ad5c4149f185d914ad72a.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9510299563407898,
+  "mal": 0.048970118165016174,
+  "top_conf": 0.9510299563407898,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001550_jpeg.rf.d1584cdf4c24694128915d3be30549e2.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9337709546089172,
+  "mal": 0.06622899323701859,
+  "top_conf": 0.9337709546089172,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001557_jpeg.rf.1ad197708ffe1b0e0ccf98796b16c706.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.5316223502159119,
+  "ben": 0.9272982478141785,
+  "mal": 0.07270174473524094,
+  "top_conf": 0.9272982478141785,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001561_jpeg.rf.7d81447c0258844c22bac36e371d2ec6.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999995231628418,
+  "ben": 0.9640350937843323,
+  "mal": 0.03596498444676399,
+  "top_conf": 0.9640350937843323,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001585_jpeg.rf.4cb705ec5fb6831fd87e2b160a3becc7.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9997534155845642,
+  "ben": 0.8752636909484863,
+  "mal": 0.12473629415035248,
+  "top_conf": 0.8752636909484863,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001589_jpeg.rf.a2733cbccdecf04ba42ce9e02b7312fd.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999821186065674,
+  "ben": 0.9467310309410095,
+  "mal": 0.05326889827847481,
+  "top_conf": 0.9467310309410095,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001590_jpeg.rf.d898ff00790444a480c2e8aabac71537.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9744291305541992,
+  "mal": 0.025570819154381752,
+  "top_conf": 0.9744291305541992,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001598_jpeg.rf.2a079a396de31c25964903c086e2f751.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9529918432235718,
+  "mal": 0.04700815677642822,
+  "top_conf": 0.9529918432235718,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001606_jpeg.rf.abfa16b2af22faec38ff932806dd7dc2.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999955892562866,
+  "ben": 0.916332483291626,
+  "mal": 0.08366747200489044,
+  "top_conf": 0.916332483291626,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001616_jpeg.rf.62d6f656cf4d15dba51cf53cfc4fcd05.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999977350234985,
+  "ben": 0.9408517479896545,
+  "mal": 0.05914827436208725,
+  "top_conf": 0.9408517479896545,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001636_jpeg.rf.0b600a737c49bb5ae6f5458de6fd153e.jpg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999997615814209,
+  "ben": 0.2462722361087799,
+  "mal": 0.7537277936935425,
+  "top_conf": 0.7537277936935425,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001726_jpeg.rf.1b9bf295b786a3fea463a85e7abaa81a.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.996727466583252,
+  "ben": 0.910804808139801,
+  "mal": 0.08919519931077957,
+  "top_conf": 0.910804808139801,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001730_jpeg.rf.e2f5888ab46d77af7e713539923ddd46.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999998807907104,
+  "ben": 0.9595166444778442,
+  "mal": 0.04048336669802666,
+  "top_conf": 0.9595166444778442,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001738_jpeg.rf.3dd5d2d3b3beff9fc9d8f310eec9cb6d.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9989075660705566,
+  "ben": 0.960113525390625,
+  "mal": 0.03988650441169739,
+  "top_conf": 0.960113525390625,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001745_jpeg.rf.fdb7bcfd097c3075f20555f5e8698054.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999746084213257,
+  "ben": 0.9456320405006409,
+  "mal": 0.05436796694993973,
+  "top_conf": 0.9456320405006409,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001776_jpeg.rf.8708d544d361453d1426b499dacaeba7.jpg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9992947578430176,
+  "ben": 0.5067055821418762,
+  "mal": 0.4932944178581238,
+  "top_conf": 0.5067055821418762,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001792_jpeg.rf.a8f41b2ce9f55e5b3c123d0ca8a86023.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999943971633911,
+  "ben": 0.8694705963134766,
+  "mal": 0.13052940368652344,
+  "top_conf": 0.8694705963134766,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001830_jpeg.rf.c5ec68e706dd5574797e43abd01851b6.jpg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9870721697807312,
+  "ben": 0.42736878991127014,
+  "mal": 0.5726312398910522,
+  "top_conf": 0.5726312398910522,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001851_jpeg.rf.f2f8dcb510067bb8ca6ad9bc69523ceb.jpg",
+  "truth": 0,
+  "pred": 1,
+  "tumor": 0.9999593496322632,
+  "ben": 0.29804742336273193,
+  "mal": 0.7019525170326233,
+  "top_conf": 0.7019525170326233,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\benign\\tb2_IMG001855_jpeg.rf.185b2c19223b660f0de426bdc53a52ae.jpg",
+  "truth": 0,
+  "pred": 0,
+  "tumor": 0.9999994039535522,
+  "ben": 0.9115670323371887,
+  "mal": 0.08843294531106949,
+  "top_conf": 0.9115670323371887,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000234.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999457597732544,
+  "ben": 0.028310848399996758,
+  "mal": 0.9716891646385193,
+  "top_conf": 0.9716891646385193,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000235.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999920129776001,
+  "ben": 0.025131087750196457,
+  "mal": 0.9748689532279968,
+  "top_conf": 0.9748689532279968,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000283.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9714824557304382,
+  "ben": 0.08201674371957779,
+  "mal": 0.9179832339286804,
+  "top_conf": 0.9179832339286804,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000321.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999897480010986,
+  "ben": 0.022792479023337364,
+  "mal": 0.9772074818611145,
+  "top_conf": 0.9772074818611145,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000362.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999898672103882,
+  "ben": 0.007933571003377438,
+  "mal": 0.9920663833618164,
+  "top_conf": 0.9920663833618164,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000363.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999701976776123,
+  "ben": 0.022691600024700165,
+  "mal": 0.9773083329200745,
+  "top_conf": 0.9773083329200745,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000423.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9990296363830566,
+  "ben": 0.12474881112575531,
+  "mal": 0.8752512335777283,
+  "top_conf": 0.8752512335777283,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000442.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9998094439506531,
+  "ben": 0.019567204639315605,
+  "mal": 0.9804328680038452,
+  "top_conf": 0.9804328680038452,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000452.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9997984766960144,
+  "ben": 0.005654463544487953,
+  "mal": 0.994345486164093,
+  "top_conf": 0.994345486164093,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000481.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9757307767868042,
+  "ben": 0.01910613849759102,
+  "mal": 0.9808938503265381,
+  "top_conf": 0.9808938503265381,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000568.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9984399676322937,
+  "ben": 0.037401698529720306,
+  "mal": 0.9625982642173767,
+  "top_conf": 0.9625982642173767,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000578.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9979389309883118,
+  "ben": 0.018277805298566818,
+  "mal": 0.9817221760749817,
+  "top_conf": 0.9817221760749817,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000579.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.7044895887374878,
+  "ben": 0.030781369656324387,
+  "mal": 0.9692186713218689,
+  "top_conf": 0.9692186713218689,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000596.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999978542327881,
+  "ben": 0.01869942434132099,
+  "mal": 0.9813005924224854,
+  "top_conf": 0.9813005924224854,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000605.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999090433120728,
+  "ben": 0.041050467640161514,
+  "mal": 0.9589495658874512,
+  "top_conf": 0.9589495658874512,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000606.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999737739562988,
+  "ben": 0.031608548015356064,
+  "mal": 0.968391478061676,
+  "top_conf": 0.968391478061676,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000641.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9970365762710571,
+  "ben": 0.025980563834309578,
+  "mal": 0.974019467830658,
+  "top_conf": 0.974019467830658,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000650.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.980989396572113,
+  "ben": 0.045242905616760254,
+  "mal": 0.954757034778595,
+  "top_conf": 0.954757034778595,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000651.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9996381998062134,
+  "ben": 0.03786127269268036,
+  "mal": 0.9621387720108032,
+  "top_conf": 0.9621387720108032,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000661.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.02630600705742836,
+  "mal": 0.9736939668655396,
+  "top_conf": 0.9736939668655396,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000669.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999996423721313,
+  "ben": 0.013755188323557377,
+  "mal": 0.9862448573112488,
+  "top_conf": 0.9862448573112488,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000670.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.016756419092416763,
+  "mal": 0.9832435250282288,
+  "top_conf": 0.9832435250282288,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000671.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9982315897941589,
+  "ben": 0.06695330142974854,
+  "mal": 0.9330467581748962,
+  "top_conf": 0.9330467581748962,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000694.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9929795861244202,
+  "ben": 0.03470633178949356,
+  "mal": 0.9652937054634094,
+  "top_conf": 0.9652937054634094,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000695.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9998493194580078,
+  "ben": 0.05207853391766548,
+  "mal": 0.9479214549064636,
+  "top_conf": 0.9479214549064636,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000716.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.030709998682141304,
+  "mal": 0.969290018081665,
+  "top_conf": 0.969290018081665,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000717.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.03152496740221977,
+  "mal": 0.9684749841690063,
+  "top_conf": 0.9684749841690063,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000718.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.02839757688343525,
+  "mal": 0.9716023802757263,
+  "top_conf": 0.9716023802757263,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000719.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999967813491821,
+  "ben": 0.026861226186156273,
+  "mal": 0.9731387495994568,
+  "top_conf": 0.9731387495994568,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000732.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9936679005622864,
+  "ben": 0.041513822972774506,
+  "mal": 0.9584861993789673,
+  "top_conf": 0.9584861993789673,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000733.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9861158132553101,
+  "ben": 0.035547856241464615,
+  "mal": 0.9644521474838257,
+  "top_conf": 0.9644521474838257,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000734.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.8114778995513916,
+  "ben": 0.03381682187318802,
+  "mal": 0.9661831855773926,
+  "top_conf": 0.9661831855773926,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000735.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.5994608998298645,
+  "ben": 0.03743491694331169,
+  "mal": 0.9625650644302368,
+  "top_conf": 0.9625650644302368,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000749.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999972581863403,
+  "ben": 0.13275405764579773,
+  "mal": 0.8672459125518799,
+  "top_conf": 0.8672459125518799,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000758.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9995848536491394,
+  "ben": 0.020071007311344147,
+  "mal": 0.9799290299415588,
+  "top_conf": 0.9799290299415588,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000759.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999744892120361,
+  "ben": 0.031321484595537186,
+  "mal": 0.9686785340309143,
+  "top_conf": 0.9686785340309143,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000763.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999830722808838,
+  "ben": 0.049562085419893265,
+  "mal": 0.9504379630088806,
+  "top_conf": 0.9504379630088806,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000774.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999982118606567,
+  "ben": 0.034249745309352875,
+  "mal": 0.9657502174377441,
+  "top_conf": 0.9657502174377441,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000775.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.999953031539917,
+  "ben": 0.03296833857893944,
+  "mal": 0.9670316576957703,
+  "top_conf": 0.9670316576957703,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000791.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.8710945248603821,
+  "mal": 0.1289055198431015,
+  "top_conf": 0.8710945248603821,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000792.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999943971633911,
+  "ben": 0.22786015272140503,
+  "mal": 0.7721399068832397,
+  "top_conf": 0.7721399068832397,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000838.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999608993530273,
+  "ben": 0.03382229059934616,
+  "mal": 0.9661777019500732,
+  "top_conf": 0.9661777019500732,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000841.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.045897226780653,
+  "mal": 0.9541027545928955,
+  "top_conf": 0.9541027545928955,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000842.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999960660934448,
+  "ben": 0.0315469428896904,
+  "mal": 0.9684531092643738,
+  "top_conf": 0.9684531092643738,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000860.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9983105659484863,
+  "ben": 0.04034862294793129,
+  "mal": 0.9596513509750366,
+  "top_conf": 0.9596513509750366,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000864.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999580383300781,
+  "ben": 0.021692795678973198,
+  "mal": 0.9783072471618652,
+  "top_conf": 0.9783072471618652,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000865.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.999983549118042,
+  "ben": 0.029194755479693413,
+  "mal": 0.970805287361145,
+  "top_conf": 0.970805287361145,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000881.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999991655349731,
+  "ben": 0.02272080071270466,
+  "mal": 0.9772791862487793,
+  "top_conf": 0.9772791862487793,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000890.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9949553608894348,
+  "ben": 0.02168671227991581,
+  "mal": 0.9783132672309875,
+  "top_conf": 0.9783132672309875,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000901.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9909096360206604,
+  "ben": 0.029468927532434464,
+  "mal": 0.9705311059951782,
+  "top_conf": 0.9705311059951782,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000925.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999884366989136,
+  "ben": 0.029726846143603325,
+  "mal": 0.9702731370925903,
+  "top_conf": 0.9702731370925903,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000930.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999065399169922,
+  "ben": 0.028763409703969955,
+  "mal": 0.971236526966095,
+  "top_conf": 0.971236526966095,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000960.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999611377716064,
+  "ben": 0.04086477309465408,
+  "mal": 0.9591351747512817,
+  "top_conf": 0.9591351747512817,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000961.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999542236328125,
+  "ben": 0.030607251450419426,
+  "mal": 0.969392716884613,
+  "top_conf": 0.969392716884613,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000965.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9980598092079163,
+  "ben": 0.03345305100083351,
+  "mal": 0.9665469527244568,
+  "top_conf": 0.9665469527244568,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000981.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9998121857643127,
+  "ben": 0.0523315966129303,
+  "mal": 0.9476683735847473,
+  "top_conf": 0.9476683735847473,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000988.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.02177569642663002,
+  "mal": 0.9782243371009827,
+  "top_conf": 0.9782243371009827,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000991.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.034537527710199356,
+  "mal": 0.9654624462127686,
+  "top_conf": 0.9654624462127686,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG000992.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999997615814209,
+  "ben": 0.02947898395359516,
+  "mal": 0.9705209732055664,
+  "top_conf": 0.9705209732055664,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001017.jpeg",
+  "truth": 1,
+  "pred": 2,
+  "tumor": 0.06782574951648712,
+  "ben": 0.05480334535241127,
+  "mal": 0.9451966285705566,
+  "top_conf": 0.9321742504835129,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001024.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.999665379524231,
+  "ben": 0.161250039935112,
+  "mal": 0.8387499451637268,
+  "top_conf": 0.8387499451637268,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001049.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999879598617554,
+  "ben": 0.023769747465848923,
+  "mal": 0.976230263710022,
+  "top_conf": 0.976230263710022,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001059.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999161958694458,
+  "ben": 0.010257326997816563,
+  "mal": 0.9897426962852478,
+  "top_conf": 0.9897426962852478,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001065.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999827146530151,
+  "ben": 0.006550984922796488,
+  "mal": 0.9934490323066711,
+  "top_conf": 0.9934490323066711,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001066.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.024087121710181236,
+  "mal": 0.9759128093719482,
+  "top_conf": 0.9759128093719482,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001095.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999978542327881,
+  "ben": 0.03540486469864845,
+  "mal": 0.9645950794219971,
+  "top_conf": 0.9645950794219971,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001096.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999969005584717,
+  "ben": 0.06408856809139252,
+  "mal": 0.9359114766120911,
+  "top_conf": 0.9359114766120911,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001120.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9997574687004089,
+  "ben": 0.08953559398651123,
+  "mal": 0.910464346408844,
+  "top_conf": 0.910464346408844,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001131.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9961481094360352,
+  "ben": 0.026767268776893616,
+  "mal": 0.9732326865196228,
+  "top_conf": 0.9732326865196228,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001132.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9993034601211548,
+  "ben": 0.028607463464140892,
+  "mal": 0.9713925719261169,
+  "top_conf": 0.9713925719261169,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001139.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999817609786987,
+  "ben": 0.018910950049757957,
+  "mal": 0.9810891151428223,
+  "top_conf": 0.9810891151428223,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001163.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9103298783302307,
+  "ben": 0.03633488342165947,
+  "mal": 0.9636650681495667,
+  "top_conf": 0.9636650681495667,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001164.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.973013162612915,
+  "ben": 0.0338316410779953,
+  "mal": 0.9661683440208435,
+  "top_conf": 0.9661683440208435,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001169.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999977350234985,
+  "ben": 0.026563391089439392,
+  "mal": 0.9734366536140442,
+  "top_conf": 0.9734366536140442,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001204.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999288320541382,
+  "ben": 0.03739817440509796,
+  "mal": 0.9626018404960632,
+  "top_conf": 0.9626018404960632,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001205.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999995231628418,
+  "ben": 0.011507113464176655,
+  "mal": 0.9884929060935974,
+  "top_conf": 0.9884929060935974,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001207.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.6453098058700562,
+  "mal": 0.35469019412994385,
+  "top_conf": 0.6453098058700562,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001208.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.35550129413604736,
+  "mal": 0.6444987058639526,
+  "top_conf": 0.6444987058639526,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001209.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999722242355347,
+  "ben": 0.06218978762626648,
+  "mal": 0.9378101825714111,
+  "top_conf": 0.9378101825714111,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001210.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9998661279678345,
+  "ben": 0.10991263389587402,
+  "mal": 0.890087366104126,
+  "top_conf": 0.890087366104126,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001240.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999366998672485,
+  "ben": 0.0347946360707283,
+  "mal": 0.9652054309844971,
+  "top_conf": 0.9652054309844971,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001255.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999994039535522,
+  "ben": 0.05209296569228172,
+  "mal": 0.9479070901870728,
+  "top_conf": 0.9479070901870728,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001256.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9986912608146667,
+  "ben": 0.04951327666640282,
+  "mal": 0.9504867196083069,
+  "top_conf": 0.9504867196083069,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001258.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999849796295166,
+  "ben": 0.03101228177547455,
+  "mal": 0.9689877033233643,
+  "top_conf": 0.9689877033233643,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001265.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999263286590576,
+  "ben": 0.03958851471543312,
+  "mal": 0.9604114294052124,
+  "top_conf": 0.9604114294052124,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001266.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9914571642875671,
+  "ben": 0.04634726792573929,
+  "mal": 0.9536527395248413,
+  "top_conf": 0.9536527395248413,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001282.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.8294609189033508,
+  "ben": 0.07222755253314972,
+  "mal": 0.9277724623680115,
+  "top_conf": 0.9277724623680115,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001289.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999802112579346,
+  "ben": 0.09178382903337479,
+  "mal": 0.9082161784172058,
+  "top_conf": 0.9082161784172058,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001290.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999974966049194,
+  "ben": 0.03658747300505638,
+  "mal": 0.9634125232696533,
+  "top_conf": 0.9634125232696533,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001309.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999994039535522,
+  "ben": 0.009055384434759617,
+  "mal": 0.9909446239471436,
+  "top_conf": 0.9909446239471436,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001310.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999982118606567,
+  "ben": 0.04179344326257706,
+  "mal": 0.9582065939903259,
+  "top_conf": 0.9582065939903259,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001327.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999982118606567,
+  "ben": 0.05361463874578476,
+  "mal": 0.9463853240013123,
+  "top_conf": 0.9463853240013123,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001328.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.99981290102005,
+  "ben": 0.03563523292541504,
+  "mal": 0.964364767074585,
+  "top_conf": 0.964364767074585,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001417.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9571356773376465,
+  "mal": 0.04286433383822441,
+  "top_conf": 0.9571356773376465,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001418.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9999998807907104,
+  "ben": 0.9757000803947449,
+  "mal": 0.024299917742609978,
+  "top_conf": 0.9757000803947449,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001438.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.030839988961815834,
+  "mal": 0.9691600203514099,
+  "top_conf": 0.9691600203514099,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001442.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999973773956299,
+  "ben": 0.07485862076282501,
+  "mal": 0.925141453742981,
+  "top_conf": 0.925141453742981,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001443.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.0710078701376915,
+  "mal": 0.9289921522140503,
+  "top_conf": 0.9289921522140503,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001555.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.027558231726288795,
+  "mal": 0.9724418520927429,
+  "top_conf": 0.9724418520927429,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001556.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.03846214339137077,
+  "mal": 0.9615378379821777,
+  "top_conf": 0.9615378379821777,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001557.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.4096054434776306,
+  "ben": 0.38940727710723877,
+  "mal": 0.6105927228927612,
+  "top_conf": 0.6105927228927612,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001563.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9999911785125732,
+  "ben": 0.932277500629425,
+  "mal": 0.06772249191999435,
+  "top_conf": 0.932277500629425,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001565.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9374037981033325,
+  "mal": 0.06259620934724808,
+  "top_conf": 0.9374037981033325,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001583.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999997615814209,
+  "ben": 0.1314801126718521,
+  "mal": 0.8685199022293091,
+  "top_conf": 0.8685199022293091,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001593.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999997615814209,
+  "ben": 0.12026730179786682,
+  "mal": 0.8797326683998108,
+  "top_conf": 0.8797326683998108,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001594.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999974966049194,
+  "ben": 0.07574363797903061,
+  "mal": 0.9242563843727112,
+  "top_conf": 0.9242563843727112,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001601.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999580383300781,
+  "ben": 0.04680416360497475,
+  "mal": 0.9531958699226379,
+  "top_conf": 0.9531958699226379,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001607.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9998623132705688,
+  "ben": 0.05659068748354912,
+  "mal": 0.9434093236923218,
+  "top_conf": 0.9434093236923218,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001614.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9999995231628418,
+  "ben": 0.912784993648529,
+  "mal": 0.08721504360437393,
+  "top_conf": 0.912784993648529,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001615.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.05940818041563034,
+  "mal": 0.9405918121337891,
+  "top_conf": 0.9405918121337891,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001616.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.999997615814209,
+  "ben": 0.4173760414123535,
+  "mal": 0.5826239585876465,
+  "top_conf": 0.5826239585876465,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001620.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999933242797852,
+  "ben": 0.09442232549190521,
+  "mal": 0.9055777192115784,
+  "top_conf": 0.9055777192115784,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001621.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999991655349731,
+  "ben": 0.08689028024673462,
+  "mal": 0.9131096601486206,
+  "top_conf": 0.9131096601486206,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001624.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.0643618181347847,
+  "mal": 0.9356381297111511,
+  "top_conf": 0.9356381297111511,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001637.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999988079071045,
+  "ben": 0.7156369686126709,
+  "mal": 0.2843630313873291,
+  "top_conf": 0.7156369686126709,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001640.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.09669864922761917,
+  "mal": 0.9033012986183167,
+  "top_conf": 0.9033012986183167,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001641.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999997615814209,
+  "ben": 0.03692241758108139,
+  "mal": 0.9630776047706604,
+  "top_conf": 0.9630776047706604,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001670.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.999991774559021,
+  "ben": 0.07260055094957352,
+  "mal": 0.9273994565010071,
+  "top_conf": 0.9273994565010071,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001671.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9998819828033447,
+  "ben": 0.21480274200439453,
+  "mal": 0.7851972579956055,
+  "top_conf": 0.7851972579956055,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001694.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.7221779823303223,
+  "mal": 0.27782198786735535,
+  "top_conf": 0.7221779823303223,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001699.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999977350234985,
+  "ben": 0.1826631724834442,
+  "mal": 0.8173367977142334,
+  "top_conf": 0.8173367977142334,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001709.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999967813491821,
+  "ben": 0.0656871423125267,
+  "mal": 0.9343128204345703,
+  "top_conf": 0.9343128204345703,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001710.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999992847442627,
+  "ben": 0.042840082198381424,
+  "mal": 0.9571599364280701,
+  "top_conf": 0.9571599364280701,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001726.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9991732239723206,
+  "ben": 0.6662713289260864,
+  "mal": 0.3337286114692688,
+  "top_conf": 0.6662713289260864,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001727.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9999980926513672,
+  "ben": 0.8872381448745728,
+  "mal": 0.11276186257600784,
+  "top_conf": 0.8872381448745728,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001728.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9999994039535522,
+  "ben": 0.9460794925689697,
+  "mal": 0.053920481353998184,
+  "top_conf": 0.9460794925689697,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001742.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999986886978149,
+  "ben": 0.04286016896367073,
+  "mal": 0.9571398496627808,
+  "top_conf": 0.9571398496627808,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001765.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9999922513961792,
+  "ben": 0.9578031897544861,
+  "mal": 0.042196858674287796,
+  "top_conf": 0.9578031897544861,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001766.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999994039535522,
+  "ben": 0.09902708977460861,
+  "mal": 0.9009729027748108,
+  "top_conf": 0.9009729027748108,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001784.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9983073472976685,
+  "ben": 0.9389763474464417,
+  "mal": 0.06102366000413895,
+  "top_conf": 0.9389763474464417,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001795.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9999914169311523,
+  "ben": 0.962848961353302,
+  "mal": 0.037150971591472626,
+  "top_conf": 0.962848961353302,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001800.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.1045173928141594,
+  "mal": 0.89548259973526,
+  "top_conf": 0.89548259973526,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001804.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.997313916683197,
+  "ben": 0.04881826415657997,
+  "mal": 0.9511817693710327,
+  "top_conf": 0.9511817693710327,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001807.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9999738931655884,
+  "ben": 0.9707486629486084,
+  "mal": 0.029251376166939735,
+  "top_conf": 0.9707486629486084,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001818.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9998364448547363,
+  "ben": 0.057813480496406555,
+  "mal": 0.9421865344047546,
+  "top_conf": 0.9421865344047546,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001819.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9777438640594482,
+  "ben": 0.0355643592774868,
+  "mal": 0.9644356369972229,
+  "top_conf": 0.9644356369972229,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001830.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9888523817062378,
+  "ben": 0.07543094456195831,
+  "mal": 0.9245690703392029,
+  "top_conf": 0.9245690703392029,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001831.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999974966049194,
+  "ben": 0.3028530776500702,
+  "mal": 0.6971468925476074,
+  "top_conf": 0.6971468925476074,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001832.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9999967813491821,
+  "ben": 0.8233710527420044,
+  "mal": 0.17662890255451202,
+  "top_conf": 0.8233710527420044,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001833.jpeg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 1.0,
+  "ben": 0.9274622797966003,
+  "mal": 0.07253772765398026,
+  "top_conf": 0.9274622797966003,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\btxrd_IMG001834.jpeg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999886751174927,
+  "ben": 0.4114135801792145,
+  "mal": 0.5885864496231079,
+  "top_conf": 0.5885864496231079,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000001_jpeg.rf.401bc760aca5eb1cc033ea8263d66f1d.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999978542327881,
+  "ben": 0.6768069267272949,
+  "mal": 0.3231930434703827,
+  "top_conf": 0.6768069267272949,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000004_jpeg.rf.f81d9f6100915391ec33464d42edd6b4.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9953847527503967,
+  "ben": 0.15209053456783295,
+  "mal": 0.8479095101356506,
+  "top_conf": 0.8479095101356506,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000019_jpeg.rf.19ea6c7dd5552196293c530879ee9aaf.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9998242259025574,
+  "ben": 0.024082494899630547,
+  "mal": 0.9759174585342407,
+  "top_conf": 0.9759174585342407,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000021_jpeg.rf.13e21c05e91cd592a2e43cab86b96d78.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999996423721313,
+  "ben": 0.02531231939792633,
+  "mal": 0.9746877551078796,
+  "top_conf": 0.9746877551078796,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000038_jpeg.rf.a9d1a3a9e80f4e61d9395cabb9d03b18.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.02214685082435608,
+  "mal": 0.9778531193733215,
+  "top_conf": 0.9778531193733215,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000056_jpeg.rf.7aa7fe83c98ea11f0adcec13a4b7de16.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999997615814209,
+  "ben": 0.03989214077591896,
+  "mal": 0.9601078033447266,
+  "top_conf": 0.9601078033447266,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000058_jpeg.rf.d0b7f4d0d1bc0f7b736745954d266286.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.015458086505532265,
+  "mal": 0.9845418930053711,
+  "top_conf": 0.9845418930053711,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000079_jpeg.rf.536f1992081da828a668183510296aa3.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.02295577898621559,
+  "mal": 0.9770442843437195,
+  "top_conf": 0.9770442843437195,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000089_jpeg.rf.e918b0337a63e75099015f9131ae2d91.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.007866395637392998,
+  "mal": 0.992133617401123,
+  "top_conf": 0.992133617401123,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000094_jpeg.rf.17dd5d36e659a31be2d9df28bedbf858.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999996423721313,
+  "ben": 0.04758957773447037,
+  "mal": 0.9524103999137878,
+  "top_conf": 0.9524103999137878,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000100_jpeg.rf.dd38ed5be9d90c677e4e5d94779d1ee8.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999983310699463,
+  "ben": 0.556208074092865,
+  "mal": 0.443791925907135,
+  "top_conf": 0.556208074092865,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000127_jpeg.rf.f0180598a15de7288f0d982186f6ff6a.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.999992847442627,
+  "ben": 0.15754522383213043,
+  "mal": 0.8424547910690308,
+  "top_conf": 0.8424547910690308,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000135_jpeg.rf.bb47de88b386011b1250a8e53ce5329e.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.050082601606845856,
+  "mal": 0.9499173760414124,
+  "top_conf": 0.9499173760414124,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000142_jpeg.rf.24214eb7b6476bed7e0f7a1598a190f5.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999974966049194,
+  "ben": 0.016787370666861534,
+  "mal": 0.9832126498222351,
+  "top_conf": 0.9832126498222351,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000147_jpeg.rf.1dcf9cdbbfbc28a0725d2fb87fe7783f.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.06015126407146454,
+  "mal": 0.939848780632019,
+  "top_conf": 0.939848780632019,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000148_jpeg.rf.55f72d3060b6a9c9fe580cbb1fdea596.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999992847442627,
+  "ben": 0.03530922159552574,
+  "mal": 0.9646908044815063,
+  "top_conf": 0.9646908044815063,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000152_jpeg.rf.5b3ee37e0145ed673a9a0c23e7a53047.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.0031648175790905952,
+  "mal": 0.9968351721763611,
+  "top_conf": 0.9968351721763611,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000153_jpeg.rf.5c485e376d4d419d3900102cab3d57f1.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999997615814209,
+  "ben": 0.018100935965776443,
+  "mal": 0.9818990230560303,
+  "top_conf": 0.9818990230560303,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000160_jpeg.rf.95c2c35c1f004b4d0d169dc6e4107127.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999997615814209,
+  "ben": 0.045771002769470215,
+  "mal": 0.9542289972305298,
+  "top_conf": 0.9542289972305298,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000162_jpeg.rf.7528c23ccdc69ac7b9c5d2e4fcd85e5f.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.01721278578042984,
+  "mal": 0.9827872514724731,
+  "top_conf": 0.9827872514724731,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000173_jpeg.rf.11cbf45a13880b86ebb6cbd76e308485.jpg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9999709129333496,
+  "ben": 0.8983159065246582,
+  "mal": 0.1016841009259224,
+  "top_conf": 0.8983159065246582,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000180_jpeg.rf.8489943ad42c170c8fc363000b366fac.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9998883008956909,
+  "ben": 0.0505513921380043,
+  "mal": 0.9494485855102539,
+  "top_conf": 0.9494485855102539,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000182_jpeg.rf.c3a0e952589b4ec49b74ea87ca15d347.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.007315450813621283,
+  "mal": 0.9926844835281372,
+  "top_conf": 0.9926844835281372,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000196_jpeg.rf.8d364783df86dbfba64b9b7d0bb6fcc2.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.18012478947639465,
+  "mal": 0.819875180721283,
+  "top_conf": 0.819875180721283,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000220_jpeg.rf.87b9168aecb149488d64d3cf7dfa729a.jpg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.9961153268814087,
+  "ben": 0.9582579135894775,
+  "mal": 0.04174205660820007,
+  "top_conf": 0.9582579135894775,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000232_jpeg.rf.a23281c8588bfe5f25ca0451af563d44.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.02353251352906227,
+  "mal": 0.9764675498008728,
+  "top_conf": 0.9764675498008728,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG000607_jpeg.rf.749fe1c433e8fdc5fd26b0a5262f7dca.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999581575393677,
+  "ben": 0.06738711148500443,
+  "mal": 0.932612955570221,
+  "top_conf": 0.932612955570221,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG001364_jpeg.rf.d4f2e55bf5d0df7e83c2f85ac2533e64.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999998807907104,
+  "ben": 0.015964461490511894,
+  "mal": 0.9840355515480042,
+  "top_conf": 0.9840355515480042,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG001415_jpeg.rf.520ee726f9fce0360d3b7ebdb928e08d.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999221563339233,
+  "ben": 0.03415343165397644,
+  "mal": 0.9658465385437012,
+  "top_conf": 0.9658465385437012,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG001434_jpeg.rf.21ee8fb2c15f44c4a7945fd70c4528bb.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999921321868896,
+  "ben": 0.0384136438369751,
+  "mal": 0.9615863561630249,
+  "top_conf": 0.9615863561630249,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG001439_jpeg.rf.fd07ee173bb53206d461c402d4ab45bf.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999997615814209,
+  "ben": 0.05230499431490898,
+  "mal": 0.9476950764656067,
+  "top_conf": 0.9476950764656067,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG001453_jpeg.rf.192432d270000c9ae839bed59e707f33.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9999912977218628,
+  "ben": 0.0535227470099926,
+  "mal": 0.9464772343635559,
+  "top_conf": 0.9464772343635559,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG001545_jpeg.rf.c84464b115473a0a668adf20af1afef3.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.04698144271969795,
+  "mal": 0.9530186057090759,
+  "top_conf": 0.9530186057090759,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG001630_jpeg.rf.3001014a6e188094587868a2fa3b4f9a.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9998059868812561,
+  "ben": 0.09891016781330109,
+  "mal": 0.9010899066925049,
+  "top_conf": 0.9010899066925049,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG001646_jpeg.rf.748d216af74a6b95be101c896d450e59.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.14369253814220428,
+  "mal": 0.8563074469566345,
+  "top_conf": 0.8563074469566345,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG001657_jpeg.rf.9aeab22aca2761ab1f66307dba63035a.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 1.0,
+  "ben": 0.013205052353441715,
+  "mal": 0.9867950081825256,
+  "top_conf": 0.9867950081825256,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG001717_jpeg.rf.88ca6314137259c784b74e17e47a3634.jpg",
+  "truth": 1,
+  "pred": 1,
+  "tumor": 0.9848308563232422,
+  "ben": 0.03885786235332489,
+  "mal": 0.9611421227455139,
+  "top_conf": 0.9611421227455139,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\malignant\\tb2_IMG001740_jpeg.rf.a9874c089aa0189dc259f546fab16c4f.jpg",
+  "truth": 1,
+  "pred": 0,
+  "tumor": 0.999332845211029,
+  "ben": 0.828530490398407,
+  "mal": 0.17146943509578705,
+  "top_conf": 0.828530490398407,
+  "correct": 0
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG001931.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00010990171722369269,
+  "ben": 0.030408604070544243,
+  "mal": 0.9695913791656494,
+  "top_conf": 0.9998900982827763,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG002116.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.683181487052934e-06,
+  "ben": 0.05229170620441437,
+  "mal": 0.9477083086967468,
+  "top_conf": 0.999995316818513,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG002222.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.2617356876253325e-07,
+  "ben": 0.03722165524959564,
+  "mal": 0.9627783894538879,
+  "top_conf": 0.9999997738264312,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG002332.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.629233707944877e-07,
+  "ben": 0.012831720523536205,
+  "mal": 0.9871683120727539,
+  "top_conf": 0.9999998370766292,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG002535.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.31947979045799e-07,
+  "ben": 0.03551629185676575,
+  "mal": 0.9644837379455566,
+  "top_conf": 0.999999768052021,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG002658.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0007339560543186963,
+  "ben": 0.030763540416955948,
+  "mal": 0.9692364931106567,
+  "top_conf": 0.9992660439456813,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG002912.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 7.282284286702634e-07,
+  "ben": 0.7632359266281128,
+  "mal": 0.23676404356956482,
+  "top_conf": 0.9999992717715713,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG002957.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.2689613615511917e-05,
+  "ben": 0.016259437426924706,
+  "mal": 0.9837406277656555,
+  "top_conf": 0.9999773103863845,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG003021.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.994829891482368e-05,
+  "ben": 0.030540185049176216,
+  "mal": 0.9694598317146301,
+  "top_conf": 0.9999300517010852,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG003121.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.02534974366426468,
+  "ben": 0.04287194460630417,
+  "mal": 0.9571280479431152,
+  "top_conf": 0.9746502563357353,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG003220.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.340087346646257e-10,
+  "ben": 0.0430871807038784,
+  "mal": 0.9569128155708313,
+  "top_conf": 0.9999999998659913,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG003276.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.99675456417026e-06,
+  "ben": 0.05825144052505493,
+  "mal": 0.9417484998703003,
+  "top_conf": 0.9999930032454358,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG003286.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.5881837447959697e-06,
+  "ben": 0.02790273353457451,
+  "mal": 0.9720972180366516,
+  "top_conf": 0.9999964118162552,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG003404.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.016793912276625633,
+  "ben": 0.045936793088912964,
+  "mal": 0.9540631771087646,
+  "top_conf": 0.9832060877233744,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG003501.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.1190196498064324e-05,
+  "ben": 0.026000045239925385,
+  "mal": 0.9739999771118164,
+  "top_conf": 0.9999588098035019,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG003509.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0002337243058718741,
+  "ben": 0.3026561141014099,
+  "mal": 0.6973439455032349,
+  "top_conf": 0.9997662756941281,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG003668.jpeg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.270694651291706e-05,
+  "ben": 0.03484299033880234,
+  "mal": 0.9651569724082947,
+  "top_conf": 0.9999672930534871,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\btxrd_IMG003735.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.1447882997117631e-07,
+  "ben": 0.3046817183494568,
+  "mal": 0.695318341255188,
+  "top_conf": 0.99999988552117,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001879_jpeg.rf.9e81d8cba924119a25e7696854d8a01d.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.4910534673617803e-06,
+  "ben": 0.9374896883964539,
+  "mal": 0.06251036375761032,
+  "top_conf": 0.9999985089465326,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001903_jpeg.rf.4ba7d951cfbb8c5e61c8d8364d7263e9.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0005875166971236467,
+  "ben": 0.9535388350486755,
+  "mal": 0.04646122455596924,
+  "top_conf": 0.9994124833028764,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001906_jpeg.rf.3f7ea88fddc9268779a9b0045154e3e3.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0009650219581089914,
+  "ben": 0.9513612389564514,
+  "mal": 0.04863869026303291,
+  "top_conf": 0.999034978041891,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001919_jpeg.rf.078ef5dca146ed24c2fc5a00b0f781be.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0017703772755339742,
+  "ben": 0.9810873866081238,
+  "mal": 0.018912585452198982,
+  "top_conf": 0.998229622724466,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001924_jpeg.rf.ec75c22cba07117b60de095bea5a5683.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.1726129969247268e-06,
+  "ben": 0.9882683753967285,
+  "mal": 0.0117316460236907,
+  "top_conf": 0.9999988273870031,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001935_jpeg.rf.3065c2464904556f2f29f413f556d661.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 9.699785732664168e-05,
+  "ben": 0.9685679078102112,
+  "mal": 0.03143211081624031,
+  "top_conf": 0.9999030021426734,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001946_jpeg.rf.64e836a5263d17daca1433c8ba1c9246.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00010897959873545915,
+  "ben": 0.9798991680145264,
+  "mal": 0.0201007891446352,
+  "top_conf": 0.9998910204012645,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001954_jpeg.rf.17c335eb145a6f1c14dc42ad1d9e4dc7.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.843864760710858e-06,
+  "ben": 0.9857192635536194,
+  "mal": 0.014280712231993675,
+  "top_conf": 0.9999961561352393,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001976_jpeg.rf.ee28feb2218ad8952f04cef7cd9b477f.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.458817445789464e-05,
+  "ben": 0.8042952418327332,
+  "mal": 0.19570472836494446,
+  "top_conf": 0.9999654118255421,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001987_jpeg.rf.396e318641255fde7b8296b317603705.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.496352007914538e-08,
+  "ben": 0.9826099276542664,
+  "mal": 0.017390098422765732,
+  "top_conf": 0.9999999650364799,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001989_jpeg.rf.37ab7d62aa28c3efc7b25bdc3552c3e4.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.251977576113063e-09,
+  "ben": 0.9136719107627869,
+  "mal": 0.08632806688547134,
+  "top_conf": 0.9999999967480224,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001993_jpeg.rf.166b7ab2d0a44894120762e42f49ebd6.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.003437192703132e-06,
+  "ben": 0.056048303842544556,
+  "mal": 0.9439517259597778,
+  "top_conf": 0.9999939965628073,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG001997_jpeg.rf.9305254b6ce93202ef86da384a322939.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.4356604879139923e-05,
+  "ben": 0.940078616142273,
+  "mal": 0.05992138013243675,
+  "top_conf": 0.9999856433951209,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002013_jpeg.rf.42c48a0697e5b902efcb017a09855c4d.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.003628259291872382,
+  "ben": 0.9751555919647217,
+  "mal": 0.024844486266374588,
+  "top_conf": 0.9963717407081276,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002014_jpeg.rf.6f3760971274fe6cc6153e386d29c9fd.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.185481652210001e-06,
+  "ben": 0.9786248803138733,
+  "mal": 0.021375183016061783,
+  "top_conf": 0.9999938145183478,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002016_jpeg.rf.5135c4aee145799d3f72b51c5ae7e21d.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.0353476429590955e-05,
+  "ben": 0.9856012463569641,
+  "mal": 0.01439876388758421,
+  "top_conf": 0.9999796465235704,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002034_jpeg.rf.c2421c854d11386d70f52ac1856fc7c7.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0018144947243854403,
+  "ben": 0.9668968915939331,
+  "mal": 0.03310311213135719,
+  "top_conf": 0.9981855052756146,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002035_jpeg.rf.9861daddce1ed217dcf1615168a1077a.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.171277959765575e-07,
+  "ben": 0.9750224947929382,
+  "mal": 0.02497752755880356,
+  "top_conf": 0.999999382872204,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002051_jpeg.rf.e1e213cb8337ab590d510116fd2d5a24.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0010292826918885112,
+  "ben": 0.9856583476066589,
+  "mal": 0.014341681264340878,
+  "top_conf": 0.9989707173081115,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002062_jpeg.rf.a1a90fde98dc6fc335b2bc20ca0dfa98.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.2106004021461558e-07,
+  "ben": 0.9529277682304382,
+  "mal": 0.04707219451665878,
+  "top_conf": 0.9999998789399598,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002071_jpeg.rf.84a935e310b0a536dfa38b73deb5e09f.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.114254468528088e-06,
+  "ben": 0.9631329774856567,
+  "mal": 0.03686698153614998,
+  "top_conf": 0.9999968857455315,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002097_jpeg.rf.883cf16e72a71050b1db4717ac381d5d.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.868296633096179e-06,
+  "ben": 0.9679691195487976,
+  "mal": 0.03203091397881508,
+  "top_conf": 0.9999971317033669,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002101_jpeg.rf.b2da0ffd86bea283e63a0d531f299410.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.0869605830521323e-05,
+  "ben": 0.9704253673553467,
+  "mal": 0.029574645683169365,
+  "top_conf": 0.9999891303941695,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002146_jpeg.rf.87725d5880796bfba5b11b2689e7f93e.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0002309246629010886,
+  "ben": 0.9473264813423157,
+  "mal": 0.052673496305942535,
+  "top_conf": 0.9997690753370989,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002149_jpeg.rf.2d4e53fdb004b55975e955c508488a48.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.8442504369886592e-05,
+  "ben": 0.9685917496681213,
+  "mal": 0.03140820935368538,
+  "top_conf": 0.9999815574956301,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002176_jpeg.rf.71699831b0a7ef85b7f6446d4e583fef.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 5.715634188163676e-09,
+  "ben": 0.7753809690475464,
+  "mal": 0.224619060754776,
+  "top_conf": 0.9999999942843658,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002179_jpeg.rf.0c96e111934c3ca6b75936957cedb76c.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.052054171031159e-08,
+  "ben": 0.31248751282691956,
+  "mal": 0.6875125169754028,
+  "top_conf": 0.9999999794794583,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002189_jpeg.rf.05e9cc1d5ff06e8db7daa953b5865910.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.95363792651915e-07,
+  "ben": 0.9694609642028809,
+  "mal": 0.030539046972990036,
+  "top_conf": 0.9999995046362073,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002207_jpeg.rf.8a803093ee069791e04e793e7cec2276.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 9.626442079024855e-06,
+  "ben": 0.9756532311439514,
+  "mal": 0.02434670925140381,
+  "top_conf": 0.999990373557921,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002208_jpeg.rf.a2f90654f3ed1907aba3ef44f36b6b1c.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 5.309213884174824e-05,
+  "ben": 0.9614663124084473,
+  "mal": 0.038533635437488556,
+  "top_conf": 0.9999469078611583,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002210_jpeg.rf.236d602e80f7a629fd8ef2728d30dbf3.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.7638714527711272e-05,
+  "ben": 0.9585195183753967,
+  "mal": 0.041480548679828644,
+  "top_conf": 0.9999723612854723,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002225_jpeg.rf.beb738699f0785f26cd01586bc63baa3.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 8.760903438087553e-05,
+  "ben": 0.9686475396156311,
+  "mal": 0.03135247528553009,
+  "top_conf": 0.9999123909656191,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002230_jpeg.rf.78863923383df02b02ba9d7f1c0d1d4a.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 5.9797703215735964e-06,
+  "ben": 0.9773502349853516,
+  "mal": 0.022649694234132767,
+  "top_conf": 0.9999940202296784,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002240_jpeg.rf.9b00bdf17b6963104239f19a9f9d53df.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00019509383128024638,
+  "ben": 0.9675890207290649,
+  "mal": 0.03241097554564476,
+  "top_conf": 0.9998049061687198,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002241_jpeg.rf.b54ecb55471b27aee5ecba1c49444218.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0015862159198150039,
+  "ben": 0.9684054851531982,
+  "mal": 0.03159452602267265,
+  "top_conf": 0.998413784080185,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002252_jpeg.rf.775ee4f6638ba6b6508d744123649543.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.2098441831985838e-07,
+  "ben": 0.9582894444465637,
+  "mal": 0.04171055927872658,
+  "top_conf": 0.9999997790155817,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002255_jpeg.rf.2c43571e716bb4302ca9dc7ec38e9358.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00014396825281437486,
+  "ben": 0.9511989951133728,
+  "mal": 0.04880101606249809,
+  "top_conf": 0.9998560317471856,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002256_jpeg.rf.1babfc48047e9986e34e86524e736884.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 5.184397741686553e-05,
+  "ben": 0.9813662767410278,
+  "mal": 0.018633676692843437,
+  "top_conf": 0.9999481560225831,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002265_jpeg.rf.bbfc5a316c6cacbb16e02652037eb62a.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.623189695645124e-05,
+  "ben": 0.967212975025177,
+  "mal": 0.03278698772192001,
+  "top_conf": 0.9999637681030435,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002269_jpeg.rf.2b585e844fa0f592df723320c75f00c0.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.4518997943090426e-09,
+  "ben": 0.946107804775238,
+  "mal": 0.05389215052127838,
+  "top_conf": 0.9999999975481002,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002294_jpeg.rf.f3a211e5e550ec01d0cc91e4dd5715ed.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.720536992408597e-07,
+  "ben": 0.9561867117881775,
+  "mal": 0.04381322115659714,
+  "top_conf": 0.9999995279463008,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002301_jpeg.rf.910fd879ed404a72d2749d87f3f15187.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.4756075188415707e-06,
+  "ben": 0.9676691889762878,
+  "mal": 0.032330844551324844,
+  "top_conf": 0.9999985243924812,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002302_jpeg.rf.df2e2674ef55e05b0a4f2f794992240c.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00031422218307852745,
+  "ben": 0.9507642388343811,
+  "mal": 0.049235749989748,
+  "top_conf": 0.9996857778169215,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002315_jpeg.rf.5b6d6dd1b5b8fdc01c7fccef35b87a7b.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 8.906932634999976e-06,
+  "ben": 0.967370331287384,
+  "mal": 0.03262964263558388,
+  "top_conf": 0.999991093067365,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002332_jpeg.rf.fdd06548253de27f01b6494b2932a3ec.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.1007704614485192e-07,
+  "ben": 0.9790405035018921,
+  "mal": 0.02095952071249485,
+  "top_conf": 0.9999998899229539,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002338_jpeg.rf.9684bd55b813003f51f4c24bcb9c5f39.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.054981451481580734,
+  "ben": 0.9739833474159241,
+  "mal": 0.026016604155302048,
+  "top_conf": 0.9450185485184193,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002341_jpeg.rf.45539349cdd6f3090ca1173118aadeb1.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.4793196001505748e-08,
+  "ben": 0.9935668110847473,
+  "mal": 0.006433251779526472,
+  "top_conf": 0.999999985206804,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002354_jpeg.rf.f6373b61bf0dee09bfe8a7217facb4ef.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0015710463048890233,
+  "ben": 0.9721521735191345,
+  "mal": 0.02784784324467182,
+  "top_conf": 0.998428953695111,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002386_jpeg.rf.3ae3fa39b607d7a7114149db420d6f87.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 7.633033965248615e-05,
+  "ben": 0.9634726047515869,
+  "mal": 0.0365273654460907,
+  "top_conf": 0.9999236696603475,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002399_jpeg.rf.fbde238bb2351605301d4a3807a31383.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 5.655375616697711e-07,
+  "ben": 0.936631441116333,
+  "mal": 0.0633685514330864,
+  "top_conf": 0.9999994344624383,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002405_jpeg.rf.1fca02f4d1dba412b2c71369257526ff.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00035091262543573976,
+  "ben": 0.9427144527435303,
+  "mal": 0.05728558078408241,
+  "top_conf": 0.9996490873745643,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002438_jpeg.rf.42c54144d6fc7e065f9a75d52738d414.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.0586076721638165e-09,
+  "ben": 0.9580726027488708,
+  "mal": 0.04192738234996796,
+  "top_conf": 0.9999999959413923,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002440_jpeg.rf.84b341e6486f1ada6984b3e5a85774c4.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.120499686952826e-07,
+  "ben": 0.9845800399780273,
+  "mal": 0.015419954434037209,
+  "top_conf": 0.9999997879500313,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002442_jpeg.rf.d1a30df5184c25b4b0c80ab52edd34f9.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.866622850206113e-08,
+  "ben": 0.9788606762886047,
+  "mal": 0.02113928645849228,
+  "top_conf": 0.9999999713337715,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002443_jpeg.rf.5744f392ea82fb01709c8199d7e0c44a.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.6978275452217417e-09,
+  "ben": 0.9740371704101562,
+  "mal": 0.02596280537545681,
+  "top_conf": 0.9999999983021725,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002447_jpeg.rf.d88dea7d33a7a9cdac9c4b6c6c16a3a3.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.273318932566326e-05,
+  "ben": 0.9928157329559326,
+  "mal": 0.007184258662164211,
+  "top_conf": 0.9999772668106743,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002448_jpeg.rf.6e853d0362ffbeea7888b5d82826e559.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00012312846956774592,
+  "ben": 0.9761930108070374,
+  "mal": 0.023807020857930183,
+  "top_conf": 0.9998768715304323,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002449_jpeg.rf.2db61e965cbc8acc383958feebac0e2a.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.9677579985000193e-05,
+  "ben": 0.9908570647239685,
+  "mal": 0.009142883121967316,
+  "top_conf": 0.999980322420015,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002456_jpeg.rf.837f24052e9e7c70d4b4ceae7471c07c.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 5.1687882660189644e-05,
+  "ben": 0.9838064908981323,
+  "mal": 0.016193518415093422,
+  "top_conf": 0.9999483121173398,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002459_jpeg.rf.4d2ed7207ed18755df0bd6bf8bccf5bd.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.2910528823795175e-07,
+  "ben": 0.9652497172355652,
+  "mal": 0.03475029766559601,
+  "top_conf": 0.9999998708947118,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002460_jpeg.rf.5a36d5e178b0c81bda4c0c3d25380959.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.029279014299391e-06,
+  "ben": 0.9724559187889099,
+  "mal": 0.0275440476834774,
+  "top_conf": 0.9999969707209857,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002461_jpeg.rf.b4ab7c7ce76ffb784d5abaf18ccafceb.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 8.192832723352694e-08,
+  "ben": 0.9708322286605835,
+  "mal": 0.029167717322707176,
+  "top_conf": 0.9999999180716728,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002477_jpeg.rf.2cb368a2575be75335667efee3da502b.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0018011447973549366,
+  "ben": 0.9789078831672668,
+  "mal": 0.021092157810926437,
+  "top_conf": 0.9981988552026451,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002478_jpeg.rf.8808422eac6ee5f3f5d84972d0eaf8dc.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.7074736291533554e-08,
+  "ben": 0.9507048726081848,
+  "mal": 0.04929514601826668,
+  "top_conf": 0.9999999829252637,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002490_jpeg.rf.5dd1817e2256e7f07b6acfcd3524462e.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.000188243473530747,
+  "ben": 0.9836466908454895,
+  "mal": 0.016353238373994827,
+  "top_conf": 0.9998117565264693,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002494_jpeg.rf.96ff23b388a77e38a5591a955ea70562.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.2265528514253674e-06,
+  "ben": 0.9748256802558899,
+  "mal": 0.025174366310238838,
+  "top_conf": 0.9999977734471486,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002503_jpeg.rf.109d3392fe7cdd8bb34f6b6385eb26d5.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.2371870194982648e-09,
+  "ben": 0.9754613637924194,
+  "mal": 0.024538634344935417,
+  "top_conf": 0.999999998762813,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002509_jpeg.rf.a501086a31e9db066f013b981089a1fb.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.0064914931717794e-05,
+  "ben": 0.9539151787757874,
+  "mal": 0.04608481004834175,
+  "top_conf": 0.9999899350850683,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002563_jpeg.rf.896f2c645a7eb451245199a2cbd515b7.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.5620361387979074e-10,
+  "ben": 0.9262881278991699,
+  "mal": 0.07371190935373306,
+  "top_conf": 0.9999999997437964,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002565_jpeg.rf.bb6b9b85b1446cced5f73a1e303e0e9d.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.2381337910483126e-05,
+  "ben": 0.9853206276893616,
+  "mal": 0.014679343439638615,
+  "top_conf": 0.9999876186620895,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002566_jpeg.rf.f7349d2d776de4b8346f9f58953f2140.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 5.281328867567936e-07,
+  "ben": 0.95527184009552,
+  "mal": 0.044728197157382965,
+  "top_conf": 0.9999994718671132,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002569_jpeg.rf.2356f3838d5083e5e33346c0a20d5c61.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 5.247753051662585e-06,
+  "ben": 0.9751936793327332,
+  "mal": 0.024806302040815353,
+  "top_conf": 0.9999947522469483,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002575_jpeg.rf.5a4ca46d4f1ab1c52ff21f80d32e1694.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.4177156673395075e-06,
+  "ben": 0.923792839050293,
+  "mal": 0.07620720565319061,
+  "top_conf": 0.9999935822843327,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002587_jpeg.rf.a7b2b4bbf50e28b7671206c1f058bd21.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.1553845070011448e-05,
+  "ben": 0.9655173420906067,
+  "mal": 0.03448261320590973,
+  "top_conf": 0.99998844615493,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002590_jpeg.rf.70415e7db36974665f1155c7eaece9f3.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 8.903385406711095e-08,
+  "ben": 0.9566920399665833,
+  "mal": 0.04330797493457794,
+  "top_conf": 0.9999999109661459,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002598_jpeg.rf.6e119414b7617865215593786f2ed739.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.546664513327414e-06,
+  "ben": 0.9877989292144775,
+  "mal": 0.01220105029642582,
+  "top_conf": 0.9999954533354867,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002608_jpeg.rf.fb7ee18d58762cb66c54e0d8768008a8.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.6972021000281075e-09,
+  "ben": 0.6806468963623047,
+  "mal": 0.3193531036376953,
+  "top_conf": 0.9999999963027979,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002609_jpeg.rf.5b66795bb359d1b54e1b6dbc6bb9b0c5.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.480802403530106e-05,
+  "ben": 0.9783555269241333,
+  "mal": 0.021644510328769684,
+  "top_conf": 0.9999351919759647,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002612_jpeg.rf.63f69c3061f915aa372b37bceb0775c8.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.529106758534908e-05,
+  "ben": 0.9775133728981018,
+  "mal": 0.022486666217446327,
+  "top_conf": 0.9999347089324147,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002617_jpeg.rf.b93a33007e8fce31dc27dd90cbe770a3.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.0573055735439993e-05,
+  "ben": 0.9799039363861084,
+  "mal": 0.020096033811569214,
+  "top_conf": 0.9999794269442646,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002632_jpeg.rf.7cf9dc41be8f11aecf305bf2eb4900df.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0019661514088511467,
+  "ben": 0.9722549319267273,
+  "mal": 0.027745027095079422,
+  "top_conf": 0.9980338485911489,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002642_jpeg.rf.782ac79d5c5ff5689bfe9e424c45b85a.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.110176632821094e-06,
+  "ben": 0.9701392650604248,
+  "mal": 0.02986072562634945,
+  "top_conf": 0.9999958898233672,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002650_jpeg.rf.a360a803da3fcd45a95f5eec924423e4.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.907811780365591e-07,
+  "ben": 0.977371096611023,
+  "mal": 0.022628948092460632,
+  "top_conf": 0.999999309218822,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002664_jpeg.rf.6b0188cd02450e60dca62ebeff93111d.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 9.219935236615129e-06,
+  "ben": 0.9821419715881348,
+  "mal": 0.017858054488897324,
+  "top_conf": 0.9999907800647634,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002666_jpeg.rf.802db6e40baeda4a5e070196976a4b90.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 9.36916476348415e-05,
+  "ben": 0.9895867109298706,
+  "mal": 0.010413320735096931,
+  "top_conf": 0.9999063083523652,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002688_jpeg.rf.4d212d1e94e5ecb9d69b5e10e4dda7f2.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.0634832509358603e-08,
+  "ben": 0.9386443495750427,
+  "mal": 0.06135571375489235,
+  "top_conf": 0.9999999793651675,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002692_jpeg.rf.df93fe5e216351412929c17e0eb39437.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.813736500684172e-05,
+  "ben": 0.9646235108375549,
+  "mal": 0.035376496613025665,
+  "top_conf": 0.9999718626349932,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002712_jpeg.rf.046b8d8d3110b41b7b4f423d439399cb.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.9040363667954807e-06,
+  "ben": 0.9688324928283691,
+  "mal": 0.031167462468147278,
+  "top_conf": 0.9999980959636332,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002720_jpeg.rf.ac01ac83ec6d7419a66e08114a883ff9.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.698596356433882e-08,
+  "ben": 0.953486979007721,
+  "mal": 0.04651304706931114,
+  "top_conf": 0.9999999530140364,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002732_jpeg.rf.7d8364334f52f39f548e77ad41cb53ef.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00019699522817973047,
+  "ben": 0.9557706713676453,
+  "mal": 0.04422927647829056,
+  "top_conf": 0.9998030047718203,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002735_jpeg.rf.4f60d7999b91f6e5c3ae572c02902462.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.3251028324011713e-05,
+  "ben": 0.9859817028045654,
+  "mal": 0.014018363319337368,
+  "top_conf": 0.999976748971676,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002747_jpeg.rf.3a7706a8a6055a6f56943aac6b7b2a70.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.027468491345643997,
+  "ben": 0.9478761553764343,
+  "mal": 0.052123866975307465,
+  "top_conf": 0.972531508654356,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002778_jpeg.rf.406e4a2fb6006a6dbb11f738134b57ce.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 5.799829068564577e-06,
+  "ben": 0.9779165387153625,
+  "mal": 0.022083468735218048,
+  "top_conf": 0.9999942001709314,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002787_jpeg.rf.2b081bb0f290423f4695c9900afd2ccb.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.133990842092317e-06,
+  "ben": 0.9703114032745361,
+  "mal": 0.02968854457139969,
+  "top_conf": 0.9999958660091579,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002792_jpeg.rf.6f29f8e566c6ac35c94b9a0893eb0ac0.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00011447530414443463,
+  "ben": 0.9895269870758057,
+  "mal": 0.010472988709807396,
+  "top_conf": 0.9998855246958556,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002795_jpeg.rf.2efca6bc05a36ec7b455380755a86b4b.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.475246194284409e-05,
+  "ben": 0.9784687161445618,
+  "mal": 0.02153131552040577,
+  "top_conf": 0.9999652475380572,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002798_jpeg.rf.82324ec3df84f5efba705c815995ac64.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.000874911027494818,
+  "ben": 0.9835548996925354,
+  "mal": 0.016445113345980644,
+  "top_conf": 0.9991250889725052,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002832_jpeg.rf.38f42ff5c8d8b547285bba61c090fc5d.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 5.968023106106557e-05,
+  "ben": 0.9819938540458679,
+  "mal": 0.0180061012506485,
+  "top_conf": 0.9999403197689389,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002834_jpeg.rf.65521c8ac3c1acf770d5693a95226280.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.928263592773874e-07,
+  "ben": 0.9748473167419434,
+  "mal": 0.02515263855457306,
+  "top_conf": 0.9999995071736407,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002853_jpeg.rf.2929dd61d9febbbcc1c5e893c3942450.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.1372171938419342,
+  "ben": 0.957543671131134,
+  "mal": 0.04245631396770477,
+  "top_conf": 0.8627828061580658,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002854_jpeg.rf.ab853c559ce34e21759f6d65351b4ec8.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.2950851023197174,
+  "ben": 0.9804731607437134,
+  "mal": 0.019526762887835503,
+  "top_conf": 0.7049148976802826,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002878_jpeg.rf.114cc76e2c5675f58072449e868e2595.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.098505764384754e-05,
+  "ben": 0.9742366075515747,
+  "mal": 0.025763388723134995,
+  "top_conf": 0.9999390149423562,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002879_jpeg.rf.b7b57fd7cce2de12d06b5fa2a3a27a91.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.8787026419886388e-05,
+  "ben": 0.9668269157409668,
+  "mal": 0.033173102885484695,
+  "top_conf": 0.9999812129735801,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002890_jpeg.rf.8b612f6483fee85474310a4cb226aad7.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.350752528305748e-07,
+  "ben": 0.9852755069732666,
+  "mal": 0.014724490232765675,
+  "top_conf": 0.9999993649247472,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002892_jpeg.rf.b93ac8dfcdacd11b8ca7fefab320d75a.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.9134389731334522e-05,
+  "ben": 0.8238423466682434,
+  "mal": 0.17615768313407898,
+  "top_conf": 0.9999808656102687,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002898_jpeg.rf.572d28633a9d7aa9d74fe163e2f7a898.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.5259283827617764e-05,
+  "ben": 0.9785087704658508,
+  "mal": 0.021491244435310364,
+  "top_conf": 0.9999847407161724,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002900_jpeg.rf.51dc5203d7b17dcf0f9cdd3d2a8f2cf5.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.6392829588495204e-10,
+  "ben": 0.983242392539978,
+  "mal": 0.016757670789957047,
+  "top_conf": 0.9999999997360717,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002915_jpeg.rf.0d8365694e9e9ee963b97560a660f518.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0011352093424648046,
+  "ben": 0.985320508480072,
+  "mal": 0.014679454267024994,
+  "top_conf": 0.9988647906575352,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002917_jpeg.rf.3431f491cc9df452a60f00a5308e1ccd.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.721676901273895e-05,
+  "ben": 0.9473977088928223,
+  "mal": 0.05260229483246803,
+  "top_conf": 0.9999727832309873,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002927_jpeg.rf.6689409e560cbaea4b441152c06fb44a.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.031388770788908005,
+  "ben": 0.9866322875022888,
+  "mal": 0.013367777690291405,
+  "top_conf": 0.968611229211092,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002945_jpeg.rf.8782f9f1c28792276f2f28991b5e3adf.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.4700794742926746e-09,
+  "ben": 0.8101268410682678,
+  "mal": 0.18987315893173218,
+  "top_conf": 0.9999999975299205,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002963_jpeg.rf.56e86bdc5fab32bce8236e7a3d3f06b5.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.3353940269431614e-13,
+  "ben": 0.9299508929252625,
+  "mal": 0.07004906982183456,
+  "top_conf": 0.9999999999996665,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002964_jpeg.rf.b3c8b638a78e68d8319ccef6f73a7553.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0006719745579175651,
+  "ben": 0.9598165154457092,
+  "mal": 0.04018346965312958,
+  "top_conf": 0.9993280254420824,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002970_jpeg.rf.19e13cbdee3563117f66116ec6d2e780.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.13005548377987e-05,
+  "ben": 0.9549476504325867,
+  "mal": 0.04505231976509094,
+  "top_conf": 0.9999686994451622,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002985_jpeg.rf.20c20f7e874a1a145aaeadca55b3d5a2.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.005230485927313566,
+  "ben": 0.9891003966331482,
+  "mal": 0.010899618268013,
+  "top_conf": 0.9947695140726864,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002989_jpeg.rf.a1570a6f96441c48432a0e9f8838bf62.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0002073470241157338,
+  "ben": 0.9837570190429688,
+  "mal": 0.01624296046793461,
+  "top_conf": 0.9997926529758843,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002996_jpeg.rf.03b1e54995038573b5117a14ad235b62.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.0195732304273406e-06,
+  "ben": 0.981094479560852,
+  "mal": 0.018905527889728546,
+  "top_conf": 0.9999979804267696,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG002997_jpeg.rf.eff8b9906caf58f3754f233949e6528b.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.637805977836251e-05,
+  "ben": 0.9817593097686768,
+  "mal": 0.018240641802549362,
+  "top_conf": 0.9999536219402216,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003001_jpeg.rf.e40b7c8eb7e1daf6d215d11bfbdc6287.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.809194145607762e-05,
+  "ben": 0.9820311069488525,
+  "mal": 0.017968902364373207,
+  "top_conf": 0.9999819080585439,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003002_jpeg.rf.6784da2e7c4bc2dcd8b6c94ffeeee72a.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.216148763447336e-09,
+  "ben": 0.9210171699523926,
+  "mal": 0.07898278534412384,
+  "top_conf": 0.9999999957838512,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003050_jpeg.rf.21a9050e9abd98ddac870608398bf40b.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00017538032261654735,
+  "ben": 0.9719431400299072,
+  "mal": 0.028056832030415535,
+  "top_conf": 0.9998246196773835,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003083_jpeg.rf.339ee0fbf21529bd4c995f0af4f768a1.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.011844562366604805,
+  "ben": 0.8680458068847656,
+  "mal": 0.13195423781871796,
+  "top_conf": 0.9881554376333952,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003085_jpeg.rf.d6aea421e6f42ce38c84cf10c8b5413b.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 9.862854994935333e-07,
+  "ben": 0.97539222240448,
+  "mal": 0.02460782788693905,
+  "top_conf": 0.9999990137145005,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003091_jpeg.rf.c07dfdbf4c2744eb80458357c0f5b728.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.007619709707796574,
+  "ben": 0.9780040979385376,
+  "mal": 0.02199593372642994,
+  "top_conf": 0.9923802902922034,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003105_jpeg.rf.6415495b9aae678970efa620fa040ba0.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00025892656412906945,
+  "ben": 0.9719019532203674,
+  "mal": 0.028098128736019135,
+  "top_conf": 0.9997410734358709,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003108_jpeg.rf.fd365a52059cf3932ac8f9149747c58e.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.4638895815296564e-06,
+  "ben": 0.9838504195213318,
+  "mal": 0.016149569302797318,
+  "top_conf": 0.9999955361104185,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003120_jpeg.rf.48dcbc3acbb2c0c473fbb0d5a8959569.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.082253508386202e-05,
+  "ben": 0.9667760133743286,
+  "mal": 0.033223956823349,
+  "top_conf": 0.9999591774649161,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003125_jpeg.rf.54679a1491cf7602fc38aae47b419fff.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.007315867114812136,
+  "ben": 0.9657759070396423,
+  "mal": 0.03422408178448677,
+  "top_conf": 0.9926841328851879,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003157_jpeg.rf.a7dda67c12c34d27623eae37ea9cc3c2.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.019240280613303185,
+  "ben": 0.964057445526123,
+  "mal": 0.03594260662794113,
+  "top_conf": 0.9807597193866968,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003161_jpeg.rf.fce84f9895e24816e76112666330592b.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 6.444589234888554e-05,
+  "ben": 0.9775567650794983,
+  "mal": 0.022443272173404694,
+  "top_conf": 0.9999355541076511,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003168_jpeg.rf.c34092e727dbad4b6cfa73becf95004a.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.025571046397089958,
+  "ben": 0.9581546783447266,
+  "mal": 0.041845325380563736,
+  "top_conf": 0.97442895360291,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003174_jpeg.rf.f3a5e6a00e26133d7cc536466ee18a20.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.003556508105248213,
+  "ben": 0.9693361520767212,
+  "mal": 0.03066382370889187,
+  "top_conf": 0.9964434918947518,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003187_jpeg.rf.0b07b6ea0320555c5564db55d0cc4687.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.6664204331761148e-14,
+  "ben": 0.9809193015098572,
+  "mal": 0.019080666825175285,
+  "top_conf": 0.9999999999999833,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003198_jpeg.rf.2db7cb35dc0d14602b2dce0322faaf52.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.3573023352364544e-05,
+  "ben": 0.9245325922966003,
+  "mal": 0.07546732574701309,
+  "top_conf": 0.9999864269766476,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003202_jpeg.rf.399c722a75cf4370613d6deee531cd98.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 7.740361070318613e-06,
+  "ben": 0.9803690314292908,
+  "mal": 0.019630972295999527,
+  "top_conf": 0.9999922596389297,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003204_jpeg.rf.73c2979fb3dfcd4b1f7fd392e8f4330d.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.6285049468933721e-06,
+  "ben": 0.9831268787384033,
+  "mal": 0.016873138025403023,
+  "top_conf": 0.9999983714950531,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003207_jpeg.rf.0c4a61c7c4525bdfab30bc603bb7ad59.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0015604256186634302,
+  "ben": 0.9219909906387329,
+  "mal": 0.07800900191068649,
+  "top_conf": 0.9984395743813366,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003243_jpeg.rf.021c29ef342906a21238ef2f25d051cd.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.263817259517964e-05,
+  "ben": 0.9741212129592896,
+  "mal": 0.02587880752980709,
+  "top_conf": 0.9999773618274048,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003245_jpeg.rf.26a1a192d3b6b78760b09ba79f887e85.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0015124866040423512,
+  "ben": 0.9441753625869751,
+  "mal": 0.0558246485888958,
+  "top_conf": 0.9984875133959576,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003254_jpeg.rf.b4114d0b434cdd4fc5bcd877921bf083.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.6219071224954362e-11,
+  "ben": 0.9466837048530579,
+  "mal": 0.053316228091716766,
+  "top_conf": 0.999999999983781,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003264_jpeg.rf.98ae7d6a20d1d2504fb8d834013ff2db.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 9.11912284209393e-05,
+  "ben": 0.9795234203338623,
+  "mal": 0.02047661505639553,
+  "top_conf": 0.9999088087715791,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003269_jpeg.rf.4c29bf384dbbd9dea02be45a4fa222a4.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.1462097018957138,
+  "ben": 0.9830694198608398,
+  "mal": 0.01693062111735344,
+  "top_conf": 0.8537902981042862,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003288_jpeg.rf.397f352cf0457688bcf2757d729510df.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.004026082810014486,
+  "ben": 0.9727368354797363,
+  "mal": 0.027263183146715164,
+  "top_conf": 0.9959739171899855,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003313_jpeg.rf.2d05890f4a2885e09605ffedf5e28a5c.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.4341809162488062e-07,
+  "ben": 0.327107310295105,
+  "mal": 0.672892689704895,
+  "top_conf": 0.9999998565819084,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003315_jpeg.rf.b36f8f7d529c35ce94761abc1abb90ac.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.005932170897722244,
+  "ben": 0.9747524857521057,
+  "mal": 0.025247499346733093,
+  "top_conf": 0.9940678291022778,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003343_jpeg.rf.e9b48a3bf9ffce6193ecc54c01d07a64.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00012683507520705462,
+  "ben": 0.9907315373420715,
+  "mal": 0.009268512949347496,
+  "top_conf": 0.999873164924793,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003344_jpeg.rf.8c4db3441962358693043a20ba30904b.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.142299993261986e-06,
+  "ben": 0.9756283760070801,
+  "mal": 0.024371596053242683,
+  "top_conf": 0.9999988577000067,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003350_jpeg.rf.a615d2266bf38ac3e769ce83354bdf27.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.7166111376809567e-07,
+  "ben": 0.9834429621696472,
+  "mal": 0.0165571141988039,
+  "top_conf": 0.9999998283388862,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003353_jpeg.rf.682ec18c704b048349ab24b85eb06523.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0025431837420910597,
+  "ben": 0.9946722388267517,
+  "mal": 0.005327783990651369,
+  "top_conf": 0.9974568162579089,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003366_jpeg.rf.187b9bc35411b115bdd5cb7e43a2e3a5.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.1235283586283913e-06,
+  "ben": 0.9687891006469727,
+  "mal": 0.03121093660593033,
+  "top_conf": 0.9999968764716414,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003382_jpeg.rf.af8ae12e32cce9d57f87d8ed550d9253.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.562987330951728e-05,
+  "ben": 0.976085901260376,
+  "mal": 0.023914065212011337,
+  "top_conf": 0.9999643701266905,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003387_jpeg.rf.ec5f709c1de976a7cdcda9bd0114c429.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.03220326825976372,
+  "ben": 0.9553729295730591,
+  "mal": 0.04462703317403793,
+  "top_conf": 0.9677967317402363,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003390_jpeg.rf.e4501a951aba51df3e7418685721164d.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0004568512667901814,
+  "ben": 0.866628110408783,
+  "mal": 0.13337188959121704,
+  "top_conf": 0.9995431487332098,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003398_jpeg.rf.6f5649e767d07a18d585d0440d3e706b.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.288780708819104e-07,
+  "ben": 0.7929807305335999,
+  "mal": 0.20701920986175537,
+  "top_conf": 0.9999998711219291,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003403_jpeg.rf.6d0bbb455e9a18e9bfad02ae64bcb721.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 7.468195690307766e-06,
+  "ben": 0.9477991461753845,
+  "mal": 0.05220090225338936,
+  "top_conf": 0.9999925318043097,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003404_jpeg.rf.f87e6c5acb8562d75101e89b23b4a90e.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.004828209523111582,
+  "ben": 0.947394847869873,
+  "mal": 0.05260515585541725,
+  "top_conf": 0.9951717904768884,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003445_jpeg.rf.108d640b8891cf10b4e30c6b6111fd68.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0011648378567770123,
+  "ben": 0.9830694198608398,
+  "mal": 0.016930555924773216,
+  "top_conf": 0.998835162143223,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003449_jpeg.rf.0d47f9e33efbae3ffc7a6f2bdeaf4524.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.15893031656742096,
+  "ben": 0.7942712306976318,
+  "mal": 0.20572881400585175,
+  "top_conf": 0.841069683432579,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003470_jpeg.rf.2631308cae1f822f8df4115b23471de5.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.761932748602703e-05,
+  "ben": 0.906671404838562,
+  "mal": 0.09332863986492157,
+  "top_conf": 0.999962380672514,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003495_jpeg.rf.0e5d1aacc948f7fe3eb38439668719fd.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 4.1544484519207003e-10,
+  "ben": 0.95414137840271,
+  "mal": 0.04585860297083855,
+  "top_conf": 0.9999999995845552,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003519_jpeg.rf.b3298a70e35eb99cde249e0072ef2bc4.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.7564472543085685e-08,
+  "ben": 0.44012361764907837,
+  "mal": 0.5598763823509216,
+  "top_conf": 0.9999999824355275,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003520_jpeg.rf.1c11fdedeb91c6abb6e1227a836652ce.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.6901583371218294e-05,
+  "ben": 0.9772188663482666,
+  "mal": 0.02278115041553974,
+  "top_conf": 0.9999630984166288,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003526_jpeg.rf.6b0e7511d459d415e2b8a46a3e47be34.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0009029037901200354,
+  "ben": 0.9572867155075073,
+  "mal": 0.04271329939365387,
+  "top_conf": 0.99909709620988,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003535_jpeg.rf.eac068c91022f4a96d5a3c540b0ce676.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.7327024554324453e-07,
+  "ben": 0.7108542919158936,
+  "mal": 0.28914567828178406,
+  "top_conf": 0.9999997267297545,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003540_jpeg.rf.12fa1487aae8c32f0d72b29af0c1136f.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.2148091421693152e-09,
+  "ben": 0.9776918888092041,
+  "mal": 0.02230808697640896,
+  "top_conf": 0.9999999987851909,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003546_jpeg.rf.a739926fbfd5215d5a3575f4a660d8b7.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 9.443196177016944e-06,
+  "ben": 0.9783717393875122,
+  "mal": 0.021628325805068016,
+  "top_conf": 0.999990556803823,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003550_jpeg.rf.83a7f9fc930ede44fcb855044b4dbb4d.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.0341881306885625e-06,
+  "ben": 0.8575357794761658,
+  "mal": 0.14246425032615662,
+  "top_conf": 0.9999989658118693,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003569_jpeg.rf.a7e38e377ad4714dc2cc677838e6c47a.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 8.439499652013183e-06,
+  "ben": 0.9820022583007812,
+  "mal": 0.017997700721025467,
+  "top_conf": 0.999991560500348,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003587_jpeg.rf.42b26ba020a82368d0f8457b1d55babb.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.0976926034800272e-07,
+  "ben": 0.9251086711883545,
+  "mal": 0.07489136606454849,
+  "top_conf": 0.9999998902307397,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003596_jpeg.rf.0aacd1c216ab2443fc2b0e4dc1edcd8e.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 8.121124750459785e-08,
+  "ben": 0.9476122856140137,
+  "mal": 0.052387744188308716,
+  "top_conf": 0.9999999187887525,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003599_jpeg.rf.98a7a34e3d1e4c0034a759240ce1f68f.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 5.373347100601222e-09,
+  "ben": 0.9575367569923401,
+  "mal": 0.04246323183178902,
+  "top_conf": 0.9999999946266529,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003604_jpeg.rf.4df693fad6b56a2b7e45c9ad8168e0d0.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.707537689479068e-05,
+  "ben": 0.9878571033477783,
+  "mal": 0.01214288454502821,
+  "top_conf": 0.9999629246231052,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003624_jpeg.rf.b78fb351361277c0e1c707feb6a51a9e.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.8432565696002712e-08,
+  "ben": 0.9654410481452942,
+  "mal": 0.03455893695354462,
+  "top_conf": 0.9999999815674343,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003631_jpeg.rf.80dc98765a49abfd81fa2b591f43f2e1.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.12273908406496048,
+  "ben": 0.9719325304031372,
+  "mal": 0.028067411854863167,
+  "top_conf": 0.8772609159350395,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003635_jpeg.rf.d9ff2d6a6429ffee033e24e6b04f02e4.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.29105880856513977,
+  "ben": 0.9534881114959717,
+  "mal": 0.04651188477873802,
+  "top_conf": 0.7089411914348602,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003664_jpeg.rf.b1890b1375ab749e07ed96db296f10da.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.2798589523299597e-05,
+  "ben": 0.8674143552780151,
+  "mal": 0.13258562982082367,
+  "top_conf": 0.9999872014104767,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003669_jpeg.rf.2501977f6dd2e29a873fecc0b8c9798b.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.697129015099108e-08,
+  "ben": 0.9626621603965759,
+  "mal": 0.03733791038393974,
+  "top_conf": 0.9999999830287098,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003673_jpeg.rf.4e1ea2d245bf042824de9a08df8c8484.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.9045215796941193e-06,
+  "ben": 0.7446487545967102,
+  "mal": 0.2553512156009674,
+  "top_conf": 0.9999970954784203,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003683_jpeg.rf.cb33971d14130faa5872179e91441b1c.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.8565355023602024e-05,
+  "ben": 0.9315716624259949,
+  "mal": 0.06842836737632751,
+  "top_conf": 0.9999714346449764,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003689_jpeg.rf.7e29c274bc4f331dbcfa17caeafe68f4.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.447696508374065e-05,
+  "ben": 0.1983586847782135,
+  "mal": 0.8016412854194641,
+  "top_conf": 0.9999655230349163,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003694_jpeg.rf.6621a18334c3ee410c51f0b5b8cc5709.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.161067769179681e-09,
+  "ben": 0.8479477763175964,
+  "mal": 0.15205231308937073,
+  "top_conf": 0.9999999978389322,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003714_jpeg.rf.9433a814f492f995f7ae312aad594f41.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.115682582370937e-05,
+  "ben": 0.7141505479812622,
+  "mal": 0.2858494222164154,
+  "top_conf": 0.9999788431741763,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003715_jpeg.rf.c34115ff5ce51cdc2ccc96cbf3f1d243.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 3.273666607128689e-06,
+  "ben": 0.9239951372146606,
+  "mal": 0.07600485533475876,
+  "top_conf": 0.9999967263333929,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003718_jpeg.rf.d55a34c911a684faaafeb51898b3066d.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 2.3173376551000047e-09,
+  "ben": 0.8998217582702637,
+  "mal": 0.10017828643321991,
+  "top_conf": 0.9999999976826623,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003732_jpg.rf.926e5cdef30f6d8a3feef208ff2224a4.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.0035957919899374247,
+  "ben": 0.9569461345672607,
+  "mal": 0.04305389150977135,
+  "top_conf": 0.9964042080100626,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003738_jpg.rf.323bbd13e0428e94d9ff92a7ed0ba3ad.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 1.309135466698308e-08,
+  "ben": 0.9504100680351257,
+  "mal": 0.04958989843726158,
+  "top_conf": 0.9999999869086453,
+  "correct": 1
+ },
+ {
+  "file": "data\\test\\normal\\tb2_IMG003746_jpg.rf.b6d2371601c0cd824d75c216317a1149.jpg",
+  "truth": 2,
+  "pred": 2,
+  "tumor": 0.00038437964394688606,
+  "ben": 0.9613646268844604,
+  "mal": 0.03863545134663582,
+  "top_conf": 0.9996156203560531,
+  "correct": 1
+ }
+]

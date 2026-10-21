@@ -37,6 +37,7 @@ import traceback
 from pathlib import Path
 
 random.seed(23)
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -209,24 +210,31 @@ def main():
                 link(img, SUB / split / c / img.name)
     mark("subtype-staged")
 
-    # ---- load the wild split (dataset ships the wild images as ONE zip) ----
+    # ---- load the wild split ----
+    # The dataset may ship the wild images as one zip (we upload a zip so the
+    # uploader makes ONE request instead of 199) OR Kaggle may have expanded it
+    # into a wild_images/ subfolder. Handle both, and any nesting depth.
     import zipfile
     split = json.loads(ASSETS.read_text())
     wild_root = ASSETS.parent
+    search_dirs = [wild_root]
     zpath = next((p for p in wild_root.glob("wild_images.zip")), None)
-    if zpath is None:
-        print("wild_images.zip missing - aborting", flush=True)
-        sys.exit(2)
-    wdir = TMP / "wild"
-    wdir.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(zpath) as z:
-        z.extractall(str(wdir))
-    wimg = {p.name: p for p in wdir.glob("wildimg_*.png")}
-    wlab = {p.name.replace("wildlbl_", "").replace(".txt", ""): p
-            for p in wdir.glob("wildlbl_*.txt")}
-    print(f"wild images unzipped: {len(wimg)} | labels: {len(wlab)}", flush=True)
-    if not wimg or not wlab:
-        print("wild assets missing after unzip - aborting", flush=True)
+    if zpath is not None:
+        wdir = TMP / "wild"
+        wdir.mkdir(parents=True, exist_ok=True)
+        with zipfile.ZipFile(zpath) as z:
+            z.extractall(str(wdir))
+        search_dirs = [wdir, wild_root]
+        print(f"unzipped {zpath.name}", flush=True)
+    wimg, wlab = {}, {}
+    for d in search_dirs:
+        for p in d.rglob("wildimg_*.png"):
+            wimg.setdefault(p.name, p)
+        for p in d.rglob("wildlbl_*.txt"):
+            wlab.setdefault(p.name.replace("wildlbl_", "").replace(".txt", ""), p)
+    print(f"wild images found: {len(wimg)} | labels: {len(wlab)}", flush=True)
+    if len(wimg) < 150 or len(wlab) < 150:
+        print(f"wild assets incomplete ({len(wimg)}/{len(wlab)}) - aborting", flush=True)
         sys.exit(2)
 
     def wild_items(entries):
@@ -301,20 +309,48 @@ def main():
     best, out = 0.0, WORK / "specB23.pt"
     hist = []
     for ep in range(1, EPOCHS + 1):
-        model.train()
-        t0, co, to, cw = time.time(), 0, 0, 0
-        for x, y, isw in tqdm(tr_ld, desc=f"B23 {ep}/{EPOCHS}", leave=False):
-            x = x.to(device, non_blocking=True)
-            y = y.to(device, non_blocking=True)
+        try:
+            model.train()
+            t0, co, to, cw = time.time(), 0, 0, 0
+            for x, y, isw in tqdm(tr_ld, desc=f"B23 {ep}/{EPOCHS}", leave=False):
+                x = x.to(device, non_blocking=True)
+                y = y.to(device, non_blocking=True)
+                opt.zero_grad()
+                with autocast():
+                    logits = model(x)
+                    loss = crit(logits, y)
+                scaler.scale(loss).backward()
+                scaler.step(opt)
+                scaler.update()
+                # count accuracy from the SAME logits used for the loss. Calling
+                # model(x) again here would run a second forward with a second
+                # autograd graph and OOM the T4 (V24 died exactly this way).
+                co += (logits.argmax(1) == y).sum().item()
+                to += x.size(0)
+                cw += int(isw.sum())
+        except torch.cuda.OutOfMemoryError:
+            print(f"OOM at epoch {ep} -> halving the batch and retrying", flush=True)
+            torch.cuda.empty_cache()
             opt.zero_grad()
-            with autocast():
-                loss = crit(model(x), y)
-            scaler.scale(loss).backward()
-            scaler.step(opt)
-            scaler.update()
-            co += (model(x).argmax(1) == y).sum().item()
-            to += x.size(0)
-            cw += int(isw.sum())
+            tr_ld = DataLoader(tr, batch_size=max(2, BATCH // 2), shuffle=True, num_workers=4,
+                               pin_memory=True, drop_last=True, persistent_workers=True)
+            va_ld = DataLoader(va, batch_size=max(2, BATCH // 2), shuffle=False,
+                               num_workers=4, pin_memory=True)
+            model.train()
+            t0, co, to, cw = time.time(), 0, 0, 0
+            for x, y, isw in tqdm(tr_ld, desc=f"B23 {ep}/{EPOCHS} (small batch)", leave=False):
+                x = x.to(device, non_blocking=True)
+                y = y.to(device, non_blocking=True)
+                opt.zero_grad()
+                with autocast():
+                    logits = model(x)
+                    loss = crit(logits, y)
+                scaler.scale(loss).backward()
+                scaler.step(opt)
+                scaler.update()
+                co += (logits.argmax(1) == y).sum().item()
+                to += x.size(0)
+                cw += int(isw.sum())
         sched.step()
         vacc, _, _ = evaluate_btxrd()
         hist.append({"ep": ep, "train": co / to, "val": vacc, "secs": time.time() - t0})

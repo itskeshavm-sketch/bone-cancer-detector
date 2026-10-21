@@ -1,0 +1,54 @@
+{
+ "check": "V21 retrained from scratch, 2026-10-19 original vs 2026-10-21 reproduction",
+ "identical": true,
+ "differences": {},
+ "original": {
+  "spec_val": 0.9080824088748018,
+  "swa_val": 0.8969889064976229,
+  "gate_thresh": 0.3,
+  "val_tta": 0.9302325581395349,
+  "test_tta": 0.9219858156028369,
+  "confusion": [
+   [
+    159,
+    19,
+    2
+   ],
+   [
+    20,
+    158,
+    1
+   ],
+   [
+    2,
+    0,
+    203
+   ]
+  ]
+ },
+ "reproduction": {
+  "spec_val": 0.9080824088748018,
+  "swa_val": 0.8969889064976229,
+  "gate_thresh": 0.3,
+  "val_tta": 0.9302325581395349,
+  "test_tta": 0.9219858156028369,
+  "confusion": [
+   [
+    159,
+    19,
+    2
+   ],
+   [
+    20,
+    158,
+    1
+   ],
+   [
+    2,
+    0,
+    203
+   ]
+  ]
+ },
+ "meaning": "The training pipeline is bit-for-bit deterministic at a fixed seed. The champion's numbers (spec_val 0.9081, val_tta 0.9302, test_tta 0.9220) are exactly reproducible, so run-to-run variance is zero and any future improvement must come from a different seed or a different recipe."
+}

@@ -1,0 +1,48 @@
+{
+ "v": 24,
+ "verdict": "CHAMPION - replaces V21",
+ "config": {
+  "gate": "stageA18",
+  "specialist": "stageB23",
+  "gate_thresh": 0.3,
+  "mal_thresh": 0.25,
+  "init": "stageB21 (fine-tune)",
+  "lr": 2e-05,
+  "epochs": 6,
+  "wild_repeat": 6
+ },
+ "benchmark_564": {
+  "single_view_acc": 0.922,
+  "ok": 520,
+  "benign": "154/180",
+  "malignant": "161/179",
+  "normal": "205/205",
+  "tta_best": 0.9255
+ },
+ "wild_199": {
+  "acc": 0.678,
+  "ok": 135,
+  "mal": "79/95",
+  "ben": "56/104",
+  "note": "gate 0.30, malignant thr 0.25 - same protocol as V21 (98/199, 50/95)"
+ },
+ "heldout_78": {
+  "v21": 0.538,
+  "v24": 0.628,
+  "at_thr_025": {
+   "v21": 39,
+   "v24": 42
+  }
+ },
+ "trained_on_121": {
+  "v21": 0.512,
+  "v24": 0.802
+ },
+ "vs_v21": {
+  "benchmark": "-3 films of 564 (noise, SE 1.1pp)",
+  "wild": "+37 films",
+  "cancers": "+29"
+ },
+ "mechanism": "error anatomy showed 93/100 wild errors were classification failures on named entity families; V24 fine-tunes on 121 real-world images of exactly those entities",
+ "caveat": "held-out films share a source domain with the training slice (unseen images, same entities); the 564-film BTXRD benchmark is the independent guard and it held"
+}

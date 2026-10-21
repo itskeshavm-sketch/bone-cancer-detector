@@ -1,0 +1,1055 @@
+{
+ "bt2_benign_abc_00.png": {
+  "reason": null,
+  "sat": 0.025914877653121948,
+  "dark": 0.002112,
+  "std": 0.19177158176898956,
+  "w": 1000,
+  "h": 1000,
+  "ar": 1.0
+ },
+ "bt2_benign_abc_01.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.020750652439118552,
+  "std": 0.26066064834594727,
+  "w": 638,
+  "h": 406,
+  "ar": 1.5714285714285714
+ },
+ "bt2_benign_abc_02.png": {
+  "reason": "black background (CT/MRI/scintigraphy)",
+  "sat": 0.0,
+  "dark": 0.3635244066278549,
+  "std": 0.3514195680618286,
+  "w": 638,
+  "h": 406,
+  "ar": 1.5714285714285714
+ },
+ "bt2_benign_abc_03.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0010655218740831106,
+  "std": 0.2939080595970154,
+  "w": 406,
+  "h": 638,
+  "ar": 0.6363636363636364
+ },
+ "bt2_benign_abc_04.png": {
+  "reason": null,
+  "sat": 0.04699697718024254,
+  "dark": 0.017356565042551203,
+  "std": 0.32031261920928955,
+  "w": 592,
+  "h": 578,
+  "ar": 1.0242214532871972
+ },
+ "bt2_benign_abc_05.png": {
+  "reason": "black background (CT/MRI/scintigraphy)",
+  "sat": 0.009253651835024357,
+  "dark": 0.27927177561586164,
+  "std": 0.36403095722198486,
+  "w": 775,
+  "h": 567,
+  "ar": 1.3668430335097002
+ },
+ "bt2_benign_abc_06.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.000829817158931083,
+  "std": 0.29674872756004333,
+  "w": 700,
+  "h": 711,
+  "ar": 0.9845288326300985
+ },
+ "bt2_benign_abc_07.png": {
+  "reason": null,
+  "sat": 0.04845429211854935,
+  "dark": 0.001136074607884697,
+  "std": 0.20608878135681152,
+  "w": 700,
+  "h": 674,
+  "ar": 1.0385756676557865
+ },
+ "bt2_benign_abc_08.png": {
+  "reason": null,
+  "sat": 0.060428865253925323,
+  "dark": 0.02415720961281709,
+  "std": 0.28380489349365234,
+  "w": 560,
+  "h": 1070,
+  "ar": 0.5233644859813084
+ },
+ "bt2_benign_abc_09.png": {
+  "reason": null,
+  "sat": 0.08422844856977463,
+  "dark": 0.005112044817927171,
+  "std": 0.24562321603298187,
+  "w": 700,
+  "h": 1122,
+  "ar": 0.6238859180035651
+ },
+ "bt2_benign_abc_10.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.005580189644586943,
+  "std": 0.2597077488899231,
+  "w": 1070,
+  "h": 822,
+  "ar": 1.3017031630170317
+ },
+ "bt2_benign_abc_11.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 7.722007722007723e-05,
+  "std": 0.2681238651275635,
+  "w": 296,
+  "h": 700,
+  "ar": 0.4228571428571429
+ },
+ "bt2_benign_abc_12.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0001531567303874298,
+  "std": 0.22098860144615173,
+  "w": 610,
+  "h": 1156,
+  "ar": 0.527681660899654
+ },
+ "bt2_benign_abc_13.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0006143146913937989,
+  "std": 0.22004856169223785,
+  "w": 350,
+  "h": 493,
+  "ar": 0.7099391480730223
+ },
+ "bt2_benign_bfh_00.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.22234024107456207,
+  "dark": 0.012726250702641934,
+  "std": 0.24890805780887604,
+  "w": 600,
+  "h": 593,
+  "ar": 1.0118043844856661
+ },
+ "bt2_benign_bfh_01.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.1935270130634308,
+  "dark": 0.02194724220623501,
+  "std": 0.30333200097084045,
+  "w": 600,
+  "h": 695,
+  "ar": 0.8633093525179856
+ },
+ "bt2_benign_bfh_02.png": {
+  "reason": "black background (CT/MRI/scintigraphy)",
+  "sat": 0.0,
+  "dark": 0.2872632850241546,
+  "std": 0.2901018559932709,
+  "w": 600,
+  "h": 690,
+  "ar": 0.8695652173913043
+ },
+ "bt2_benign_bfh_03.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 2.100840336134454e-05,
+  "std": 0.2885705232620239,
+  "w": 600,
+  "h": 714,
+  "ar": 0.8403361344537815
+ },
+ "bt2_benign_boneisland_00.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0,
+  "std": 0.16712559759616852,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_boneisland_01.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0,
+  "std": 0.2192509025335312,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_boneisland_02.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0006555555555555556,
+  "std": 0.17498613893985748,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_boneisland_03.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.135,
+  "std": 0.1977270245552063,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_boneisland_04.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.020788888888888888,
+  "std": 0.20684325695037842,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_boneisland_05.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.16608055555555556,
+  "std": 0.27589407563209534,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_boneisland_06.png": {
+  "reason": "black background (CT/MRI/scintigraphy)",
+  "sat": 0.00044326798524707556,
+  "dark": 0.5007638888888889,
+  "std": 0.2531505823135376,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_boneisland_07.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.017244444444444444,
+  "std": 0.20887790620326996,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_browntumor_00.png": {
+  "reason": null,
+  "sat": 0.020382078364491463,
+  "dark": 0.0,
+  "std": 0.17801760137081146,
+  "w": 1000,
+  "h": 1000,
+  "ar": 1.0
+ },
+ "bt2_benign_browntumor_01.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.2760116457939148,
+  "dark": 0.00963975155279503,
+  "std": 0.23262064158916473,
+  "w": 500,
+  "h": 322,
+  "ar": 1.5527950310559007
+ },
+ "bt2_benign_browntumor_02.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.17458929121494293,
+  "dark": 0.013858461538461538,
+  "std": 0.24677568674087524,
+  "w": 500,
+  "h": 325,
+  "ar": 1.5384615384615385
+ },
+ "bt2_benign_browntumor_03.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.18782106041908264,
+  "dark": 0.020024539877300615,
+  "std": 0.2631395757198334,
+  "w": 500,
+  "h": 326,
+  "ar": 1.5337423312883436
+ },
+ "bt2_benign_browntumor_04.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.00012519561815336463,
+  "std": 0.2966194450855255,
+  "w": 300,
+  "h": 426,
+  "ar": 0.704225352112676
+ },
+ "bt2_benign_browntumor_05.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.013070876026392822,
+  "std": 0.20823261141777039,
+  "w": 826,
+  "h": 1273,
+  "ar": 0.6488609583660644
+ },
+ "bt2_benign_chondroblastoma_00.png": {
+  "reason": null,
+  "sat": 0.02570537105202675,
+  "dark": 0.000829,
+  "std": 0.18889079988002777,
+  "w": 1000,
+  "h": 1000,
+  "ar": 1.0
+ },
+ "bt2_benign_chondroblastoma_01.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0,
+  "std": 0.13754871487617493,
+  "w": 800,
+  "h": 600,
+  "ar": 1.3333333333333333
+ },
+ "bt2_benign_chondroblastoma_02.png": {
+  "reason": "flat texture (slide/graphic)",
+  "sat": 0.0,
+  "dark": 0.00022261277094317517,
+  "std": 0.07909247279167175,
+  "w": 600,
+  "h": 569,
+  "ar": 1.054481546572935
+ },
+ "bt2_benign_chondroblastoma_03.png": {
+  "reason": null,
+  "sat": 0.05277540534734726,
+  "dark": 2.9166666666666666e-05,
+  "std": 0.2161661982536316,
+  "w": 600,
+  "h": 400,
+  "ar": 1.5
+ },
+ "bt2_benign_chondroblastoma_04.png": {
+  "reason": null,
+  "sat": 0.07056872546672821,
+  "dark": 0.20454166666666668,
+  "std": 0.2725801169872284,
+  "w": 600,
+  "h": 400,
+  "ar": 1.5
+ },
+ "bt2_benign_chondroblastoma_05.png": {
+  "reason": null,
+  "sat": 0.06375584751367569,
+  "dark": 0.005391666666666667,
+  "std": 0.2693762481212616,
+  "w": 600,
+  "h": 400,
+  "ar": 1.5
+ },
+ "bt2_benign_chondroblastoma_06.png": {
+  "reason": null,
+  "sat": 0.057684000581502914,
+  "dark": 0.0006875,
+  "std": 0.2198832631111145,
+  "w": 600,
+  "h": 400,
+  "ar": 1.5
+ },
+ "bt2_benign_chondroblastoma_07.png": {
+  "reason": null,
+  "sat": 0.05639893561601639,
+  "dark": 0.0023333333333333335,
+  "std": 0.2537221312522888,
+  "w": 600,
+  "h": 400,
+  "ar": 1.5
+ },
+ "bt2_benign_chondroblastoma_08.png": {
+  "reason": "black background (CT/MRI/scintigraphy)",
+  "sat": 0.06682830303907394,
+  "dark": 0.5399412593984962,
+  "std": 0.2911689281463623,
+  "w": 800,
+  "h": 532,
+  "ar": 1.5037593984962405
+ },
+ "bt2_benign_cmf_00.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.11932129080496882,
+  "std": 0.25615203380584717,
+  "w": 709,
+  "h": 830,
+  "ar": 0.8542168674698796
+ },
+ "bt2_benign_cmf_01.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.11112178717271198,
+  "std": 0.19252446293830872,
+  "w": 805,
+  "h": 724,
+  "ar": 1.111878453038674
+ },
+ "bt2_benign_cmf_02.png": {
+  "reason": null,
+  "sat": 0.036227982491254807,
+  "dark": 0.0,
+  "std": 0.20761235058307648,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_cmf_03.png": {
+  "reason": null,
+  "sat": 0.06443130970001221,
+  "dark": 1.6666666666666667e-05,
+  "std": 0.32789742946624756,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_cmf_04.png": {
+  "reason": null,
+  "sat": 0.038019876927137375,
+  "dark": 0.0,
+  "std": 0.3070944845676422,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_cmf_05.png": {
+  "reason": null,
+  "sat": 0.0007328104693442583,
+  "dark": 0.1056388888888889,
+  "std": 0.21805016696453094,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_cmf_06.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.05871944444444444,
+  "std": 0.3155363202095032,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_cmf_07.png": {
+  "reason": null,
+  "sat": 0.0003829738707281649,
+  "dark": 0.16415555555555555,
+  "std": 0.27246007323265076,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_cmf_08.png": {
+  "reason": "black background (CT/MRI/scintigraphy)",
+  "sat": 0.0,
+  "dark": 0.32366388888888886,
+  "std": 0.3462846279144287,
+  "w": 600,
+  "h": 600,
+  "ar": 1.0
+ },
+ "bt2_benign_crmo_00.png": {
+  "reason": null,
+  "sat": 0.019012218341231346,
+  "dark": 0.0027932313398238294,
+  "std": 0.24099315702915192,
+  "w": 600,
+  "h": 719,
+  "ar": 0.8344923504867872
+ },
+ "bt2_benign_crmo_01.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0,
+  "std": 0.23532278835773468,
+  "w": 600,
+  "h": 769,
+  "ar": 0.7802340702210663
+ },
+ "bt2_benign_crmo_02.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 4.391743522178305e-06,
+  "std": 0.2695836126804352,
+  "w": 600,
+  "h": 759,
+  "ar": 0.7905138339920948
+ },
+ "bt2_benign_desmoid_00.png": {
+  "reason": null,
+  "sat": 0.019503774121403694,
+  "dark": 0.0,
+  "std": 0.15062327682971954,
+  "w": 1000,
+  "h": 1000,
+  "ar": 1.0
+ },
+ "bt2_benign_desmoid_01.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.30772513151168823,
+  "dark": 0.0,
+  "std": 0.09020183980464935,
+  "w": 446,
+  "h": 418,
+  "ar": 1.0669856459330143
+ },
+ "bt2_benign_myxoma_00.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.7579614520072937,
+  "dark": 0.00041875,
+  "std": 0.057277895510196686,
+  "w": 800,
+  "h": 800,
+  "ar": 1.0
+ },
+ "bt2_benign_myxoma_01.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.40477338433265686,
+  "dark": 0.001715625,
+  "std": 0.12487989664077759,
+  "w": 800,
+  "h": 800,
+  "ar": 1.0
+ },
+ "bt2_benign_myxoma_02.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.6752567291259766,
+  "dark": 0.000590625,
+  "std": 0.09765361994504929,
+  "w": 800,
+  "h": 800,
+  "ar": 1.0
+ },
+ "bt2_benign_myxoma_03.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.6018703579902649,
+  "dark": 0.0008734375,
+  "std": 0.16354379057884216,
+  "w": 800,
+  "h": 800,
+  "ar": 1.0
+ },
+ "bt2_benign_myxoma_04.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.528074324131012,
+  "dark": 0.0002640625,
+  "std": 0.22212906181812286,
+  "w": 800,
+  "h": 800,
+  "ar": 1.0
+ },
+ "bt2_benign_nora_00.png": {
+  "reason": null,
+  "sat": 0.020205466076731682,
+  "dark": 0.0,
+  "std": 0.17958472669124603,
+  "w": 1000,
+  "h": 1000,
+  "ar": 1.0
+ },
+ "bt2_benign_nora_01.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0017502198768689534,
+  "std": 0.24958376586437225,
+  "w": 600,
+  "h": 758,
+  "ar": 0.7915567282321899
+ },
+ "bt2_benign_perichondroma_00.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.1805870532989502,
+  "dark": 0.06962981047453703,
+  "std": 0.2959580719470978,
+  "w": 1728,
+  "h": 1152,
+  "ar": 1.5
+ },
+ "bt2_benign_perichondroma_01.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.23701651394367218,
+  "dark": 0.0,
+  "std": 0.18332822620868683,
+  "w": 3000,
+  "h": 2144,
+  "ar": 1.3992537313432836
+ },
+ "bt2_benign_perichondroma_02.png": {
+  "reason": null,
+  "sat": 0.01731773652136326,
+  "dark": 0.08598115299334812,
+  "std": 0.3587617576122284,
+  "w": 800,
+  "h": 451,
+  "ar": 1.7738359201773837
+ },
+ "bt2_benign_perichondroma_03.png": {
+  "reason": null,
+  "sat": 0.0668892189860344,
+  "dark": 0.0,
+  "std": 0.28789252042770386,
+  "w": 800,
+  "h": 465,
+  "ar": 1.7204301075268817
+ },
+ "bt2_benign_perichondroma_04.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.23774787783622742,
+  "dark": 0.0,
+  "std": 0.18338343501091003,
+  "w": 800,
+  "h": 572,
+  "ar": 1.3986013986013985
+ },
+ "bt2_benign_perichondroma_05.png": {
+  "reason": null,
+  "sat": 0.01701773889362812,
+  "dark": 0.08429878048780488,
+  "std": 0.35879889130592346,
+  "w": 800,
+  "h": 451,
+  "ar": 1.7738359201773837
+ },
+ "bt2_benign_perichondroma_06.png": {
+  "reason": null,
+  "sat": 0.06685848534107208,
+  "dark": 0.0,
+  "std": 0.2878732979297638,
+  "w": 800,
+  "h": 465,
+  "ar": 1.7204301075268817
+ },
+ "bt2_benign_perichondroma_07.png": {
+  "reason": null,
+  "sat": 0.022883377969264984,
+  "dark": 0.0,
+  "std": 0.30597177147865295,
+  "w": 800,
+  "h": 568,
+  "ar": 1.408450704225352
+ },
+ "bt2_benign_tug_00.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.004210726433805017,
+  "std": 0.26073315739631653,
+  "w": 652,
+  "h": 597,
+  "ar": 1.0921273031825796
+ },
+ "bt2_benign_tug_01.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.1703622997833465,
+  "std": 0.2655794620513916,
+  "w": 619,
+  "h": 645,
+  "ar": 0.9596899224806201
+ },
+ "bt2_benign_tug_02.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.23512636223520328,
+  "std": 0.2394069880247116,
+  "w": 521,
+  "h": 599,
+  "ar": 0.8697829716193656
+ },
+ "bt2_malignant_adamantinoma_00.png": {
+  "reason": null,
+  "sat": 0.0291777104139328,
+  "dark": 0.000192,
+  "std": 0.19100935757160187,
+  "w": 1000,
+  "h": 1000,
+  "ar": 1.0
+ },
+ "bt2_malignant_adamantinoma_01.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.2000774647887324,
+  "std": 0.3264932334423065,
+  "w": 284,
+  "h": 500,
+  "ar": 0.568
+ },
+ "bt2_malignant_adamantinoma_02.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.018432784636488342,
+  "std": 0.2354966253042221,
+  "w": 252,
+  "h": 324,
+  "ar": 0.7777777777777778
+ },
+ "bt2_malignant_adenocarcinoma_00.png": {
+  "reason": null,
+  "sat": 0.01643582433462143,
+  "dark": 0.0,
+  "std": 0.13703081011772156,
+  "w": 1000,
+  "h": 1000,
+  "ar": 1.0
+ },
+ "bt2_malignant_angiosarcoma_00.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.017626511419614868,
+  "std": 0.2714085578918457,
+  "w": 350,
+  "h": 638,
+  "ar": 0.54858934169279
+ },
+ "bt2_malignant_angiosarcoma_01.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.12550945580005646,
+  "dark": 0.3273656755346896,
+  "std": 0.2777725160121918,
+  "w": 300,
+  "h": 639,
+  "ar": 0.4694835680751174
+ },
+ "bt2_malignant_angiosarcoma_02.png": {
+  "reason": null,
+  "sat": 0.07198163121938705,
+  "dark": 0.21022617611580216,
+  "std": 0.3171604871749878,
+  "w": 400,
+  "h": 829,
+  "ar": 0.4825090470446321
+ },
+ "bt2_malignant_chondrosarcoma_00.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.20187778927374647,
+  "std": 0.2874326705932617,
+  "w": 638,
+  "h": 406,
+  "ar": 1.5714285714285714
+ },
+ "bt2_malignant_chondrosarcoma_01.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.14675775170326233,
+  "dark": 0.0,
+  "std": 0.15036942064762115,
+  "w": 770,
+  "h": 584,
+  "ar": 1.3184931506849316
+ },
+ "bt2_malignant_chondrosarcoma_02.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.16355983912944794,
+  "dark": 0.0,
+  "std": 0.1986946314573288,
+  "w": 764,
+  "h": 608,
+  "ar": 1.256578947368421
+ },
+ "bt2_malignant_chondrosarcoma_03.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.16311995685100555,
+  "dark": 0.001057610544217687,
+  "std": 0.1831817924976349,
+  "w": 1120,
+  "h": 840,
+  "ar": 1.3333333333333333
+ },
+ "bt2_malignant_chondrosarcoma_04.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.20015379786491394,
+  "dark": 0.000742984693877551,
+  "std": 0.22621428966522217,
+  "w": 1120,
+  "h": 840,
+  "ar": 1.3333333333333333
+ },
+ "bt2_malignant_chondrosarcoma_05.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.21588367223739624,
+  "dark": 0.05155293367346939,
+  "std": 0.28178250789642334,
+  "w": 1120,
+  "h": 840,
+  "ar": 1.3333333333333333
+ },
+ "bt2_malignant_chondrosarcoma_06.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.19981026649475098,
+  "dark": 0.02220344387755102,
+  "std": 0.299920916557312,
+  "w": 1120,
+  "h": 840,
+  "ar": 1.3333333333333333
+ },
+ "bt2_malignant_chondrosarcoma_07.png": {
+  "reason": null,
+  "sat": 0.05398821458220482,
+  "dark": 0.026264880952380953,
+  "std": 0.23904606699943542,
+  "w": 1120,
+  "h": 840,
+  "ar": 1.3333333333333333
+ },
+ "bt2_malignant_chondrosarcoma_08.png": {
+  "reason": null,
+  "sat": 0.05344264209270477,
+  "dark": 0.03610969387755102,
+  "std": 0.22833800315856934,
+  "w": 1120,
+  "h": 840,
+  "ar": 1.3333333333333333
+ },
+ "bt2_malignant_chondrosarcoma_09.png": {
+  "reason": null,
+  "sat": 0.03647563233971596,
+  "dark": 0.18569409013605442,
+  "std": 0.2282271832227707,
+  "w": 2240,
+  "h": 1680,
+  "ar": 1.3333333333333333
+ },
+ "bt2_malignant_chondrosarcoma_10.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.18802501261234283,
+  "dark": 0.0,
+  "std": 0.0631360337138176,
+  "w": 797,
+  "h": 600,
+  "ar": 1.3283333333333334
+ },
+ "bt2_malignant_chondrosarcoma_11.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.21200965344905853,
+  "dark": 0.0,
+  "std": 0.0563245490193367,
+  "w": 600,
+  "h": 452,
+  "ar": 1.3274336283185841
+ },
+ "bt2_malignant_chondrosarcoma_12.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.18644021451473236,
+  "dark": 3.6873156342182893e-06,
+  "std": 0.07013998925685883,
+  "w": 600,
+  "h": 452,
+  "ar": 1.3274336283185841
+ },
+ "bt2_malignant_chondrosarcoma_13.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.1751377433538437,
+  "dark": 0.0,
+  "std": 0.06827812641859055,
+  "w": 600,
+  "h": 452,
+  "ar": 1.3274336283185841
+ },
+ "bt2_malignant_chondrosarcoma_14.png": {
+  "reason": "colour (photo/histology/graphic)",
+  "sat": 0.1413765698671341,
+  "dark": 0.0,
+  "std": 0.051581915467977524,
+  "w": 600,
+  "h": 452,
+  "ar": 1.3274336283185841
+ },
+ "bt2_malignant_chondrosarcoma_15.png": {
+  "reason": null,
+  "sat": 0.03155205026268959,
+  "dark": 0.001635,
+  "std": 0.19655005633831024,
+  "w": 1000,
+  "h": 1000,
+  "ar": 1.0
+ },
+ "bt2_malignant_chondrosarcoma_16.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.000695941617521554,
+  "std": 0.16822898387908936,
+  "w": 713,
+  "h": 659,
+  "ar": 1.0819423368740515
+ },
+ "bt2_malignant_chondrosarcoma_17.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0007299938067580826,
+  "std": 0.16823363304138184,
+  "w": 713,
+  "h": 659,
+  "ar": 1.0819423368740515
+ },
+ "bt2_malignant_chondrosarcoma_18.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.09311070285646557,
+  "std": 0.26554039120674133,
+  "w": 520,
+  "h": 649,
+  "ar": 0.8012326656394453
+ },
+ "bt2_malignant_chondrosarcoma_19.png": {
+  "reason": "black background (CT/MRI/scintigraphy)",
+  "sat": 0.0,
+  "dark": 0.6951822351440753,
+  "std": 0.13162261247634888,
+  "w": 623,
+  "h": 477,
+  "ar": 1.3060796645702306
+ },
+ "bt2_malignant_chondrosarcoma_20.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0007917133997492907,
+  "std": 0.16826878488063812,
+  "w": 713,
+  "h": 659,
+  "ar": 1.0819423368740515
+ },
+ "bt2_malignant_chondrosarcoma_21.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 3.1392246115209545e-06,
+  "std": 0.1985190063714981,
+  "w": 575,
+  "h": 554,
+  "ar": 1.0379061371841156
+ },
+ "bt2_malignant_chondrosarcoma_22.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.037997660964294695,
+  "std": 0.19601793587207794,
+  "w": 573,
+  "h": 673,
+  "ar": 0.8514115898959881
+ },
+ "bt2_malignant_chondrosarcoma_23.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0023466747412464214,
+  "std": 0.24655748903751373,
+  "w": 478,
+  "h": 304,
+  "ar": 1.5723684210526316
+ },
+ "bt2_malignant_chondrosarcoma_24.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.019793377120963327,
+  "std": 0.1445762664079666,
+  "w": 406,
+  "h": 360,
+  "ar": 1.1277777777777778
+ },
+ "bt2_malignant_chordoma_00.png": {
+  "reason": null,
+  "sat": 0.027928689494729042,
+  "dark": 0.0,
+  "std": 0.18830735981464386,
+  "w": 1000,
+  "h": 1000,
+  "ar": 1.0
+ },
+ "bt2_malignant_chordoma_01.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.002028820629503223,
+  "std": 0.17649242281913757,
+  "w": 600,
+  "h": 879,
+  "ar": 0.6825938566552902
+ },
+ "bt2_malignant_chordoma_02.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0,
+  "std": 0.12433095276355743,
+  "w": 451,
+  "h": 296,
+  "ar": 1.5236486486486487
+ },
+ "bt2_malignant_chordoma_03.png": {
+  "reason": "flat texture (slide/graphic)",
+  "sat": 0.07226055860519409,
+  "dark": 0.0006833333333333333,
+  "std": 0.09812305122613907,
+  "w": 400,
+  "h": 300,
+  "ar": 1.3333333333333333
+ },
+ "bt2_malignant_clearcellcs_00.png": {
+  "reason": null,
+  "sat": 0.020562225952744484,
+  "dark": 0.0,
+  "std": 0.1763278990983963,
+  "w": 1000,
+  "h": 1000,
+  "ar": 1.0
+ },
+ "bt2_malignant_clearcellcs_01.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.0003792667509481669,
+  "std": 0.2947540581226349,
+  "w": 339,
+  "h": 350,
+  "ar": 0.9685714285714285
+ },
+ "bt2_malignant_metastasis_00.png": {
+  "reason": null,
+  "sat": 0.0,
+  "dark": 0.09897935272216002,
+  "std": 0.2693919241428375,
+  "w": 398,
+  "h": 579,
+  "ar": 0.687392055267703
+ },
+ "bt2_malignant_metastasis_01.png": {
+  "reason": null,
+  "sat": 2.8137212666479172e-06,
+  "dark": 0.00012495767562599764,
+  "std": 0.23567716777324677,
+  "w": 436,
+  "h": 569,
+  "ar": 0.7662565905096661
+ },
+ "bt2_malignant_metastasis_02.png": {
+  "reason": "black background (CT/MRI/scintigraphy)",
+  "sat": 0.0,
+  "dark": 0.7143685986620093,
+  "std": 0.18796981871128082,
+  "w": 798,
+  "h": 635,
+  "ar": 1.2566929133858267
+ },
+ "bt2_malignant_metastasis_03.png": {
+  "reason": "black background (CT/MRI/scintigraphy)",
+  "sat": 0.0,
+  "dark": 0.45526737098573117,
+  "std": 0.22286199033260345,
+  "w": 721,
+  "h": 674,
+  "ar": 1.0697329376854599
+ },
+ "bt2_malignant_metastasis_04.png": {
+  "reason": "black background (CT/MRI/scintigraphy)",
+  "sat": 0.0,
+  "dark": 0.2842462713068182,
+  "std": 0.24566306173801422,
+  "w": 704,
+  "h": 704,
+  "ar": 1.0
+ },
+ "bt2_malignant_metastasis_05.png": {
+  "reason": "black background (CT/MRI/scintigraphy)",
+  "sat": 0.0,
+  "dark": 0.31478374966781825,
+  "std": 0.24644851684570312,
+  "w": 426,
+  "h": 848,
+  "ar": 0.5023584905660378
+ }
+}

@@ -1,0 +1,626 @@
+{
+ "bt2_benign_abc_00.png": {
+  "reason": "not soft-tissue filled (CT/MRI/graphic)",
+  "color_frac": 0.01726,
+  "mid_frac": 0.146121,
+  "dark_frac": 0.002112,
+  "white_frac": 0.843753,
+  "std": 0.19177158176898956
+ },
+ "bt2_benign_abc_01.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8295126395602019,
+  "dark_frac": 0.020750652439118552,
+  "white_frac": 0.0,
+  "std": 0.26066064834594727
+ },
+ "bt2_benign_abc_03.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.7810545578084223,
+  "dark_frac": 0.0010655218740831106,
+  "white_frac": 0.0,
+  "std": 0.2939080595970154
+ },
+ "bt2_benign_abc_04.png": {
+  "reason": null,
+  "color_frac": 0.0004968203497615262,
+  "mid_frac": 0.699309711961096,
+  "dark_frac": 0.017356565042551203,
+  "white_frac": 0.14509199943888526,
+  "std": 0.32031261920928955
+ },
+ "bt2_benign_abc_06.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.6928631705846896,
+  "dark_frac": 0.000829817158931083,
+  "white_frac": 0.0077315651999196305,
+  "std": 0.29674872756004333
+ },
+ "bt2_benign_abc_07.png": {
+  "reason": null,
+  "color_frac": 0.00022467147096227216,
+  "mid_frac": 0.9306379821958457,
+  "dark_frac": 0.001136074607884697,
+  "white_frac": 0.020807545570156846,
+  "std": 0.20608878135681152
+ },
+ "bt2_benign_abc_08.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.6995193591455273,
+  "dark_frac": 0.02415720961281709,
+  "white_frac": 0.0041104806408544725,
+  "std": 0.28380489349365234
+ },
+ "bt2_benign_abc_09.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9223898650369239,
+  "dark_frac": 0.005112044817927171,
+  "white_frac": 0.00874331550802139,
+  "std": 0.24562321603298187
+ },
+ "bt2_benign_abc_10.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.7411874388885099,
+  "dark_frac": 0.005580189644586943,
+  "white_frac": 0.0019123632808058758,
+  "std": 0.2597077488899231
+ },
+ "bt2_benign_abc_11.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.74628861003861,
+  "dark_frac": 7.722007722007723e-05,
+  "white_frac": 0.0029488416988416987,
+  "std": 0.2681238651275635
+ },
+ "bt2_benign_abc_12.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8591028986329343,
+  "dark_frac": 0.0001531567303874298,
+  "white_frac": 0.0025540302909977876,
+  "std": 0.22098860144615173
+ },
+ "bt2_benign_abc_13.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.7728252680382498,
+  "dark_frac": 0.0006143146913937989,
+  "white_frac": 0.006444508838017966,
+  "std": 0.22004856169223785
+ },
+ "bt2_benign_bfh_03.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8245378151260504,
+  "dark_frac": 2.100840336134454e-05,
+  "white_frac": 0.015184407096171802,
+  "std": 0.2885705232620239
+ },
+ "bt2_benign_boneisland_00.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9661861111111111,
+  "dark_frac": 0.0,
+  "white_frac": 0.0037972222222222222,
+  "std": 0.16712559759616852
+ },
+ "bt2_benign_boneisland_01.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9231138888888889,
+  "dark_frac": 0.0,
+  "white_frac": 0.030441666666666665,
+  "std": 0.2192509025335312
+ },
+ "bt2_benign_boneisland_02.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9865638888888889,
+  "dark_frac": 0.0006555555555555556,
+  "white_frac": 0.0,
+  "std": 0.17498613893985748
+ },
+ "bt2_benign_boneisland_03.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8638416666666666,
+  "dark_frac": 0.135,
+  "white_frac": 0.0,
+  "std": 0.1977270245552063
+ },
+ "bt2_benign_boneisland_04.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9357916666666667,
+  "dark_frac": 0.020788888888888888,
+  "white_frac": 0.0046611111111111115,
+  "std": 0.20684325695037842
+ },
+ "bt2_benign_boneisland_05.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.7162027777777777,
+  "dark_frac": 0.16608055555555556,
+  "white_frac": 0.03483611111111111,
+  "std": 0.27589407563209534
+ },
+ "bt2_benign_boneisland_07.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8605222222222222,
+  "dark_frac": 0.017244444444444444,
+  "white_frac": 0.0020777777777777778,
+  "std": 0.20887790620326996
+ },
+ "bt2_benign_browntumor_00.png": {
+  "reason": "not soft-tissue filled (CT/MRI/graphic)",
+  "color_frac": 0.002145,
+  "mid_frac": 0.121929,
+  "dark_frac": 0.0,
+  "white_frac": 0.872888,
+  "std": 0.17801760137081146
+ },
+ "bt2_benign_browntumor_04.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.6271596244131455,
+  "dark_frac": 0.00012519561815336463,
+  "white_frac": 0.06916275430359937,
+  "std": 0.2966194450855255
+ },
+ "bt2_benign_browntumor_05.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.6396217586719137,
+  "dark_frac": 0.013070876026392822,
+  "white_frac": 0.00029386646479593877,
+  "std": 0.20823261141777039
+ },
+ "bt2_benign_chondroblastoma_00.png": {
+  "reason": "not soft-tissue filled (CT/MRI/graphic)",
+  "color_frac": 0.024525,
+  "mid_frac": 0.136712,
+  "dark_frac": 0.000829,
+  "white_frac": 0.855816,
+  "std": 0.18889079988002777
+ },
+ "bt2_benign_chondroblastoma_01.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 1.0,
+  "dark_frac": 0.0,
+  "white_frac": 0.0,
+  "std": 0.13754871487617493
+ },
+ "bt2_benign_chondroblastoma_03.png": {
+  "reason": null,
+  "color_frac": 1.25e-05,
+  "mid_frac": 0.40941666666666665,
+  "dark_frac": 2.9166666666666666e-05,
+  "white_frac": 0.0015791666666666667,
+  "std": 0.2161661982536316
+ },
+ "bt2_benign_chondroblastoma_04.png": {
+  "reason": null,
+  "color_frac": 0.0006125,
+  "mid_frac": 0.5783541666666666,
+  "dark_frac": 0.20454166666666668,
+  "white_frac": 0.006383333333333334,
+  "std": 0.2725801169872284
+ },
+ "bt2_benign_chondroblastoma_05.png": {
+  "reason": null,
+  "color_frac": 0.00020833333333333335,
+  "mid_frac": 0.6005958333333333,
+  "dark_frac": 0.005391666666666667,
+  "white_frac": 0.0214625,
+  "std": 0.2693762481212616
+ },
+ "bt2_benign_chondroblastoma_06.png": {
+  "reason": null,
+  "color_frac": 0.0015458333333333333,
+  "mid_frac": 0.45119166666666666,
+  "dark_frac": 0.0006875,
+  "white_frac": 0.024966666666666668,
+  "std": 0.2198832631111145
+ },
+ "bt2_benign_chondroblastoma_07.png": {
+  "reason": null,
+  "color_frac": 0.0010375,
+  "mid_frac": 0.4366833333333333,
+  "dark_frac": 0.0023333333333333335,
+  "white_frac": 0.0038708333333333333,
+  "std": 0.2537221312522888
+ },
+ "bt2_benign_cmf_00.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.7941237446258943,
+  "dark_frac": 0.11932129080496882,
+  "white_frac": 0.005505803184529373,
+  "std": 0.25615203380584717
+ },
+ "bt2_benign_cmf_01.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.84344909234412,
+  "dark_frac": 0.11112178717271198,
+  "white_frac": 0.0021773446347071136,
+  "std": 0.19252446293830872
+ },
+ "bt2_benign_cmf_02.png": {
+  "reason": null,
+  "color_frac": 0.0005083333333333333,
+  "mid_frac": 0.9709055555555556,
+  "dark_frac": 0.0,
+  "white_frac": 0.01829722222222222,
+  "std": 0.20761235058307648
+ },
+ "bt2_benign_cmf_03.png": {
+  "reason": null,
+  "color_frac": 5.555555555555556e-06,
+  "mid_frac": 0.5639055555555555,
+  "dark_frac": 1.6666666666666667e-05,
+  "white_frac": 0.08966944444444444,
+  "std": 0.32789742946624756
+ },
+ "bt2_benign_cmf_04.png": {
+  "reason": null,
+  "color_frac": 5.555555555555556e-05,
+  "mid_frac": 0.8134222222222223,
+  "dark_frac": 0.0,
+  "white_frac": 0.09538333333333333,
+  "std": 0.3070944845676422
+ },
+ "bt2_benign_cmf_05.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8216777777777777,
+  "dark_frac": 0.1056388888888889,
+  "white_frac": 0.00015833333333333332,
+  "std": 0.21805016696453094
+ },
+ "bt2_benign_cmf_06.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.6965722222222223,
+  "dark_frac": 0.05871944444444444,
+  "white_frac": 0.02386388888888889,
+  "std": 0.3155363202095032
+ },
+ "bt2_benign_cmf_07.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.6998472222222222,
+  "dark_frac": 0.16415555555555555,
+  "white_frac": 0.0,
+  "std": 0.27246007323265076
+ },
+ "bt2_benign_crmo_00.png": {
+  "reason": null,
+  "color_frac": 8.344923504867872e-05,
+  "mid_frac": 0.9083750579508577,
+  "dark_frac": 0.0027932313398238294,
+  "white_frac": 0.05984237366713027,
+  "std": 0.24099315702915192
+ },
+ "bt2_benign_crmo_01.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8242544429995665,
+  "dark_frac": 0.0,
+  "white_frac": 0.005227568270481145,
+  "std": 0.23532278835773468
+ },
+ "bt2_benign_crmo_02.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9091040843214756,
+  "dark_frac": 4.391743522178305e-06,
+  "white_frac": 0.04981554677206851,
+  "std": 0.2695836126804352
+ },
+ "bt2_benign_desmoid_00.png": {
+  "reason": "not soft-tissue filled (CT/MRI/graphic)",
+  "color_frac": 0.026122,
+  "mid_frac": 0.101594,
+  "dark_frac": 0.0,
+  "white_frac": 0.886901,
+  "std": 0.15062327682971954
+ },
+ "bt2_benign_nora_00.png": {
+  "reason": "not soft-tissue filled (CT/MRI/graphic)",
+  "color_frac": 0.003725,
+  "mid_frac": 0.123756,
+  "dark_frac": 0.0,
+  "white_frac": 0.869271,
+  "std": 0.17958472669124603
+ },
+ "bt2_benign_nora_01.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8728737906772207,
+  "dark_frac": 0.0017502198768689534,
+  "white_frac": 0.0,
+  "std": 0.24958376586437225
+ },
+ "bt2_benign_perichondroma_02.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.3852771618625277,
+  "dark_frac": 0.08598115299334812,
+  "white_frac": 0.10062361419068735,
+  "std": 0.3587617576122284
+ },
+ "bt2_benign_perichondroma_03.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8788629032258064,
+  "dark_frac": 0.0,
+  "white_frac": 0.07388440860215054,
+  "std": 0.28789252042770386
+ },
+ "bt2_benign_perichondroma_05.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.38534922394678495,
+  "dark_frac": 0.08429878048780488,
+  "white_frac": 0.10062915742793792,
+  "std": 0.35879889130592346
+ },
+ "bt2_benign_perichondroma_06.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8789059139784946,
+  "dark_frac": 0.0,
+  "white_frac": 0.07368817204301076,
+  "std": 0.2878732979297638
+ },
+ "bt2_benign_perichondroma_07.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8157834507042253,
+  "dark_frac": 0.0,
+  "white_frac": 0.04312720070422535,
+  "std": 0.30597177147865295
+ },
+ "bt2_benign_tug_00.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9660444348532026,
+  "dark_frac": 0.004210726433805017,
+  "white_frac": 0.022713259549280142,
+  "std": 0.26073315739631653
+ },
+ "bt2_benign_tug_01.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.7124669697311242,
+  "dark_frac": 0.1703622997833465,
+  "white_frac": 0.0010694919287172358,
+  "std": 0.2655794620513916
+ },
+ "bt2_benign_tug_02.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.6912929098080934,
+  "dark_frac": 0.23512636223520328,
+  "white_frac": 0.0025121844148436774,
+  "std": 0.2394069880247116
+ },
+ "bt2_malignant_adamantinoma_00.png": {
+  "reason": "not soft-tissue filled (CT/MRI/graphic)",
+  "color_frac": 0.029912,
+  "mid_frac": 0.152786,
+  "dark_frac": 0.000192,
+  "white_frac": 0.840077,
+  "std": 0.19100935757160187
+ },
+ "bt2_malignant_adamantinoma_01.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.6796197183098591,
+  "dark_frac": 0.2000774647887324,
+  "white_frac": 0.0048098591549295775,
+  "std": 0.3264932334423065
+ },
+ "bt2_malignant_adamantinoma_02.png": {
+  "reason": "not soft-tissue filled (CT/MRI/graphic)",
+  "color_frac": 0.0,
+  "mid_frac": 0.19521604938271606,
+  "dark_frac": 0.018432784636488342,
+  "white_frac": 0.746876837154615,
+  "std": 0.2354966253042221
+ },
+ "bt2_malignant_adenocarcinoma_00.png": {
+  "reason": "not soft-tissue filled (CT/MRI/graphic)",
+  "color_frac": 0.012763,
+  "mid_frac": 0.089411,
+  "dark_frac": 0.0,
+  "white_frac": 0.905706,
+  "std": 0.13703081011772156
+ },
+ "bt2_malignant_angiosarcoma_00.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.6984773846842812,
+  "dark_frac": 0.017626511419614868,
+  "white_frac": 0.00034034930586654725,
+  "std": 0.2714085578918457
+ },
+ "bt2_malignant_angiosarcoma_02.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.5024698431845597,
+  "dark_frac": 0.21022617611580216,
+  "white_frac": 0.016544028950542824,
+  "std": 0.3171604871749878
+ },
+ "bt2_malignant_chondrosarcoma_00.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.553218184906651,
+  "dark_frac": 0.20187778927374647,
+  "white_frac": 0.003903052951804438,
+  "std": 0.2874326705932617
+ },
+ "bt2_malignant_chondrosarcoma_07.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.5406005527210884,
+  "dark_frac": 0.026264880952380953,
+  "white_frac": 0.005715348639455782,
+  "std": 0.23904606699943542
+ },
+ "bt2_malignant_chondrosarcoma_08.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.5377178996598639,
+  "dark_frac": 0.03610969387755102,
+  "white_frac": 0.0047470238095238095,
+  "std": 0.22833800315856934
+ },
+ "bt2_malignant_chondrosarcoma_09.png": {
+  "reason": "not soft-tissue filled (CT/MRI/graphic)",
+  "color_frac": 2.657312925170068e-07,
+  "mid_frac": 0.3253706951530612,
+  "dark_frac": 0.18569409013605442,
+  "white_frac": 0.0029881483843537415,
+  "std": 0.2282271832227707
+ },
+ "bt2_malignant_chondrosarcoma_15.png": {
+  "reason": "colour regions (infographic/photo)",
+  "color_frac": 0.030743,
+  "mid_frac": 0.167173,
+  "dark_frac": 0.001635,
+  "white_frac": 0.82389,
+  "std": 0.19655005633831024
+ },
+ "bt2_malignant_chondrosarcoma_16.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9661968173972635,
+  "dark_frac": 0.000695941617521554,
+  "white_frac": 0.0007108394503125352,
+  "std": 0.16822898387908936
+ },
+ "bt2_malignant_chondrosarcoma_17.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9661968173972635,
+  "dark_frac": 0.0007299938067580826,
+  "white_frac": 0.0007299938067580826,
+  "std": 0.16823363304138184
+ },
+ "bt2_malignant_chondrosarcoma_18.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8323663624511082,
+  "dark_frac": 0.09311070285646557,
+  "white_frac": 0.0025245940500177788,
+  "std": 0.26554039120674133
+ },
+ "bt2_malignant_chondrosarcoma_20.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9662415108956365,
+  "dark_frac": 0.0007917133997492907,
+  "white_frac": 0.0008342786362949516,
+  "std": 0.16826878488063812
+ },
+ "bt2_malignant_chondrosarcoma_21.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9071542928896562,
+  "dark_frac": 3.1392246115209545e-06,
+  "white_frac": 0.0,
+  "std": 0.1985190063714981
+ },
+ "bt2_malignant_chondrosarcoma_22.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9242743673323324,
+  "dark_frac": 0.037997660964294695,
+  "white_frac": 0.0002152327755433331,
+  "std": 0.19601793587207794
+ },
+ "bt2_malignant_chondrosarcoma_23.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.7915450891874036,
+  "dark_frac": 0.0023466747412464214,
+  "white_frac": 0.0014038757982823167,
+  "std": 0.24655748903751373
+ },
+ "bt2_malignant_chondrosarcoma_24.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9621100164203612,
+  "dark_frac": 0.019793377120963327,
+  "white_frac": 0.0,
+  "std": 0.1445762664079666
+ },
+ "bt2_malignant_chordoma_00.png": {
+  "reason": "not soft-tissue filled (CT/MRI/graphic)",
+  "color_frac": 0.026063,
+  "mid_frac": 0.146377,
+  "dark_frac": 0.0,
+  "white_frac": 0.847797,
+  "std": 0.18830735981464386
+ },
+ "bt2_malignant_chordoma_01.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.8821539628365567,
+  "dark_frac": 0.002028820629503223,
+  "white_frac": 0.0038149412210845657,
+  "std": 0.17649242281913757
+ },
+ "bt2_malignant_chordoma_02.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 1.0,
+  "dark_frac": 0.0,
+  "white_frac": 0.0,
+  "std": 0.12433095276355743
+ },
+ "bt2_malignant_clearcellcs_00.png": {
+  "reason": "not soft-tissue filled (CT/MRI/graphic)",
+  "color_frac": 0.009095,
+  "mid_frac": 0.1189,
+  "dark_frac": 0.0,
+  "white_frac": 0.874313,
+  "std": 0.1763278990983963
+ },
+ "bt2_malignant_clearcellcs_01.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.6084702907711758,
+  "dark_frac": 0.0003792667509481669,
+  "white_frac": 0.012895069532237674,
+  "std": 0.2947540581226349
+ },
+ "bt2_malignant_metastasis_00.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.5731290302982963,
+  "dark_frac": 0.09897935272216002,
+  "white_frac": 0.012050754636741566,
+  "std": 0.2693919241428375
+ },
+ "bt2_malignant_metastasis_01.png": {
+  "reason": null,
+  "color_frac": 0.0,
+  "mid_frac": 0.9422776156463133,
+  "dark_frac": 0.00012495767562599764,
+  "white_frac": 0.03313796939746215,
+  "std": 0.23567716777324677
+ }
+}

@@ -209,21 +209,39 @@ def main():
                 link(img, SUB / split / c / img.name)
     mark("subtype-staged")
 
-    # ---- load the wild split ----
+    # ---- load the wild split (dataset ships the wild images as ONE zip) ----
+    import zipfile
     split = json.loads(ASSETS.read_text())
     wild_root = ASSETS.parent
-    wimg = next(p for p in wild_root.rglob("images") if p.is_dir())
-    wlab = next(p for p in wild_root.rglob("labels") if p.is_dir())
+    zpath = next((p for p in wild_root.glob("wild_images.zip")), None)
+    if zpath is None:
+        print("wild_images.zip missing - aborting", flush=True)
+        sys.exit(2)
+    wdir = TMP / "wild"
+    wdir.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(zpath) as z:
+        z.extractall(str(wdir))
+    wimg = {p.name: p for p in wdir.glob("wildimg_*.png")}
+    wlab = {p.name.replace("wildlbl_", "").replace(".txt", ""): p
+            for p in wdir.glob("wildlbl_*.txt")}
+    print(f"wild images unzipped: {len(wimg)} | labels: {len(wlab)}", flush=True)
+    if not wimg or not wlab:
+        print("wild assets missing after unzip - aborting", flush=True)
+        sys.exit(2)
 
     def wild_items(entries):
         out = []
+        missing = 0
         for e in entries:
-            ip = wimg / e["file"]
-            lp = wlab / (Path(e["file"]).stem + ".txt")
-            if not ip.exists() or not lp.exists():
+            ip = wimg.get(e["file"])
+            stem = e["file"].replace("wildimg_", "").replace(".png", "")
+            lp = wlab.get(stem)
+            if ip is None or lp is None:
+                missing += 1
                 continue
-            out.append((str(ip), MCLS["malignant" if e["label"] == "malignant" else "benign"]
-                         if False else (1 if e["label"] == "malignant" else 0)))
+            out.append((str(ip), 1 if e["label"] == "malignant" else 0))
+        if missing:
+            print(f"  WARNING: {missing} split entries had no image/label on disk", flush=True)
         return out
 
     train_wild = wild_items(split["train"])
@@ -231,6 +249,7 @@ def main():
     train_names = {e["file"] for e in split["train"]}
     val_names = {e["file"] for e in split["val"]}
     assert not (train_names & val_names), "train/val overlap in the split!"
+    assert len(train_wild) > 50 and len(val_wild) > 30, f"wild split too small: {len(train_wild)}/{len(val_wild)}"
     print(f"wild train {len(train_wild)} | wild val {len(val_wild)} | "
           f"overlap 0 (asserted)", flush=True)
     mark("wild-loaded")

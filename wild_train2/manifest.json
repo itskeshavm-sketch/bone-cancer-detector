@@ -1,0 +1,1991 @@
+[
+ {
+  "file": "bt2_benign_abc_00.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 296,
+  "h": 700
+ },
+ {
+  "file": "bt2_benign_boneisland_00.png",
+  "entity": "boneisland",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/bone-island",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_boneisland_01.png",
+  "entity": "boneisland",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/bone-island",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_boneisland_02.png",
+  "entity": "boneisland",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/bone-island",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_boneisland_03.png",
+  "entity": "boneisland",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/bone-island",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_boneisland_04.png",
+  "entity": "boneisland",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/bone-island",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_boneisland_05.png",
+  "entity": "boneisland",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/bone-island",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_boneisland_06.png",
+  "entity": "boneisland",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/bone-island",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_boneisland_07.png",
+  "entity": "boneisland",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/bone-island",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_cmf_00.png",
+  "entity": "cmf",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondromyxoid-fibroma",
+  "w": 709,
+  "h": 830
+ },
+ {
+  "file": "bt2_benign_cmf_01.png",
+  "entity": "cmf",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondromyxoid-fibroma",
+  "w": 805,
+  "h": 724
+ },
+ {
+  "file": "bt2_benign_cmf_02.png",
+  "entity": "cmf",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondromyxoid-fibroma",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_cmf_03.png",
+  "entity": "cmf",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondromyxoid-fibroma",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_cmf_04.png",
+  "entity": "cmf",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondromyxoid-fibroma",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_cmf_05.png",
+  "entity": "cmf",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondromyxoid-fibroma",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_cmf_06.png",
+  "entity": "cmf",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondromyxoid-fibroma",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_cmf_07.png",
+  "entity": "cmf",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondromyxoid-fibroma",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_cmf_08.png",
+  "entity": "cmf",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondromyxoid-fibroma",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_perichondroma_00.png",
+  "entity": "perichondroma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/periosteal-chondroma",
+  "w": 350,
+  "h": 362
+ },
+ {
+  "file": "bt2_benign_perichondroma_01.png",
+  "entity": "perichondroma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/periosteal-chondroma",
+  "w": 350,
+  "h": 390
+ },
+ {
+  "file": "bt2_malignant_metastasis_00.png",
+  "entity": "metastasis",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/metastatic-tumors/metastatic-breast-cancer",
+  "w": 776,
+  "h": 594
+ },
+ {
+  "file": "bt2_malignant_metastasis_01.png",
+  "entity": "metastasis",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/metastatic-tumors/metastatic-breast-cancer",
+  "w": 782,
+  "h": 607
+ },
+ {
+  "file": "bt2_malignant_metastasis_00.png",
+  "entity": "metastasis",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/metastatic-tumors/metastatic-kidney-cancer",
+  "w": 398,
+  "h": 579
+ },
+ {
+  "file": "bt2_malignant_metastasis_01.png",
+  "entity": "metastasis",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/metastatic-tumors/metastatic-kidney-cancer",
+  "w": 436,
+  "h": 569
+ },
+ {
+  "file": "bt2_malignant_metastasis_02.png",
+  "entity": "metastasis",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/metastatic-tumors/metastatic-kidney-cancer",
+  "w": 798,
+  "h": 635
+ },
+ {
+  "file": "bt2_malignant_metastasis_03.png",
+  "entity": "metastasis",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/metastatic-tumors/metastatic-kidney-cancer",
+  "w": 721,
+  "h": 674
+ },
+ {
+  "file": "bt2_malignant_metastasis_04.png",
+  "entity": "metastasis",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/metastatic-tumors/metastatic-kidney-cancer",
+  "w": 704,
+  "h": 704
+ },
+ {
+  "file": "bt2_malignant_metastasis_05.png",
+  "entity": "metastasis",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/metastatic-tumors/metastatic-kidney-cancer",
+  "w": 426,
+  "h": 848
+ },
+ {
+  "file": "bt2_benign_abc_00.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/aneurysmal-bone-cyst-foot-and-ankle",
+  "w": 555,
+  "h": 776
+ },
+ {
+  "file": "bt2_benign_abc_01.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/aneurysmal-bone-cyst-foot-and-ankle",
+  "w": 481,
+  "h": 718
+ },
+ {
+  "file": "bt2_benign_perichondroma_00.png",
+  "entity": "perichondroma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/periosteal-chondroma-foot-and-ankle",
+  "w": 1728,
+  "h": 1152
+ },
+ {
+  "file": "bt2_benign_perichondroma_01.png",
+  "entity": "perichondroma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/periosteal-chondroma-foot-and-ankle",
+  "w": 3000,
+  "h": 2144
+ },
+ {
+  "file": "bt2_benign_perichondroma_02.png",
+  "entity": "perichondroma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/periosteal-chondroma-foot-and-ankle",
+  "w": 800,
+  "h": 451
+ },
+ {
+  "file": "bt2_benign_perichondroma_03.png",
+  "entity": "perichondroma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/periosteal-chondroma-foot-and-ankle",
+  "w": 800,
+  "h": 465
+ },
+ {
+  "file": "bt2_benign_perichondroma_04.png",
+  "entity": "perichondroma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/periosteal-chondroma-foot-and-ankle",
+  "w": 800,
+  "h": 572
+ },
+ {
+  "file": "bt2_benign_perichondroma_05.png",
+  "entity": "perichondroma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/periosteal-chondroma-foot-and-ankle",
+  "w": 800,
+  "h": 451
+ },
+ {
+  "file": "bt2_benign_perichondroma_06.png",
+  "entity": "perichondroma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/periosteal-chondroma-foot-and-ankle",
+  "w": 800,
+  "h": 465
+ },
+ {
+  "file": "bt2_benign_perichondroma_07.png",
+  "entity": "perichondroma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/periosteal-chondroma-foot-and-ankle",
+  "w": 800,
+  "h": 568
+ },
+ {
+  "file": "bt2_benign_tug_00.png",
+  "entity": "tug",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumor-mimics/avulsive-cortical-irregularity-tug-lesion",
+  "w": 652,
+  "h": 597
+ },
+ {
+  "file": "bt2_benign_tug_01.png",
+  "entity": "tug",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumor-mimics/avulsive-cortical-irregularity-tug-lesion",
+  "w": 619,
+  "h": 645
+ },
+ {
+  "file": "bt2_benign_tug_02.png",
+  "entity": "tug",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumor-mimics/avulsive-cortical-irregularity-tug-lesion",
+  "w": 521,
+  "h": 599
+ },
+ {
+  "file": "bt2_benign_crmo_00.png",
+  "entity": "crmo",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/chronic-recurrent-multifocal-osteomyelitis-crmo",
+  "w": 600,
+  "h": 719
+ },
+ {
+  "file": "bt2_benign_crmo_01.png",
+  "entity": "crmo",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/chronic-recurrent-multifocal-osteomyelitis-crmo",
+  "w": 600,
+  "h": 769
+ },
+ {
+  "file": "bt2_benign_crmo_02.png",
+  "entity": "crmo",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/chronic-recurrent-multifocal-osteomyelitis-crmo",
+  "w": 600,
+  "h": 759
+ },
+ {
+  "file": "bt2_benign_unknown_00.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 700,
+  "h": 761
+ },
+ {
+  "file": "bt2_benign_unknown_01.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 700,
+  "h": 609
+ },
+ {
+  "file": "bt2_benign_unknown_02.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 895
+ },
+ {
+  "file": "bt2_benign_unknown_03.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 700,
+  "h": 873
+ },
+ {
+  "file": "bt2_benign_unknown_04.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 508,
+  "h": 800
+ },
+ {
+  "file": "bt2_benign_unknown_05.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 626,
+  "h": 667
+ },
+ {
+  "file": "bt2_benign_unknown_06.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 657,
+  "h": 664
+ },
+ {
+  "file": "bt2_benign_unknown_07.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 667,
+  "h": 667
+ },
+ {
+  "file": "bt2_benign_unknown_08.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 668,
+  "h": 657
+ },
+ {
+  "file": "bt2_benign_unknown_09.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 506,
+  "h": 559
+ },
+ {
+  "file": "bt2_benign_unknown_10.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 588,
+  "h": 610
+ },
+ {
+  "file": "bt2_benign_unknown_11.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 687,
+  "h": 537
+ },
+ {
+  "file": "bt2_benign_unknown_12.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 513,
+  "h": 544
+ },
+ {
+  "file": "bt2_benign_unknown_13.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 400,
+  "h": 578
+ },
+ {
+  "file": "bt2_benign_unknown_14.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 544,
+  "h": 656
+ },
+ {
+  "file": "bt2_benign_unknown_15.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 589,
+  "h": 537
+ },
+ {
+  "file": "bt2_benign_unknown_16.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 442,
+  "h": 653
+ },
+ {
+  "file": "bt2_benign_unknown_17.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 430,
+  "h": 509
+ },
+ {
+  "file": "bt2_benign_unknown_18.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 550,
+  "h": 659
+ },
+ {
+  "file": "bt2_benign_unknown_19.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 1152,
+  "h": 1728
+ },
+ {
+  "file": "bt2_benign_unknown_20.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 1152,
+  "h": 1728
+ },
+ {
+  "file": "bt2_benign_unknown_21.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 460,
+  "h": 288
+ },
+ {
+  "file": "bt2_benign_unknown_22.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 369,
+  "h": 288
+ },
+ {
+  "file": "bt2_benign_unknown_23.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 450
+ },
+ {
+  "file": "bt2_benign_unknown_24.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 628
+ },
+ {
+  "file": "bt2_benign_unknown_25.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 425
+ },
+ {
+  "file": "bt2_benign_unknown_26.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 500,
+  "h": 769
+ },
+ {
+  "file": "bt2_benign_unknown_27.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 296,
+  "h": 451
+ },
+ {
+  "file": "bt2_benign_unknown_28.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 567,
+  "h": 551
+ },
+ {
+  "file": "bt2_benign_unknown_29.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 814,
+  "h": 628
+ },
+ {
+  "file": "bt2_benign_unknown_30.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 523,
+  "h": 380
+ },
+ {
+  "file": "bt2_benign_unknown_31.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 580,
+  "h": 371
+ },
+ {
+  "file": "bt2_benign_unknown_32.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_33.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_34.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_35.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_36.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_37.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_38.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_39.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_40.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_41.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_42.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 530,
+  "h": 696
+ },
+ {
+  "file": "bt2_benign_unknown_43.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 676,
+  "h": 631
+ },
+ {
+  "file": "bt2_benign_unknown_44.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 678,
+  "h": 629
+ },
+ {
+  "file": "bt2_benign_unknown_45.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_46.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_47.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_48.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_49.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_50.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_51.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_52.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_53.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_54.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_55.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_56.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_57.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_58.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_59.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_60.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_61.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_62.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_63.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_64.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_65.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_66.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_67.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_68.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_69.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_70.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_71.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_72.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_73.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_74.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_75.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_76.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_77.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_78.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_79.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_80.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_81.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_82.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_83.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_84.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_85.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_unknown_86.png",
+  "entity": "unknown",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-unknown-type/9-year-old-boy-has-right-knee-pain-after-falling-during-soccer-game",
+  "w": 2496,
+  "h": 1664
+ },
+ {
+  "file": "bt2_benign_bfh_00.png",
+  "entity": "bfh",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/benign-fibrous-histiocytoma",
+  "w": 600,
+  "h": 593
+ },
+ {
+  "file": "bt2_benign_bfh_01.png",
+  "entity": "bfh",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/benign-fibrous-histiocytoma",
+  "w": 600,
+  "h": 695
+ },
+ {
+  "file": "bt2_benign_bfh_02.png",
+  "entity": "bfh",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/benign-fibrous-histiocytoma",
+  "w": 600,
+  "h": 690
+ },
+ {
+  "file": "bt2_benign_bfh_03.png",
+  "entity": "bfh",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/benign-fibrous-histiocytoma",
+  "w": 600,
+  "h": 714
+ },
+ {
+  "file": "bt2_benign_browntumor_00.png",
+  "entity": "browntumor",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-disorder-metabolism/brown-tumor",
+  "w": 1000,
+  "h": 1000
+ },
+ {
+  "file": "bt2_benign_browntumor_01.png",
+  "entity": "browntumor",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-disorder-metabolism/brown-tumor",
+  "w": 500,
+  "h": 322
+ },
+ {
+  "file": "bt2_benign_browntumor_02.png",
+  "entity": "browntumor",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-disorder-metabolism/brown-tumor",
+  "w": 500,
+  "h": 325
+ },
+ {
+  "file": "bt2_benign_browntumor_03.png",
+  "entity": "browntumor",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-disorder-metabolism/brown-tumor",
+  "w": 500,
+  "h": 326
+ },
+ {
+  "file": "bt2_benign_browntumor_04.png",
+  "entity": "browntumor",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-disorder-metabolism/brown-tumor",
+  "w": 300,
+  "h": 426
+ },
+ {
+  "file": "bt2_benign_browntumor_05.png",
+  "entity": "browntumor",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-disorder-metabolism/brown-tumor",
+  "w": 826,
+  "h": 1273
+ },
+ {
+  "file": "bt2_benign_chondroblastoma_00.png",
+  "entity": "chondroblastoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondroblastoma-foot-and-ankle",
+  "w": 1000,
+  "h": 1000
+ },
+ {
+  "file": "bt2_benign_chondroblastoma_01.png",
+  "entity": "chondroblastoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondroblastoma-foot-and-ankle",
+  "w": 800,
+  "h": 600
+ },
+ {
+  "file": "bt2_benign_chondroblastoma_02.png",
+  "entity": "chondroblastoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondroblastoma-foot-and-ankle",
+  "w": 600,
+  "h": 569
+ },
+ {
+  "file": "bt2_benign_chondroblastoma_03.png",
+  "entity": "chondroblastoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondroblastoma-foot-and-ankle",
+  "w": 600,
+  "h": 400
+ },
+ {
+  "file": "bt2_benign_chondroblastoma_04.png",
+  "entity": "chondroblastoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondroblastoma-foot-and-ankle",
+  "w": 600,
+  "h": 400
+ },
+ {
+  "file": "bt2_benign_chondroblastoma_05.png",
+  "entity": "chondroblastoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondroblastoma-foot-and-ankle",
+  "w": 600,
+  "h": 400
+ },
+ {
+  "file": "bt2_benign_chondroblastoma_06.png",
+  "entity": "chondroblastoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondroblastoma-foot-and-ankle",
+  "w": 600,
+  "h": 400
+ },
+ {
+  "file": "bt2_benign_chondroblastoma_07.png",
+  "entity": "chondroblastoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondroblastoma-foot-and-ankle",
+  "w": 600,
+  "h": 400
+ },
+ {
+  "file": "bt2_benign_chondroblastoma_08.png",
+  "entity": "chondroblastoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondroblastoma-foot-and-ankle",
+  "w": 800,
+  "h": 532
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_00.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_01.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_02.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_03.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 600,
+  "h": 600
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_04.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 660,
+  "h": 497
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_05.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 600,
+  "h": 452
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_06.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 600,
+  "h": 452
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_07.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 600,
+  "h": 451
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_08.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 660,
+  "h": 497
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_09.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 660,
+  "h": 497
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_10.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 797,
+  "h": 600
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_11.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 600,
+  "h": 452
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_12.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 600,
+  "h": 452
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_13.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 600,
+  "h": 452
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_14.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 600,
+  "h": 452
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_15.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 1000,
+  "h": 1000
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_16.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 713,
+  "h": 659
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_17.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 713,
+  "h": 659
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_18.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 520,
+  "h": 649
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_19.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 623,
+  "h": 477
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_20.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 713,
+  "h": 659
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_21.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 575,
+  "h": 554
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_22.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 573,
+  "h": 673
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_23.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 478,
+  "h": 304
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_24.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/chondrosarcoma",
+  "w": 406,
+  "h": 360
+ },
+ {
+  "file": "bt2_malignant_clearcellcs_00.png",
+  "entity": "clearcellcs",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/clear-cell-chondrosarcoma",
+  "w": 1000,
+  "h": 1000
+ },
+ {
+  "file": "bt2_malignant_clearcellcs_01.png",
+  "entity": "clearcellcs",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/clear-cell-chondrosarcoma",
+  "w": 339,
+  "h": 350
+ },
+ {
+  "file": "bt2_malignant_adamantinoma_00.png",
+  "entity": "adamantinoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-fibrous-tissue/adamantinoma",
+  "w": 1000,
+  "h": 1000
+ },
+ {
+  "file": "bt2_malignant_adamantinoma_01.png",
+  "entity": "adamantinoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-fibrous-tissue/adamantinoma",
+  "w": 284,
+  "h": 500
+ },
+ {
+  "file": "bt2_malignant_adamantinoma_02.png",
+  "entity": "adamantinoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-fibrous-tissue/adamantinoma",
+  "w": 252,
+  "h": 324
+ },
+ {
+  "file": "bt2_malignant_angiosarcoma_00.png",
+  "entity": "angiosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-vascular-tissue/angiosarcoma",
+  "w": 350,
+  "h": 638
+ },
+ {
+  "file": "bt2_malignant_angiosarcoma_01.png",
+  "entity": "angiosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-vascular-tissue/angiosarcoma",
+  "w": 300,
+  "h": 639
+ },
+ {
+  "file": "bt2_malignant_angiosarcoma_02.png",
+  "entity": "angiosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-vascular-tissue/angiosarcoma",
+  "w": 400,
+  "h": 829
+ },
+ {
+  "file": "bt2_malignant_chordoma_00.png",
+  "entity": "chordoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/chordoma",
+  "w": 1000,
+  "h": 1000
+ },
+ {
+  "file": "bt2_malignant_chordoma_01.png",
+  "entity": "chordoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/chordoma",
+  "w": 600,
+  "h": 879
+ },
+ {
+  "file": "bt2_malignant_chordoma_02.png",
+  "entity": "chordoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/chordoma",
+  "w": 451,
+  "h": 296
+ },
+ {
+  "file": "bt2_malignant_chordoma_03.png",
+  "entity": "chordoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/chordoma",
+  "w": 400,
+  "h": 300
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_00.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondrosarcoma-foot-and-ankle",
+  "w": 638,
+  "h": 406
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_01.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondrosarcoma-foot-and-ankle",
+  "w": 770,
+  "h": 584
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_02.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondrosarcoma-foot-and-ankle",
+  "w": 764,
+  "h": 608
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_03.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondrosarcoma-foot-and-ankle",
+  "w": 1120,
+  "h": 840
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_04.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondrosarcoma-foot-and-ankle",
+  "w": 1120,
+  "h": 840
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_05.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondrosarcoma-foot-and-ankle",
+  "w": 1120,
+  "h": 840
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_06.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondrosarcoma-foot-and-ankle",
+  "w": 1120,
+  "h": 840
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_07.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondrosarcoma-foot-and-ankle",
+  "w": 1120,
+  "h": 840
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_08.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondrosarcoma-foot-and-ankle",
+  "w": 1120,
+  "h": 840
+ },
+ {
+  "file": "bt2_malignant_chondrosarcoma_09.png",
+  "entity": "chondrosarcoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/chondrosarcoma-foot-and-ankle",
+  "w": 2240,
+  "h": 1680
+ },
+ {
+  "file": "bt2_benign_desmoid_00.png",
+  "entity": "desmoid",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-fibrous-tissue/aggressive-fibromatosis-desmoid-tumor",
+  "w": 1000,
+  "h": 1000
+ },
+ {
+  "file": "bt2_benign_desmoid_01.png",
+  "entity": "desmoid",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-fibrous-tissue/aggressive-fibromatosis-desmoid-tumor",
+  "w": 446,
+  "h": 418
+ },
+ {
+  "file": "bt2_benign_myxoma_00.png",
+  "entity": "myxoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/soft-tissue-tumors/benign-cellular-myxoma",
+  "w": 800,
+  "h": 800
+ },
+ {
+  "file": "bt2_benign_myxoma_01.png",
+  "entity": "myxoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/soft-tissue-tumors/benign-cellular-myxoma",
+  "w": 800,
+  "h": 800
+ },
+ {
+  "file": "bt2_benign_myxoma_02.png",
+  "entity": "myxoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/soft-tissue-tumors/benign-cellular-myxoma",
+  "w": 800,
+  "h": 800
+ },
+ {
+  "file": "bt2_benign_myxoma_03.png",
+  "entity": "myxoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/soft-tissue-tumors/benign-cellular-myxoma",
+  "w": 800,
+  "h": 800
+ },
+ {
+  "file": "bt2_benign_myxoma_04.png",
+  "entity": "myxoma",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/soft-tissue-tumors/benign-cellular-myxoma",
+  "w": 800,
+  "h": 800
+ },
+ {
+  "file": "bt2_benign_nora_00.png",
+  "entity": "nora",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/bizarre-parosteal-osteochondromatous-proliferation",
+  "w": 1000,
+  "h": 1000
+ },
+ {
+  "file": "bt2_benign_nora_01.png",
+  "entity": "nora",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-cartilage/bizarre-parosteal-osteochondromatous-proliferation",
+  "w": 600,
+  "h": 758
+ },
+ {
+  "file": "bt2_malignant_adenocarcinoma_00.png",
+  "entity": "adenocarcinoma",
+  "label": "malignant",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-foot-and-ankle/aggressive-digital-papillary-adenoma-adenocarcinoma-foot-and-ankle",
+  "w": 1000,
+  "h": 1000
+ },
+ {
+  "file": "bt2_benign_abc_00.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 1000,
+  "h": 1000
+ },
+ {
+  "file": "bt2_benign_abc_01.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 638,
+  "h": 406
+ },
+ {
+  "file": "bt2_benign_abc_02.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 638,
+  "h": 406
+ },
+ {
+  "file": "bt2_benign_abc_03.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 406,
+  "h": 638
+ },
+ {
+  "file": "bt2_benign_abc_04.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 592,
+  "h": 578
+ },
+ {
+  "file": "bt2_benign_abc_05.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 775,
+  "h": 567
+ },
+ {
+  "file": "bt2_benign_abc_06.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 700,
+  "h": 711
+ },
+ {
+  "file": "bt2_benign_abc_07.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 700,
+  "h": 674
+ },
+ {
+  "file": "bt2_benign_abc_08.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 560,
+  "h": 1070
+ },
+ {
+  "file": "bt2_benign_abc_09.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 700,
+  "h": 1122
+ },
+ {
+  "file": "bt2_benign_abc_10.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 1070,
+  "h": 822
+ },
+ {
+  "file": "bt2_benign_abc_11.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 296,
+  "h": 700
+ },
+ {
+  "file": "bt2_benign_abc_12.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 610,
+  "h": 1156
+ },
+ {
+  "file": "bt2_benign_abc_13.png",
+  "entity": "abc",
+  "label": "benign",
+  "source": "bonetumor.org",
+  "page": "/index.php/tumors-bone/aneurysmal-bone-cyst",
+  "w": 350,
+  "h": 493
+ }
+]

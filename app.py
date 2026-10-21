@@ -464,13 +464,13 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
       <h1>A second look at bone X-rays.</h1>
       <p class="lede">Two models read every film: one asks <strong>tumor or not</strong>,
       the other asks <strong>harmless or cancerous</strong>. On 564 test films it got
-      <strong>520 right</strong> and caught <strong>161 of 179 cancers</strong>. On 199
-      real-world radiographs it caught <strong>79 of 95</strong> cancers. When it is not
+      <strong>518 right</strong> and caught <strong>158 of 179 cancers</strong>. On 199
+      real-world radiographs it caught <strong>80 of 95</strong> cancers. When it is not
       sure it says <strong>uncertain reading</strong> instead of guessing.</p>
       <div class="figures">
-        <div><b>520 / 564</b><span>test films read correctly</span></div>
-        <div><b>161 / 179</b><span>cancers caught (test set)</span></div>
-        <div><b>79 / 95</b><span>cancers caught (real radiographs)</span></div>
+        <div><b>518 / 564</b><span>test films read correctly</span></div>
+        <div><b>158 / 179</b><span>cancers caught (test set)</span></div>
+        <div><b>80 / 95</b><span>cancers caught (real radiographs)</span></div>
         <div><b>{rel_pct}</b><span>accuracy on confident reads</span></div>
       </div>
     </div>""")
@@ -512,8 +512,8 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
     gr.HTML(f"""
     <div id="colophon">
       <p><strong>Not a medical device.</strong> On held-out data it is wrong about one
-      film in fourteen. On real-world radiographs from outside its training data it is
-      right about two in three, and it misses roughly one cancer in five — a missed
+      film in fourteen. On real-world radiographs from outside its training data it
+      is right about seven in ten, and it misses roughly one cancer in six — a missed
       tumor costs more than a false alarm, so the default operating point leans toward
       catching cancer.</p>
       <p><strong>It knows when it does not know.</strong> Every reading is checked against

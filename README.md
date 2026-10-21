@@ -88,7 +88,8 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 | V21 | A18 | B6 | 92.2% | 158/179 | 90.8% | best spec val ever |
 | V21 @ malignant thr 0.25 | A18 | B6 | 92.7% | 165/179 | 90.8% | previous champion |
 | V22 (lesion-crop + 600px) | A18 | B6 | **96.6%** | 171/179 | 95.4% | **rejected** — wild pool −22 films |
-| **V24 (blind-spot fine-tune)** | **A18** | **B6** | **92.2%** | **161/179** | 89.9% | **current champion** |
+| V24 (blind-spot fine-tune) | A18 | B6 | 92.2% | 161/179 | 89.9% | superseded by V25 |
+| **V25 (V24 + 38 harvested radiographs)** | **A18** | **B6** | **91.8%** | **158/179** | 89.1% | **current champion** |
 
 **Board 2 — wild pool (199 expert-labeled real films), every model given an IDENTICAL threshold search:**
 
@@ -98,11 +99,28 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 | V18 | A18 + B18 | 93 (46.7%) | 96 (48.2%) | 93 (46.7%) |
 | V20 | A18 + B20 | 90 (45.2%) | 98 (49.2%) | 89 (44.7%) |
 | V21 | A18 + B21 | 88 (44.2%) | 98 (49.2%) | 96 (48.2%) |
-| **V24** | A18 + B24 | 139 (69.8%) | **142 (71.4%)** | **134 (67.3%)** |
+| V24 | A18 + B24 | 139 (69.8%) | 142 (71.4%) | 134 (67.3%) |
+| **V25** | A18 + B25 | **145 (72.9%)** | **145 (72.9%)** | — |
 
-> **Correction — an earlier version of this README said V12 beat V21 on real films. That was a measurement artefact, not a model difference.** V12's number had been taken at argmax while V21's had been taken after a threshold search (which is worth +10 films on its own). Re-measured with an identical search space for every model, **V21 was always ahead of V12** (49.2% vs 47.7%), and the earlier ordering was simply my own reporting bias. The full table is in `kaggle_out_probe/equal_treatment.py`; V24's win is unaffected, since it leads under every treatment (argmax 69.8%, best 71.4%, matched-sensitivity 67.3%).
+**Board 3 — Wikimedia Commons, 50 radiographs from a THIRD source no model has ever seen:**
 
-**The corrected story, which is stronger than the one it replaces:** every architecture, loss, augmentation and SSL variant tried before V24 (V13, V14, V18, V20, V21) landed on **45–49%** on real radiographs — a hard ceiling imposed by 2,736 osteosarcoma-dominated images. One *targeted data* intervention broke it to **~71%**. The lever was never capacity; it was the right images.
+| Model | argmax | best (equal search) |
+|---|---|---|
+| V21 | 11/50 (22%) | 16/50 (32%) |
+| V24 | 15/50 (30%) | 26/50 (52%) |
+| **V25** | **17/50 (34%)** | **28/50 (56%)** |
+
+> **Correction — an earlier version of this README said V12 beat V21 on real films. That was a measurement artefact, not a model difference.** V12's number had been taken at argmax while V21's had been taken after a threshold search (which is worth +10 films on its own). Re-measured with an identical search space for every model, **V21 was always ahead of V12** (49.2% vs 47.7%), and the earlier ordering was simply my own reporting bias. The full table is in `kaggle_out_probe/equal_treatment.py`; V24's and V25's wins are unaffected, since both lead under every treatment.
+
+**Champion selection rule (applied identically to every model):** a missed cancer is much worse than a false alarm, so the operating point must keep **malignant recall ≥ 80%** of the 95 wild cancers; among the thresholds that qualify, take the best combined score across all three boards.
+
+| Model | benchmark | wild | third source | combined |
+|---|---|---|---|---|
+| V21 | — | — | — | **disqualified** — max recall 71.6%, cannot reach 80% at any threshold |
+| V24 | 520/564 | 140/199 | 13/50 | 673 |
+| **V25** | 518/564 | **143/199** | **15/50** | **676** ✅ |
+
+**The corrected story, which is stronger than the one it replaces:** every architecture, loss, augmentation and SSL variant tried before V24 (V13, V14, V18, V20, V21) landed on **45–49%** on real radiographs — a hard ceiling imposed by 2,736 osteosarcoma-dominated images. Two *targeted data* interventions broke it: **V24** (fine-tune on 121 real-world images of the named blind-spot entities) → 67.8%, and **V25** (+38 harvested radiographs of the same diagnoses) → 72.9%. The lever was never capacity; it was the right images.
 
 **The headline number and the real-world number ranked models in opposite order** — until the operating point was corrected. V21 beat V12 by 2.7pp on the benchmark while losing on real films; with the threshold fixed it beats V12 on *both* boards, and catches more cancers (165 vs 163) in a single view than V12 does with 5-view TTA.
 

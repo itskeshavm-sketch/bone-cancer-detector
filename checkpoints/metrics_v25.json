@@ -1,0 +1,49 @@
+{
+ "v": 25,
+ "verdict": "CHAMPION",
+ "config": {
+  "stageA": "checkpoints/stageA18.pt",
+  "stageB": "checkpoints/stageB25.pt",
+  "gate_thresh": 0.3,
+  "mal_thresh": 0.3
+ },
+ "selection_rule": "malignant recall >= 80% of the 95 wild cancers, then max combined correct across the 564 benchmark + 199 wild + 50 third-source films",
+ "benchmark_564": {
+  "single_view_acc": 0.9184397163120568,
+  "ok": 518,
+  "benign": "155/180",
+  "malignant": "158/179",
+  "normal": "205/205"
+ },
+ "wild_199": {
+  "acc": 0.7185929648241206,
+  "ok": 143,
+  "mal": "80/95",
+  "ben": "69/104",
+  "note": "V21 scored 98/199 (49.2%) on the identical protocol"
+ },
+ "independent_wikimedia_50": {
+  "acc": 0.3,
+  "ok": 15,
+  "note": "third source unseen by any model; V21 scored 11/50"
+ },
+ "equal_treatment": {
+  "V21": {
+   "argmax": 88,
+   "best": 98,
+   "matched": 96
+  },
+  "V24": {
+   "argmax": 139,
+   "best": 142,
+   "matched": 134
+  },
+  "V25": {
+   "argmax": 145,
+   "best": 145
+  }
+ },
+ "band_table": "checkpoints/uncertainty_bands_v25.json (5.3% flagged, 46.7% error inside, 30.4% of errors caught, reliable band 95.0%)",
+ "mechanism": "error anatomy showed 93/100 wild errors were classification failures on named entity families; V24 fine-tunes on 121 real-world images of exactly those entities, V25 adds 38 harvested radiographs of the same diagnoses",
+ "caveat": "the 50-film third-source pool is 46 benign / 4 malignant so it tests generalisation, not cancer recall; the held-out 78-film slice shares a source domain with the training slice"
+}

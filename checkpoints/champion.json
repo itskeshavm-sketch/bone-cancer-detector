@@ -1,23 +1,30 @@
 {
-  "name": "V24",
-  "description": "Two-stage bone tumor screener: EfficientNet-B3 gate (300px) + EfficientNet-B6 specialist (456px), fine-tuned on the entity families the error anatomy flagged (ABC, bone island, chondroblastoma, CMF, BFH, chondrosarcoma, adamantinoma, chordoma, angiosarcoma, GCT, fibrous dysplasia, metastases).",
-  "stageA": "checkpoints/stageA18.pt",
-  "stageB": "checkpoints/stageB23.pt",
-  "bands": "checkpoints/uncertainty_bands_v24.json",
-  "gate_thresh": 0.30,
-  "mal_thresh": 0.25,
-  "specialist_img": 456,
-  "headline": {
-    "test_films": "520 / 564",
-    "cancers": "161 / 179",
-    "note": "measured single-view, gate 0.30, malignant threshold 0.25. V21 scored 523/564 with 165/179 on the same set."
-  },
-  "wild": {
-    "acc": 0.678,
-    "ok": 135,
-    "n": 199,
-    "cancers_caught": "79 / 95",
-    "benign_right": "56 / 104",
-    "note": "199 real-world radiographs (Radiology Assistant + bonetumor.org), gate 0.30, malignant threshold 0.25. V21 scored 98/199 (49.2%) with 50/95 cancers on the identical protocol. Held-out 78-film slice: 62.8% vs V21's 53.8%."
-  }
+ "name": "V25",
+ "description": "Two-stage bone tumor screener: EfficientNet-B3 gate (300px) + EfficientNet-B6 specialist (456px), fine-tuned on the entity families the error anatomy flagged (ABC, bone island, chondroblastoma, CMF, BFH, chondrosarcoma, adamantinoma, chordoma, angiosarcoma, GCT, fibrous dysplasia, metastases) plus 38 harvested radiographs of the same diagnoses.",
+ "stageA": "checkpoints/stageA18.pt",
+ "stageB": "checkpoints/stageB25.pt",
+ "bands": "checkpoints/uncertainty_bands_v25.json",
+ "gate_thresh": 0.3,
+ "mal_thresh": 0.3,
+ "specialist_img": 456,
+ "headline": {
+  "test_films": "518 / 564",
+  "cancers": "158 / 179",
+  "note": "measured single-view, gate 0.3, malignant threshold 0.3"
+ },
+ "wild": {
+  "acc": 0.7185929648241206,
+  "ok": 143,
+  "n": 199,
+  "cancers_caught": "80 / 95",
+  "benign_right": "",
+  "note": "199 real-world radiographs (Radiology Assistant + bonetumor.org); V21 scored 98/199 on the identical protocol"
+ },
+ "independent": {
+  "acc": 0.3,
+  "ok": 15,
+  "n": 50,
+  "note": "50 radiographs from Wikimedia Commons, a THIRD source unseen by any model; V21 scored 11/50. 46 benign / 4 malignant, so it tests generalisation, not cancer recall."
+ },
+ "selection_rule": "malignant recall >= 80% of the 95 wild cancers, then max combined correct across the 564 benchmark + 199 wild + 50 third-source films"
 }

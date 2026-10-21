@@ -1,0 +1,15 @@
+{
+  "name": "V21",
+  "description": "Two-stage bone tumor screener: EfficientNet-B3 gate (300px) + EfficientNet-B6 specialist (456px).",
+  "stageA": "checkpoints/stageA18.pt",
+  "stageB": "checkpoints/stageB21.pt",
+  "bands": "checkpoints/uncertainty_bands_v21.json",
+  "gate_thresh": 0.30,
+  "mal_thresh": 0.25,
+  "specialist_img": 456,
+  "headline": {
+    "test_films": "523 / 564",
+    "cancers": "165 / 179",
+    "note": "measured single-view, gate 0.30, malignant threshold 0.25"
+  }
+}

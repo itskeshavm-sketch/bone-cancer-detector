@@ -119,13 +119,43 @@ input[type='range'] { accent-color: var(--accent); }
 """
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--stageA", default="checkpoints/stageA18.pt")
-parser.add_argument("--stageB", default="checkpoints/stageB21.pt")
-parser.add_argument("--bands", default="checkpoints/uncertainty_bands_v21.json")
-parser.add_argument("--gate-thresh", type=float, default=0.30)
-parser.add_argument("--mal-thresh", type=float, default=0.25)
+parser.add_argument("--config", default="checkpoints/champion.json",
+                    help="champion config: weights, thresholds, band table")
+parser.add_argument("--stageA", default=None)
+parser.add_argument("--stageB", default=None)
+parser.add_argument("--bands", default=None)
+parser.add_argument("--gate-thresh", type=float, default=None)
+parser.add_argument("--mal-thresh", type=float, default=None)
 parser.add_argument("--port", type=int, default=7860)
 args, _ = parser.parse_known_args()
+
+# The champion lives in ONE json file so it can never be half-swapped: weights,
+# both thresholds and the band table all travel together. CLI flags still win.
+CHAMPION = {}
+_cfg_path = Path(args.config)
+if _cfg_path.exists():
+    try:
+        CHAMPION = json.loads(_cfg_path.read_text())
+    except Exception as e:
+        print("champion config unusable:", e)
+else:
+    print(f"no champion config at {_cfg_path} - using built-in defaults")
+
+def _pick(cli_value, key, fallback):
+    if cli_value is not None:
+        return cli_value
+    if key in CHAMPION:
+        return CHAMPION[key]
+    return fallback
+
+STAGE_A_PATH = _pick(args.stageA, "stageA", "checkpoints/stageA18.pt")
+STAGE_B_PATH = _pick(args.stageB, "stageB", "checkpoints/stageB21.pt")
+BANDS_PATH = _pick(args.bands, "bands", "checkpoints/uncertainty_bands_v21.json")
+GATE_THRESH = float(_pick(args.gate_thresh, "gate_thresh", 0.30))
+MAL_THRESH = float(_pick(args.mal_thresh, "mal_thresh", 0.25))
+SPECIALIST_IMG = int(_pick(None, "specialist_img", 456))
+print(f"champion: {CHAMPION.get('name', 'default')} | A={STAGE_A_PATH} B={STAGE_B_PATH} "
+      f"gate={GATE_THRESH} mal={MAL_THRESH} img={SPECIALIST_IMG}")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 NORM = [[0.485, 0.456, 0.406], [0.229, 0.224, 0.225]]
@@ -161,25 +191,25 @@ def load_b6(path):
     return m.to(device).eval(), ckpt
 
 
-modelA, ckA = load_b3(args.stageA)  # [normal, tumor], 300px
-modelB, ckB = load_b6(args.stageB)  # [benign, malignant], 456px
+modelA, ckA = load_b3(STAGE_A_PATH)  # [normal, tumor], 300px
+modelB, ckB = load_b6(STAGE_B_PATH)  # [benign, malignant], 456px
 modelB2 = None
 if Path("checkpoints/stageB11.pt").exists():
     try:
         modelB2, _ = load_b6("checkpoints/stageB11.pt")
     except Exception as e:
         print("stageB11 not usable:", e)
-IA, IB = int(ckA.get("img", 300)), int(ckB.get("img", 456))
+IA, IB = int(ckA.get("img", 300)), int(ckB.get("img", SPECIALIST_IMG))
 print(f"A: {ckA.get('classes', ['normal', 'tumor'])} acc={ckA.get('acc')} | "
       f"B: {ckB.get('classes', ['benign', 'malignant'])} acc={ckB.get('acc')}")
-print(f"operating point: gate thresh {args.gate_thresh}, malignant thresh {args.mal_thresh}")
+print(f"operating point: gate thresh {GATE_THRESH}, malignant thresh {MAL_THRESH}")
 
 # ---- measured reliability bands (calibrated on 564 test films) ----------------
 # The band table says how often this model is actually right on films that look
 # like the one being read. Bands whose measured error rate is high get flagged
 # "uncertain" instead of asserting a verdict the model cannot back up.
 BANDS = None
-_bp = Path(args.bands)
+_bp = Path(BANDS_PATH)
 if _bp.exists():
     try:
         BANDS = json.loads(_bp.read_text())
@@ -415,11 +445,11 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.30, mal_thresh=0.2
 
 
 def quick(img: Image.Image):
-    return predict(img, False, False, args.gate_thresh, args.mal_thresh)
+    return predict(img, False, False, GATE_THRESH, MAL_THRESH)
 
 
 def thorough(img: Image.Image):
-    return predict(img, True, modelB2 is not None, args.gate_thresh, args.mal_thresh)
+    return predict(img, True, modelB2 is not None, GATE_THRESH, MAL_THRESH)
 
 
 with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
@@ -470,9 +500,9 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
                 tta_box = gr.Checkbox(label="Careful reading — 5 views, slower", value=False)
                 ens_box = gr.Checkbox(label="Second opinion — B11 + B12 vote", value=False,
                                       visible=modelB2 is not None)
-                thresh = gr.Slider(0.2, 0.7, value=args.gate_thresh, step=0.05,
+                thresh = gr.Slider(0.2, 0.7, value=GATE_THRESH, step=0.05,
                                    label="Gate sensitivity — lower catches subtler tumors, more false alarms")
-                mal_slider = gr.Slider(0.05, 0.60, value=args.mal_thresh, step=0.01,
+                mal_slider = gr.Slider(0.05, 0.60, value=MAL_THRESH, step=0.01,
                                        label="Cancer caution — lower calls more things cancer (missed tumors cost more than false alarms)")
         with gr.Column(elem_id="reading"):
             out_img = gr.Image(label="Where the model looked")

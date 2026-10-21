@@ -86,6 +86,7 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 | V20 | A18 | B5 | 92.6% | 156/179 | 90.6% | benchmark win, wild flat |
 | V21 | A18 | B6 | 92.2% | 158/179 | **90.8%** | best spec val ever |
 | **V21 @ malignant thr 0.25** | **A18** | **B6** | **92.7%** (single-view) | **165/179** | 90.8% | **current champion** |
+| V22 (lesion-crop + 600px) | A18 | B6 | **96.6%** | **171/179** | **95.4%** | **rejected** — wild pool −22 films |
 
 **Board 2 — wild pool (199 expert-labeled real films):**
 
@@ -96,6 +97,20 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 | **A18 gate, malignant thr 0.25** | — | — | — | **48.2% (96/199)** |
 
 **The headline number and the real-world number ranked models in opposite order** — until the operating point was corrected. V21 beat V12 by 2.7pp on the benchmark while losing on real films; with the threshold fixed it beats V12 on *both* boards, and catches more cancers (165 vs 163) in a single view than V12 does with 5-view TTA.
+
+**And then V22 broke the pattern in the most instructive way possible.** Lesion-crop augmentation (3,367 polygon-derived crops, 50% of samples) at 600px produced the best benchmark numbers of the entire project — **96.6%**, specialist val **95.4%**, **171/179** cancers — and was **rejected**, because on the 199 real films it lost 22 films to V21 at identical cancer sensitivity (McNemar exact p = 0.0334).
+
+| Sensitivity (malignant/95) | V21 correct | V22 correct | Δ |
+|---|---|---|---|
+| 38/95 | 47.2% | 37.2% | **−20** |
+| 44/95 | 47.2% | 39.2% | **−16** |
+| **49/95 (matched)** | **48.2% (96/199)** | **37.2% (74/199)** | **−22** |
+| 56/95 | 46.7% | 38.7% | −16 |
+| 66/95 | 49.2% | 41.2% | −16 |
+
+**Mechanism:** crop training decoupled the classifier from whole-image context. Lesion-centric features transfer beautifully to the in-distribution benchmark (+4.4pp) and mislead on real radiographs from other sources, where the lesion is small in frame and the image statistics are alien. Paired flips: 59 benign→malignant, 39 malignant→benign. **This is benchmark overfitting in its purest form — and it is now the fifth independent confirmation** (V13 focal, V14 120M params, V18, V20, V22 all moved the benchmark up and the wild pool down; only the V21 threshold fix moved both up).
+
+**The honest conclusion:** the benchmark is saturated *and actively misleading*. The wild pool is the only scoreboard that counts, and it says the ceiling is ~46–48% on out-of-distribution radiographs regardless of architecture, resolution, or augmentation. Beating it needs training data that matches deployment (varied real-world radiographs), not more of the same osteosarcoma-heavy set — which no public dataset supplies.
 
 ## 5. The investigation: why V12 was ahead
 
@@ -174,6 +189,22 @@ The model knows when it does not know. `calibrate_uncertainty.py` runs the demo'
 **11.2% of films carry 48.8% of all errors.** The error rate collapses above 0.90 confidence, so the band edges follow the data, not a round number. The reliable band is **95.8% accurate** — and the previous champion's equivalent band was 93.3%.
 
 In the demo, a low-confidence read changes the headline to **"Uncertain reading"** with a neutral border (no green/red false certainty), keeps the lean ("leans benign"), and changes the next step to *"a radiologist should read this film."* Confident reads state the measured accuracy for films that look like this one.
+
+### ⚠️ The band does not generalise out of distribution (measured)
+
+Re-running the shipped band table against the **199 real-world films** exposes the limitation of the safety net:
+
+| Band | n (wild) | Wild accuracy | Wild error rate | Flagged? |
+|---|---|---|---|---|
+| 0.00–0.60 | 24 | 62.5% | 37.5% | yes |
+| 0.60–0.70 | 22 | 45.5% | 54.5% | yes |
+| 0.70–0.80 | 22 | 54.5% | 45.5% | yes |
+| 0.80–0.90 | 43 | 37.2% | 62.8% | yes |
+| **0.90–1.00** | 88 | **48.9%** | **51.1%** | no |
+
+**The "reliable" band is 48.9% accurate on real films — a coin flip — and the flagged region carries a 52.3% error rate versus 51.8% overall.** The band therefore carries **no information** on out-of-distribution data: the model's confidence is calibrated to the benchmark's distribution, and on unseen real radiographs it is confidently wrong.
+
+**This is the real remaining problem, and it is a data problem, not a modelling problem.** A confidence threshold fitted in-distribution cannot detect distribution shift. The fix is to rebuild the abstention signal on out-of-distribution data (the wild pool, with cross-validation so the same 199 films are not used for both fitting and reporting), or to use a shift-sensitive signal — the gate's own confidence, or input-statistics distance — rather than the specialist's softmax. Until that is done, the "uncertain reading" label is honest on benchmark films and **not** trustworthy on real ones.
 
 ## 7. Demo
 

@@ -1,0 +1,43 @@
+{
+ "v": 22,
+ "verdict": "REJECTED - benchmark +4.4pp but wild pool -22 films at matched 49/95 cancer sensitivity (McNemar p=0.0334)",
+ "crop_mode": "bbox",
+ "boxes": 3367,
+ "crop_prob": 0.5,
+ "img_size": 600,
+ "batch": 6,
+ "accum": 2,
+ "epochs": 40,
+ "best_epoch": 38,
+ "benchmark": {
+  "test_tta": 0.9663120567375887,
+  "ok": 545,
+  "n": 564,
+  "benign": "171/180",
+  "malignant": "171/179",
+  "normal": "203/205",
+  "spec_val": 0.9540412044374009,
+  "swa_val": 0.9492868462757528
+ },
+ "wild_199": {
+  "matched_thr": 0.7,
+  "acc": 0.372,
+  "ok": 74,
+  "mal": "48/95",
+  "ben": "26/104",
+  "best_achievable": "45.2% (90/199) at thr 0.05"
+ },
+ "paired_vs_v21": {
+  "only_v21_right": 60,
+  "only_v22_right": 38,
+  "net": 22,
+  "discordant": 98,
+  "mcnemar_p": 0.0334,
+  "flips": {
+   "benign_to_malignant": 59,
+   "malignant_to_benign": 39
+  }
+ },
+ "mechanism": "crop augmentation decoupled the classifier from whole-image context; the lesion-centric features transfer to the in-distribution benchmark (+4.4pp) and mislead on out-of-distribution real films (-22 films). ROC curve is BELOW V21 at every clinically relevant sensitivity (38/95:-20, 44/95:-16, 49/95:-22, 56/95:-16, 66/95:-16)",
+ "champion_stays": "V21 (stageA18 + stageB21, gate 0.30, malignant 0.25) - 92.73% benchmark, 48.2% wild"
+}

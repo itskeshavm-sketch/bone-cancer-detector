@@ -54,5 +54,52 @@
   }
  },
  "root_cause": "malignant decision threshold hardcoded to argmax (0.5) in eval harness and demo; B21 probabilities run systematically lower so argmax parked it in a benign-leaning corner of the ROC curve",
- "verdict": "V21 @ malignant thr 0.25 replaces V12 as champion - better on benchmark (+4.4pp) and on wild pool (+3.0pp), +7 cancers caught, 4 fewer errors overall"
+ "verdict": "V21 @ malignant thr 0.25 replaces V12 as champion - better on benchmark (+4.4pp) and on wild pool (+3.0pp), +7 cancers caught, 4 fewer errors overall",
+ "wild_199_at_shipped_operating_point": {
+  "gate_thresh": 0.3,
+  "mal_thresh": 0.25,
+  "acc": 0.492,
+  "ok": 98,
+  "mal": "50/95",
+  "ben": "48/104"
+ },
+ "wild_199_note": "CORRECTION: the earlier 45.7% (and the 48.2% harness figure) were measured with gate_thresh 0.50. At the DEMO-SHIPPED gate threshold of 0.30 the same weights score 49.2% (98/199) with 50/95 cancers caught and 48/104 benign right.",
+ "gate_threshold_joint_optimum": {
+  "swept": [
+   0.01,
+   0.05,
+   0.1,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.35,
+   0.4,
+   0.45,
+   0.5,
+   0.6
+  ],
+  "best_combined": "gate 0.30 -> 621/763 (bench 545 + wild 98)",
+  "note": "lowering the gate threshold gains wild films but costs benchmark normals; 0.30 is the joint optimum. 2-fold CV on wild alone prefers 0.05 (99/199) but costs 6 benchmark normals."
+ },
+ "ensemble_result": {
+  "matched_49_52_cancers": {
+   "V21_B21_alone": "98/199",
+   "mean_B18_B21": "98/199",
+   "mean_B12_B21": "92/199",
+   "mean_B12_B18_B21": "90/199",
+   "mean_all4": "91/199"
+  },
+  "verdict": "probability averaging does NOT beat the best single specialist at matched cancer sensitivity - the four models share a bias from the same 2,736 training images, so averaging pulls toward the shared error"
+ },
+ "ood_detection_result": {
+  "best_signal": "min_conf across 4 models, AUC 0.581",
+  "others": {
+   "specialist_conf": 0.56,
+   "gate_decisive_inverted": 0.573,
+   "ensemble_mean_p_malignant": 0.591,
+   "ensemble_disagreement": 0.435
+  },
+  "verdict": "NO confidence signal detects wild-pool errors well; disagreement is INVERTED (films where all 4 models agree are MORE likely wrong - correlated error)"
+ }
 }

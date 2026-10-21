@@ -88,13 +88,15 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 | **V21 @ malignant thr 0.25** | **A18** | **B6** | **92.7%** (single-view) | **165/179** | 90.8% | **current champion** |
 | V22 (lesion-crop + 600px) | A18 | B6 | **96.6%** | **171/179** | **95.4%** | **rejected** — wild pool −22 films |
 
-**Board 2 — wild pool (199 expert-labeled real films):**
+**Board 2 — wild pool (199 expert-labeled real films), at the demo's shipped operating point (gate 0.30, malignant 0.25):**
 
 | | B12 | B18 | B20 | B21 |
 |---|---|---|---|---|
 | **A12 gate** | 45.7% | **47.2%** | 45.7% | 44.7% |
 | **A18 gate** | 45.2% | 46.7% | 45.2% | 44.2% |
-| **A18 gate, malignant thr 0.25** | — | — | — | **48.2% (96/199)** |
+| **A18 gate, malignant thr 0.25** | — | — | — | **49.2% (98/199)**, 50/95 cancers, 48/104 benign |
+
+> **Correction:** earlier figures of 45.7% / 48.2% for V21 were measured with the evaluation harness's `gate_thresh=0.50`. At the **demo's shipped gate threshold of 0.30** the same weights score **49.2% (98/199)**. The threshold sweep is in `checkpoints/metrics_v21.json`.
 
 **The headline number and the real-world number ranked models in opposite order** — until the operating point was corrected. V21 beat V12 by 2.7pp on the benchmark while losing on real films; with the threshold fixed it beats V12 on *both* boards, and catches more cancers (165 vs 163) in a single view than V12 does with 5-view TTA.
 
@@ -298,10 +300,14 @@ kernel_status.py / loop_poll*.py       status + polling
 
 Measured, ranked, with the evidence attached:
 
-1. **Malignant-class diversity.** The binding constraint is 2,736 training images dominated by osteosarcoma. Every public source was checked (Kaggle, HuggingFace, Roboflow, figshare BTXRD) — nothing adds malignant diversity.
-2. **Calibration, not capacity.** The malignant threshold is a free dial. More capacity has now been tested and rejected four times: focal loss (V13), 120M params (V14), MixUp+EMA (V9), SSL/DINO init (V19b).
-3. **Stop, don't hide, uncertainty.** The shipped band is a bigger clinical win than any of the benchmark deltas, and it cost zero GPU hours.
-4. **Longer schedules are not the answer** — V21's own curve proves it (peak at epoch 39, then 21 epochs of overfitting).
+1. **Malignant-class diversity.** The binding constraint is 2,736 training images dominated by osteosarcoma. Every public source was checked (Kaggle, HuggingFace, Roboflow, figshare BTXRD) — nothing adds malignant diversity. This is now the *only* remaining lever the measurements point to.
+2. **Calibration, not capacity.** The malignant threshold is a free dial. More capacity has now been tested and rejected five times: focal loss (V13), 120M params (V14), MixUp+EMA (V9), SSL/DINO init (V19b), and lesion-crop + 600px (V22 — the strongest case: **+4.4pp benchmark, −22 films on real films, McNemar p=0.033**).
+3. **Ensembles do not help here.** Four specialists, probability-averaged: at matched cancer sensitivity the average is *worse* than the best single model (90–92/199 vs **98/199** for B21 alone). They share a bias from the same training images, so averaging pulls toward the shared error. Their eye-catching "best achievable" numbers (108/199) are bought by pushing cancer sensitivity to 69/95, which is not a real trade.
+4. **No confidence signal detects out-of-distribution error.** Every candidate measured on the 199 real films lands in a weak band: specialist confidence AUC 0.560, gate decisiveness 0.573 (**inverted** — *low* gate confidence predicts an error), min-confidence across the ensemble 0.581, ensemble disagreement 0.435 (**also inverted** — films all four models agree on are *more* likely wrong, the signature of correlated error). Confidence fitted in-distribution cannot detect distribution shift.
+5. **Longer schedules are not the answer** — V21's own curve proves it (peak at epoch 39, then 21 epochs of overfitting).
+6. **Stop, don't hide, uncertainty.** The shipped band is a bigger clinical win than any of the benchmark deltas, and it cost zero GPU hours — but it is only trustworthy on benchmark-like films, and the demo must say so.
+
+**The honest summary:** V21 is at the ceiling of what this data and this model family can do on unseen real radiographs. The remaining path is training data whose distribution matches deployment — varied real-world radiographs with diverse malignant entities — which no public dataset currently supplies.
 
 ## 12. ⚠️ Disclaimer
 

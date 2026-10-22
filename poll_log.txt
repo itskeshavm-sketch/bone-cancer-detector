@@ -1,0 +1,6 @@
+2026-10-22 11:37:25 | {"status": "KernelWorkerStatus.COMPLETE", "fail": "", "used": 80021.0, "left": 7.771944444444444, "reserved": 0.0}
+2026-10-22 11:37:59 | {"status": "KernelWorkerStatus.COMPLETE", "fail": "", "used": 80021.0, "left": 7.771944444444444, "reserved": 0.0}
+2026-10-22 11:53:03 | {"status": "KernelWorkerStatus.COMPLETE", "fail": "", "used": 80021.0, "left": 7.771944444444444, "reserved": 0.0}
+2026-10-22 11:57:34 | {"status": "KernelWorkerStatus.RUNNING", "fail": "", "used": 80058.0, "left": 7.761666666666667, "reserved": 0.0}
+2026-10-22 11:58:35 | {"status": "KernelWorkerStatus.RUNNING", "fail": "", "used": 80119.0, "left": 7.744722222222222, "reserved": 0.0}
+2026-10-22 11:58:55 | {"status": "KernelWorkerStatus.RUNNING", "fail": "", "used": 80140.0, "left": 7.738888888888889, "reserved": 0.0}

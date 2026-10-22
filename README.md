@@ -277,6 +277,49 @@ python app.py --port 7860      # → http://localhost:7860
 | V21 "RUNNING" for hours, actually queued | `push_kernel.py` printed `PUSH_OK` **unconditionally** and hid Kaggle's `"Maximum batch GPU session count of 2 reached"` | `push_kernel.py` now parses the response and exits non-zero on any `error` |
 | Weights landed as 0 bytes | flaky `kaggleusercontent` host; 8/12 attempts failed | `file_pattern` single-file pull + hard size assertion |
 | Wild comparison invalid | different gates used per version | one cached-probability matrix over all 8 combos |
+| **V26 and V27 both lost to V25** | **the harvested set was poisoned: 43 of 122 images are CT / MRI / pathology micrographs / bone scans, each carrying a page-level bone-tumour label** | **by-eye audit of all 122 on labelled contact sheets; V28 rebuilds the set from the 79 real radiographs** |
+| Kaggle dataset upload died with a bogus path | the API sanitises the upload path with `os.sep` only, so a *relative* folder keeps its forward slashes and it writes into a directory that was never created | `push_dataset.py` now resolves the folder to an absolute Windows path |
+| 15-min pings stopped after every server restart | background pollers are children of the server process and get reaped | a Windows **scheduled task** re-launches the poller every 15 min; the harness-level poller runs alongside it under a separate lock file |
+
+### The harvest was poisoned — and it took an eyeball to find it
+
+V24 → V25 was the single biggest win of the project: 38 harvested radiographs of the
+named blind-spot entities took the real-film board from 67.8% to 71.9%. The obvious
+next step was more of the same, so V26 added all 122 harvested images (×4 repeat) and
+V27 added the same 122 (×6 repeat). **Both lost to V25** — V26 fell to 57.7% on real
+films and its BTXRD validation accuracy fell monotonically from epoch 1.
+
+The cause is not subtle once you look. Every harvested image carries the diagnosis of
+the **bonetumor.org page** it was scraped from, and those pages list the case's
+imaging *and* its pathology *and* its scans. A contact sheet of all 122 with an index
+badge on each cell (`kaggle_out_probe/contact_sheets.py`) shows that **43 of the 122
+are not radiographs at all**:
+
+| Modality | Count | Examples |
+|---|---|---|
+| CT slice / CT scout | ~20 | axial abdomen, axial pelvis, CT chest, CT of the femur |
+| MRI | ~13 | axial, sagittal and coronal sequences of the same cases |
+| Pathology micrograph | ~5 | H&E sections from the adamantinoma and enchondroma cases |
+| Whole-body bone scan | ~3 | scintigraphy for metastases, eosinophilic granuloma, osteoid osteoma |
+
+The automated content filter (colour fraction, colour cast, black background,
+mid-grey fraction, flat texture) passed them all, because CT and MRI are grayscale
+just like radiographs. **A content filter cannot separate a radiograph from a CT
+slice.** The check has to be visual, and it is cheap — five sheets, one pass.
+
+A second filter was considered and **rejected on the evidence**. The gate model
+(A18, 99.4% accurate in-distribution) could have been used to drop images that show
+no lesion, killing the page-level label defect. But of the 79 modality-clean images,
+the seven with the lowest gate score are all **subtle benign entities** — bone
+island (×3), avulsive cortical irregularity (×2), perichondroma, fibrous dysplasia —
+i.e. the gate's own blind spots. Filtering on gate score would have deleted exactly
+the training signal the harvest was collected to provide. The gate audit is in
+`kaggle_out_probe/harvest_gate_audit.py` and the rejected index list is in
+`kaggle_out_probe/harvest_audit.py`.
+
+**V28 is the clean re-run**: V27's exact recipe, same init, same lr, same epochs,
+same 78-film held-out slice, same repeat factor 6, with the 43 poisoned images
+removed. 200 real radiographs, all genuine radiographs.
 
 **The four pre-flight checks every kernel must pass before it touches anyone's GPU quota:**
 
@@ -335,12 +378,13 @@ kernel_status.py / loop_poll*.py       status + polling
 
 Measured, ranked, with the evidence attached:
 
-1. **Malignant-class diversity — now partially solved, and it worked.** The binding constraint was 2,736 osteosarcoma-dominated images. V24 proved the mechanism: fine-tuning on 121 real-world images of the *named* blind-spot entities (ABC, bone island, chondroblastoma, CMF, BFH, chondrosarcoma, adamantinoma, chordoma, angiosarcoma, GCT, fibrous dysplasia, metastases) moved the wild pool from 49.2% to 67.8% with the benchmark untouched. **V25 pushes further with 38 more harvested radiographs of exactly those entities.**
-2. **Calibration, not capacity.** The malignant threshold is a free dial. More capacity has been tested and rejected five times: focal loss (V13), 120M params (V14), MixUp+EMA (V9), SSL/DINO init (V19b), and lesion-crop + 600px (V22 — the strongest counter-example: **+4.4pp benchmark, −22 films on real films, McNemar p=0.033**).
-3. **Ensembles do not help here.** Four specialists, probability-averaged: at matched cancer sensitivity the average is *worse* than the best single model (90–92/199 vs 98/199). They share a bias from the same training images, so averaging pulls toward the shared error. Their eye-catching "best achievable" numbers (108/199) are bought by pushing cancer sensitivity to 69/95, which is not a real trade.
-4. **No confidence signal detects out-of-distribution error.** Every candidate measured on the 199 real films lands in a weak band: specialist confidence AUC 0.560, gate decisiveness 0.573 (**inverted** — *low* gate confidence predicts an error), min-confidence across the ensemble 0.581, ensemble disagreement 0.435 (**also inverted** — films all four models agree on are *more* likely wrong, the signature of correlated error). Confidence fitted in-distribution cannot detect distribution shift, which is why the shipped band is calibrated on the test set and is **optimistic on unfamiliar sources** — the demo now says so.
-5. **The pipeline is deterministic.** V21 was retrained from scratch two days later and came back **bit-for-bit identical** on every metric (`checkpoints/reproducibility_v21.json`). Run-to-run variance is zero, so future gains must come from a different seed or a different recipe — never from rerunning.
-6. **Longer schedules are not the answer** — V21's own curve peaks at epoch 39, then 21 epochs of overfitting.
+1. **Malignant-class diversity — now partially solved, and it worked.** The binding constraint was 2,736 osteosarcoma-dominated images. V24 proved the mechanism: fine-tuning on 121 real-world images of the *named* blind-spot entities (ABC, bone island, chondroblastoma, CMF, BFH, chondrosarcoma, adamantinoma, chordoma, angiosarcoma, GCT, fibrous dysplasia, metastases) moved the wild pool from 49.2% to 67.8% with the benchmark untouched. **V25 pushes further with 38 more harvested radiographs of exactly those entities.** Scaling that harvest up (V26, V27) *lost*, because 43 of the 122 harvested images were CT / MRI / pathology / bone-scan images wearing a page-level radiograph label — see §8. The lever was never the *count* of real radiographs, it was the count of *correctly labelled* ones.
+2. **Data hygiene is a lever, and it is a visual one.** Every automatic content filter tried (colour fraction, colour cast, black background, mid-grey fraction, flat texture) passes CT and MRI slices, because they are grayscale like radiographs. One labelled contact sheet and one human pass separated 43 poisons out of 122. Any future crawl of a medical image site needs the same treatment before a single pixel reaches the GPU.
+3. **Calibration, not capacity.** The malignant threshold is a free dial. More capacity has been tested and rejected five times: focal loss (V13), 120M params (V14), MixUp+EMA (V9), SSL/DINO init (V19b), and lesion-crop + 600px (V22 — the strongest counter-example: **+4.4pp benchmark, −22 films on real films, McNemar p=0.033**).
+4. **Ensembles do not help here.** Four specialists, probability-averaged: at matched cancer sensitivity the average is *worse* than the best single model (90–92/199 vs 98/199). They share a bias from the same training images, so averaging pulls toward the shared error. Their eye-catching "best achievable" numbers (108/199) are bought by pushing cancer sensitivity to 69/95, which is not a real trade.
+5. **No confidence signal detects out-of-distribution error.** Every candidate measured on the 199 real films lands in a weak band: specialist confidence AUC 0.560, gate decisiveness 0.573 (**inverted** — *low* gate confidence predicts an error), min-confidence across the ensemble 0.581, ensemble disagreement 0.435 (**also inverted** — films all four models agree on are *more* likely wrong, the signature of correlated error). Confidence fitted in-distribution cannot detect distribution shift, which is why the shipped band is calibrated on the test set and is **optimistic on unfamiliar sources** — the demo now says so. A 7-signal logistic model reaches AUC 0.761 *within* a pool but only **0.571–0.627 across** pools, so it cannot be shipped as an OOD gate either.
+6. **The pipeline is deterministic.** V21 was retrained from scratch two days later and came back **bit-for-bit identical** on every metric (`checkpoints/reproducibility_v21.json`). Run-to-run variance is zero, so future gains must come from a different seed or a different recipe — never from rerunning.
+7. **Longer schedules are not the answer** — V21's own curve peaks at epoch 39, then 21 epochs of overfitting.
 
 **What remains:** the wild pool has **no normal films** (it is a tumor-only population), so it cannot measure the normal class at all, and the 78-film held-out slice shares a source domain with the training slice. The honest next measurement is a **third source of real radiographs** — not more of the same.
 

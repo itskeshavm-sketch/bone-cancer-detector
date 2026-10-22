@@ -1,15 +1,17 @@
-"""Prove the V25 label fix against the REAL split JSON and the REAL zip.
+"""Prove the label lookup resolves against the REAL split JSON and the REAL zip,
+for any assets folder. V25 burned ~1.5h of GPU training on zero wild images
+because of a prefix-matching bug; this is the gate that stops that repeating.
 
-V25 burned ~1.5h of GPU training on zero wild images. This must never happen
-again, so the matching is verified here first, and the check is run against the
-same assets the kernel will see.
+Usage: python verify_label_match.py kaggle_data/v28_assets
 """
 import json
+import sys
 import zipfile
 from pathlib import Path
 
-SPLIT = Path("kaggle_data/v25_assets/wild_split.json")
-ZIP = Path("kaggle_data/v25_assets/wild_images.zip")
+FOLDER = Path(sys.argv[1] if len(sys.argv) > 1 else "kaggle_data/v28_assets")
+SPLIT = FOLDER / "wild_split.json"
+ZIP = FOLDER / "wild_images.zip"
 
 
 def wild_key(name):
@@ -38,9 +40,12 @@ for n in names:
     if base.endswith(".txt") and base.startswith("wildlbl"):
         wlab.setdefault(wild_key(base), n)
 
-print(f"zip files {len(names)} | images {len(wimg)} | labels {len(wlab)}")
-assert len(wimg) == 237, len(wimg)
-assert len(wlab) == 237, len(wlab)
+n_split = len(split["train"]) + len(split["val"])
+print(f"{FOLDER}")
+print(f"zip files {len(names)} | images {len(wimg)} | labels {len(wlab)} | "
+      f"split entries {n_split}")
+assert len(wimg) == n_split, (len(wimg), n_split)
+assert len(wlab) == n_split, (len(wlab), n_split)
 
 for key in ("train", "val"):
     unresolved = []
@@ -59,11 +64,13 @@ for key in ("train", "val"):
         print("     e.g.", unresolved[:3])
         raise SystemExit("STILL BROKEN")
 
-# overlap check
 tr = {wild_key(e["file"]) for e in split["train"]}
 vl = {wild_key(e["file"]) for e in split["val"]}
 assert not (tr & vl), "train/val overlap"
-print(f"\ntrain {len(tr)} | val {len(vl)} | overlap 0")
 harv = [e for e in split["train"] if e["file"].startswith("wildimg2_")]
-print(f"harvested in train: {len(harv)}")
+print(f"\ntrain {len(tr)} | val {len(vl)} | overlap 0")
+print(f"harvested in train: {len(harv)} (rejected: {split.get('harvested_rejected')})")
+
+# the zip must contain every split entry exactly once
+assert len(wimg) == len(set(wimg)), "duplicate key after normalisation"
 print("\nLABEL MATCHING VERIFIED - safe to push")

@@ -131,8 +131,48 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 
 **The same audit found 22 near-duplicate pairs inside the 564-film benchmark** — the same BTXRD image filed as both `btxrd_IMG002332.jpeg` and `tb2_IMG002332_jpeg.rf.<hash>.jpg`. The kernel's train/val/test dedup is md5-based, so re-encodes slip through it and the benchmark is worth a little more than it appears. **That is reported, not silently fixed**: the benchmark is the in-distribution guard for every comparison in this project, and rewriting it would invalidate all of them.
 
-A third, even stricter view: of the 78-film held-out slice, **8 films were in the training set**, leaving **70 films that no harvest-trained model has ever seen** (32 cancers). At the shipped thresholds:
+### The correction that mattered: most of my "findings" were noise
 
+Three runs had told me "more harvested radiographs don't help", and I wrote that
+up as a curve with a peak at 159 images. **I was reading raw counts on a
+172-film board as if they were signal.** The paired test settles it —
+McNemar's exact test on the discordant films, the ones one model gets right and
+the other gets wrong:
+
+| model | correct | cancers | model-only right | V25-only right | p | verdict |
+|---|---|---|---|---|---|---|
+| V21 | 85/172 | 38/81 | 9 | 50 | <0.0001 | **WORSE** (real) |
+| V24 | 118/172 | 66/81 | 3 | 11 | 0.0574 | **TIED** |
+| **V25** | **126/172** | **70/81** | — | — | — | reference |
+| V26 | 107/172 | 58/81 | 2 | 21 | 0.0001 | **WORSE** (real) |
+| V27 | 112/172 | 58/81 | 6 | 20 | 0.0094 | **WORSE** (real) |
+| V28 | 120/172 | 69/81 | 5 | 11 | **0.2101** | **TIED** |
+
+**So the harvested-data curve is FLAT, not peaked:** 121 images (V24) ties with
+159 (V25) ties with 200 (V28). The only two things with a real, statistically
+significant effect in the whole sequence are:
+
+1. **The blind-spot fine-tune itself** (V21 → V25: +41 films, p < 0.0001) — the one big win.
+2. **The 43 non-radiographs** (V26/V27 → V28/V25: p = 0.0001 and 0.0094) — the one big loss.
+
+Everything between them was noise I had been narrating as a finding. The reason
+the extras added nothing is measurable: **14 of the 20 entity families in V28's
+extra images were already in V25's 38** (23 of the 52 were metastasis 11, CMF 6,
+enchondroma 6), so V28 got the same diagnoses weighted more heavily rather than
+new knowledge.
+
+**V29 — the 9-class BTXRD release — was a loss, and the cause is arithmetic.**
+It added **1,561 genuinely new images** (1,269 benign / 292 malignant) with
+per-image fine labels, aimed straight at the dominant error mode. It still lost:
+BTXRD val **0.8685** (worst of any model, vs V25's 0.8906), benchmark
+**512/564** (worst), held-out wild 64.1% vs 65.4%. Because the base pool grew
+3,367 → 4,928 while the real radiographs stayed at 954 items, the **real-data
+share fell from 22.1% to 16.2%** — the new in-distribution images diluted the
+only real-scanner data in the mix. **V30 is the run that removes that confound**:
+the same 1,561 images with the repeat factor recomputed at runtime so the
+real-data share is pinned back to 22.1%.
+
+A third, even stricter view: of the 78-film held-out slice, **8 films were in the training set**, leaving **70 films that no harvest-trained model has ever seen** (32 cancers). At the shipped thresholds:
 | Model | never-seen real films | cancers caught |
 |---|---|---|
 | V21 (no harvest) | 38/70 (54%) | 20/32 |

@@ -1,0 +1,1 @@
+{"code_file":"train_tta_eval.py","dataset_sources":["musakhanalabazy/bone-tumor-dataset3","juyhtrfewqasdfrgt/tta-assets"],"enable_gpu":true,"enable_internet":false,"id":"juyhtrfewqasdfrgt/bone-cancer-tta-eval","is_private":true,"kernel_type":"script","language":"python","title":"Bone Cancer TTA Eval"}

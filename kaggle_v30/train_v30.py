@@ -123,33 +123,50 @@ def md5(p):
     return h.hexdigest()
 
 
-NEAR_DUP_MAD = 0.02
+NEAR_DUP_HAMMING = 8
+
+
+def _dct_matrix(n):
+    k = np.arange(n).reshape(-1, 1)
+    x = np.arange(n).reshape(1, -1)
+    Dm = np.cos(np.pi * (2 * x + 1) * k / (2 * n))
+    Dm[0] *= np.sqrt(1.0 / n)
+    Dm[1:] *= np.sqrt(2.0 / n)
+    return Dm
+
+
+_DCT = _dct_matrix(32)
 
 
 def psig(p):
-    """16x16 grayscale signature, NOT quantised.
+    """64-bit pHash (DCT low-frequency) of an image.
 
-    A byte-exact comparison of a QUANTISED signature collides across unrelated
-    films - a radiograph is mostly black background, so a 4-level 16x16 grid is
-    nearly constant and many different films hash to the same bytes. Calibrated
-    in kaggle_out_probe/calibrate_dedup.py: the 19 known same-film pairs sit at
-    mean-absolute-difference <= 0.0002 while unrelated pairs have a median of
-    0.255, so MAD16 < 0.02 catches 19/19 real leaks and false-flags 2 in 3000.
+    A byte-exact comparison of a QUANTISED 16x16 signature collides across
+    unrelated films - a radiograph is mostly black background, so a 4-level
+    16x16 grid is nearly constant and many different films hash alike. V29
+    dropped 39 of the 1,600 nine-class images with that check and almost none
+    were real duplicates. pHash is calibrated for this job
+    (kaggle_out_probe/dedup_v2.py): the 19 known same-film pairs score Hamming
+    0, unrelated pairs have a median of 32, and Hamming <= 8 catches 19/19
+    while false-flagging 2 in 3,000.
     """
     try:
-        a = np.asarray(Image.open(p).convert("L").resize((16, 16)), dtype=float) / 255.0
-        return a
+        im = Image.open(p).convert("L").resize((32, 32), Image.LANCZOS)
+        g = np.asarray(im, dtype=float)
+        d = _DCT @ g @ _DCT.T
+        low = d[:8, :8].flatten()[1:]
+        return (low > np.median(low)).astype(np.uint8)
     except Exception:
         return None
 
 
-def near_duplicate(sig, pool):
-    if sig is None:
+def near_duplicate(h, pool):
+    if h is None:
         return False
     for other in pool:
         if other is None:
             continue
-        if np.abs(sig - other).mean() < NEAR_DUP_MAD:
+        if int(np.count_nonzero(h != other)) <= NEAR_DUP_HAMMING:
             return True
     return False
 
@@ -392,9 +409,11 @@ def main():
     # Pin the real-data share to V25's value. V25 used 159 real images x 6
     # against a base of 3,367 -> 954/(954+3367) = 22.1%. The 9-class images
     # grow the base, so the repeat is recomputed to keep that share identical.
-    real_items_needed = TARGET_REAL_SHARE / (1 - TARGET_REAL_SHARE) * len(tr.base)
+    # The base size is read from the directory - `tr` does not exist yet.
+    base_count = len(list((SUB / "train").rglob("*")))
+    real_items_needed = TARGET_REAL_SHARE / (1 - TARGET_REAL_SHARE) * base_count
     wild_repeat = max(1, int(round(real_items_needed / max(len(train_wild), 1))))
-    print(f"base {len(list((SUB / 'train').rglob('*')))} | real needed "
+    print(f"base {base_count} | real needed "
           f"{real_items_needed:.0f} items | {len(train_wild)} real images -> "
           f"repeat {wild_repeat}", flush=True)
 

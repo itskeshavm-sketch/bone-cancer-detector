@@ -47,3 +47,5 @@ SyntaxError: invalid syntax
 2026-10-22 15:55:19 | {"status": "KernelWorkerStatus.COMPLETE", "fail": "", "used_h": 0.461, "total_h": 6.0, "left_h": 5.539, "reserved_h": 0.0, "refresh": "2026-10-24T00:00:00.000Z"}
 2026-10-22 16:11:55 | {"status": "KernelWorkerStatus.QUEUED", "fail": "", "used_h": 0.461, "total_h": 6.0, "left_h": 5.539, "reserved_h": 0.0, "refresh": "2026-10-24T00:00:00.000Z"}
 2026-10-22 16:22:35 | {"status": "KernelWorkerStatus.QUEUED", "fail": "", "used_h": 0.461, "total_h": 6.0, "left_h": 5.539, "reserved_h": 0.0, "refresh": "2026-10-24T00:00:00.000Z"}
+2026-10-22 16:39:50 | {"status": "KernelWorkerStatus.RUNNING", "fail": "", "used_h": 0.679, "total_h": 6.0, "left_h": 5.321, "reserved_h": 0.0, "refresh": "2026-10-24T00:00:00.000Z"}
+2026-10-22 17:03:48 | {"status": "KernelWorkerStatus.RUNNING", "fail": "", "used_h": 0.973, "total_h": 6.0, "left_h": 5.027, "reserved_h": 11.938, "refresh": "2026-10-24T00:00:00.000Z"}

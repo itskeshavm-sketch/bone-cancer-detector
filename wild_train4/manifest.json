@@ -1,0 +1,32 @@
+[
+ {
+  "file": "wm4_benign_chondroma_000.png",
+  "label": "benign",
+  "entity": "chondroma",
+  "source": "wikimedia commons",
+  "title": "File:Periostales Chondrom oder hoch differenziertes Chondrosarkom 16M - CR ap - 001.jpg",
+  "page": "Category:X-rays of chondroma",
+  "w": 969,
+  "h": 1858
+ },
+ {
+  "file": "wm4_benign_chondroma_001.png",
+  "label": "benign",
+  "entity": "chondroma",
+  "source": "wikimedia commons",
+  "title": "File:The R\u00f6ntgen rays in medical work (1907) (14757508495) - retouched.jpg",
+  "page": "Category:X-rays of chondroma",
+  "w": 712,
+  "h": 1770
+ },
+ {
+  "file": "wm4_benign_enchondroma_of_femur_000.png",
+  "label": "benign",
+  "entity": "enchondroma_of_femur",
+  "source": "wikimedia commons",
+  "title": "File:Enchondrom Femur Roe 001.jpg",
+  "page": "Category:X-rays of enchondroma of femur",
+  "w": 1042,
+  "h": 1509
+ }
+]

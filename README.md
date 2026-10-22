@@ -226,7 +226,22 @@ Re-running the shipped band table against the **199 real-world films** exposes t
 
 **The "reliable" band is 48.9% accurate on real films — a coin flip — and the flagged region carries a 52.3% error rate versus 51.8% overall.** The band therefore carries **no information** on out-of-distribution data: the model's confidence is calibrated to the benchmark's distribution, and on unseen real radiographs it is confidently wrong.
 
-**This is the real remaining problem, and it is a data problem, not a modelling problem.** A confidence threshold fitted in-distribution cannot detect distribution shift. The fix is to rebuild the abstention signal on out-of-distribution data (the wild pool, with cross-validation so the same 199 films are not used for both fitting and reporting), or to use a shift-sensitive signal — the gate's own confidence, or input-statistics distance — rather than the specialist's softmax. Until that is done, the "uncertain reading" label is honest on benchmark films and **not** trustworthy on real ones.
+**We searched for a better one, and it does not exist for this model family.** Seven cheap signals (specialist confidence, margin, gate decisiveness, gate p, model disagreement, gate-normalised p, p(malignant)) plus a cross-validated logistic model, scored on both the wild pool and the 50-film third-source pool:
+
+| Signal | Wild 199 (effective AUC) | Third source 50 (effective AUC) |
+|---|---|---|
+| specialist confidence | 0.683 | 0.516 |
+| specialist margin | 0.683 | 0.516 |
+| gate decisiveness | 0.556 | 0.569 |
+| model disagreement (V25 vs V21) | 0.553 | 0.545 |
+| input-statistics distance from training | 0.513 | 0.573 |
+| logistic on all 7, 5-fold OOF **within** the pool | 0.761 | 0.777 |
+| **logistic fitted on one pool, applied to the other** | — | **0.571** |
+| **logistic fitted on the other pool, applied to one** | — | **0.627** |
+
+**The 0.761 / 0.777 are a trap, and the transfer numbers expose them.** Cross-validation *within* a pool cannot detect that a signal learned that pool's quirks; across pools the same signal collapses to barely above chance. A band built on it would give false reassurance on exactly the films that matter. (The fitted weights are also unstable — negative coefficients on specialist confidence, contradicting the direct measurement, because `spec_conf` and `spec_margin` are nearly collinear.)
+
+**What survives, and what the demo therefore claims:** within one source, abstention works — flagging the least-confident 20% of wild films catches **23 of 56 errors** (41%) with a 57.5% error rate inside the flagged group versus 20.8% outside. Across sources, **no confidence-based signal we tested clears chance.** So the shipped band's honest scope is *"a within-distribution uncertainty flag, not a distribution-shift detector"*, and the colophon says exactly that. The number that actually measures generalisation is the third-source accuracy itself: **56% for the current champion versus 32% for the old one** — and it is the number to put in front of anyone who asks how good this is.
 
 ## 7. Demo
 

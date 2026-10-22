@@ -33,9 +33,10 @@ Remove-Item "$root\poll_sched.lock" -Force -ErrorAction SilentlyContinue
 $py = (Get-Command python).Source
 # Quote every argument: the project path contains spaces and Start-Process does
 # not quote them for us, which silently truncates the script path.
+# NO stdout redirection: Start-Process -RedirectStandardOutput makes the parent
+# wait on the child's handles, which hung an interactive invocation. The poller
+# writes poll_log.txt and poll_loop.out itself.
 Start-Process -FilePath $py `
     -ArgumentList "`"$root\loop_poll_v27.py`"", "`"$slug`"", "0", "sched" `
     -WorkingDirectory $root `
-    -WindowStyle Hidden `
-    -RedirectStandardOutput "$root\poll_loop.out" `
-    -RedirectStandardError "$root\poll_loop.err"
+    -WindowStyle Hidden

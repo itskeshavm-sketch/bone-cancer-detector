@@ -168,5 +168,75 @@
   "page": "Category:X-rays of osteoma",
   "w": 1472,
   "h": 1020
+ },
+ {
+  "file": "wm4_benign_osteoma_010.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteom der Stirnhoehle Roentgen.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 542,
+  "h": 666
+ },
+ {
+  "file": "wm4_benign_osteoma_011.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteom im Calcaneus 41M - CR und MRT - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1633,
+  "h": 1385
+ },
+ {
+  "file": "wm4_benign_osteoma_012.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteom im Finger 43M - CR 2 Eb - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 946,
+  "h": 1374
+ },
+ {
+  "file": "wm4_benign_osteoma_013.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteom im Os ilium 69W - CT und CR - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1920,
+  "h": 552
+ },
+ {
+  "file": "wm4_benign_osteoma_014.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Typischer Befund eines Osteoms im Os ilium 72W - CT und CR - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1779,
+  "h": 1387
+ },
+ {
+  "file": "wm4_benign_osteoma_015.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Typisches Osteom im distalen Radius 26M - CT und CR - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1486,
+  "h": 1111
+ },
+ {
+  "file": "wm4_benign_fibrous_dysplasia_000.png",
+  "label": "benign",
+  "entity": "fibrous_dysplasia",
+  "source": "wikimedia commons",
+  "title": "File:Fibroese Dysplasie Kalkaneus 21jm- Roe seitlich - 001.jpg",
+  "page": "Category:X-rays of fibrous dysplasia",
+  "w": 1464,
+  "h": 1497
  }
 ]

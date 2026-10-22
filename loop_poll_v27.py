@@ -47,7 +47,21 @@ if alive():
     sys.exit(2)
 
 LOCK.write_text(str(os.getpid()))
-print(f"poller armed pid={os.getpid()} slug={SLUG} cycle={CYCLE}s", flush=True)
+
+# Write the status line to the file directly rather than relying on stdout
+# redirection: Start-Process -RedirectStandardOutput makes the parent shell wait
+# on the child's handles, which hung an interactive invocation and could wedge
+# the scheduled task.
+STATUS = ROOT / "poll_loop.out"
+
+
+def note(msg):
+    with STATUS.open("a", encoding="utf-8") as f:
+        f.write(msg + "\n")
+    print(msg, flush=True)
+
+
+note(f"poller armed pid={os.getpid()} slug={SLUG} cycle={CYCLE}s")
 
 try:
     done = 0
@@ -58,14 +72,14 @@ try:
         r = subprocess.run([sys.executable, str(ROOT / "poll_once.py"), SLUG],
                            capture_output=True, text=True, cwd=ROOT)
         out = (r.stdout or r.stderr).strip()
-        print(f"CYCLE {out}", flush=True)
+        note(f"CYCLE {out}")
         BEAT.write_text(out + "\n")
         if "COMPLETE" in out or "ERROR" in out:
-            print("FINAL STATE REACHED - notifier exits", flush=True)
+            note("FINAL STATE REACHED - notifier exits")
             sys.exit(0)
         done += 1
         if CYCLES and done >= CYCLES:
-            print("cycle budget spent - re-arm me", flush=True)
+            note("cycle budget spent - re-arm me")
             sys.exit(1)
 finally:
     try:

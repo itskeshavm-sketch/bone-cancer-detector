@@ -11,3 +11,15 @@ kaggle_out_probe/
 __pycache__/
 *.out
 *.log
+
+# regenerable Kaggle asset bundles (each version added ~60MB of zips + a 164MB
+# weight copy to git history; the repo had reached 3.7GB)
+kaggle_data/
+# images rejected by the eye audit - the INDEX (harvest_audit.py) is the artifact
+# that matters, not 48MB of rejected PNGs
+wild_rejected/
+# poller runtime state (locks, heartbeats, logs) - not artifacts
+poll_*.lock
+poll_heartbeat_*.txt
+poll_log.txt
+poll_final_state.txt

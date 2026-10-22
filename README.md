@@ -17,7 +17,7 @@ Two-stage X-ray classifier for bone tumors — **normal / benign tumor / maligna
 | **Stack** | PyTorch, torchvision EfficientNet, Gradio 6.29.1 |
 | **Training infra** | Kaggle GPU (T4), private kernels, 30 GPU-h/week quota |
 | **Demo** | `python app.py` → http://localhost:7860 |
-| **Champion** | **V24** — 92.2% on the test set, **67.8% on 199 real-world radiographs** |
+| **Champion** | **V25** — 91.8% on the 564-film test set, **72.8% on 180 leak-free real-world radiographs**, 74/88 cancers caught |
 
 ## 2. Architecture
 
@@ -112,15 +112,33 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 
 > **Correction — an earlier version of this README said V12 beat V21 on real films. That was a measurement artefact, not a model difference.** V12's number had been taken at argmax while V21's had been taken after a threshold search (which is worth +10 films on its own). Re-measured with an identical search space for every model, **V21 was always ahead of V12** (49.2% vs 47.7%), and the earlier ordering was simply my own reporting bias. The full table is in `kaggle_out_probe/equal_treatment.py`; V24's and V25's wins are unaffected, since both lead under every treatment.
 
-**Champion selection rule (applied identically to every model):** a missed cancer is much worse than a false alarm, so the operating point must keep **malignant recall ≥ 80%** of the 95 wild cancers; among the thresholds that qualify, take the best combined score across all three boards.
+**Champion selection rule (applied identically to every model):** a missed cancer is much worse than a false alarm, so the operating point must keep **malignant recall ≥ 80%** of the wild cancers; among the thresholds that qualify, take the best combined score across all three boards.
 
-| Model | benchmark | wild | third source | combined |
+> **The wild board was leaking, and it is now fixed.** Nineteen of the 199 collected radiographs turned out to be **byte-identical to images in the training set** — eight of them inside the 78-film held-out slice — because the harvest and the wild pool were scraped from the same bonetumor.org cases under different filenames. Every model trained on the harvest (V25, V26, V27, V28) had therefore seen films that were also on the board. Those 19 films are now removed, leaving a **180-film leak-free board with 88 cancers**, and every number below is measured on it. The full analysis is `kaggle_out_probe/check_leakage.py` + `kaggle_out_probe/leakage_rescore.py`; the benchmark and the third-source board have **zero** overlap with any training image and are unaffected.
+
+| Model | trained on harvest? | leak-free wild (180) | cancers | vs V25 |
 |---|---|---|---|---|
-| V21 | — | — | — | **disqualified** — max recall 71.6%, cannot reach 80% at any threshold |
-| V24 | 520/564 | 140/199 | 13/50 | 673 |
-| **V25** | 518/564 | **143/199** | **15/50** | **676** ✅ |
+| V21 | no | 82/180 | 72/88 | −51 |
+| V24 | no | 123/180 | 73/88 | −10 |
+| **V25** | **yes** | **133/180** | 70/88 | **—** ✅ |
+| V26 | yes | 95/180 | 74/88 | −38 |
+| V27 | yes | 106/180 | 70/88 | −27 |
+| V28 | yes | 129/180 | 70/88 | −4 |
 
-**The corrected story, which is stronger than the one it replaces:** every architecture, loss, augmentation and SSL variant tried before V24 (V13, V14, V18, V20, V21) landed on **45–49%** on real radiographs — a hard ceiling imposed by 2,736 osteosarcoma-dominated images. Two *targeted data* interventions broke it: **V24** (fine-tune on 121 real-world images of the named blind-spot entities) → 67.8%, and **V25** (+38 harvested radiographs of the same diagnoses) → 72.9%. The lever was never capacity; it was the right images.
+**The leak did not manufacture V25's win.** V25 led V24 by 8 films on the dirty board (144 vs 136) and by **10 films on the clean board** (133 vs 123) — the advantage is if anything slightly larger once the duplicates are gone, because the duplicates were films V25 had memorised and the clean board throws those memorised films away. The headline wild number drops from 143/199 to **131/180 at the shipped thresholds** (72.8% either way), and 80/95 cancers becomes **74/88**.
+
+A third, even stricter view: of the 78-film held-out slice, **8 films were in the training set**, leaving **70 films that no harvest-trained model has ever seen** (32 cancers). At the shipped thresholds:
+
+| Model | never-seen real films | cancers caught |
+|---|---|---|
+| V21 (no harvest) | 38/70 (54%) | 20/32 |
+| V24 (no harvest) | 39/70 (56%) | 21/32 |
+| **V25** | **41/70 (59%)** | **23/32** |
+| V28 | 40/70 (57%) | 24/32 |
+
+V25 leads on all three views — full board, leak-free board, never-seen slice — so the ranking is not an artefact of the cleanup. (On 70 films the standard error is ±6%, so this view is indicative rather than decisive; the 180-film board is the one to read.)
+
+**The corrected story, which is stronger than the one it replaces:** every architecture, loss, augmentation and SSL variant tried before V24 (V13, V14, V18, V20, V21) landed on **45–49%** on real radiographs — a hard ceiling imposed by 2,736 osteosarcoma-dominated images. Two *targeted data* interventions broke it: **V24** (fine-tune on 121 real-world images of the named blind-spot entities) → 68% leak-free, and **V25** (+38 harvested radiographs of the same diagnoses) → 74% leak-free. The lever was never capacity; it was the right images.
 
 **The headline number and the real-world number ranked models in opposite order** — until the operating point was corrected. V21 beat V12 by 2.7pp on the benchmark while losing on real films; with the threshold fixed it beats V12 on *both* boards, and catches more cancers (165 vs 163) in a single view than V12 does with 5-view TTA.
 
@@ -187,6 +205,37 @@ The error anatomy said the problem was **93 of 100 errors being classification f
 **Result:** wild pool **49.2% → 67.8%**, cancers caught **50/95 → 79/95**, benchmark unchanged within noise (−3 films of 564), held-out slice 53.8% → 62.8%. The honesty check passes: V24 scores 80.2% on the 121 films it trained on and 62.8% on the 78 it did not — the expected shape of a model that learned something real *and* partly memorised.
 
 **Caveat, stated in the metrics:** the held-out films come from the same source domain as the training slice, so that number means "unseen images, same entities", not "unseen hospitals". The 564-film BTXRD benchmark is the independent check, and it held.
+
+### The errors, decomposed on the clean board — and it is one thing, not many
+
+Every board number above was re-measured on the 180-film leak-free board. At the
+shipped thresholds (gate 0.30, malignant 0.30) the champion makes **49 errors**, and
+they are not evenly spread:
+
+| error | count | share of all errors |
+|---|---|---|
+| **the specialist called a benign lesion MALIGNANT** | **32** | **65%** |
+| the specialist called a cancer benign | 11 | 22% |
+| the gate rejected a real cancer | 3 | 6% |
+| the gate rejected a benign film | 3 | 6% |
+
+Three consequences, all of them actionable:
+
+1. **The gate is not the bottleneck.** It passes 97% of real films and loses 3% of
+   cancers. Every hour spent on the gate would have been wasted — the error
+   anatomy had already said 93 of 100 errors were classification failures, and
+   this decomposes it exactly.
+2. **Two-thirds of all errors are one behaviour: over-calling malignancy on a
+   benign bone lesion.** ABC, bone island, chondroblastoma, CMF, LCH,
+   enchondroma, fibrous dysplasia and GCT — the same named blind-spot families
+   the hunt list identified. The model is too eager, and it is eager in exactly
+   one direction.
+3. **So the next lever is benign-mimic supervision, not more malignant data.**
+   Our malignant class is 100% osteosarcoma; our benign class never contains a
+   labelled osteochondroma, simple bone cyst or giant cell tumour. That is what
+   the 9-class BTXRD release supplies (osteochondroma 521, multiple
+   osteochondromas 183, simple bone cyst 144, GCT 75, osteofibroma 29,
+   synovial osteochondroma 38), and it is what V29 and V30 test.
 
 ### Phase 4 — Reality check
 
@@ -278,6 +327,8 @@ python app.py --port 7860      # → http://localhost:7860
 | Weights landed as 0 bytes | flaky `kaggleusercontent` host; 8/12 attempts failed | `file_pattern` single-file pull + hard size assertion |
 | Wild comparison invalid | different gates used per version | one cached-probability matrix over all 8 combos |
 | **V26 and V27 both lost to V25** | **the harvested set was poisoned: 43 of 122 images are CT / MRI / pathology micrographs / bone scans, each carrying a page-level bone-tumour label** | **by-eye audit of all 122 on labelled contact sheets; V28 rebuilds the set from the 79 real radiographs** |
+| **V25/V26/V27/V28 "held-out" numbers were inflated** | **19 of the 199 wild-board films were byte-identical to harvested training images, 8 of them inside the 78-film held-out slice — two crawls of the same cases under different names** | **md5 + perceptual check of every crawl against every held-out board before use (`check_leakage.py`); the board is now 180 films and all numbers are re-quoted** |
+| A 1.15 GB dataset download landed corrupt | the resumable downloader accepted a `200` response that ignored the `Range` header and appended the whole archive twice | `download_dataset.py` now requires `206`, checks `Content-Range`, writes at a verified offset, and validates the zip before use |
 | Kaggle dataset upload died with a bogus path | the API sanitises the upload path with `os.sep` only, so a *relative* folder keeps its forward slashes and it writes into a directory that was never created | `push_dataset.py` now resolves the folder to an absolute Windows path |
 | 15-min pings stopped after every server restart | background pollers are children of the server process and get reaped | a Windows **scheduled task** re-launches the poller every 15 min; the harness-level poller runs alongside it under a separate lock file |
 
@@ -320,6 +371,62 @@ the training signal the harvest was collected to provide. The gate audit is in
 **V28 is the clean re-run**: V27's exact recipe, same init, same lr, same epochs,
 same 78-film held-out slice, same repeat factor 6, with the 43 poisoned images
 removed. 200 real radiographs, all genuine radiographs.
+
+**V28's result: the contamination was real, it cost 23 films, and fixing it was
+still not enough.** On the leak-free 180-film board, at the operating point that
+keeps 80% malignant recall:
+
+| | V27 (243, 43 poisoned) | **V28 (200, all radiographs)** | V25 (159, 38 harvested) |
+|---|---|---|---|
+| leak-free wild | 106/180 | **129/180** | **133/180** |
+| cancers caught | 70/88 | 70/88 | 70/88 |
+| held-out 78, best thr | 64.1% | 62.8% | **65.4%** |
+
+So removing the poison bought **+23 films over V27** — the CT slices and MRI really
+were poisoning the model — but V28 still finished **4 films behind V25**, which
+trained on *fewer* harvested images. **There is an optimum, and it sits at roughly
+159 real images / 26% real-data weight.** Past it, every additional real radiograph
+— clean or not, more or less — moves the model off the point that balances the
+in-distribution benchmark against the real-film board. The harvest is exhausted;
+the remaining lever is **different diagnoses**, not more of these.
+
+### The leak: 19 of the 199 wild-board films were in the training set
+
+The V25 staging script carried a caveat that had never been measured: *"the
+harvested images come from the same bonetumor.org diagnosis pages as some held-out
+wild films, so the held-out number means 'unseen images, same entities', not
+'unseen source'."* It turned out to be worse than "same entities":
+
+```
+ra_benign_webabc_1.png            ==  bt2_benign_abc_009.png
+ra_benign_webabcfoot_2.png        ==  bt2_benign_abc_002.png     (HELD-OUT slice)
+ra_benign_webbfh_1.png            ==  bt2_benign_bfh_013.png      (HELD-OUT slice)
+ra_benign_webboneisland_2.png     ==  bt2_benign_boneisland_019.png (HELD-OUT slice)
+ra_malignant_webchondrosarcoma_2.png == bt2_malignant_chondrosarcoma_119.png (HELD-OUT slice)
+... 19 in total: 11 in the wild train slice, 8 inside the 78-film held-out slice
+```
+
+**Two independent crawls of the same case list produced the same images under two
+names.** So the harvest was never 122 new radiographs: it was 19 films that were
+already on the board, 43 that were not radiographs, and ~60 genuinely new ones.
+Every harvest-trained model had 8 of its "held-out" films in the training set.
+
+What it did and did not change:
+
+- **It did not manufacture V25's win.** V25 beat V24 by 8 films on the dirty board
+  and by 10 on the clean board. The win is real.
+- **It did inflate every absolute wild number** by up to 11 films, and it inflated
+  the *held-out 78-film slice* number that has been quoted since V25.
+- **The benchmark and the third-source board are clean** — 0 overlap, byte and
+  perceptual — so 518/564 and 15/50 never needed adjusting.
+- **The demo now quotes the clean numbers** (131/180, 74/88 cancers) and says in
+  the colophon that duplicates were found and removed.
+
+**The guard that should have existed:** every dataset that joins the training set
+must be md5- and perceptually-checked against every held-out board *before* it is
+used, and the check must be re-run whenever a new crawl lands. `kaggle_out_probe/check_leakage.py`
+and `kaggle_out_probe/check_btxrd9_overlap.py` do exactly that and are now part of
+the pre-flight list.
 
 **The four pre-flight checks every kernel must pass before it touches anyone's GPU quota:**
 
@@ -381,7 +488,7 @@ Measured, ranked, with the evidence attached:
 1. **Malignant-class diversity — now partially solved, and it worked.** The binding constraint was 2,736 osteosarcoma-dominated images. V24 proved the mechanism: fine-tuning on 121 real-world images of the *named* blind-spot entities (ABC, bone island, chondroblastoma, CMF, BFH, chondrosarcoma, adamantinoma, chordoma, angiosarcoma, GCT, fibrous dysplasia, metastases) moved the wild pool from 49.2% to 67.8% with the benchmark untouched. **V25 pushes further with 38 more harvested radiographs of exactly those entities.** Scaling that harvest up (V26, V27) *lost*, because 43 of the 122 harvested images were CT / MRI / pathology / bone-scan images wearing a page-level radiograph label — see §8. The lever was never the *count* of real radiographs, it was the count of *correctly labelled* ones.
 2. **Data hygiene is a lever, and it is a visual one.** Every automatic content filter tried (colour fraction, colour cast, black background, mid-grey fraction, flat texture) passes CT and MRI slices, because they are grayscale like radiographs. One labelled contact sheet and one human pass separated 43 poisons out of 122. Any future crawl of a medical image site needs the same treatment before a single pixel reaches the GPU.
 3. **Calibration, not capacity.** The malignant threshold is a free dial. More capacity has been tested and rejected five times: focal loss (V13), 120M params (V14), MixUp+EMA (V9), SSL/DINO init (V19b), and lesion-crop + 600px (V22 — the strongest counter-example: **+4.4pp benchmark, −22 films on real films, McNemar p=0.033**).
-4. **Ensembles do not help here.** Four specialists, probability-averaged: at matched cancer sensitivity the average is *worse* than the best single model (90–92/199 vs 98/199). They share a bias from the same training images, so averaging pulls toward the shared error. Their eye-catching "best achievable" numbers (108/199) are bought by pushing cancer sensitivity to 69/95, which is not a real trade.
+4. **Ensembles do not help here — re-verified on the clean board.** Every subset of the six specialists was probability-averaged and scored under the champion rule on the leak-free 180-film board (`kaggle_out_probe/ensemble_leakfree.py`). The best ensemble, **V25+V28, scores 665 combined — exactly one film ahead of V25 alone at 664.** The three strongest models land within two films of each other (V25 664, V28 663, V24 654) and no combination of them separates them. They share a bias from the same training images, so averaging pulls toward the shared error. Their eye-catching "best achievable" numbers are bought by pushing cancer sensitivity to 69/95, which is not a real trade.
 5. **No confidence signal detects out-of-distribution error.** Every candidate measured on the 199 real films lands in a weak band: specialist confidence AUC 0.560, gate decisiveness 0.573 (**inverted** — *low* gate confidence predicts an error), min-confidence across the ensemble 0.581, ensemble disagreement 0.435 (**also inverted** — films all four models agree on are *more* likely wrong, the signature of correlated error). Confidence fitted in-distribution cannot detect distribution shift, which is why the shipped band is calibrated on the test set and is **optimistic on unfamiliar sources** — the demo now says so. A 7-signal logistic model reaches AUC 0.761 *within* a pool but only **0.571–0.627 across** pools, so it cannot be shipped as an OOD gate either.
 6. **The pipeline is deterministic.** V21 was retrained from scratch two days later and came back **bit-for-bit identical** on every metric (`checkpoints/reproducibility_v21.json`). Run-to-run variance is zero, so future gains must come from a different seed or a different recipe — never from rerunning.
 7. **Longer schedules are not the answer** — V21's own curve peaks at epoch 39, then 21 epochs of overfitting.

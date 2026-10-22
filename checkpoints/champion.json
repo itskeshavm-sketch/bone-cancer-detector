@@ -11,7 +11,7 @@
  "headline": {
   "test_films": "521 / 564",
   "cancers": "162 / 179",
-  "note": "measured single-view, gate 0.3, malignant threshold 0.3, with 5-view TTA on both the gate and the specialist"
+  "note": "measured with 5-view TTA on both the gate and the specialist (identity, h-flip, rotate -10, rotate +10, h-flip+rotate+10), gate 0.3, malignant threshold 0.3. Single-view scores 518/564 with 158/179 cancers; the 5-view path is what ships."
  },
  "wild": {
   "acc": 0.7267441860465116,
@@ -37,7 +37,7 @@
   "V27": "final board 100/172 - significantly worse (p=0.0094)",
   "V28": "final board 120/172 - statistically tied with V25 (McNemar p=0.21)",
   "V29": "9-class BTXRD release, 1,561 new images - BTXRD val 0.8685 (worst), benchmark 512/564 (worst)",
-  "V30": "same 9-class data with the real-data mix pinned - BTXRD val 0.8716, held-out 57.7% and 23/35 cancers against V25's 60.3% and 27/35"
+  "V30": "same 9-class data with the real-data mix pinned at 22.1% - BTXRD val 0.8716, final board 116/172 with 64/81 cancers, 641 combined against V25's 659; the pHash overlap filter dropped 272 near-duplicates of our own benchmark test films that V29's byte-exact check missed"
  },
  "known_caveats": {
   "benchmark_internal_duplicates": "the 564-film benchmark contains 22 near-duplicate pairs (the same BTXRD image filed as both btxrd_IMGxxxxx.jpeg and tb2_IMGxxxxx_jpeg.rf.<hash>.jpg). The kernel's train/val/test dedup is md5-based, so re-encodes slip through it. Not corrected, because changing the benchmark would invalidate every comparison in this project.",

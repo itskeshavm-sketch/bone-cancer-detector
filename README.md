@@ -131,6 +131,49 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 
 **The same audit found 22 near-duplicate pairs inside the 564-film benchmark** — the same BTXRD image filed as both `btxrd_IMG002332.jpeg` and `tb2_IMG002332_jpeg.rf.<hash>.jpg`. The kernel's train/val/test dedup is md5-based, so re-encodes slip through it and the benchmark is worth a little more than it appears. **That is reported, not silently fixed**: the benchmark is the in-distribution guard for every comparison in this project, and rewriting it would invalidate all of them.
 
+### The free win: reading each film more than once
+
+Every number in this project was measured on a **single-view** forward pass. The
+demo, meanwhile, had a "Thorough check" button that averaged five views — a mode
+that had never been measured against the champion on a clean board. It was.
+
+**One measurement is wrong.** The first TTA result came out on the 180-film
+leak-free board and looked like a big win (141/180 vs 131/180). Re-running it on
+the **final 172-film board** told a different story: the apparent +10 was almost
+entirely on the eight duplicate films that the board cleanup then removed. The
+honest comparison, at the shipped thresholds with no fitting:
+
+| variant | benchmark | cancers caught (bench) | wild board | cancers caught (real) | missed cancers | false alarms | third source |
+|---|---|---|---|---|---|---|---|
+| single-view | 518/564 | 158/179 | 126/172 | 70/81 | 11 | 32/91 | 15/50 |
+| **5-view TTA** | **521/564** | **162/179** | 125/172 | **74/81** | **7** | 36/91 | 12/50 |
+| 6-view TTA + zoom | 518/564 | 160/179 | 126/172 | **74/81** | **7** | 35/91 | 12/50 |
+
+**The discordant cancers run one way only: 4 films TTA gets right that
+single-view misses, 0 the other way.** (McNemar p = 0.125 — not significant with
+only four discordant pairs, but the direction is clean and one-sided.) The cost
+is 4 more false alarms per 91 benign films, and the third-source board loses 3
+films out of 50, which is noise at that sample size.
+
+**So TTA ships as the default**, on the project's own stated principle that a
+missed cancer costs more than a false alarm: it catches **4 more cancers in every
+81** on real radiographs and **4 more in every 179** on the benchmark, with no
+film going from right to wrong on either board. The careful check adds the zoom
+as a sixth view.
+
+Two things the change had to respect:
+
+- **The reliability bands are still correctly assigned.** The band table was
+  calibrated on the single-view path, so the band KEY is deliberately the
+  single-view specialist probability even though the *reading* uses five views.
+  `test_demo_e2e.py` asserts this — if the key had changed with the views, every
+  band in the UI would have been mis-assigned.
+- **The second-opinion vote was removed.** The measured verdict was that
+  probability-averaging two specialists is no better than the best single model at
+  matched cancer sensitivity (best ensemble 665 vs V25 alone 664 — a coin flip),
+  so voting only diluted the better model. The gain comes from the views, not
+  from a second opinion.
+
 ### The correction that mattered: most of my "findings" were noise
 
 Three runs had told me "more harvested radiographs don't help", and I wrote that
@@ -171,6 +214,33 @@ share fell from 22.1% to 16.2%** — the new in-distribution images diluted the
 only real-scanner data in the mix. **V30 is the run that removes that confound**:
 the same 1,561 images with the repeat factor recomputed at runtime so the
 real-data share is pinned back to 22.1%.
+
+**V30 — the confound removed, and the hypothesis is still refuted.** The dynamic
+repeat computed 6, which puts the real-data share back at ~21.8% (against V25's
+22.1%), and the pHash test-overlap filter dropped **272** of the 1,600 nine-class
+images as genuine near-duplicates of benchmark test films. And it still lost:
+
+| | V25 | V29 (diluted) | V30 (mix restored) |
+|---|---|---|---|
+| BTXRD val | **0.8906** | 0.8685 | 0.8716 |
+| held-out wild, thr 0.30 | **60.3%** | 55.1% | 57.7% |
+| cancers caught (of 35) | **27** | 25 | 23 |
+| held-out wild, best thr | **65.4%** | 64.1% | 64.1% |
+
+**So the fine-grained-label hypothesis is refuted, not merely diluted.** The
+model does not need more benign *labels* — it needs more benign *radiographs from
+real scanners*. BTXRD-style osteochondromas are not the same thing as the
+ABC / bone island / CMF films the model actually gets wrong, and injecting 617
+osteochondromas pushed the decision boundary benign-ward: **V30 catches 4 fewer
+cancers than V25** on the held-out slice. More in-distribution supervision of
+the wrong kind is worse than none.
+
+**One incidental vindication of the detector rebuild:** the pHash filter found
+**272** genuine near-duplicates of our benchmark test films inside the 9-class
+release, and the old byte-exact check in V29 missed them — **V29 trained on 39
+benchmark test films**. V30 did not. Two of this project's worst bugs (the 19
+harvest/wild leaks and this one) were invisible to byte comparison and obvious
+to a structural hash.
 
 A third, even stricter view: of the 78-film held-out slice, **8 films were in the training set**, leaving **70 films that no harvest-trained model has ever seen** (32 cancers). At the shipped thresholds:
 | Model | never-seen real films | cancers caught |

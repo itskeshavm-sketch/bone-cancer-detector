@@ -1,43 +1,47 @@
 {
- "name": "V25",
- "description": "Two-stage bone tumor screener: EfficientNet-B3 gate (300px) + EfficientNet-B6 specialist (456px), fine-tuned on the entity families the error anatomy flagged (ABC, bone island, chondroblastoma, CMF, BFH, chondrosarcoma, adamantinoma, chordoma, angiosarcoma, GCT, fibrous dysplasia, metastases) plus 38 harvested radiographs of the same diagnoses.",
+ "name": "V25 + 5-view TTA",
+ "description": "Two-stage bone tumor screener: EfficientNet-B3 gate (300px) + EfficientNet-B6 specialist (456px), fine-tuned on the entity families the error anatomy flagged (ABC, bone island, chondroblastoma, CMF, BFH, chondrosarcoma, adamantinoma, chordoma, angiosarcoma, GCT, fibrous dysplasia, metastases) plus 38 harvested radiographs of the same diagnoses. The shipped inference path averages FIVE views of each film (identity, h-flip, rotate +/-10, h-flip+rotate+10); a sixth, a 1.25x centre zoom, is available on the careful check.",
  "stageA": "checkpoints/stageA18.pt",
  "stageB": "checkpoints/stageB25.pt",
  "bands": "checkpoints/uncertainty_bands_v25.json",
  "gate_thresh": 0.3,
  "mal_thresh": 0.3,
  "specialist_img": 456,
+ "tta_views": 5,
  "headline": {
-  "test_films": "518 / 564",
-  "cancers": "158 / 179",
-  "note": "measured single-view, gate 0.3, malignant threshold 0.3"
+  "test_films": "521 / 564",
+  "cancers": "162 / 179",
+  "note": "measured single-view, gate 0.3, malignant threshold 0.3, with 5-view TTA on both the gate and the specialist"
  },
  "wild": {
-  "acc": 0.7325581395348837,
-  "ok": 126,
+  "acc": 0.7267441860465116,
+  "ok": 125,
   "n": 172,
-  "cancers_caught": "70 / 81",
-  "benign_right": "56 / 91",
-  "note": "FINAL deduplicated board: 172 unique real-world radiographs (81 cancers) from Radiology Assistant + bonetumor.org. Two contamination sources were measured and removed: (1) 19 films that were byte-identical to harvested training images, 8 of them inside the 78-film held-out slice, because the harvest and the pool were crawled from the same cases under different names; (2) 9 near-duplicate PAIRS inside the pool itself (pHash Hamming 0 re-encodes of the same film, e.g. webchondrosarcoma_2 vs webchondrosarcoma_3) that md5 could not see. On the raw 199-film board the same model scored 143/199; on the 180-film leak-free board 131/180; on this final board 126/172."
+  "cancers_caught": "74 / 81",
+  "missed_cancers": "7 / 81",
+  "false_alarms": "36 / 91",
+  "note": "FINAL deduplicated board: 172 unique real-world radiographs (81 cancers) from Radiology Assistant + bonetumor.org. Two contamination sources were measured and removed: (1) 19 films byte-identical to harvested training images, 8 of them inside the 78-film held-out slice, because the harvest and the pool were crawled from the same cases under different names; (2) 9 near-duplicate PAIRS inside the pool itself (pHash Hamming 0 re-encodes of the same film) that md5 could not see. Single-view scores 126/172 with 70/81 cancers and 32/91 false alarms; the shipped 5-view path trades 1 film of total accuracy for 4 more cancers caught, and the discordant cancers run one way only (4 TTA-only right, 0 single-view-only right)."
  },
  "independent": {
-  "acc": 0.3,
-  "ok": 15,
+  "acc": 0.24,
+  "ok": 12,
   "n": 50,
-  "note": "50 radiographs from Wikimedia Commons, a THIRD source unseen by any model; V21 scored 11/50. 46 benign / 4 malignant, so it tests generalisation, not cancer recall. This pool also contains 9 near-duplicate pairs, which are counted here as-is."
+  "note": "50 radiographs from Wikimedia Commons, a THIRD source unseen by any model; V21 scored 11/50. 46 benign / 4 malignant, so it tests generalisation, not cancer recall. The 5-view path scores 12/50 against single-view's 15/50 - a 3-film difference on a 50-film board, which is noise. This pool also contains 9 near-duplicate pairs, counted here as-is."
  },
  "selection_rule": "malignant recall >= 80% of the 81 wild cancers, then max combined correct across the 564 benchmark + 172-film final wild board + 50 third-source films",
  "measured_contenders": {
-  "V21": "final board 76/172",
-  "V24": "final board 122/172",
+  "V21": "final board 76/172 at its own best threshold - no blind-spot fine-tune",
+  "V24": "final board 122/172 - statistically tied with V25 (McNemar p=0.057)",
   "V25": "final board 126/172 - CHAMPION",
-  "V26": "final board 98/172",
-  "V27": "final board 100/172",
-  "V28": "final board 120/172"
+  "V26": "final board 98/172 - significantly worse (p=0.0001)",
+  "V27": "final board 100/172 - significantly worse (p=0.0094)",
+  "V28": "final board 120/172 - statistically tied with V25 (McNemar p=0.21)",
+  "V29": "9-class BTXRD release, 1,561 new images - BTXRD val 0.8685 (worst), benchmark 512/564 (worst)",
+  "V30": "same 9-class data with the real-data mix pinned - BTXRD val 0.8716, held-out 57.7% and 23/35 cancers against V25's 60.3% and 27/35"
  },
  "known_caveats": {
   "benchmark_internal_duplicates": "the 564-film benchmark contains 22 near-duplicate pairs (the same BTXRD image filed as both btxrd_IMGxxxxx.jpeg and tb2_IMGxxxxx_jpeg.rf.<hash>.jpg). The kernel's train/val/test dedup is md5-based, so re-encodes slip through it. Not corrected, because changing the benchmark would invalidate every comparison in this project.",
   "wild_pool_has_no_normal_films": "it is a tumour-only population, so it cannot measure the normal class at all",
-  "bands_are_in_distribution": "the reliability bands are calibrated on the benchmark and are optimistic on unfamiliar sources; no confidence signal tested transfers across sources (0.571-0.627 AUC)"
+  "bands_are_in_distribution": "the reliability bands are calibrated on the benchmark and are optimistic on unfamiliar sources; no confidence signal tested transfers across sources (0.571-0.627 AUC). The band KEY is deliberately the single-view specialist probability, so the calibrated bands stay correctly assigned even though the reading itself uses 5 views."
  }
 }

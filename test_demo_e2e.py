@@ -23,8 +23,8 @@ from PIL import Image
 
 import app as A
 
-print("views in tta_views:", len(A.tta_views(Image.new("RGB", (400, 400)))))
-assert len(A.tta_views(Image.new("RGB", (400, 400)))) == 6, "expected 6 views"
+print("views in tta_views (default):", len(A.tta_views(Image.new("RGB", (400, 400)))))
+assert len(A.tta_views(Image.new("RGB", (400, 400)))) == 5, "expected 5 views by default"
 
 fails = []
 for cls in ["malignant", "benign", "normal"]:

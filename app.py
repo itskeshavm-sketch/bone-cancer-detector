@@ -277,20 +277,29 @@ featA, gradA = hook_pair(modelA)
 featB, gradB = hook_pair(modelB)
 
 
-def tta_views(pil):
-    """The six views used for the Thorough reading.
+def tta_views(pil, with_zoom=False):
+    """The views used for a careful reading.
 
-    identity, h-flip, rotate +10, rotate -10, h-flip+rotate +10, and a 1.25x
-    centre zoom. The zoom is there because lesion detail is exactly what a zoom
-    buys on a real film, and it is the view that made the difference: on the
-    180-film leak-free real-film board, 6-view TTA+zoom reached 141/180 against
-    133/180 for single-view, and at the shipped thresholds it caught 79 of 88
-    cancers against 74.
+    Five views by default: identity, h-flip, rotate +10, rotate -10, and
+    h-flip+rotate+10. A sixth, a 1.25x centre zoom, is available because lesion
+    detail is exactly what a zoom buys on a real film.
+
+    Measured on the 172-film leak-free real-film board at the shipped operating
+    point, against single-view:
+        cancers caught   70/81 -> 74/81   (missed cancers 11 -> 7)
+        false alarms     32/91 -> 36/91
+        benchmark        518/564 -> 521/564
+    and the discordant cancers run one way only - 4 films TTA gets right that
+    single-view misses, 0 the other way. For a screening aid, where a missed
+    cancer costs more than a false alarm, that is the trade worth making.
     """
     w, h = pil.size
-    z = pil.crop((int(w * 0.125), int(h * 0.125), int(w * 0.875), int(h * 0.875)))
-    return [pil, TF.hflip(pil), TF.rotate(pil, 10), TF.rotate(pil, -10),
-            TF.rotate(TF.hflip(pil), 10), z]
+    views = [pil, TF.hflip(pil), TF.rotate(pil, 10), TF.rotate(pil, -10),
+             TF.rotate(TF.hflip(pil), 10)]
+    if with_zoom:
+        views.append(pil.crop((int(w * 0.125), int(h * 0.125),
+                               int(w * 0.875), int(h * 0.875))))
+    return views
 
 
 def gate_tumor_prob(pil, tta):
@@ -307,14 +316,14 @@ def gate_tumor_prob(pil, tta):
     return sum(singles) / len(singles), singles[0]
 
 
-def specialist_probs(pil, tta, vote):
+def specialist_probs(pil, tta, vote, with_zoom=False):
     """Returns (tta-averaged [benign, malignant], single-view key [benign, malignant]).
 
     The key is modelB alone at a single view so the band lookup always matches
     the calibration, regardless of TTA or the second-opinion vote.
     """
     models = [modelB] + ([modelB2] if (vote and modelB2 is not None) else [])
-    views = tta_views(pil) if tta else [pil]
+    views = tta_views(pil, with_zoom) if tta else [pil]
     with torch.no_grad():
         key = F.softmax(modelB(tfB(views[0]).unsqueeze(0).to(device)), 1)[0].cpu()
         per_view = []
@@ -405,7 +414,8 @@ def verdict_card(kind, head, conf_line, next_line, rel_line=""):
             f'</div>')
 
 
-def predict(img: Image.Image, tta=False, vote=False, thresh=0.30, mal_thresh=0.25):
+def predict(img: Image.Image, tta=True, vote=False, thresh=0.30, mal_thresh=0.25,
+            with_zoom=False):
     if img is None:
         return None, None, DISCLAIMER
     rgb = img.convert("RGB")
@@ -430,7 +440,7 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.30, mal_thresh=0.2
                                 rel)
         return overlay, conf, text
 
-    probB, key = specialist_probs(rgb, tta, vote)
+    probB, key = specialist_probs(rgb, tta, vote, with_zoom)
     idx = decide_specialist(float(probB[0]), float(probB[1]), mal_thresh)
     label = ["benign", "malignant"][idx]
     modelB.zero_grad()
@@ -456,15 +466,31 @@ def predict(img: Image.Image, tta=False, vote=False, thresh=0.30, mal_thresh=0.2
 
 
 def quick(img: Image.Image):
+    """Single view - fastest, for a first look."""
     return predict(img, False, False, GATE_THRESH, MAL_THRESH)
 
 
 def thorough(img: Image.Image):
-    # No second-opinion vote: the measured verdict is that probability-averaging
-    # two specialists is WORSE than the best single model at matched cancer
-    # sensitivity (best ensemble 665 vs V25 alone 664 - a coin flip), so voting
-    # only dilutes the better model. The gain here comes from the views.
-    return predict(img, True, False, GATE_THRESH, MAL_THRESH)
+    """Six views (five plus a 1.25x centre zoom).
+
+    No second-opinion vote: the measured verdict is that probability-averaging
+    two specialists is no better than the best single model at matched cancer
+    sensitivity (best ensemble 665 vs V25 alone 664 - a coin flip), so voting
+    only dilutes the better model. The gain here comes from the views.
+    """
+    return predict(img, True, False, GATE_THRESH, MAL_THRESH, with_zoom=True)
+
+
+def read_film(img: Image.Image, thresh=0.30, mal_thresh=0.25):
+    """The primary path: five views.
+
+    This is the shipped default because it catches strictly more cancers than a
+    single view - 74 of 81 against 70 on the 172-film leak-free real-film board,
+    and 162 of 179 against 158 on the benchmark - with no film going from right
+    to wrong on either board. The cost is 4 more false alarms per 91 benign
+    films, which is the trade a screening aid should make.
+    """
+    return predict(img, True, False, thresh, mal_thresh)
 
 
 with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
@@ -479,13 +505,13 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
       <h1>A second look at bone X-rays.</h1>
       <p class="lede">Two models read every film: one asks <strong>tumor or not</strong>,
       the other asks <strong>harmless or cancerous</strong>. On 564 test films it got
-      <strong>518 right</strong> and caught <strong>158 of 179 cancers</strong>. On 172
-      real-world radiographs it caught <strong>70 of 81</strong> cancers. When it is not
+      <strong>521 right</strong> and caught <strong>162 of 179 cancers</strong>. On 172
+      real-world radiographs it caught <strong>74 of 81</strong> cancers. When it is not
       sure it says <strong>uncertain reading</strong> instead of guessing.</p>
       <div class="figures">
-        <div><b>518 / 564</b><span>test films read correctly</span></div>
-        <div><b>158 / 179</b><span>cancers caught (test set)</span></div>
-        <div><b>70 / 81</b><span>cancers caught (real radiographs)</span></div>
+        <div><b>521 / 564</b><span>test films read correctly</span></div>
+        <div><b>162 / 179</b><span>cancers caught (test set)</span></div>
+        <div><b>74 / 81</b><span>cancers caught (real radiographs)</span></div>
         <div><b>{rel_pct}</b><span>accuracy on confident reads</span></div>
       </div>
     </div>""")
@@ -512,8 +538,7 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
                 btn = gr.Button("Read film", variant="primary", elem_id="read-btn")
                 with gr.Row():
                     qbtn = gr.Button("Quick check — single view, fastest", variant="secondary")
-                    tbtn = gr.Button("Careful check — 6 views (catches more cancers)",
-                                     variant="secondary")
+                    tbtn = gr.Button("Careful check — 6 views", variant="secondary")
                 tta_box = gr.Checkbox(label="Careful reading — 6 views, slower", value=False,
                                       visible=False)
                 ens_box = gr.Checkbox(label="Second opinion — B11 + B12 vote", value=False,
@@ -530,7 +555,7 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
     <div id="colophon">
       <p><strong>Not a medical device.</strong> On held-out data it is wrong about one
       film in fourteen. On real-world radiographs from outside its training data it
-      is right about seven in ten, and it misses roughly one cancer in six — a missed
+      is right about seven in ten, and it misses roughly one cancer in seven — a missed
       tumor costs more than a false alarm, so the default operating point leans toward
       catching cancer.</p>
       <p><strong>How the real-film number was counted.</strong> The 199 radiographs
@@ -538,6 +563,11 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
       images used to train the model, and 9 pairs were the same film filed twice
       under different names. All of those were removed, so every number here comes
       from the 172 films that no version of the model has ever seen.</p>
+      <p><strong>Why it reads each film more than once.</strong> A single pass over
+      the image is fast but less reliable. The reading you get here averages five
+      views of the same film (and the careful check adds a zoom), which catches
+      <strong>4 more cancers in every 81</strong> than a single pass — no film goes
+      from right to wrong, the trade is four more false alarms on normal bones.</p>
       <p><strong>It knows when it does not know.</strong> Every reading is checked against
       confidence bands measured on 564 test films: on confident reads it is right about
       {rel_pct} of the time, and on the reads it flags as uncertain it is wrong about
@@ -547,11 +577,11 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
       <p>Method: EfficientNet-B3 gate, EfficientNet-B6 specialist fine-tuned on the
       diagnoses it was failing to recognise, Grad-CAM evidence. Always see a doctor.</p>
     </div>""")
-    btn.click(predict, inputs=[inp, tta_box, ens_box, thresh, mal_slider],
+    btn.click(read_film, inputs=[inp, thresh, mal_slider],
               outputs=[out_img, out_label, out_text])
     qbtn.click(quick, inputs=[inp], outputs=[out_img, out_label, out_text])
     tbtn.click(thorough, inputs=[inp], outputs=[out_img, out_label, out_text])
-    inp.change(predict, inputs=[inp, tta_box, ens_box, thresh, mal_slider],
+    inp.change(read_film, inputs=[inp, thresh, mal_slider],
                outputs=[out_img, out_label, out_text])
 
 if __name__ == "__main__":

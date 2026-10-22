@@ -32,7 +32,7 @@ for cls in ["malignant", "benign", "normal"]:
     if not hits:
         continue
     img = Image.open(hits[0]).convert("RGB")
-    for mode, fn in (("quick", A.quick), ("careful", A.thorough)):
+    for mode, fn in (("quick", A.quick), ("read", A.read_film)):
         overlay, conf, text = fn(img)
         ok = overlay is not None and bool(conf) and bool(text) and len(text) > 40
         key = conf.get("malignant", conf.get("benign", conf.get("normal")))

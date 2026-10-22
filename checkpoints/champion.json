@@ -13,26 +13,31 @@
   "note": "measured single-view, gate 0.3, malignant threshold 0.3"
  },
  "wild": {
-  "acc": 0.7277777777777778,
-  "ok": 131,
-  "n": 180,
-  "cancers_caught": "74 / 88",
-  "benign_right": "57 / 92",
-  "note": "180 real-world radiographs (Radiology Assistant + bonetumor.org), LEAK-FREE: 19 of the 199 collected films were byte-identical to images in the training set (8 of them inside the 78-film held-out slice) and were removed. Measured at the shipped gate 0.3 / malignant 0.3. On the un-cleaned 199-film board the same model scored 143/199 with 80/95 cancers; that number was inflated by the duplicates and is not quoted."
+  "acc": 0.7325581395348837,
+  "ok": 126,
+  "n": 172,
+  "cancers_caught": "70 / 81",
+  "benign_right": "56 / 91",
+  "note": "FINAL deduplicated board: 172 unique real-world radiographs (81 cancers) from Radiology Assistant + bonetumor.org. Two contamination sources were measured and removed: (1) 19 films that were byte-identical to harvested training images, 8 of them inside the 78-film held-out slice, because the harvest and the pool were crawled from the same cases under different names; (2) 9 near-duplicate PAIRS inside the pool itself (pHash Hamming 0 re-encodes of the same film, e.g. webchondrosarcoma_2 vs webchondrosarcoma_3) that md5 could not see. On the raw 199-film board the same model scored 143/199; on the 180-film leak-free board 131/180; on this final board 126/172."
  },
  "independent": {
   "acc": 0.3,
   "ok": 15,
   "n": 50,
-  "note": "50 radiographs from Wikimedia Commons, a THIRD source unseen by any model; V21 scored 11/50. 46 benign / 4 malignant, so it tests generalisation, not cancer recall."
+  "note": "50 radiographs from Wikimedia Commons, a THIRD source unseen by any model; V21 scored 11/50. 46 benign / 4 malignant, so it tests generalisation, not cancer recall. This pool also contains 9 near-duplicate pairs, which are counted here as-is."
  },
- "selection_rule": "malignant recall >= 80% of the wild cancers, then max combined correct across the 564 benchmark + leak-free wild pool + 50 third-source films",
+ "selection_rule": "malignant recall >= 80% of the 81 wild cancers, then max combined correct across the 564 benchmark + 172-film final wild board + 50 third-source films",
  "measured_contenders": {
-  "V21": "leak-free wild 82/180",
-  "V24": "leak-free wild 123/180",
-  "V25": "leak-free wild 133/180 (at its own best threshold) / 131/180 at the shipped thresholds",
-  "V26": "leak-free wild 95/180",
-  "V27": "leak-free wild 106/180",
-  "V28": "leak-free wild 129/180"
+  "V21": "final board 76/172",
+  "V24": "final board 122/172",
+  "V25": "final board 126/172 - CHAMPION",
+  "V26": "final board 98/172",
+  "V27": "final board 100/172",
+  "V28": "final board 120/172"
+ },
+ "known_caveats": {
+  "benchmark_internal_duplicates": "the 564-film benchmark contains 22 near-duplicate pairs (the same BTXRD image filed as both btxrd_IMGxxxxx.jpeg and tb2_IMGxxxxx_jpeg.rf.<hash>.jpg). The kernel's train/val/test dedup is md5-based, so re-encodes slip through it. Not corrected, because changing the benchmark would invalidate every comparison in this project.",
+  "wild_pool_has_no_normal_films": "it is a tumour-only population, so it cannot measure the normal class at all",
+  "bands_are_in_distribution": "the reliability bands are calibrated on the benchmark and are optimistic on unfamiliar sources; no confidence signal tested transfers across sources (0.571-0.627 AUC)"
  }
 }

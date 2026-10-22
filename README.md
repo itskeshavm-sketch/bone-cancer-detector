@@ -114,18 +114,22 @@ Main 3-class split: benign 1,860 / malignant 1,866 / normal 2,053 across train+v
 
 **Champion selection rule (applied identically to every model):** a missed cancer is much worse than a false alarm, so the operating point must keep **malignant recall ≥ 80%** of the wild cancers; among the thresholds that qualify, take the best combined score across all three boards.
 
-> **The wild board was leaking, and it is now fixed.** Nineteen of the 199 collected radiographs turned out to be **byte-identical to images in the training set** — eight of them inside the 78-film held-out slice — because the harvest and the wild pool were scraped from the same bonetumor.org cases under different filenames. Every model trained on the harvest (V25, V26, V27, V28) had therefore seen films that were also on the board. Those 19 films are now removed, leaving a **180-film leak-free board with 88 cancers**, and every number below is measured on it. The full analysis is `kaggle_out_probe/check_leakage.py` + `kaggle_out_probe/leakage_rescore.py`; the benchmark and the third-source board have **zero** overlap with any training image and are unaffected.
+> **The wild board was leaking twice, and both are now fixed.** Nineteen of the 199 collected radiographs turned out to be **byte-identical to images in the training set** — eight of them inside the 78-film held-out slice — because the harvest and the wild pool were scraped from the same bonetumor.org cases under different filenames. And **nine near-duplicate pairs sat inside the pool itself** — re-encodes of the same film that md5 cannot see (`webchondrosarcoma_2` vs `webchondrosarcoma_3`, Hamming 0). The final board is **172 unique films (81 cancers)**, and every wild number in this README is measured on it. The audit is `kaggle_out_probe/check_leakage.py`, `kaggle_out_probe/dedup_v2.py` and `kaggle_out_probe/final_board.py`.
 
-| Model | trained on harvest? | leak-free wild (180) | cancers | vs V25 |
-|---|---|---|---|---|
-| V21 | no | 82/180 | 72/88 | −51 |
-| V24 | no | 123/180 | 73/88 | −10 |
-| **V25** | **yes** | **133/180** | 70/88 | **—** ✅ |
-| V26 | yes | 95/180 | 74/88 | −38 |
-| V27 | yes | 106/180 | 70/88 | −27 |
-| V28 | yes | 129/180 | 70/88 | −4 |
+| Model | trained on harvest? | leak-free wild (180) | cancers | final board (172) | vs V25 |
+|---|---|---|---|---|---|
+| V21 | no | 82/180 | 72/88 | 76/172 | −50 |
+| V24 | no | 123/180 | 73/88 | 122/172 | −4 |
+| **V25** | **yes** | **133/180** | 70/88 | **126/172 (73.3%)** | **—** ✅ |
+| V26 | yes | 95/180 | 74/88 | 98/172 | −28 |
+| V27 | yes | 106/180 | 70/88 | 100/172 | −26 |
+| V28 | yes | 129/180 | 70/88 | 120/172 | −6 |
 
-**The leak did not manufacture V25's win.** V25 led V24 by 8 films on the dirty board (144 vs 136) and by **10 films on the clean board** (133 vs 123) — the advantage is if anything slightly larger once the duplicates are gone, because the duplicates were films V25 had memorised and the clean board throws those memorised films away. The headline wild number drops from 143/199 to **131/180 at the shipped thresholds** (72.8% either way), and 80/95 cancers becomes **74/88**.
+**The leak did not manufacture V25's win.** V25 led V24 by 8 films on the dirty board (144 vs 136) and by **10 films on the leak-free board** (133 vs 123) — the advantage is if anything slightly larger once the duplicates are gone, because the duplicates were films V25 had memorised and the clean board throws those memorised films away. On the final 172-film board V25 leads V24 by 4 films and V28 by 6.
+
+**The near-duplicate detector had to be rebuilt to see any of this.** The first version compared a *quantised* 16×16 grayscale signature byte-for-byte; radiographs are mostly black background, so that signature collides across unrelated films — it false-flagged 12 of 16 *distinct* osteochondroma radiographs as duplicates. A second version used raw 16×16 MAD and still false-flagged them for the same reason. The working version is a **pHash** (DCT low-frequency, 64 bits): all 19 known same-film pairs score **Hamming 0**, unrelated pairs have a median of 32, and a threshold of 8 catches 19/19 with 2 false flags in 3,000 (`kaggle_out_probe/dedup_v2.py`).
+
+**The same audit found 22 near-duplicate pairs inside the 564-film benchmark** — the same BTXRD image filed as both `btxrd_IMG002332.jpeg` and `tb2_IMG002332_jpeg.rf.<hash>.jpg`. The kernel's train/val/test dedup is md5-based, so re-encodes slip through it and the benchmark is worth a little more than it appears. **That is reported, not silently fixed**: the benchmark is the in-distribution guard for every comparison in this project, and rewriting it would invalidate all of them.
 
 A third, even stricter view: of the 78-film held-out slice, **8 films were in the training set**, leaving **70 films that no harvest-trained model has ever seen** (32 cancers). At the shipped thresholds:
 

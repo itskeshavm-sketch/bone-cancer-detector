@@ -1,1 +1,1 @@
-2026-10-22 14:40:10 | {"status": "KernelWorkerStatus.RUNNING", "fail": "", "used": 85922.0, "left": 6.132777777777778, "reserved": 0.0}
+2026-10-22 15:55:19 | {"status": "KernelWorkerStatus.COMPLETE", "fail": "", "used_h": 0.461, "total_h": 6.0, "left_h": 5.539, "reserved_h": 0.0, "refresh": "2026-10-24T00:00:00.000Z"}

@@ -28,5 +28,145 @@
   "page": "Category:X-rays of enchondroma of femur",
   "w": 1042,
   "h": 1509
+ },
+ {
+  "file": "wm4_benign_bone_cyst_000.png",
+  "label": "benign",
+  "entity": "bone_cyst",
+  "source": "wikimedia commons",
+  "title": "File:JKZ.jpeg",
+  "page": "Category:X-rays of bone cyst",
+  "w": 382,
+  "h": 580
+ },
+ {
+  "file": "wm4_benign_osteomyelitis_000.png",
+  "label": "benign",
+  "entity": "osteomyelitis",
+  "source": "wikimedia commons",
+  "title": "File:American quarterly of roentgenology (1912) (14570606359).jpg",
+  "page": "Category:X-rays of osteomyelitis",
+  "w": 1920,
+  "h": 2592
+ },
+ {
+  "file": "wm4_benign_osteomyelitis_001.png",
+  "label": "benign",
+  "entity": "osteomyelitis",
+  "source": "wikimedia commons",
+  "title": "File:X1300064 Nevit.jpg",
+  "page": "Category:X-rays of osteomyelitis",
+  "w": 1920,
+  "h": 2560
+ },
+ {
+  "file": "wm4_benign_osteomyelitis_002.png",
+  "label": "benign",
+  "entity": "osteomyelitis",
+  "source": "wikimedia commons",
+  "title": "File:X1300065 Nevit.jpg",
+  "page": "Category:X-rays of osteomyelitis",
+  "w": 1920,
+  "h": 2560
+ },
+ {
+  "file": "wm4_benign_osteoma_000.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Enostom Metacarpale IV als Zufallsbefund bei Metacarpale-V-Fraktur 84W - CR - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1669,
+  "h": 1339
+ },
+ {
+  "file": "wm4_benign_osteoma_001.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Enostom Os metacarpale I 23M - CR - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1091,
+  "h": 1345
+ },
+ {
+  "file": "wm4_benign_osteoma_002.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Flaechiges Osteom volarseitig im Daumenendglied 47W - CR - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1162,
+  "h": 1389
+ },
+ {
+  "file": "wm4_benign_osteoma_003.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteom Endphalanx D4 linker Fuss 60M - CR - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1920,
+  "h": 1273
+ },
+ {
+  "file": "wm4_benign_osteoma_004.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteom Grundglied 4 Zehe 32M - CR - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1920,
+  "h": 1340
+ },
+ {
+  "file": "wm4_benign_osteoma_005.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteom Stirnhoehle.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1198,
+  "h": 1509
+ },
+ {
+  "file": "wm4_benign_osteoma_006.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteom Stirnhoehle Roe ap.png",
+  "page": "Category:X-rays of osteoma",
+  "w": 1106,
+  "h": 1012
+ },
+ {
+  "file": "wm4_benign_osteoma_007.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteom Stirnhoehle Roe seitl.png",
+  "page": "Category:X-rays of osteoma",
+  "w": 820,
+  "h": 1044
+ },
+ {
+  "file": "wm4_benign_osteoma_008.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteom Stirnhoehle links 75M - CR ap - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1338,
+  "h": 911
+ },
+ {
+  "file": "wm4_benign_osteoma_009.png",
+  "label": "benign",
+  "entity": "osteoma",
+  "source": "wikimedia commons",
+  "title": "File:Osteom der Endphalanx D3 51M - CR - 001.jpg",
+  "page": "Category:X-rays of osteoma",
+  "w": 1472,
+  "h": 1020
  }
 ]

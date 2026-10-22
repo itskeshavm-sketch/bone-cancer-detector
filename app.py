@@ -278,8 +278,19 @@ featB, gradB = hook_pair(modelB)
 
 
 def tta_views(pil):
+    """The six views used for the Thorough reading.
+
+    identity, h-flip, rotate +10, rotate -10, h-flip+rotate +10, and a 1.25x
+    centre zoom. The zoom is there because lesion detail is exactly what a zoom
+    buys on a real film, and it is the view that made the difference: on the
+    180-film leak-free real-film board, 6-view TTA+zoom reached 141/180 against
+    133/180 for single-view, and at the shipped thresholds it caught 79 of 88
+    cancers against 74.
+    """
+    w, h = pil.size
+    z = pil.crop((int(w * 0.125), int(h * 0.125), int(w * 0.875), int(h * 0.875)))
     return [pil, TF.hflip(pil), TF.rotate(pil, 10), TF.rotate(pil, -10),
-            TF.rotate(TF.hflip(pil), 10)]
+            TF.rotate(TF.hflip(pil), 10), z]
 
 
 def gate_tumor_prob(pil, tta):
@@ -449,7 +460,11 @@ def quick(img: Image.Image):
 
 
 def thorough(img: Image.Image):
-    return predict(img, True, modelB2 is not None, GATE_THRESH, MAL_THRESH)
+    # No second-opinion vote: the measured verdict is that probability-averaging
+    # two specialists is WORSE than the best single model at matched cancer
+    # sensitivity (best ensemble 665 vs V25 alone 664 - a coin flip), so voting
+    # only dilutes the better model. The gain here comes from the views.
+    return predict(img, True, False, GATE_THRESH, MAL_THRESH)
 
 
 with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
@@ -496,11 +511,13 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
             with gr.Group(elem_id="controls"):
                 btn = gr.Button("Read film", variant="primary", elem_id="read-btn")
                 with gr.Row():
-                    qbtn = gr.Button("Quick check — 4 seconds", variant="secondary")
-                    tbtn = gr.Button("Thorough check — vote + 5 views (most accurate)", variant="secondary")
-                tta_box = gr.Checkbox(label="Careful reading — 5 views, slower", value=False)
+                    qbtn = gr.Button("Quick check — single view, fastest", variant="secondary")
+                    tbtn = gr.Button("Careful check — 6 views (catches more cancers)",
+                                     variant="secondary")
+                tta_box = gr.Checkbox(label="Careful reading — 6 views, slower", value=False,
+                                      visible=False)
                 ens_box = gr.Checkbox(label="Second opinion — B11 + B12 vote", value=False,
-                                      visible=modelB2 is not None)
+                                      visible=False)
                 thresh = gr.Slider(0.2, 0.7, value=GATE_THRESH, step=0.05,
                                    label="Gate sensitivity — lower catches subtler tumors, more false alarms")
                 mal_slider = gr.Slider(0.05, 0.60, value=MAL_THRESH, step=0.01,

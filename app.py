@@ -464,13 +464,13 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
       <h1>A second look at bone X-rays.</h1>
       <p class="lede">Two models read every film: one asks <strong>tumor or not</strong>,
       the other asks <strong>harmless or cancerous</strong>. On 564 test films it got
-      <strong>518 right</strong> and caught <strong>158 of 179 cancers</strong>. On 199
-      real-world radiographs it caught <strong>80 of 95</strong> cancers. When it is not
+      <strong>518 right</strong> and caught <strong>158 of 179 cancers</strong>. On 180
+      real-world radiographs it caught <strong>74 of 88</strong> cancers. When it is not
       sure it says <strong>uncertain reading</strong> instead of guessing.</p>
       <div class="figures">
         <div><b>518 / 564</b><span>test films read correctly</span></div>
         <div><b>158 / 179</b><span>cancers caught (test set)</span></div>
-        <div><b>80 / 95</b><span>cancers caught (real radiographs)</span></div>
+        <div><b>74 / 88</b><span>cancers caught (real radiographs)</span></div>
         <div><b>{rel_pct}</b><span>accuracy on confident reads</span></div>
       </div>
     </div>""")
@@ -516,6 +516,10 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
       is right about seven in ten, and it misses roughly one cancer in six — a missed
       tumor costs more than a false alarm, so the default operating point leans toward
       catching cancer.</p>
+      <p><strong>How the real-film number was counted.</strong> Nineteen of the
+      radiographs used to build the training set turned out to be duplicates of films
+      in the evaluation set, so they were removed and every number here comes from
+      the 180 films that no version of the model has ever seen.</p>
       <p><strong>It knows when it does not know.</strong> Every reading is checked against
       confidence bands measured on 564 test films: on confident reads it is right about
       {rel_pct} of the time, and on the reads it flags as uncertain it is wrong about
@@ -533,4 +537,8 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
                outputs=[out_img, out_label, out_text])
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=args.port, share=True, theme=theme, css=CSS)
+    # LOCALHOST ONLY. Binding 0.0.0.0 would expose a medical-image model to the
+    # whole LAN, and share=True would publish it to a public Gradio tunnel.
+    # Neither is acceptable for a screening tool that is not a medical device.
+    demo.launch(server_name="127.0.0.1", server_port=args.port, share=False,
+                theme=theme, css=CSS)

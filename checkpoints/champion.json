@@ -13,12 +13,12 @@
   "note": "measured single-view, gate 0.3, malignant threshold 0.3"
  },
  "wild": {
-  "acc": 0.7185929648241206,
-  "ok": 143,
-  "n": 199,
-  "cancers_caught": "80 / 95",
-  "benign_right": "",
-  "note": "199 real-world radiographs (Radiology Assistant + bonetumor.org); V21 scored 98/199 on the identical protocol"
+  "acc": 0.7277777777777778,
+  "ok": 131,
+  "n": 180,
+  "cancers_caught": "74 / 88",
+  "benign_right": "57 / 92",
+  "note": "180 real-world radiographs (Radiology Assistant + bonetumor.org), LEAK-FREE: 19 of the 199 collected films were byte-identical to images in the training set (8 of them inside the 78-film held-out slice) and were removed. Measured at the shipped gate 0.3 / malignant 0.3. On the un-cleaned 199-film board the same model scored 143/199 with 80/95 cancers; that number was inflated by the duplicates and is not quoted."
  },
  "independent": {
   "acc": 0.3,
@@ -26,5 +26,13 @@
   "n": 50,
   "note": "50 radiographs from Wikimedia Commons, a THIRD source unseen by any model; V21 scored 11/50. 46 benign / 4 malignant, so it tests generalisation, not cancer recall."
  },
- "selection_rule": "malignant recall >= 80% of the 95 wild cancers, then max combined correct across the 564 benchmark + 199 wild + 50 third-source films"
+ "selection_rule": "malignant recall >= 80% of the wild cancers, then max combined correct across the 564 benchmark + leak-free wild pool + 50 third-source films",
+ "measured_contenders": {
+  "V21": "leak-free wild 82/180",
+  "V24": "leak-free wild 123/180",
+  "V25": "leak-free wild 133/180 (at its own best threshold) / 131/180 at the shipped thresholds",
+  "V26": "leak-free wild 95/180",
+  "V27": "leak-free wild 106/180",
+  "V28": "leak-free wild 129/180"
+ }
 }

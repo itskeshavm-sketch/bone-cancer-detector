@@ -1,9 +1,33 @@
 # 🦴 Bone Cancer Detection AI
 
-Two-stage X-ray classifier for bone tumors — **normal / benign tumor / malignant tumor** — with Grad-CAM heatmaps, a measured uncertainty band, and an honest two-board evaluation.
+Two-stage X-ray classifier for bone tumors — **normal / benign tumor / malignant tumor** — with Grad-CAM heatmaps, a measured uncertainty band, and an honest three-board evaluation.
 
 > **⚠️ Proof-of-concept for educational and hackathon purposes only. NOT a medical device. NOT for clinical use.**
 > The model is wrong about one film in ten. Never use it for patient decisions. Always consult a medical professional.
+
+---
+
+## 0. The result, in one table
+
+| board | what it measures | n | result |
+|---|---|---|---|
+| **BTXRD test set** | in-distribution films from the training corpus | 564 | **521 correct (92.4%)** · 162/179 cancers caught |
+| **Real radiographs** | films from a source the model never trained on, deduplicated | 172 | **74/81 cancers caught** · 7 missed · 36 false alarms on 91 benign films |
+| **Third source** | a further unseen source (Wikimedia Commons) | 50 | 12 correct · tests generalisation, not cancer recall |
+
+**The shipped demo reads every film five ways.** That is worth **4 more cancers
+caught in every 81** than a single pass, with no film going from right to wrong —
+the trade is four more false alarms on normal bones.
+
+**The evaluation itself was audited twice.** The 199-film real-radiograph board
+turned out to contain 19 films that were also in the training set and 9
+near-duplicate pairs, so the board is now **172 unique films** that no version of
+the model has ever seen. Every number above is measured on the cleaned board.
+
+**What did not work, measured and documented:** 6 architectures, 4 loss/schedule
+variants, SSL/DINO init, lesion-crop augmentation, probability-averaged
+ensembles, scaling the radiograph harvest 4 ways, fine-grained 9-class labels,
+and every confidence-based out-of-distribution detector. See §8.
 
 ---
 
@@ -15,9 +39,9 @@ Two-stage X-ray classifier for bone tumors — **normal / benign tumor / maligna
 | **Input** | Single 2D radiograph (PNG/JPEG) |
 | **Output** | Verdict (normal / benign / malignant) + confidence + Grad-CAM overlay + reliability band |
 | **Stack** | PyTorch, torchvision EfficientNet, Gradio 6.29.1 |
-| **Training infra** | Kaggle GPU (T4), private kernels, 30 GPU-h/week quota |
-| **Demo** | `python app.py` → http://localhost:7860 |
-| **Champion** | **V25** — 91.8% on the 564-film test set, **72.8% on 180 leak-free real-world radiographs**, 74/88 cancers caught |
+| **Training infra** | Kaggle GPU (T4), private kernels, **6 GPU-h/week** quota |
+| **Demo** | `python app.py` → http://localhost:7860 (localhost only) |
+| **Champion** | **V25 + 5-view TTA** — 521/564 on the test set, **74/81 cancers on 172 leak-free real radiographs** |
 
 ## 2. Architecture
 

@@ -1,2 +1,2 @@
-KernelWorkerStatus.ERROR
+KernelWorkerStatus.COMPLETE
 

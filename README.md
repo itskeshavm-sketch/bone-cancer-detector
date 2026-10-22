@@ -636,6 +636,18 @@ Measured, ranked, with the evidence attached:
 
 **What remains:** the wild pool has **no normal films** (it is a tumor-only population), so it cannot measure the normal class at all, and the 78-film held-out slice shares a source domain with the training slice. The honest next measurement is a **third source of real radiographs** — not more of the same.
 
+**One gap that is still open, and it is the most important one:** the project's boards
+contain **no real normal radiographs**, so the gate's false-positive rate on a
+normal bone X-ray from a real hospital has never been measured — and for a
+screening tool that number decides how many unnecessary scans a programme
+generates. MURA's hand radiographs (271 normal films from 96 patients in the
+official patient-disjoint `valid` split) were identified and the measurement script
+written (`kaggle_out_probe/eval_real_normals.py`), but that dataset's download
+endpoint returns **403** for this account and the Kaggle host drops the 581 MB
+archive mid-transfer. The board is ready to run; the data is not retrievable from
+here. **The normal class is the one thing this project cannot claim to have
+measured**, and it is stated that way in the demo's own colophon.
+
 ## 12. ⚠️ Disclaimer
 
 **Proof-of-concept for educational and hackathon purposes only — NOT for clinical use, NOT a medical device.**

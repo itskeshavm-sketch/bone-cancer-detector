@@ -79,6 +79,77 @@ out = out.replace('f"| real share {len(tr.wild)*WILD_REPEAT/len(tr):.1%} | val {
 out = out.replace('+ wild {len(tr.wild)}x{WILD_REPEAT})',
                   '+ wild {len(tr.wild)}x{wild_repeat})')
 
+# ---- replace the byte-exact quantised near-duplicate check with the calibrated
+# MAD comparison. The quantised byte signature collided across unrelated films
+# (a radiograph is mostly black, so a 4-level 16x16 grid is nearly constant),
+# which over-dropped good training images. Calibrated in calibrate_dedup.py:
+# known same-film pairs sit at MAD <= 0.0002, unrelated pairs at a median of
+# 0.255, and MAD16 < 0.02 catches 19/19 leaks while false-flagging 2 in 3000.
+OLD_PSIG = '''def psig(p):
+    """16x16 grayscale signature quantised to 4 levels - survives re-encoding."""
+    try:
+        a = np.asarray(Image.open(p).convert("L").resize((16, 16)), dtype=float) / 255.0
+        return (a * 4).astype(np.int8).tobytes()
+    except Exception:
+        return None
+'''
+NEW_PSIG = '''NEAR_DUP_MAD = 0.02
+
+
+def psig(p):
+    """16x16 grayscale signature, NOT quantised.
+
+    A byte-exact comparison of a QUANTISED signature collides across unrelated
+    films - a radiograph is mostly black background, so a 4-level 16x16 grid is
+    nearly constant and many different films hash to the same bytes. Calibrated
+    in kaggle_out_probe/calibrate_dedup.py: the 19 known same-film pairs sit at
+    mean-absolute-difference <= 0.0002 while unrelated pairs have a median of
+    0.255, so MAD16 < 0.02 catches 19/19 real leaks and false-flags 2 in 3000.
+    """
+    try:
+        a = np.asarray(Image.open(p).convert("L").resize((16, 16)), dtype=float) / 255.0
+        return a
+    except Exception:
+        return None
+
+
+def near_duplicate(sig, pool):
+    if sig is None:
+        return False
+    for other in pool:
+        if other is None:
+            continue
+        if np.abs(sig - other).mean() < NEAR_DUP_MAD:
+            return True
+    return False
+'''
+if OLD_PSIG not in out:
+    raise SystemExit("psig block not found")
+out = out.replace(OLD_PSIG, NEW_PSIG)
+
+out = out.replace("""    test_md5, test_sig = set(), set()
+    for c in ["normal", "benign", "malignant"]:
+        for i in (D3 / "test" / c).glob("*"):
+            test_md5.add(md5(i))
+            s = psig(i)
+            if s:
+                test_sig.add(s)""",
+"""    test_md5, test_sig = set(), []
+    for c in ["normal", "benign", "malignant"]:
+        for i in (D3 / "test" / c).glob("*"):
+            test_md5.add(md5(i))
+            s = psig(i)
+            if s is not None:
+                test_sig.append(s)""")
+
+out = out.replace("""                s = psig(img)
+                if s and s in test_sig:
+                    n_test += 1
+                    continue""",
+"""                if near_duplicate(psig(img), test_sig):
+                    n_test += 1
+                    continue""")
+
 DST.write_text(out, encoding="utf-8")
 
 import ast
@@ -91,6 +162,9 @@ checks = {
     "seed 30": "random.seed(30)" in out,
     "nine added": "nine_added" in out,
     "test exclusion": "test_sig" in out,
+    "MAD dedup not byte-exact": "near_duplicate(psig(img), test_sig)" in out,
+    "no quantised signature": "astype(np.int8).tobytes()" not in out,
+    "numpy available": "import numpy as np" in out,
 }
 for k, v in checks.items():
     print(f"  {'OK ' if v else 'FAIL'} {k}")

@@ -123,13 +123,35 @@ def md5(p):
     return h.hexdigest()
 
 
+NEAR_DUP_MAD = 0.02
+
+
 def psig(p):
-    """16x16 grayscale signature quantised to 4 levels - survives re-encoding."""
+    """16x16 grayscale signature, NOT quantised.
+
+    A byte-exact comparison of a QUANTISED signature collides across unrelated
+    films - a radiograph is mostly black background, so a 4-level 16x16 grid is
+    nearly constant and many different films hash to the same bytes. Calibrated
+    in kaggle_out_probe/calibrate_dedup.py: the 19 known same-film pairs sit at
+    mean-absolute-difference <= 0.0002 while unrelated pairs have a median of
+    0.255, so MAD16 < 0.02 catches 19/19 real leaks and false-flags 2 in 3000.
+    """
     try:
         a = np.asarray(Image.open(p).convert("L").resize((16, 16)), dtype=float) / 255.0
-        return (a * 4).astype(np.int8).tobytes()
+        return a
     except Exception:
         return None
+
+
+def near_duplicate(sig, pool):
+    if sig is None:
+        return False
+    for other in pool:
+        if other is None:
+            continue
+        if np.abs(sig - other).mean() < NEAR_DUP_MAD:
+            return True
+    return False
 
 
 def aug_train(sz):
@@ -224,13 +246,13 @@ def main():
                 link(img, D3 / split / main_label(img, MAIN_SRC / split / "labels") / img.name)
     mark("main-staged")
 
-    test_md5, test_sig = set(), set()
+    test_md5, test_sig = set(), []
     for c in ["normal", "benign", "malignant"]:
         for i in (D3 / "test" / c).glob("*"):
             test_md5.add(md5(i))
             s = psig(i)
-            if s:
-                test_sig.add(s)
+            if s is not None:
+                test_sig.append(s)
     print(f"test fingerprints: {len(test_md5)} md5 / {len(test_sig)} signatures", flush=True)
 
     drop = 0
@@ -278,8 +300,7 @@ def main():
                 if m in test_md5:
                     n_test += 1
                     continue
-                s = psig(img)
-                if s and s in test_sig:
+                if near_duplicate(psig(img), test_sig):
                     n_test += 1
                     continue
                 if m in main_md5:

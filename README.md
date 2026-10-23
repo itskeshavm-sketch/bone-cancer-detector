@@ -636,17 +636,64 @@ Measured, ranked, with the evidence attached:
 
 **What remains:** the wild pool has **no normal films** (it is a tumor-only population), so it cannot measure the normal class at all, and the 78-film held-out slice shares a source domain with the training slice. The honest next measurement is a **third source of real radiographs** — not more of the same.
 
-**One gap that is still open, and it is the most important one:** the project's boards
-contain **no real normal radiographs**, so the gate's false-positive rate on a
-normal bone X-ray from a real hospital has never been measured — and for a
-screening tool that number decides how many unnecessary scans a programme
-generates. MURA's hand radiographs (271 normal films from 96 patients in the
-official patient-disjoint `valid` split) were identified and the measurement script
-written (`kaggle_out_probe/eval_real_normals.py`), but that dataset's download
-endpoint returns **403** for this account and the Kaggle host drops the 581 MB
-archive mid-transfer. The board is ready to run; the data is not retrievable from
-here. **The normal class is the one thing this project cannot claim to have
-measured**, and it is stated that way in the demo's own colophon.
+**The gap is now measured, and the answer is the worst one in this document.**
+Every board above is tumour-only. None of them says what happens when an
+ordinary normal bone X-ray goes through the model — and for a screening tool
+that number decides how many unnecessary scans a programme generates. That
+board now exists: **207 normal hand radiographs** from 80 patients of MURA's
+official patient-disjoint `valid` split, real Stanford patients on real
+scanners, scored by the shipped gate and specialist.
+
+**67% of healthy hands were called a tumour.**
+
+| | 207 real normal films |
+|---|---|
+| gate flags it as a tumour, shipped threshold 0.30 | **139 / 207 = 67.1%** |
+| gate flags it, single view | 136 / 207 = 65.7% |
+| end-to-end, 5-view path | **139 / 207 = 67.1%** |
+| end-to-end, single-view path | 132 / 207 = 63.8% |
+
+And it is not uncertainty: on the 139 films it flagged, p(tumour) ran **0.305 to
+1.000 with a median of 0.963**. Only 19 of the 139 were below 0.50. The model is
+not confused by healthy hands — it is confident they are cancer.
+
+**You cannot threshold your way out of it.**
+
+| gate threshold | normal films still flagged |
+|---|---|
+| 0.20 | 71.5% |
+| 0.30 (shipped) | 67.1% |
+| 0.50 | 58.0% |
+| 0.70 | 51.7% |
+
+Even at a threshold so high it would gut cancer recall, half of all healthy
+hands still come back flagged. The problem is the representation, not the
+operating point.
+
+**What this does and does not mean.** MURA is hand and wrist; this project's
+training positives are humerus, femur, tibia, pelvis and spine. So the test
+mixes two failures that cannot be separated from one board: *does not know a
+wrist is a bone* and *calls healthy bone tumour*. Both are real. The honest
+reading is the narrower one — **the normal class is narrow.** The gate learned
+"normal" from one family of radiographs and does not recognise normal bone
+outside it. That is enough to disqualify the model as a general bone screener,
+and it is exactly the kind of failure the tumour-only boards could never show.
+
+**The headline numbers above still stand** — they are correctly measured on
+tumour films, and the champion was chosen by a rule fixed before this board
+existed, so nothing here re-opens the model selection. What changes is the
+claim. This is a **tumour-film classifier**, not a screening tool: pointed at a
+general bone radiograph population it would flag two out of three healthy
+patients. The demo says so in its own colophon.
+
+**How the data was retrieved, because it mattered:** the dataset's download
+endpoint returns 403 for this account, so `kaggle_out_probe/fetch_mura_from_zip.py`
+reads a MURA mirror's zip End-Of-Central-Directory over an HTTP range, parses
+the 40,013-entry central directory and pulls only the 271 wanted entries —
+about 25 MB instead of 3.4 GB. Kaggle's CDN rate-limited at 207 of 271; the
+remaining 64 were not retrieved and are not missed, because a 67% false-positive
+rate on 207 films has a 95% interval of roughly 60–73%.
+
 
 ## 12. ⚠️ Disclaimer
 

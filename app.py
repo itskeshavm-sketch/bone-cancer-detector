@@ -544,6 +544,13 @@ with gr.Blocks(title="Bone cancer detector — screening aid") as demo:
       is right about seven in ten, and it misses roughly one cancer in seven — a missed
       tumor costs more than a false alarm, so the default operating point leans toward
       catching cancer.</p>
+      <p><strong>It reads tumours, not healthy bones.</strong> Tested on 207 real,
+      completely normal hand X-rays from a different hospital, it called
+      <strong>two out of three of them a tumour</strong> — and confidently, not
+      unsure. Raising the threshold does not fix it. The model learned what a normal
+      bone looks like from arms, legs, hips and spines, and does not recognise normal
+      bone outside that. Point it at ordinary healthy X-rays and it will over-flag
+      badly.</p>
       <p><strong>How the real-film number was counted.</strong> The 199 radiographs
       collected for testing turned out to contain duplicates — 19 were the same
       images used to train the model, and 9 pairs were the same film filed twice

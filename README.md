@@ -679,6 +679,23 @@ reading is the narrower one — **the normal class is narrow.** The gate learned
 outside it. That is enough to disqualify the model as a general bone screener,
 and it is exactly the kind of failure the tumour-only boards could never show.
 
+**The control that rules out "the gate is just broken."** Running the same gate,
+same views, same threshold on **205 held-out normals from its own training
+domain** (`data/test/normal`, never trained on):
+
+| board | films | flagged as tumour | median p(tumour) |
+|---|---|---|---|
+| its own held-out normals | 205 | **2 = 1.0%** | **0.000** |
+| real normal hands (MURA) | 207 | **139 = 67.1%** | **0.963** |
+
+Single-view on its own normals flags **0 of 205**. The gate is not
+miscalibrated and not broken — it is close to perfect inside its domain and
+confidently wrong outside it. The ratio between the two false-positive rates is
+about **67×**, and the direction of the confidence is inverted: it is most sure
+of itself exactly where it is most wrong. That is the failure mode no threshold,
+no confidence band and no uncertainty flag can catch, and it is why the
+per-source AUCs for every OOD signal tested in this project sat at 0.57–0.63.
+
 **The headline numbers above still stand** — they are correctly measured on
 tumour films, and the champion was chosen by a rule fixed before this board
 existed, so nothing here re-opens the model selection. What changes is the
